@@ -30,7 +30,14 @@ qui n'a pas à vivre dans l'historique.
 npm run studio          # éditeur interactif, aperçu temps réel
 npm run render          # rendu final -> out/video-habillee.mp4
 npm run render:preview  # aperçu 12 s -> out/apercu.mp4
+npm run fonts           # régénère src/fonts-inline.ts depuis public/fonts
 npm run lint            # typecheck
+```
+
+Pour viser un passage précis sans re-encoder les 4 min 28 :
+
+```bash
+npx remotion render Apercu out/test.mp4 --props='{"offsetSec":22}'
 ```
 
 ### Compositions
@@ -86,9 +93,22 @@ réseau). Si une punchline tombe à côté de ce que dit la voix off, c'est dans
 
 ## Polices
 
-Poppins (600/800) et Caveat (700) sont **embarquées** dans `public/fonts/`
-en woff2. Le rendu ne dépend donc d'aucun accès réseau, et il est
+Poppins (600/800) et Caveat (700) sont **embarquées** : les `.woff2` de
+`public/fonts/` sont inlinés en base64 dans `src/fonts-inline.ts` et déclarés
+en `@font-face` CSS. Le rendu ne dépend donc d'aucun accès réseau et il est
 reproductible à l'identique.
+
+Après avoir changé un fichier de police :
+
+```bash
+npm run fonts   # régénère src/fonts-inline.ts
+```
+
+Le chargement est volontairement fait **sans `delayRender()`** : Remotion
+attend déjà `document.fonts.ready` avant de capturer chaque frame. Les deux
+variantes à base de `delayRender` (d'abord `staticFile()`, puis data URI)
+bloquaient le rendu long — sur les pages que Remotion ouvre en cours de route,
+le handle n'était jamais libéré et le rendu s'arrêtait vers la frame 770.
 
 ## Rendu sans Chrome préinstallé
 

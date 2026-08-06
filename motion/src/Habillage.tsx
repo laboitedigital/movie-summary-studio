@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, OffthreadVideo, staticFile, useCurrentFrame} from 'remotion';
 import {COLORS} from './theme';
 import {BRAND, sec} from './timeline';
-import {loadFonts} from './load-fonts';
+import {FontStyles} from './load-fonts';
 
 import {IntroCard} from './components/IntroCard';
 import {ChapterCards} from './components/ChapterCard';
@@ -13,8 +13,6 @@ import {BrandChip} from './components/BrandChip';
 import {SubscribeBug} from './components/SubscribeBug';
 import {OutroCard} from './components/OutroCard';
 import {SceneTransitions} from './components/SceneTransition';
-
-loadFonts();
 
 export type HabillageProps = {
   /**
@@ -32,6 +30,8 @@ export const Habillage: React.FC<HabillageProps> = ({offsetSec}) => {
 
   return (
     <AbsoluteFill style={{backgroundColor: COLORS.paper}}>
+      <FontStyles />
+
       <OffthreadVideo
         src={staticFile('source.mp4')}
         startFrom={sec(offsetSec)}
