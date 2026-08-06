@@ -66,8 +66,20 @@ export const CHAPTERS: Chapter[] = [
   {at: 204.07, num: '05', title: 'Diversifier les revenus'},
 ];
 
-/** Duree d'affichage d'un carton chapitre. */
-export const CHAPTER_HOLD = 3.4;
+/**
+ * Carton de chapitre PLEIN CADRE : le panneau entre par la droite, tient, puis
+ * ressort par la gauche. `CHAPTER_ENTER` sert aussi de calage : le panneau
+ * couvre exactement au moment de la coupe de plan, si bien que la coupe seche
+ * de la video se produit derriere lui.
+ */
+export const CHAPTER_ENTER = 0.55;
+export const CHAPTER_HOLD = 1.55;
+export const CHAPTER_EXIT = 0.5;
+
+/** Punchline plein cadre (celles marquees `fullscreen`). */
+export const STATEMENT_ENTER = 0.4;
+export const STATEMENT_HOLD = 1.45;
+export const STATEMENT_EXIT = 0.45;
 
 /* -------------------------------------------------------------------------- */
 /*  Mots-cles / punchlines                                                     */
@@ -81,6 +93,14 @@ export type Keyword = {
   note?: string;
   anchor?: 'bottom' | 'top';
   accent?: 'orange' | 'blue' | 'red' | 'green';
+  /**
+   * true  -> carton PLEIN CADRE, texte geant revele mot a mot
+   * false -> pastille discrete en bas de cadre
+   *
+   * On alterne volontairement : le plein cadre est reserve aux formules qui
+   * portent, les autres restent en pastille pour laisser voir le schema.
+   */
+  fullscreen?: boolean;
 };
 
 export const KEYWORDS: Keyword[] = [
@@ -95,11 +115,13 @@ export const KEYWORDS: Keyword[] = [
     text: 'Les vues ne suffisent pas',
     note: 'peu de vues peut rapporter plus',
     accent: 'orange',
+    fullscreen: true,
   },
   {
     at: 97.7,
     text: 'Passion ou rentabilité ?',
     accent: 'blue',
+    fullscreen: true,
   },
   {
     at: 131.8,
@@ -117,6 +139,7 @@ export const KEYWORDS: Keyword[] = [
     text: 'La rétention décide',
     note: 'le remplissage tue la courbe',
     accent: 'red',
+    fullscreen: true,
   },
   {
     at: 192.7,
@@ -127,6 +150,7 @@ export const KEYWORDS: Keyword[] = [
     at: 238.1,
     text: 'Vues + Stratégie = Revenus',
     accent: 'green',
+    fullscreen: true,
   },
 ];
 

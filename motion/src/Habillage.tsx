@@ -5,7 +5,8 @@ import {BRAND, sec} from './timeline';
 import {FontStyles} from './load-fonts';
 
 import {IntroCard} from './components/IntroCard';
-import {ChapterCards} from './components/ChapterCard';
+import {ChapterFullscreens} from './components/ChapterFullscreen';
+import {StatementCards} from './components/StatementCard';
 import {KeywordPops} from './components/KeywordPop';
 import {Highlights} from './components/Highlight';
 import {ProgressBar} from './components/ProgressBar';
@@ -38,16 +39,19 @@ export const Habillage: React.FC<HabillageProps> = ({offsetSec}) => {
         style={{width: '100%', height: '100%', objectFit: 'cover'}}
       />
 
+      {/* Habillage pose SUR le plan : il laisse voir l'image. */}
       <Highlights frame={frame} />
       <SceneTransitions frame={frame} />
-      <ChapterCards frame={frame} />
       <KeywordPops frame={frame} />
       <SubscribeBug frame={frame} />
       <BrandChip frame={frame} />
+      {BRAND.showProgressBar ? <ProgressBar frame={frame} /> : null}
+
+      {/* Moments plein cadre : ils passent au-dessus de tout le reste. */}
+      <StatementCards frame={frame} />
+      <ChapterFullscreens frame={frame} />
       <OutroCard frame={frame} />
       <IntroCard frame={frame} />
-
-      {BRAND.showProgressBar ? <ProgressBar frame={frame} /> : null}
     </AbsoluteFill>
   );
 };

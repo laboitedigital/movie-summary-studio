@@ -59,13 +59,39 @@ Les aperçus partagent le composant du rendu final : ils prennent une prop
 changer les textes, les timings ou la marque :
 
 - `INTRO` — carton d'ouverture (titre, kicker, sous-titre, durée)
-- `CHAPTERS` — les 5 cartons de chapitre et leur position
-- `KEYWORDS` — les punchlines en bas de cadre + note manuscrite
+- `CHAPTERS` — les 5 chapitres plein cadre et leur position
+- `KEYWORDS` — les punchlines + note manuscrite
 - `HIGHLIGHTS` — les entourages au feutre (coordonnées en px sur 1920×1080)
 - `BRAND` — pastille de chaîne en haut à droite, barre de progression
 - `SUBSCRIBE_BUG` / `OUTRO` — appels à l'action de fin
 
 Les couleurs et les polices sont dans `src/theme.ts`.
+
+### Plein cadre ou posé sur l'image
+
+Deux registres cohabitent, et c'est un réglage, pas une fatalité :
+
+| Élément                       | Registre            | Réglage                              |
+| ----------------------------- | ------------------- | ------------------------------------ |
+| Intro / chapitres / outro     | plein cadre         | toujours                             |
+| Punchline                     | au choix            | `fullscreen: true` sur l'entrée      |
+| Entourages, pastille, barre   | posé sur l'image    | toujours                             |
+
+Une punchline `fullscreen` devient un carton plein cadre avec texte géant
+révélé mot à mot ; sans le drapeau, elle reste une pastille discrète en bas de
+cadre qui laisse voir le schéma. Sur les 8 punchlines, 4 sont en plein cadre —
+alterner évite que le procédé s'use.
+
+Les durées des moments plein cadre se règlent avec `CHAPTER_ENTER` /
+`CHAPTER_HOLD` / `CHAPTER_EXIT` et leurs équivalents `STATEMENT_*`.
+
+### Les chapitres masquent les coupes
+
+`CHAPTER_ENTER` sert aussi de calage : le panneau de chapitre couvre le cadre
+**exactement au moment de la coupe de plan**, si bien que la coupe sèche de la
+vidéo source se produit derrière lui et que la sortie révèle directement le
+nouveau plan. Les micro-transitions sont donc désactivées sur ces coupes-là
+(`CHAPTER_CUTS` dans `SceneTransition.tsx`) — sinon elles feraient doublon.
 
 ### D'où viennent les timings
 

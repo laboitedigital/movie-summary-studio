@@ -75,27 +75,38 @@ export const IntroCard: React.FC<{frame: number}> = ({frame}) => {
           </span>
         </div>
 
-        {/* Titre, revele ligne par ligne */}
+        {/* Titre, revele mot a mot : chaque mot monte avec un leger ressort */}
         {lines.map((line, i) => {
-          const p = interpolate(local, [8 + i * 7, 26 + i * 7], [0, 1], {
-            extrapolateLeft: 'clamp',
-            extrapolateRight: 'clamp',
-            easing: Easing.out(Easing.cubic),
-          });
+          const words = line.split(' ');
+          // Decalage cumule pour que la cadence ne reparte pas a zero par ligne.
+          const before = lines
+            .slice(0, i)
+            .reduce((n, l) => n + l.split(' ').length, 0);
           return (
-            <div key={i} style={{overflow: 'hidden', paddingBottom: 6}}>
-              <div
-                style={{
-                  fontFamily: FONTS.display,
-                  fontWeight: 800,
-                  fontSize: 108,
-                  lineHeight: 1.06,
-                  color: COLORS.ink,
-                  transform: `translateY(${(1 - p) * 110}%)`,
-                }}
-              >
-                {line}
-              </div>
+            <div
+              key={i}
+              style={{display: 'flex', flexWrap: 'wrap', gap: '0 24px'}}
+            >
+              {words.map((w, wi) => {
+                const p = pop(local - 6 - (before + wi) * 2.5, fps, 20);
+                return (
+                  <span
+                    key={wi}
+                    style={{
+                      fontFamily: FONTS.display,
+                      fontWeight: 800,
+                      fontSize: 108,
+                      lineHeight: 1.08,
+                      color: COLORS.ink,
+                      display: 'inline-block',
+                      opacity: p,
+                      transform: `translateY(${(1 - p) * 70}px)`,
+                    }}
+                  >
+                    {w}
+                  </span>
+                );
+              })}
             </div>
           );
         })}

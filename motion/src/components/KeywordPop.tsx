@@ -23,7 +23,7 @@ export const KeywordPops: React.FC<{frame: number}> = ({frame}) => {
 
   return (
     <>
-      {KEYWORDS.map((k, i) => {
+      {KEYWORDS.filter((k) => !k.fullscreen).map((k, i) => {
         const start = sec(k.at);
         const hold = sec(k.hold ?? DEFAULT_HOLD);
         const {visible, appear, disappear} = enterExit({
