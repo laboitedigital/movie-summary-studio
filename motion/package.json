@@ -1,0 +1,25 @@
+{
+  "name": "movie-summary-motion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Habillage motion design (Remotion) pour les vidéos generees par movie-summary-studio",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render Habillage out/video-habillee.mp4",
+    "render:preview": "remotion render Apercu out/apercu.mp4",
+    "still": "remotion still Habillage out/still.png",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.506",
+    "@remotion/fonts": "^4.0.506",
+    "@remotion/player": "4.0.506",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.506"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.8.2"
+  }
+}

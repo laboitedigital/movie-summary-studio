@@ -1,0 +1,6 @@
+node_modules/
+out/
+.remotion/
+
+# Video source : trop lourde pour git, a deposer manuellement (voir README).
+public/source.mp4
