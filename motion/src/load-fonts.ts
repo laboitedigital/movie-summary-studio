@@ -1,27 +1,16 @@
 import {loadFont} from '@remotion/fonts';
-import {staticFile} from 'remotion';
+import {CAVEAT_700, POPPINS_600, POPPINS_800} from './fonts-inline';
 
 /**
- * Les .woff2 sont embarques dans public/fonts : le rendu est deterministe et
- * ne depend d'aucun acces reseau a Google Fonts.
+ * Les polices sont embarquees en data URI (voir scripts/inline-fonts.mjs).
+ *
+ * Elles ont d'abord ete servies via staticFile(), mais sur un rendu long les
+ * pages ouvertes en cours de route voyaient la requete HTTP se bloquer et le
+ * delayRender() expirer. En data URI il n'y a plus de requete du tout : le
+ * rendu est reproductible et ne depend d'aucun acces reseau.
  */
 export const loadFonts = () => {
-  loadFont({
-    family: 'Poppins',
-    url: staticFile('fonts/Poppins-600.woff2'),
-    weight: '600',
-    format: 'woff2',
-  });
-  loadFont({
-    family: 'Poppins',
-    url: staticFile('fonts/Poppins-800.woff2'),
-    weight: '800',
-    format: 'woff2',
-  });
-  loadFont({
-    family: 'Caveat',
-    url: staticFile('fonts/Caveat-700.woff2'),
-    weight: '700',
-    format: 'woff2',
-  });
+  loadFont({family: 'Poppins', url: POPPINS_600, weight: '600', format: 'woff2'});
+  loadFont({family: 'Poppins', url: POPPINS_800, weight: '800', format: 'woff2'});
+  loadFont({family: 'Caveat', url: CAVEAT_700, weight: '700', format: 'woff2'});
 };
