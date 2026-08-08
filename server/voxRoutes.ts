@@ -38,6 +38,7 @@ import {
 } from "../src/vox/promptBuilder.js";
 import type { VoxBeat, VoxBatchJobStatus, VoxAssetJob } from "../src/vox/types.js";
 import * as yapper from "./yapperClient.js";
+import { isBlankMedia } from "./mediaCheck.js";
 import { renderVoxDocumentary, type VoxFitMode, type VoxRenderBeat } from "../voxRenderEngine.js";
 
 /** Dépendances fournies par le serveur principal. */
@@ -624,6 +625,16 @@ Réponds uniquement avec ce JSON, rien d'autre :
                     `Champs présents dans la réponse : ${Object.keys(finished).join(", ")}.`
                 );
               }
+              // Un refus silencieux du modèle d'image ressort en cadre uniforme,
+              // avec un statut « completed » et une URL valide. Sans ce contrôle,
+              // l'image vide ne se voit qu'au montage final.
+              if (kind === "images" && (await isBlankMedia(url))) {
+                throw new Error(
+                  "Le modèle a renvoyé une image vide (cadre uniforme), ce qui trahit un refus silencieux. " +
+                    "Reformulez la scène de ce beat, en retirant l'action la plus littérale, puis relancez."
+                );
+              }
+
               jobItem.url = url;
               jobItem.state = "done";
               status.completed++;
