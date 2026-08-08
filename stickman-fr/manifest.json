@@ -64,6 +64,30 @@
   "14": {
    "asset": "d3a4308a-7969-4359-bae7-ed788191b3d8",
    "version": "compact"
+  },
+  "15": {
+   "asset": "c76763ae-426f-4ec4-a201-7eda5319316f",
+   "version": "compact"
+  },
+  "16": {
+   "asset": "232ecb05-e5b5-4827-8114-b1986f4e50d5",
+   "version": "compact"
+  },
+  "17": {
+   "asset": "c049c83f-b534-4694-be58-75f71aa43827",
+   "version": "compact"
+  },
+  "18": {
+   "asset": "447e447a-ddfb-480e-8fb9-620bed0010c7",
+   "version": "compact"
+  },
+  "19": {
+   "asset": "0c7c9f41-a699-40d9-947e-3519400a516e",
+   "version": "compact"
+  },
+  "20": {
+   "asset": "55a636e5-92f0-4c82-99d0-863af2535910",
+   "version": "compact"
   }
  },
  "compact_template": true
