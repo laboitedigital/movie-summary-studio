@@ -83,7 +83,7 @@ type ProgressCallback = (pct: number, label: string) => void;
  * enchaîner. Comprimer 7 secondes d'ASMR en 2,4 demande un facteur de 2,9, donc
  * deux instances.
  */
-function atempoChain(factor: number): string {
+export function atempoChain(factor: number): string {
   const parts: string[] = [];
   let remaining = factor;
 
@@ -108,11 +108,17 @@ function atempoChain(factor: number): string {
  * ainsi sur l'audio mesuré plutôt que sur l'estimation à 2,5 mots par seconde
  * évite que l'image dérive de la voix au fil de la vidéo.
  */
-function distributeDurations(
-  beats: VoxRenderBeat[],
+export function distributeDurations(
+  beats: Pick<VoxRenderBeat, "wordCount">[],
   batchWordCounts: number[],
   batchDurations: number[]
 ): number[] {
+  // Sans lot de voix, il n'y a pas d'horloge à répartir : chaque plan retombe
+  // sur l'estimation théorique à 2,5 mots par seconde.
+  if (batchWordCounts.length === 0 || batchDurations.length === 0) {
+    return beats.map((b) => Math.max(0.5, b.wordCount / 2.5));
+  }
+
   // Bornes de mots de chaque lot.
   const batchStarts: number[] = [];
   let cumulative = 0;

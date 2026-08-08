@@ -58,7 +58,11 @@ export function splitIntoSentences(text: string): string[] {
   const normalized = text.replace(/\s+/g, " ").trim();
   if (!normalized) return [];
 
-  const ABBREVIATIONS = /(?:M|MM|Mme|Mlle|Dr|Pr|St|Ste|no|art|av|env|cf|ex|p|vol|éd)$/i;
+  // Les mois abrégés comptent autant que les titres de civilité : dans ce genre,
+  // « Le 24 nov. 1971 » est une ouverture à froid typique, et la couper en deux
+  // ferait de la date deux plans distincts.
+  const ABBREVIATIONS =
+    /(?:M|MM|Mme|Mlle|Dr|Pr|St|Ste|no|art|av|env|cf|ex|p|vol|éd|janv|févr|avr|juil|sept|oct|nov|déc)$/i;
 
   const sentences: string[] = [];
   let current = "";
@@ -161,11 +165,13 @@ export function buildBeats(script: string): VoxBeat[] {
   }
 
   // Un dernier tronçon trop court est absorbé par le beat précédent plutôt que
-  // de produire un plan d'un seul mot.
+  // de produire un plan d'un seul mot, mais seulement si la fusion tient sous le
+  // plafond : au delà, elle reconstituerait le beat trop long que le découpage
+  // venait justement de couper.
   if (texts.length >= 2) {
     const lastWords = countWords(texts[texts.length - 1]);
     const previousWords = countWords(texts[texts.length - 2]);
-    if (lastWords < MIN_BEAT_WORDS && lastWords + previousWords <= MAX_BEAT_WORDS + 2) {
+    if (lastWords < MIN_BEAT_WORDS && lastWords + previousWords <= MAX_BEAT_WORDS) {
       const merged = `${texts[texts.length - 2]} ${texts[texts.length - 1]}`;
       texts.splice(texts.length - 2, 2, merged);
     }
