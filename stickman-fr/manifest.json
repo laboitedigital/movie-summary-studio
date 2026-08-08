@@ -1,0 +1,25 @@
+{
+ "reference_asset": "6e40f706-0469-4d4c-8358-b350ac50a11d",
+ "model": "nano-banana-2",
+ "aspectRatio": "16:9",
+ "imageResolution": "1080",
+ "credits_per_image": 12,
+ "done": {
+  "1": {
+   "asset": "d3f64d5a-4d56-4916-ad35-16c2a0a3a5f3",
+   "version": 3
+  },
+  "2": {
+   "asset": "db8131a5-285a-4269-9b65-2fba7b06184d",
+   "version": 3
+  },
+  "5": {
+   "asset": "c4c75210-9aba-47da-ab7d-6b2562ece5d6",
+   "version": 3
+  },
+  "68": {
+   "asset": "6e40f706-0469-4d4c-8358-b350ac50a11d",
+   "version": 2
+  }
+ }
+}
