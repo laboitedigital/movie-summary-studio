@@ -39,19 +39,19 @@ const STAGES: { id: Stage; label: string; state: string }[] = [
 /** Ajustement d'un clip de 10 secondes à la durée de son beat. */
 const FIT_MODES: { id: string; label: string; help: string }[] = [
   {
+    id: "affiche",
+    label: "Affiche tenue (recommandé)",
+    help: "La fin du clip à vitesse réelle : le collage est déjà composé et garde le mouvement subtil du papier vivant. C'est le seul mode où chaque plan est lisible du premier au dernier image.",
+  },
+  {
     id: "assemblage",
     label: "Assemblage",
-    help: "La construction du collage (0 à 7s) compressée sur la durée du plan. Le collage se termine pile sur la fin de la phrase.",
+    help: "La construction du collage (0 à 7s) compressée sur la durée du plan. Attention : un plan durant 2 à 3 secondes, sa première moitié montre encore une plaque de papier presque vide, et la vidéo clignote de pages blanches.",
   },
   {
     id: "complet",
     label: "Clip entier",
-    help: "Les 10 secondes compressées sur la durée du plan, temps de pose compris. Plus rapide, plus nerveux.",
-  },
-  {
-    id: "affiche",
-    label: "Affiche tenue",
-    help: "La fin du clip à vitesse réelle : le collage déjà composé, sans animation. Proche d'un diaporama.",
+    help: "Les 10 secondes compressées sur la durée du plan, temps de pose compris. Même défaut de plaque vide que le mode assemblage, en plus rapide.",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function VoxEngine() {
   const [videoJob, setVideoJob] = useState<VoxBatchJobStatus | null>(null);
 
   // Montage final
-  const [fitMode, setFitMode] = useState("assemblage");
+  const [fitMode, setFitMode] = useState("affiche");
   const [asmrVolume, setAsmrVolume] = useState(0.25);
   const [burnSubtitles, setBurnSubtitles] = useState(false);
   const [renderJob, setRenderJob] = useState<{
