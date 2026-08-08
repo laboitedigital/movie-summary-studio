@@ -39,19 +39,24 @@ const STAGES: { id: Stage; label: string; state: string }[] = [
 /** Ajustement d'un clip de 10 secondes à la durée de son beat. */
 const FIT_MODES: { id: string; label: string; help: string }[] = [
   {
-    id: "affiche",
-    label: "Affiche tenue (recommandé)",
-    help: "La fin du clip à vitesse réelle : le collage est déjà composé et garde le mouvement subtil du papier vivant. C'est le seul mode où chaque plan est lisible du premier au dernier image.",
+    id: "composition",
+    label: "Composition (recommandé)",
+    help: "La fenêtre utile du clip, de 2,5 à 7 secondes, compressée sur la durée du plan. Le collage est déjà lisible et les éléments continuent de se poser : c'est le seul mode qui donne à la fois une image nette et du mouvement.",
   },
   {
     id: "assemblage",
-    label: "Assemblage",
-    help: "La construction du collage (0 à 7s) compressée sur la durée du plan. Attention : un plan durant 2 à 3 secondes, sa première moitié montre encore une plaque de papier presque vide, et la vidéo clignote de pages blanches.",
+    label: "Assemblage complet",
+    help: "Toute la construction (0 à 7s) compressée sur la durée du plan. Le plus animé, mais un plan durant 2 à 3 secondes, sa première moitié montre encore une plaque de papier presque vide.",
+  },
+  {
+    id: "affiche",
+    label: "Affiche tenue",
+    help: "La fin du clip à vitesse réelle. Le prompt vidéo impose « everything holds position » sur cette phase : mesuré à 94 pour cent d'images figées, le résultat est un diaporama.",
   },
   {
     id: "complet",
     label: "Clip entier",
-    help: "Les 10 secondes compressées sur la durée du plan, temps de pose compris. Même défaut de plaque vide que le mode assemblage, en plus rapide.",
+    help: "Les 10 secondes compressées sur la durée du plan, temps de pose compris.",
   },
 ];
 
@@ -128,7 +133,7 @@ export default function VoxEngine() {
   const [videoJob, setVideoJob] = useState<VoxBatchJobStatus | null>(null);
 
   // Montage final
-  const [fitMode, setFitMode] = useState("affiche");
+  const [fitMode, setFitMode] = useState("composition");
   const [asmrVolume, setAsmrVolume] = useState(0.25);
   const [burnSubtitles, setBurnSubtitles] = useState(false);
   const [renderJob, setRenderJob] = useState<{

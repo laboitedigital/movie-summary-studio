@@ -38,15 +38,38 @@ import {
  * de 7 à 10. Un beat durant 2 à 3 secondes, il faut choisir ce qu'on en garde.
  */
 export type VoxFitMode =
-  /** L'assemblage (0 à 7s) compressé à la durée du beat : le collage se termine pile sur la fin de la phrase. */
+  /**
+   * La fenêtre utile du clip, compressée à la durée du beat.
+   *
+   * C'est le seul mode qui donne à la fois une image lisible et du mouvement,
+   * et c'est donc le défaut. Voir COMPOSED_START_SECONDS pour la mesure qui
+   * justifie ses bornes.
+   */
+  | "composition"
+  /** L'assemblage complet (0 à 7s) compressé à la durée du beat. */
   | "assemblage"
   /** Le clip entier compressé à la durée du beat. */
   | "complet"
-  /** La fin du clip, à vitesse réelle : l'affiche déjà composée, sans animation. */
+  /** La fin du clip, à vitesse réelle : l'affiche composée, quasiment figée. */
   | "affiche";
 
 /** Fin de la phase d'assemblage dans le clip généré, en secondes. */
 const ASSEMBLY_END_SECONDS = 7;
+
+/**
+ * Début de la fenêtre utile, en secondes.
+ *
+ * Mesuré sur les clips réellement produits : l'écart entre l'image courante et
+ * la composition finale s'effondre autour de 2,5 secondes (de 24 à 6 sur
+ * l'échelle de luminance), tandis que le mouvement image à image y reste deux
+ * fois plus élevé que dans la phase de pose.
+ *
+ * Avant ce point, le cadre est encore une plaque de papier presque vide : c'est
+ * ce qui faisait clignoter le montage en mode assemblage. Après 7 secondes, le
+ * prompt impose « everything holds position », donc le clip ne bouge plus et le
+ * montage retombe en diaporama.
+ */
+const COMPOSED_START_SECONDS = 2.5;
 
 export interface VoxRenderBeat {
   index: number;
@@ -280,9 +303,16 @@ export async function renderVoxDocumentary(
             sourceLength = target;
           } else if (fitMode === "complet") {
             sourceLength = sourceDuration;
-          } else {
-            // "assemblage" : la construction du collage, sans le temps de pose.
+          } else if (fitMode === "assemblage") {
+            // La construction complète du collage, sans le temps de pose.
             sourceLength = Math.min(ASSEMBLY_END_SECONDS, sourceDuration);
+          } else {
+            // "composition", le défaut : on saute la plaque vide du début et on
+            // s'arrête à la fin de l'assemblage, avant que le clip ne se fige.
+            const start = Math.min(COMPOSED_START_SECONDS, Math.max(0, sourceDuration - 1));
+            const end = Math.min(ASSEMBLY_END_SECONDS, sourceDuration);
+            trimArgs = ["-ss", String(start)];
+            sourceLength = Math.max(0.5, end - start);
           }
 
           const speed = sourceLength / target;

@@ -77,17 +77,19 @@ les visuels Vox sont générés par le studio et doivent tomber exactement sur l
   au fil de la vidéo. Mesuré sur un montage de test : 0,02 seconde d'écart sur l'ensemble.
 - **Ajustement des clips de 10 secondes**, au choix. Le prompt vidéo universel construit le collage
   de 0 à 7 secondes puis le fige, alors qu'un plan dure 2 à 3 secondes :
-  - `affiche` (défaut) : la fin du clip à vitesse réelle, le collage déjà composé, qui garde le
-    mouvement subtil du papier vivant
-  - `assemblage` : la construction (0 à 7s) compressée sur la durée du plan
+  - `composition` (défaut) : la fenêtre de 2,5 à 7 secondes, compressée sur la durée du plan
+  - `assemblage` : toute la construction (0 à 7s) compressée
+  - `affiche` : la fin du clip à vitesse réelle
   - `complet` : les 10 secondes compressées, temps de pose compris
 
-  Le défaut vient d'un test réel sur une vidéo d'une minute, pas d'une préférence a priori. Le mode
-  `assemblage` semblait le plus fidèle à l'esprit du prompt vidéo, mais il ne tient pas à l'usage :
-  la construction dure 7 secondes alors qu'un plan en dure 2 à 3, donc chaque plan passe sa première
-  moitié sur une plaque de papier presque vide, et la vidéo clignote de pages blanches. Le mode
-  `affiche` prend les dernières secondes, où la composition est complète et où il reste le mouvement
-  de papier prévu par la phase 7 à 10 secondes du prompt.
+  Les bornes du mode par défaut sont mesurées, pas choisies à l'estime. Sur les clips réellement
+  produits, l'écart entre l'image courante et la composition finale s'effondre autour de 2,5 secondes
+  (de 24 à 6 sur l'échelle de luminance) : avant ce point le cadre est une plaque de papier presque
+  vide, et un montage qui l'inclut clignote de pages blanches. Après 7 secondes le prompt impose
+  « everything holds position », et un montage qui s'y limite tombe à 94 pour cent d'images figées,
+  c'est à dire un diaporama. La fenêtre intermédiaire garde 54 pour cent d'images identiques, ce qui
+  correspond à la cadence stop-motion « 2-3 frame holds » que le prompt demande explicitement.
+
 - **Lit sonore ASMR** réglable sous la narration (0,25 par défaut, 0 pour le couper). Quand la vidéo
   est accélérée, l'audio l'est aussi via une chaîne `atempo`.
 - **Replis en cascade** : clip animé, puis image fixe si le clip manque (la caméra est verrouillée de

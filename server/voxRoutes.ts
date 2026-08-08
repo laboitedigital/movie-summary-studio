@@ -689,7 +689,7 @@ Réponds uniquement avec ce JSON, rien d'autre :
       topic,
       beats: rawBeats,
       voiceBatches: rawVoice,
-      fitMode = "affiche",
+      fitMode = "composition",
       asmrVolume = 0.25,
       burnSubtitles = false,
     } = req.body || {};
