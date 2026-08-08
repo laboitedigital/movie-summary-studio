@@ -23,7 +23,23 @@ MAIN_CHARACTER = (
     "wears electric blue over-ear headphones resting around his neck, often holds a black-cased "
     "smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His "
     "shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and "
-    "confusion. This exact appearance must be reproduced identically in this image."
+    "confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his "
+    "head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, "
+    "no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced "
+    "identically in this image."
+)
+
+# Regles de coherence ajoutees apres le test de 4 images (capuche relevee, membres habilles,
+# texte parasite dans les decors). Bloc separe : les blocs verrouilles restent verbatim.
+CONSISTENCY_RULES = (
+    "MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin "
+    "plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. "
+    "Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black "
+    "lines in every single image. No character has hair of any kind and no character wears a hood pulled "
+    "over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere "
+    "in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, "
+    "books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a "
+    "counter or display when the scene description above explicitly asks for one."
 )
 
 LOCKED_STYLE = (
@@ -62,7 +78,7 @@ def build(scenes, beats, out_md):
             f"**Scène (FR) :** {s['fr']}\n\n"
             f"**Prompt :**\n"
             f"{s['env']} {s['chars']} {s['action']} "
-            f"{LOCKED_CHARACTER} {MAIN_CHARACTER} {LOCKED_STYLE} {CLOSER}\n"
+            f"{LOCKED_CHARACTER} {MAIN_CHARACTER} {LOCKED_STYLE} {CONSISTENCY_RULES} {CLOSER}\n"
         )
     out_md.write_text(
         "# PROMPTS D'IMAGE STICKMAN — 126 BEATS\n"
