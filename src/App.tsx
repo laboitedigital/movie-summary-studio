@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Film, Play, Sparkles, HelpCircle, Layers, Clapperboard, Youtube, Tv, ListCollapse, MessageSquareDot } from "lucide-react";
+import { Film, Play, Sparkles, HelpCircle, Layers, Clapperboard, Youtube, Tv, ListCollapse, MessageSquareDot, Scissors } from "lucide-react";
 import { ScriptSegment } from "./types";
 import { FALLBACK_CATALOG } from "./fallbackCatalog";
 import PreviewPlayer from "./components/PreviewPlayer";
@@ -7,6 +7,15 @@ import ScriptGenerator from "./components/ScriptGenerator";
 import ClipSearcher from "./components/ClipSearcher";
 import Timeline from "./components/Timeline";
 import VideoExporter from "./components/VideoExporter";
+import VoxEngine from "./components/VoxEngine";
+
+/**
+ * Le studio héberge deux chaînes de production distinctes :
+ *  - « resume », le montage de résumés de films à partir d'extraits Clip.Cafe
+ *  - « vox », le moteur documentaire en collage papier, qui fabrique ses propres
+ *    visuels via Yapper au lieu de piocher dans des extraits existants
+ */
+type StudioMode = "resume" | "vox";
 
 // Initialize a beautiful, highly engaging preloaded project (Inception) so the user isn't greeted by a blank state
 const INITIAL_SEGMENTS: ScriptSegment[] = [
@@ -53,6 +62,7 @@ const INITIAL_SEGMENTS: ScriptSegment[] = [
 ];
 
 export default function App() {
+  const [mode, setMode] = useState<StudioMode>("resume");
   const [movieTitle, setMovieTitle] = useState("Inception");
   const [segments, setSegments] = useState<ScriptSegment[]>(INITIAL_SEGMENTS);
   const [voice, setVoice] = useState("Zephyr");
@@ -99,17 +109,44 @@ export default function App() {
           </div>
         </div>
 
-        {/* Studio Status / Stats */}
-        <div className="flex items-center gap-3 text-slate-500 text-xs font-mono">
-          <div className="flex items-center gap-1.5 bg-slate-900/60 border border-slate-850 px-3 py-1.5 rounded-lg select-none">
-            <Tv className="w-3.5 h-3.5 text-slate-400 animate-pulse" />
-            <span className="text-slate-400 font-semibold">CLIP.CAFE PROXY ACTIVE</span>
+        {/* Sélecteur de chaîne de production */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 bg-slate-900/60 border border-slate-850 p-1 rounded-lg">
+            <button
+              onClick={() => setMode("resume")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
+                mode === "resume" ? "bg-amber-500 text-slate-950" : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              <Film className="w-3.5 h-3.5" />
+              Résumé de film
+            </button>
+            <button
+              onClick={() => setMode("vox")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
+                mode === "vox" ? "bg-amber-500 text-slate-950" : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              <Scissors className="w-3.5 h-3.5" />
+              Vox Doc Engine
+            </button>
           </div>
+
+          {mode === "resume" && (
+            <div className="hidden lg:flex items-center gap-1.5 bg-slate-900/60 border border-slate-850 px-3 py-1.5 rounded-lg select-none text-xs font-mono">
+              <Tv className="w-3.5 h-3.5 text-slate-400 animate-pulse" />
+              <span className="text-slate-400 font-semibold">CLIP.CAFE PROXY ACTIVE</span>
+            </div>
+          )}
         </div>
       </header>
 
       {/* Main Studio Grid */}
       <main className="flex-1 p-6 flex flex-col gap-6 max-w-[1600px] w-full mx-auto">
+        {mode === "vox" ? (
+          <VoxEngine />
+        ) : (
+          <>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Panel: Script Generator Cockpit (lg:col-span-5) */}
           <section className="lg:col-span-5 flex flex-col gap-6 h-full">
@@ -166,6 +203,8 @@ export default function App() {
             duration={totalDuration}
           />
         </div>
+          </>
+        )}
       </main>
 
       {/* Aesthetic Footer */}

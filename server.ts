@@ -8,6 +8,8 @@ import Anthropic from "@anthropic-ai/sdk";
 import dotenv from "dotenv";
 import { FALLBACK_CATALOG } from "./src/fallbackCatalog.js";
 import { renderMovieSummary, RENDER_ROOT, cleanupOldJobs, RenderSegmentInput } from "./renderEngine.js";
+import { createVoxRouter } from "./server/voxRoutes.js";
+import { VOICE_MODEL_ID } from "./src/vox/constants.js";
 
 dotenv.config();
 
@@ -211,6 +213,7 @@ app.get("/api/config", (req, res) => {
     hasClaude: !!(process.env.CLAUDE_API_KEY || process.env.ANTHROPIC_API_KEY),
     hasClipCafe: !!(process.env.CLIP_CAFE_API_KEY || process.env.SCRAPESTACK_API_KEY),
     hasElevenLabs: !!process.env.ELEVENLABS_API_KEY,
+    hasYapper: !!process.env.YAPPER_API_KEY,
   });
 });
 
@@ -254,8 +257,16 @@ app.get("/api/tts/elevenlabs-voices", async (req, res) => {
 
 /**
  * Generate narration audio via ElevenLabs (returns raw mp3 Buffer)
+ *
+ * `voiceSettings` lets a caller override the studio defaults. The Vox engine
+ * uses it to apply the documentary read baseline from its source material
+ * (stability 55, similarity 80, style low, speaker boost on).
  */
-async function callElevenLabsTTS(text: string, voiceId: string): Promise<Buffer> {
+async function callElevenLabsTTS(
+  text: string,
+  voiceId: string,
+  voiceSettings?: Record<string, unknown>
+): Promise<Buffer> {
   const apiKey = process.env.ELEVENLABS_API_KEY;
   if (!apiKey) {
     throw new Error("ELEVENLABS_API_KEY n'est pas configurée.");
@@ -269,8 +280,8 @@ async function callElevenLabsTTS(text: string, voiceId: string): Promise<Buffer>
     },
     body: JSON.stringify({
       text,
-      model_id: "eleven_multilingual_v2",
-      voice_settings: {
+      model_id: VOICE_MODEL_ID,
+      voice_settings: voiceSettings || {
         stability: 0.5,
         similarity_boost: 0.75,
       },
@@ -1051,6 +1062,56 @@ async function refreshClipCafeDownloadUrl(slug: string): Promise<string | null> 
     return null;
   }
 }
+
+/**
+ * Vox engine (Crime Documentary Paper Engine).
+ *
+ * The router owns the engine logic; the provider wiring stays here, so the
+ * engine keeps working through whichever text model the deployment has a key
+ * for. Claude is tried first because the Fern writing rules are long and
+ * constraint-heavy, and Gemini takes over when no Claude key is available.
+ */
+app.use(
+  "/api/vox",
+  createVoxRouter({
+    async generateText(prompt, options = {}) {
+      const maxTokens = options.maxTokens ?? 4000;
+
+      if (process.env.CLAUDE_API_KEY || process.env.ANTHROPIC_API_KEY) {
+        try {
+          const client = getAnthropicClient();
+          const message = await createClaudeMessageWithFallback(
+            client,
+            [{ role: "user", content: prompt }],
+            maxTokens
+          );
+          return message.content[0].type === "text" ? message.content[0].text : "";
+        } catch (claudeError: any) {
+          console.warn("Vox, Claude indisponible, bascule sur Gemini :", claudeError.message || claudeError);
+        }
+      }
+
+      const response = await callGeminiWithRetry(
+        {
+          model: "gemini-3.5-flash",
+          contents: prompt,
+          config: options.json ? { responseMimeType: "application/json" } : undefined,
+        },
+        ["gemini-3.1-flash-lite", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
+      );
+
+      return response.text || "";
+    },
+
+    generateSpeech(text, voiceId, settings) {
+      return callElevenLabsTTS(text, voiceId, settings as Record<string, unknown>);
+    },
+
+    hasElevenLabs() {
+      return !!process.env.ELEVENLABS_API_KEY;
+    },
+  })
+);
 
 // Configure Vite or Static Files Middleware
 async function startServer() {

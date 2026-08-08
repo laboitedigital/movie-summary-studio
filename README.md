@@ -19,6 +19,60 @@ View your app in AI Studio: https://ai.studio/apps/dd5e38b2-db2a-41a7-8cb1-ee4fe
 3. Run the app:
    `npm run dev`
 
+## Mode "Vox Doc Engine" (documentaire en collage papier)
+
+Le studio héberge une seconde chaîne de production, accessible par le sélecteur en haut à droite.
+Là où le mode "Résumé de film" monte des extraits Clip.Cafe existants, le Vox Doc Engine **fabrique
+ses propres visuels** : il écrit un script documentaire en français, le découpe en plans, puis
+génère une image de collage papier par plan et l'anime en clip de 10 secondes.
+
+Le moteur suit les 9 états du *Crime Documentary Paper Engine* (ADN d'écriture Fern, système visuel
+de collage, lois de composition, motifs de chute, ADN des vignettes). Tout l'éditorial est en
+**français** ; les prompts d'images et de vidéo sont en **anglais**, langue dans laquelle les
+modèles de génération comprennent le vocabulaire du collage éditorial.
+
+### Les 9 états
+
+| État | Ce qu'il produit | Moteur |
+|---|---|---|
+| 1 | Choix de la niche | interface |
+| 2 | 10 idées, titres de forme Fern, aucun doublon de sous-territoire | Claude ou Gemini |
+| 3 | Choix de la durée (30 s à 5 min) | interface |
+| 4 | Script de narration continue, à 5 % près de la cible de mots | Claude ou Gemini |
+| 5 | Voix off en lots de 20 à 25 s, 2 à 5 prises par lot | **ElevenLabs** |
+| 6 | Tableau de beats timecodés à 2,5 mots/seconde | calcul local |
+| 7 | Un prompt d'image par beat + fichier `[sujet]-prompts.txt` | Claude ou Gemini, puis **Yapper** |
+| 8 | Prompt vidéo universel appliqué à chaque image | **Yapper** (image vers vidéo) |
+| 9 | 3 prompts de vignettes | Claude ou Gemini |
+
+### Points de conception
+
+- **Le découpage en beats est calculé, pas généré.** Les règles (2 à 3 secondes par beat, 5 à 8 mots,
+  timecodes cumulés à 2,5 mots/seconde) sont arithmétiques : `src/vox/beats.ts` les applique de façon
+  déterministe, rejouable et sans consommer de jetons. Les coupures tombent sur les césures naturelles
+  du français, virgules d'abord, connecteurs de proposition ensuite.
+- **Le bloc de style et le closer sont concaténés par le code**, jamais rédigés par un modèle
+  (`src/vox/promptBuilder.ts`). Un modèle qui recopie trente fois le même paragraphe de 90 mots finit
+  toujours par en dériver, et la série d'images perd son unité visuelle.
+- **La cible de mots du script est vérifiée côté serveur** et relancée une fois avec la correction
+  exacte si l'écart dépasse 5 %.
+- **Aucun tiret cadratin** n'échappe à la règle maison : elle est appliquée par le code sur chaque
+  sortie textuelle (`src/vox/sanitize.ts`), pas seulement demandée au modèle.
+- **Aucune dépense sans validation.** Tout lot d'images ou de clips est d'abord chiffré en `dryRun`
+  (gratuit) chez Yapper, le coût exact et le solde restant sont affichés, et le bouton de lancement
+  n'apparaît qu'ensuite. Chaque génération porte une clé d'idempotence stable par beat, pour qu'un
+  renvoi après coupure réseau ne facture jamais deux fois la même image.
+
+### Configuration
+
+Ajoutez `YAPPER_API_KEY` dans votre `.env` (voir `.env.example`). `ELEVENLABS_API_KEY` est déjà
+utilisée par le studio et sert aussi à la voix off du moteur, avec les réglages du matériau source
+(stabilité 55, similarité 80, style bas, speaker boost actif).
+
+Sans clé Yapper, les états 1 à 7 et 9 restent pleinement utilisables : vous récupérez le fichier
+`.txt` de prompts prêt pour une génération en masse ailleurs. Sans clé ElevenLabs, l'état 5 renvoie
+chaque lot en texte prêt à coller dans l'interface ElevenLabs, accompagné de ses réglages.
+
 ## Rendu vidéo réel (ffmpeg)
 
 L'export final de la vidéo (bouton "Compiler la Vidéo Summary") effectue un **vrai rendu côté serveur** via `ffmpeg` :
