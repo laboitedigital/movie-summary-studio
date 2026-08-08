@@ -40,6 +40,30 @@
   "8": {
    "asset": "8cd5d8a8-ea22-411e-80db-07c240bb6030",
    "version": "compact"
+  },
+  "9": {
+   "asset": "6fdc5e49-64d4-4bf8-af0b-a1c0d64b718d",
+   "version": "compact"
+  },
+  "10": {
+   "asset": "2e51af5a-18f7-41c0-987e-fd651deae7aa",
+   "version": "compact"
+  },
+  "11": {
+   "asset": "5f7f2a66-cdc5-4511-9a74-79690efd2171",
+   "version": "compact"
+  },
+  "12": {
+   "asset": "f5fadaaf-17dc-4e8c-9600-b8fc471c816c",
+   "version": "compact"
+  },
+  "13": {
+   "asset": "c7d58d9c-27c9-4151-bc6f-b106f85c46f9",
+   "version": "compact"
+  },
+  "14": {
+   "asset": "d3a4308a-7969-4359-bae7-ed788191b3d8",
+   "version": "compact"
   }
  },
  "compact_template": true
