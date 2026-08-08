@@ -615,7 +615,15 @@ Réponds uniquement avec ce JSON, rien d'autre :
 
             if (finished.status === "completed") {
               const url = yapper.extractOutputUrl(finished);
-              if (!url) throw new Error("Yapper n'a renvoyé aucune URL de média pour cette génération.");
+              if (!url) {
+                // La forme exacte de la réponse dépend du modèle. Lister les
+                // champs réellement reçus rend l'écart auto-diagnostiquable au
+                // lieu d'un échec opaque.
+                throw new Error(
+                  "Yapper n'a renvoyé aucune URL de média reconnue pour cette génération. " +
+                    `Champs présents dans la réponse : ${Object.keys(finished).join(", ")}.`
+                );
+              }
               jobItem.url = url;
               jobItem.state = "done";
               status.completed++;
