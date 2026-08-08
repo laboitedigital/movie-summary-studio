@@ -105,3 +105,25 @@ if __name__ == "__main__":
     beats = [l.strip() for l in (here / "beats.txt").read_text(encoding="utf-8").splitlines() if l.strip()]
     n = build(scenes, beats, here / "PROMPTS_IMAGES_STICKMAN.md")
     print(f"{n} prompts generes")
+
+
+# Gabarit compact utilise pour la generation via API : l'image de reference porte
+# le style et le personnage, le prompt ne porte plus que la scene.
+COMPACT_PREFIX = (
+    "Match the attached reference image exactly for art style and for the main character Leo: same "
+    "cinematic cartoon illustration style, same bold confident line work, same fully rendered colourful "
+    "background with dramatic atmospheric lighting, same large round pure white bare head with no hair "
+    "and expressive thick black eyebrows, and Leo's same heather grey hoodie with the hood down, white "
+    "t-shirt, dark blue rolled jeans, red sneakers, electric blue headphones around the neck and orange "
+    "notebook in the front pocket. Every wall, poster, artwork, sign, label, book and screen in this "
+    "image is completely blank with no words, letters or lettering anywhere, except the numbers "
+    "explicitly described below."
+)
+COMPACT_SUFFIX = "16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality."
+
+
+def compact(i):
+    """Prompt compact du beat i (1-indexe)."""
+    import json, pathlib
+    s = json.loads((pathlib.Path(__file__).parent / "scenes.json").read_text(encoding="utf-8"))[i - 1]
+    return f"{COMPACT_PREFIX} {s['env']} {s['chars']} {s['action']} {COMPACT_SUFFIX}"

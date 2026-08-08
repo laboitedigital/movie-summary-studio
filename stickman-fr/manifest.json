@@ -20,6 +20,27 @@
   "68": {
    "asset": "6e40f706-0469-4d4c-8358-b350ac50a11d",
    "version": 2
+  },
+  "3": {
+   "asset": "a34608e9-0474-4265-8549-ed18693d66a7",
+   "version": "compact"
+  },
+  "4": {
+   "asset": "eba0695e-d7cf-4d5a-a292-0b55931f8fbd",
+   "version": "compact"
+  },
+  "6": {
+   "asset": "6d6c8879-5b9a-487b-ab0f-e00c8f83de9e",
+   "version": "compact"
+  },
+  "7": {
+   "asset": "9ceb5a33-86c1-49be-b4e5-684f86c7d348",
+   "version": "compact"
+  },
+  "8": {
+   "asset": "8cd5d8a8-ea22-411e-80db-07c240bb6030",
+   "version": "compact"
   }
- }
+ },
+ "compact_template": true
 }
