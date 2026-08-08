@@ -44,6 +44,7 @@ modèles de génération comprennent le vocabulaire du collage éditorial.
 | 7 | Un prompt d'image par beat + fichier `[sujet]-prompts.txt` | Claude ou Gemini, puis **Yapper** |
 | 8 | Prompt vidéo universel appliqué à chaque image | **Yapper** (image vers vidéo) |
 | 9 | 3 prompts de vignettes | Claude ou Gemini |
+| 10 | Montage final en MP4 1920x1080 | **ffmpeg** |
 
 ### Points de conception
 
@@ -62,6 +63,32 @@ modèles de génération comprennent le vocabulaire du collage éditorial.
   (gratuit) chez Yapper, le coût exact et le solde restant sont affichés, et le bouton de lancement
   n'apparaît qu'ensuite. Chaque génération porte une clé d'idempotence stable par beat, pour qu'un
   renvoi après coupure réseau ne facture jamais deux fois la même image.
+
+### Le montage final (état 10)
+
+`voxRenderEngine.ts` assemble les plans et pose la narration par dessus. Il est séparé du moteur de
+résumés de films, dont les contraintes sont inverses : celui-ci est bâti autour d'extraits sous
+copyright (plafond de 7 secondes d'usage continu, effets anti-détection, mise en boucle), alors que
+les visuels Vox sont générés par le studio et doivent tomber exactement sur leur ligne de narration.
+
+- **La voix est l'horloge maîtresse.** La durée réelle de chaque lot de voix off est mesurée au
+  `ffprobe`, puis répartie entre les beats de ce lot au prorata du nombre de mots. Se caler sur
+  l'audio mesuré plutôt que sur l'estimation à 2,5 mots/seconde évite que l'image dérive de la voix
+  au fil de la vidéo. Mesuré sur un montage de test : 0,02 seconde d'écart sur l'ensemble.
+- **Ajustement des clips de 10 secondes**, au choix. Le prompt vidéo universel construit le collage
+  de 0 à 7 secondes puis le fige, alors qu'un plan dure 2 à 3 secondes :
+  - `assemblage` (défaut) : la construction (0 à 7s) compressée sur la durée du plan, donc le collage
+    se termine pile sur la fin de la phrase
+  - `complet` : les 10 secondes compressées, temps de pose compris
+  - `affiche` : la fin du clip à vitesse réelle, le collage déjà composé, sans animation
+- **Lit sonore ASMR** réglable sous la narration (0,25 par défaut, 0 pour le couper). Quand la vidéo
+  est accélérée, l'audio l'est aussi via une chaîne `atempo`.
+- **Replis en cascade** : clip animé, puis image fixe si le clip manque (la caméra est verrouillée de
+  toute façon), puis carton neutre. Un beat raté n'empêche jamais le montage d'aboutir.
+
+Comme pour l'autre mode, `ffmpeg` et `ffprobe` doivent être installés sur le serveur, et le rendu
+tourne en tâche de fond (`POST /api/vox/render/start` renvoie un `jobId`, puis le frontend interroge
+`GET /api/vox/render/status/:jobId`).
 
 ### Configuration
 

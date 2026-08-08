@@ -4,11 +4,11 @@ import path from "path";
 
 export const RENDER_ROOT = path.join(process.cwd(), "render-output");
 
-function ensureDir(p: string) {
+export function ensureDir(p: string) {
   if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
 }
 
-function run(cmd: string, args: string[], timeoutMs = 120000): Promise<void> {
+export function run(cmd: string, args: string[], timeoutMs = 120000): Promise<void> {
   return new Promise((resolve, reject) => {
     const proc = spawn(cmd, args);
     let stderr = "";
@@ -32,7 +32,7 @@ function run(cmd: string, args: string[], timeoutMs = 120000): Promise<void> {
   });
 }
 
-async function ffprobeDuration(filePath: string): Promise<number> {
+export async function ffprobeDuration(filePath: string): Promise<number> {
   return new Promise((resolve) => {
     const proc = spawn("ffprobe", [
       "-v", "error",
@@ -50,7 +50,7 @@ async function ffprobeDuration(filePath: string): Promise<number> {
   });
 }
 
-async function downloadToFile(url: string, destPath: string): Promise<void> {
+export async function downloadToFile(url: string, destPath: string): Promise<void> {
   const res = await fetch(url, { signal: AbortSignal.timeout(20000) });
   if (!res.ok) throw new Error(`Téléchargement échoué (HTTP ${res.status}) pour ${url}`);
   const buf = Buffer.from(await res.arrayBuffer());
@@ -60,13 +60,13 @@ async function downloadToFile(url: string, destPath: string): Promise<void> {
   }
 }
 
-function decodeBase64DataUri(dataUri: string, destPath: string) {
+export function decodeBase64DataUri(dataUri: string, destPath: string) {
   const match = dataUri.match(/^data:.*?;base64,(.*)$/);
   const base64 = match ? match[1] : dataUri;
   fs.writeFileSync(destPath, Buffer.from(base64, "base64"));
 }
 
-function wrapText(text: string, maxCharsPerLine = 42): string {
+export function wrapText(text: string, maxCharsPerLine = 42): string {
   const words = (text || "").split(/\s+/).filter(Boolean);
   const lines: string[] = [];
   let current = "";
@@ -96,7 +96,7 @@ function findFont(): string | null {
   return null;
 }
 
-const FONT_PATH = findFont();
+export const FONT_PATH = findFont();
 
 /**
  * Builds the ffmpeg video filter chain for a real movie clip shot.
@@ -139,7 +139,7 @@ export interface RenderResult {
 type ProgressCallback = (pct: number, label: string) => void;
 
 // Escape a path for use inside an ffmpeg filter option (colons and backslashes need escaping)
-function escapeForFilter(p: string): string {
+export function escapeForFilter(p: string): string {
   return p.replace(/\\/g, "\\\\").replace(/:/g, "\\:");
 }
 

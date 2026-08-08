@@ -38,6 +38,7 @@ import {
 } from "../src/vox/promptBuilder.js";
 import type { VoxBeat, VoxBatchJobStatus, VoxAssetJob } from "../src/vox/types.js";
 import * as yapper from "./yapperClient.js";
+import { renderVoxDocumentary, type VoxFitMode, type VoxRenderBeat } from "../voxRenderEngine.js";
 
 /** Dépendances fournies par le serveur principal. */
 export interface VoxDeps {
@@ -646,6 +647,100 @@ Réponds uniquement avec ce JSON, rien d'autre :
     if (!job) {
       return res.status(404).json({ error: "Tâche de génération introuvable (peut-être expirée)." });
     }
+    res.json(job);
+  });
+
+  // -------------------------------------------------------------------------
+  // Montage final ffmpeg
+  // -------------------------------------------------------------------------
+
+  interface VoxRenderJobStatus {
+    status: "processing" | "done" | "error";
+    progress: number;
+    label: string;
+    downloadUrl?: string;
+    durationSeconds?: number;
+    error?: string;
+  }
+
+  const renderJobs = new Map<string, VoxRenderJobStatus>();
+
+  router.post("/render/start", (req, res) => {
+    const {
+      topic,
+      beats: rawBeats,
+      voiceBatches: rawVoice,
+      fitMode = "assemblage",
+      asmrVolume = 0.25,
+      burnSubtitles = false,
+    } = req.body || {};
+
+    if (!Array.isArray(rawBeats) || rawBeats.length === 0) {
+      return res.status(400).json({ error: "Aucun beat à monter." });
+    }
+
+    const beats: VoxRenderBeat[] = rawBeats.map((b: any) => ({
+      index: Number(b.index),
+      text: String(b.text || ""),
+      wordCount: Number(b.wordCount) || 1,
+      clipUrl: b.clipUrl || null,
+      imageUrl: b.imageUrl || null,
+    }));
+
+    if (!beats.some((b) => b.clipUrl || b.imageUrl)) {
+      return res.status(400).json({
+        error: "Aucun beat ne dispose d'un clip ou d'une image. Générez les visuels avant le montage.",
+      });
+    }
+
+    const voiceBatches = (Array.isArray(rawVoice) ? rawVoice : [])
+      .filter((b: any) => b?.audioDataUri)
+      .map((b: any) => ({ wordCount: Number(b.wordCount) || 1, audioDataUri: String(b.audioDataUri) }));
+
+    const jobId = `vox-render-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    renderJobs.set(jobId, { status: "processing", progress: 0, label: "Initialisation du montage..." });
+
+    res.json({ jobId, hasNarration: voiceBatches.length > 0 });
+
+    (async () => {
+      try {
+        const result = await renderVoxDocumentary(
+          jobId,
+          String(topic || "documentaire"),
+          {
+            beats,
+            voiceBatches,
+            fitMode: fitMode as VoxFitMode,
+            asmrVolume: Number(asmrVolume) || 0,
+            burnSubtitles: !!burnSubtitles,
+          },
+          (progress, label) => renderJobs.set(jobId, { status: "processing", progress, label })
+        );
+
+        renderJobs.set(jobId, {
+          status: "done",
+          progress: 100,
+          label: "Montage terminé.",
+          downloadUrl: result.outputUrl,
+          durationSeconds: result.durationSeconds,
+        });
+      } catch (error: any) {
+        console.error("Vox, erreur de montage :", error);
+        renderJobs.set(jobId, {
+          status: "error",
+          progress: 0,
+          label: "Erreur",
+          error:
+            error.message ||
+            "Le montage a échoué. Vérifiez que ffmpeg et ffprobe sont installés et accessibles dans le PATH du serveur.",
+        });
+      }
+    })();
+  });
+
+  router.get("/render/status/:jobId", (req, res) => {
+    const job = renderJobs.get(req.params.jobId);
+    if (!job) return res.status(404).json({ error: "Montage introuvable (peut-être expiré)." });
     res.json(job);
   });
 

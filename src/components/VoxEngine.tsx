@@ -19,7 +19,9 @@ import type {
  * une seule d'entre elles sans relancer toute la chaîne.
  */
 
-type Stage = "niche" | "idees" | "duree" | "script" | "voix" | "beats" | "images" | "video" | "vignettes";
+type Stage =
+  | "niche" | "idees" | "duree" | "script" | "voix" | "beats"
+  | "images" | "video" | "vignettes" | "montage";
 
 const STAGES: { id: Stage; label: string; state: string }[] = [
   { id: "niche", label: "Niche", state: "1" },
@@ -31,6 +33,26 @@ const STAGES: { id: Stage; label: string; state: string }[] = [
   { id: "images", label: "Images", state: "7" },
   { id: "video", label: "Vidéo", state: "8" },
   { id: "vignettes", label: "Vignettes", state: "9" },
+  { id: "montage", label: "Montage", state: "10" },
+];
+
+/** Ajustement d'un clip de 10 secondes à la durée de son beat. */
+const FIT_MODES: { id: string; label: string; help: string }[] = [
+  {
+    id: "assemblage",
+    label: "Assemblage",
+    help: "La construction du collage (0 à 7s) compressée sur la durée du plan. Le collage se termine pile sur la fin de la phrase.",
+  },
+  {
+    id: "complet",
+    label: "Clip entier",
+    help: "Les 10 secondes compressées sur la durée du plan, temps de pose compris. Plus rapide, plus nerveux.",
+  },
+  {
+    id: "affiche",
+    label: "Affiche tenue",
+    help: "La fin du clip à vitesse réelle : le collage déjà composé, sans animation. Proche d'un diaporama.",
+  },
 ];
 
 interface VoxConfig {
@@ -104,6 +126,14 @@ export default function VoxEngine() {
   const [estimateKind, setEstimateKind] = useState<"images" | "videos" | null>(null);
   const [imageJob, setImageJob] = useState<VoxBatchJobStatus | null>(null);
   const [videoJob, setVideoJob] = useState<VoxBatchJobStatus | null>(null);
+
+  // Montage final
+  const [fitMode, setFitMode] = useState("assemblage");
+  const [asmrVolume, setAsmrVolume] = useState(0.25);
+  const [burnSubtitles, setBurnSubtitles] = useState(false);
+  const [renderJob, setRenderJob] = useState<{
+    status: string; progress: number; label: string; downloadUrl?: string; durationSeconds?: number; error?: string;
+  } | null>(null);
 
   useEffect(() => {
     fetch("/api/vox/config")
@@ -283,6 +313,56 @@ export default function VoxEngine() {
       const data = await postJson("/api/vox/thumbnails", { topic, script });
       setThumbnails(data.thumbnails);
       setStage("vignettes");
+    });
+
+  // --- Montage final ------------------------------------------------------
+  const urlByBeat = (job: VoxBatchJobStatus | null) => {
+    const map = new Map<number, string>();
+    for (const item of job?.items || []) {
+      if (item.url) map.set(item.beatIndex, item.url);
+    }
+    return map;
+  };
+
+  const clipsReady = useMemo(() => urlByBeat(videoJob).size, [videoJob]);
+  const imagesReady = useMemo(() => urlByBeat(imageJob).size, [imageJob]);
+  const takesReady = useMemo(() => voiceBatches.filter((b) => b.audioUrl).length, [voiceBatches]);
+
+  const startRender = () =>
+    run("montage", async () => {
+      const clips = urlByBeat(videoJob);
+      const images = urlByBeat(imageJob);
+
+      const data = await postJson("/api/vox/render/start", {
+        topic,
+        fitMode,
+        asmrVolume,
+        burnSubtitles,
+        beats: beats.map((b) => ({
+          index: b.index,
+          text: b.text,
+          wordCount: b.wordCount,
+          clipUrl: clips.get(b.index) || null,
+          imageUrl: images.get(b.index) || null,
+        })),
+        voiceBatches: voiceBatches
+          .filter((b) => b.audioUrl)
+          .map((b) => ({ wordCount: b.wordCount, audioDataUri: b.audioUrl })),
+      });
+
+      setStage("montage");
+      setRenderJob({ status: "processing", progress: 0, label: "Initialisation du montage..." });
+
+      const timer = setInterval(async () => {
+        try {
+          const response = await fetch(`/api/vox/render/status/${data.jobId}`);
+          const job = await response.json();
+          setRenderJob(job);
+          if (job.status === "done" || job.status === "error") clearInterval(timer);
+        } catch {
+          clearInterval(timer);
+        }
+      }, 2000);
     });
 
   const totalVoiceSeconds = useMemo(
@@ -728,6 +808,148 @@ export default function VoxEngine() {
                   <p className="text-[11px] text-slate-400 leading-relaxed">{t.scene}</p>
                 </div>
               ))}
+            </div>
+          )}
+        </Section>
+      )}
+
+      {/* ÉTAT 10, montage final ffmpeg */}
+      {beats.length > 0 && (imagesReady > 0 || clipsReady > 0) && (
+        <Section icon={<Film className="w-4 h-4" />} state="10" title="Montage final (ffmpeg)">
+          <p className="text-[11px] text-slate-400 mb-3">
+            Assemble les plans dans l'ordre des beats et pose la narration par dessus. La durée réelle de
+            chaque lot de voix sert d'horloge : les plans se calent sur la voix, pas sur l'estimation
+            théorique, donc l'image ne dérive pas au fil de la vidéo.
+          </p>
+
+          <div className="flex flex-wrap gap-3 text-[11px] font-mono text-slate-500 mb-3">
+            <span className={clipsReady > 0 ? "text-emerald-400" : ""}>{clipsReady} clips</span>
+            <span className={imagesReady > 0 ? "text-emerald-400" : ""}>{imagesReady} images</span>
+            <span className={takesReady > 0 ? "text-emerald-400" : "text-amber-400"}>
+              {takesReady} / {voiceBatches.length} lots de voix
+            </span>
+          </div>
+
+          {clipsReady === 0 && imagesReady > 0 && (
+            <div className="flex items-start gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs rounded-lg p-3 mb-3">
+              <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+              <span>
+                Aucun clip animé : le montage utilisera les images fixes. La caméra étant verrouillée par le
+                style, le résultat reste cohérent, mais le papier ne bougera pas.
+              </span>
+            </div>
+          )}
+
+          {takesReady === 0 && (
+            <div className="flex items-start gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs rounded-lg p-3 mb-3">
+              <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+              <span>
+                Aucune voix off générée : la vidéo sortira sans narration et les durées de plans retomberont
+                sur l'estimation à 2,5 mots par seconde.
+              </span>
+            </div>
+          )}
+
+          <label className="block text-[11px] font-semibold text-slate-400 mb-1.5">
+            Ajustement des clips de 10 secondes
+          </label>
+          <div className="flex flex-wrap gap-2 mb-1.5">
+            {FIT_MODES.map((m) => (
+              <button
+                key={m.id}
+                onClick={() => setFitMode(m.id)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${
+                  fitMode === m.id
+                    ? "bg-amber-500 text-slate-950 border-amber-500"
+                    : "bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700"
+                }`}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+          <p className="text-[11px] text-slate-500 mb-3">
+            {FIT_MODES.find((m) => m.id === fitMode)?.help}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 mb-3">
+            <label className="flex items-center gap-2 text-xs text-slate-300">
+              Lit sonore ASMR
+              <input
+                type="range"
+                min={0}
+                max={0.6}
+                step={0.05}
+                value={asmrVolume}
+                onChange={(e) => setAsmrVolume(Number(e.target.value))}
+                className="w-28 accent-amber-500"
+              />
+              <span className="font-mono text-[11px] text-slate-500 w-8">
+                {asmrVolume === 0 ? "off" : asmrVolume.toFixed(2)}
+              </span>
+            </label>
+
+            <label className="flex items-center gap-2 text-xs text-slate-300">
+              <input
+                type="checkbox"
+                checked={burnSubtitles}
+                onChange={(e) => setBurnSubtitles(e.target.checked)}
+                className="accent-amber-500"
+              />
+              Incruster les sous-titres
+            </label>
+          </div>
+
+          <button
+            onClick={startRender}
+            disabled={busy === "montage" || renderJob?.status === "processing"}
+            className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 disabled:opacity-40 text-slate-950 font-bold text-sm px-4 py-2 rounded-lg transition-colors"
+          >
+            {busy === "montage" || renderJob?.status === "processing" ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : (
+              <Film className="w-4 h-4" />
+            )}
+            Compiler la vidéo
+          </button>
+
+          {renderJob && (
+            <div className="mt-3">
+              <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-1.5">
+                <span>{renderJob.label}</span>
+                <span>{renderJob.progress}%</span>
+              </div>
+              <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  className={`h-full transition-all ${
+                    renderJob.status === "error" ? "bg-red-500" : "bg-amber-500"
+                  }`}
+                  style={{ width: `${renderJob.progress}%` }}
+                />
+              </div>
+
+              {renderJob.status === "error" && (
+                <p className="mt-2 text-xs text-red-300">{renderJob.error}</p>
+              )}
+
+              {renderJob.status === "done" && renderJob.downloadUrl && (
+                <div className="mt-3">
+                  <video src={renderJob.downloadUrl} controls className="w-full rounded-lg border border-slate-800" />
+                  <a
+                    href={renderJob.downloadUrl}
+                    download
+                    className="mt-2 inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-100 font-semibold text-sm px-4 py-2 rounded-lg transition-colors"
+                  >
+                    <Download className="w-4 h-4" />
+                    Télécharger le MP4
+                    {renderJob.durationSeconds ? (
+                      <span className="font-mono text-[11px] text-slate-500">
+                        {renderJob.durationSeconds.toFixed(1)}s
+                      </span>
+                    ) : null}
+                  </a>
+                </div>
+              )}
             </div>
           )}
         </Section>
