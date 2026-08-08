@@ -56,6 +56,15 @@ LOCKED_STYLE = (
     "composition, ultra-detailed, professional cartoon illustration quality."
 )
 
+# Phrase ajoutee uniquement quand une image de reference est jointe a la generation
+# (Yapper : input.referenceImages = [{"assetId": "..."}]). Absente du fichier .md,
+# qui sert aux generations manuelles sans reference.
+REFERENCE_NOTE = (
+    "CHARACTER REFERENCE: The attached reference image shows the main character Leo exactly as he must "
+    "look. Copy his head shape, face style, line weight, clothing colours, and body proportions from that "
+    "reference precisely, including when he appears small, distant, or in the background of this scene."
+)
+
 CLOSER = (
     "The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial "
     "features clearly visible. Character clothing must be fully colored and thematically appropriate. "
