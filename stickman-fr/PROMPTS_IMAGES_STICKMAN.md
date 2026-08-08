@@ -1,5 +1,6 @@
-# PROMPTS D'IMAGE STICKMAN — 126 BEATS
-Vidéo : « Comment YouTube paie vraiment ses créateurs » — 5 minutes, 749 mots, 126 beats.
+# PROMPTS D'IMAGE STICKMAN — 148 BEATS
+Vidéo : « Comment YouTube paie vraiment ses créateurs » — 5 minutes, 984 mots, 148 beats.
+Cadence de narration mesurée : 3.27 mots/seconde.
 Personnage principal verrouillé : Léo.
 
 ## PROMPT 1  —  beat 1 · 0.0s
@@ -12,7 +13,7 @@ SCENE AND ENVIRONMENT: A wide night-time split view of two small bedroom studios
 
 ---
 
-## PROMPT 2  —  beat 2 · 3.2s
+## PROMPT 2  —  beat 2 · 2.4s
 **Narration :** La première fait un million de vues.
 
 **Scène (FR) :** Le compteur du premier créateur explose à un million de vues.
@@ -22,7 +23,7 @@ SCENE AND ENVIRONMENT: The right bedroom studio at night, seen slightly from bel
 
 ---
 
-## PROMPT 3  —  beat 3 · 6.0s
+## PROMPT 3  —  beat 3 · 4.6s
 **Narration :** La seconde en fait cent mille.
 
 **Scène (FR) :** Le compteur de Léo s'arrête, dix fois plus petit.
@@ -32,7 +33,7 @@ SCENE AND ENVIRONMENT: The left bedroom studio at night, warm amber lamp light, 
 
 ---
 
-## PROMPT 4  —  beat 4 · 8.4s
+## PROMPT 4  —  beat 4 · 6.4s
 **Narration :** Et pourtant, à la fin du mois,
 
 **Scène (FR) :** Une horloge murale marque la fin du mois au-dessus des deux bureaux.
@@ -42,7 +43,7 @@ SCENE AND ENVIRONMENT: A wide symmetrical shot of both bedroom studios again, no
 
 ---
 
-## PROMPT 5  —  beat 5 · 11.2s
+## PROMPT 5  —  beat 5 · 8.6s
 **Narration :** c'est la seconde qui touche le plus gros chèque.
 
 **Scène (FR) :** Léo reçoit un chèque énorme, son voisin un tout petit.
@@ -52,7 +53,7 @@ SCENE AND ENVIRONMENT: The dividing wall between the two studios seen from the f
 
 ---
 
-## PROMPT 6  —  beat 6 · 14.8s
+## PROMPT 6  —  beat 6 · 11.3s
 **Narration :** Ça n'a aucun sens,
 
 **Scène (FR) :** Léo, seul, fixe les deux chèques sans comprendre.
@@ -62,7 +63,7 @@ SCENE AND ENVIRONMENT: A dim empty room in deep blue shadow with one hard white 
 
 ---
 
-## PROMPT 7  —  beat 7 · 16.4s
+## PROMPT 7  —  beat 7 · 12.5s
 **Narration :** jusqu'à ce que vous compreniez une chose simple.
 
 **Scène (FR) :** Une porte de lumière s'ouvre derrière lui et éclaire la pièce.
@@ -72,7 +73,7 @@ SCENE AND ENVIRONMENT: The same dark blue room, but now a tall rectangle of warm
 
 ---
 
-## PROMPT 8  —  beat 8 · 19.6s
+## PROMPT 8  —  beat 8 · 15.0s
 **Narration :** YouTube ne vous paie pas pour vos vues.
 
 **Scène (FR) :** Léo tend ses vues à un guichet et le guichetier refuse de payer.
@@ -82,7 +83,7 @@ SCENE AND ENVIRONMENT: A tall marble payment counter in a grand hall lit by cold
 
 ---
 
-## PROMPT 9  —  beat 9 · 22.8s
+## PROMPT 9  —  beat 9 · 17.4s
 **Narration :** YouTube vous paie pour les publicités
 
 **Scène (FR) :** Le même guichetier accepte volontiers une pile de panneaux publicitaires.
@@ -92,7 +93,7 @@ SCENE AND ENVIRONMENT: The same marble payment counter and grille, but now the o
 
 ---
 
-## PROMPT 10  —  beat 10 · 25.2s
+## PROMPT 10  —  beat 10 · 19.3s
 **Narration :** affichées devant vos vues.
 
 **Scène (FR) :** Une publicité géante s'allume juste devant l'écran de la vidéo.
@@ -102,7 +103,7 @@ SCENE AND ENVIRONMENT: A dark cinema-like space where a huge glowing video scree
 
 ---
 
-## PROMPT 11  —  beat 11 · 26.8s
+## PROMPT 11  —  beat 11 · 20.5s
 **Narration :** Et ces publicités n'ont pas toutes le même prix.
 
 **Scène (FR) :** Une rangée de publicités porte des étiquettes de prix très différentes.
@@ -112,7 +113,7 @@ SCENE AND ENVIRONMENT: A long gallery wall in a vast hall, lit by individual ove
 
 ---
 
-## PROMPT 12  —  beat 12 · 30.4s
+## PROMPT 12  —  beat 12 · 23.2s
 **Narration :** Voilà comment ça marche vraiment.
 
 **Scène (FR) :** Léo écarte un rideau et découvre la machinerie cachée.
@@ -122,7 +123,7 @@ SCENE AND ENVIRONMENT: A heavy deep red theatre curtain fills most of the frame,
 
 ---
 
-## PROMPT 13  —  beat 13 · 32.4s
+## PROMPT 13  —  beat 13 · 24.8s
 **Narration :** Une marque veut vendre quelque chose.
 
 **Scène (FR) :** Un dirigeant de marque présente son produit sous un projecteur.
@@ -132,7 +133,7 @@ SCENE AND ENVIRONMENT: A polished corporate showroom with a raised circular plat
 
 ---
 
-## PROMPT 14  —  beat 14 · 34.8s
+## PROMPT 14  —  beat 14 · 26.6s
 **Narration :** Elle donne un budget à la plateforme.
 
 **Scène (FR) :** La marque verse un sac d'argent dans une fente de la plateforme.
@@ -142,7 +143,7 @@ SCENE AND ENVIRONMENT: The base of an enormous machine wall made of brushed stee
 
 ---
 
-## PROMPT 15  —  beat 15 · 37.6s
+## PROMPT 15  —  beat 15 · 28.7s
 **Narration :** La plateforme place cette publicité
 
 **Scène (FR) :** Un bras mécanique saisit la publicité et la fait glisser sur un rail.
@@ -152,7 +153,7 @@ SCENE AND ENVIRONMENT: The interior of the same great machine, a warm brass and 
 
 ---
 
-## PROMPT 16  —  beat 16 · 39.6s
+## PROMPT 16  —  beat 16 · 30.3s
 **Narration :** devant la vidéo la plus utile pour cette marque.
 
 **Scène (FR) :** Le bras dépose la publicité exactement devant la bonne vidéo.
@@ -162,7 +163,7 @@ SCENE AND ENVIRONMENT: The end of the machine hall opening onto a wall of many s
 
 ---
 
-## PROMPT 17  —  beat 17 · 43.2s
+## PROMPT 17  —  beat 17 · 33.0s
 **Narration :** Ensuite, l'argent est partagé,
 
 **Scène (FR) :** Une pile de pièces tombe sur une balance à deux plateaux.
@@ -172,7 +173,7 @@ SCENE AND ENVIRONMENT: A grand hall with a huge ornate brass balance scale stand
 
 ---
 
-## PROMPT 18  —  beat 18 · 44.8s
+## PROMPT 18  —  beat 18 · 34.3s
 **Narration :** une part pour la plateforme,
 
 **Scène (FR) :** Le plateau de la plateforme se remplit en premier.
@@ -182,7 +183,7 @@ SCENE AND ENVIRONMENT: Close on the left pan of the great brass scale, heaped wi
 
 ---
 
-## PROMPT 19  —  beat 19 · 46.8s
+## PROMPT 19  —  beat 19 · 35.8s
 **Narration :** une part pour vous.
 
 **Scène (FR) :** Le plateau de Léo reçoit une part plus petite mais bien réelle.
@@ -192,7 +193,7 @@ SCENE AND ENVIRONMENT: Close on the right pan of the same brass scale, rising li
 
 ---
 
-## PROMPT 20  —  beat 20 · 48.4s
+## PROMPT 20  —  beat 20 · 37.0s
 **Narration :** Donc la vraie question n'est pas
 
 **Scène (FR) :** Léo raye une question inscrite sur un grand tableau.
@@ -202,7 +203,7 @@ SCENE AND ENVIRONMENT: A vast dark slate blackboard wall filling the frame, lit 
 
 ---
 
-## PROMPT 21  —  beat 21 · 50.8s
+## PROMPT 21  —  beat 21 · 38.8s
 **Narration :** combien de personnes vous regardent.
 
 **Scène (FR) :** Une foule de spectateurs identiques regarde en silence.
@@ -212,8 +213,8 @@ SCENE AND ENVIRONMENT: A dark auditorium seen from the stage, rows of seats rece
 
 ---
 
-## PROMPT 22  —  beat 22 · 52.8s
-**Narration :** La vraie question, c'est combien
+## PROMPT 22  —  beat 22 · 40.4s
+**Narration :** La vraie question, c'est combien une marque est prête
 
 **Scène (FR) :** Léo écrit une nouvelle question, bien plus grande, sur le tableau.
 
@@ -222,18 +223,8 @@ SCENE AND ENVIRONMENT: The same dark slate blackboard wall under the warm clampe
 
 ---
 
-## PROMPT 23  —  beat 23 · 54.8s
-**Narration :** une marque est prête à payer
-
-**Scène (FR) :** Une marque hésite, un carnet de chèques ouvert à la main.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: A dim wood panelled office at night, a green banker's lamp casting a tight warm pool on a heavy desk, rain streaking the tall window behind, city lights blurred beyond the glass in cold blue. CHARACTERS: Two stick figures. The royal blue suited brand executive sits at the desk, pen hovering above an open blank chequebook, head tilted, one eyebrow up in calculation, mouth pressed sideways. Leo stands in the doorway on the far left, half in shadow, watching quietly. KEY ACTION AND FOCAL POINT: The pen tip hovers a hair above the blank cheque without touching it, a small glint of light on the nib. The hovering pen is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 24  —  beat 24 · 57.2s
-**Narration :** pour parler à ces personnes-là.
+## PROMPT 23  —  beat 23 · 43.1s
+**Narration :** à payer pour parler à ces personnes-là.
 
 **Scène (FR) :** La marque tend une liasse en pointant précisément un groupe de gens.
 
@@ -242,7 +233,7 @@ SCENE AND ENVIRONMENT: A raised balcony overlooking a crowd square at dusk, warm
 
 ---
 
-## PROMPT 25  —  beat 25 · 59.2s
+## PROMPT 24  —  beat 24 · 45.3s
 **Narration :** Et là, l'écart devient énorme.
 
 **Scène (FR) :** Deux escaliers partent du même palier, l'un plat, l'autre vertigineux.
@@ -252,8 +243,8 @@ SCENE AND ENVIRONMENT: A dramatic stone landing splitting into two staircases un
 
 ---
 
-## PROMPT 26  —  beat 26 · 61.2s
-**Narration :** Une chaîne de jeux vidéo
+## PROMPT 25  —  beat 25 · 46.8s
+**Narration :** Une chaîne de jeux vidéo attire surtout des adolescents.
 
 **Scène (FR) :** Une salle d'arcade bruyante, pleine de bornes et d'écrans.
 
@@ -262,18 +253,8 @@ SCENE AND ENVIRONMENT: A packed neon arcade at night, rows of cabinets glowing m
 
 ---
 
-## PROMPT 27  —  beat 27 · 63.2s
-**Narration :** attire surtout des adolescents.
-
-**Scène (FR) :** Des adolescents en sacs à dos remplissent toute la salle d'arcade.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: The same neon arcade, now shot lower and wider, cabinets glowing magenta and cyan on both sides forming a bright corridor, hazy coloured light, glossy reflective floor, dark ceiling above. CHARACTERS: A crowd of small young stick figures packed shoulder to shoulder, wearing colourful backpacks, caps turned backwards, bright hoodies in lime, orange, and purple, all leaning toward the screens with wide eyes and open mouths. Leo stands squeezed at the right edge, taller than the crowd, looking down at them, one eyebrow raised. KEY ACTION AND FOCAL POINT: The young crowd surges forward toward the cabinets in one wave with motion lines behind them. The dense mass of backpacks and caps is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 28  —  beat 28 · 64.8s
-**Narration :** Les marques qui veulent leur parler
+## PROMPT 26  —  beat 26 · 49.5s
+**Narration :** Les marques qui veulent leur
 
 **Scène (FR) :** Un annonceur regarde cette foule depuis la porte, peu enthousiaste.
 
@@ -282,8 +263,8 @@ SCENE AND ENVIRONMENT: The arcade entrance seen from inside, a rectangle of cold
 
 ---
 
-## PROMPT 29  —  beat 29 · 67.2s
-**Narration :** ont de petits budgets.
+## PROMPT 27  —  beat 27 · 51.1s
+**Narration :** parler ont de petits budgets.
 
 **Scène (FR) :** Il sort un porte-monnaie minuscule, presque vide.
 
@@ -292,18 +273,8 @@ SCENE AND ENVIRONMENT: A tight view of the arcade doorway area, the neon glow no
 
 ---
 
-## PROMPT 30  —  beat 30 · 68.8s
-**Narration :** Résultat, mille vues rapportent
-
-**Scène (FR) :** Mille petites silhouettes de spectateurs s'alignent devant une caisse.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: A long counting hall with pale teal walls, a low ceiling with rows of hanging lamps, and a mechanical counter machine at the end with a large glowing dial. Cool even light with warm pools under each lamp, receding into haze. CHARACTERS: A very long queue of small identical stick figure viewers in muted casual clothes stretching from the foreground to the machine in the far background, all facing the same way. Leo stands beside the machine at the end of the queue, hand on its lever, looking back along the line, mouth open slightly. KEY ACTION AND FOCAL POINT: The endless queue of viewers feeds one by one into the counting machine, which ticks over on its glowing dial. The receding line is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 31  —  beat 31 · 70.4s
-**Narration :** parfois deux ou trois dollars.
+## PROMPT 28  —  beat 28 · 52.6s
+**Narration :** Résultat, mille vues rapportent parfois deux ou trois dollars.
 
 **Scène (FR) :** La machine ne recrache que deux ou trois pièces ternes.
 
@@ -312,8 +283,8 @@ SCENE AND ENVIRONMENT: Close on the output tray of the counting machine, brushed
 
 ---
 
-## PROMPT 32  —  beat 32 · 72.4s
-**Narration :** Une chaîne qui parle d'argent,
+## PROMPT 29  —  beat 29 · 55.4s
+**Narration :** Une chaîne qui parle d'argent, d'assurance
 
 **Scène (FR) :** Un couloir de bureaux feutrés remplace l'arcade bruyante.
 
@@ -322,8 +293,8 @@ SCENE AND ENVIRONMENT: A calm upmarket office corridor at golden hour, tall glas
 
 ---
 
-## PROMPT 33  —  beat 33 · 74.4s
-**Narration :** d'assurance ou d'immobilier attire des adultes
+## PROMPT 30  —  beat 30 · 57.2s
+**Narration :** ou d'immobilier attire des adultes
 
 **Scène (FR) :** Des adultes en tenue de travail attendent, dossiers sous le bras.
 
@@ -332,8 +303,8 @@ SCENE AND ENVIRONMENT: A wide bright waiting area with tall windows, warm late a
 
 ---
 
-## PROMPT 34  —  beat 34 · 76.8s
-**Narration :** qui vont peut-être signer un contrat
+## PROMPT 31  —  beat 31 · 58.7s
+**Narration :** qui vont peut-être signer un
 
 **Scène (FR) :** Un stylo s'apprête à signer un contrat épais sur une table de réunion.
 
@@ -342,8 +313,8 @@ SCENE AND ENVIRONMENT: A dark polished boardroom table filling the lower half of
 
 ---
 
-## PROMPT 35  —  beat 35 · 79.2s
-**Narration :** de plusieurs milliers de dollars.
+## PROMPT 32  —  beat 32 · 60.2s
+**Narration :** contrat de plusieurs milliers de dollars.
 
 **Scène (FR) :** Le contrat signé se transforme en une tour de pièces d'or.
 
@@ -352,7 +323,7 @@ SCENE AND ENVIRONMENT: The same boardroom table under the low pendant lamp, but 
 
 ---
 
-## PROMPT 36  —  beat 36 · 81.2s
+## PROMPT 33  —  beat 33 · 62.1s
 **Narration :** Une banque accepte de payer très cher
 
 **Scène (FR) :** Un banquier en costume trois pièces pose une lourde mallette sur le comptoir.
@@ -362,7 +333,7 @@ SCENE AND ENVIRONMENT: A grand bank hall with marble columns, a high vaulted cei
 
 ---
 
-## PROMPT 37  —  beat 37 · 84.0s
+## PROMPT 34  —  beat 34 · 64.2s
 **Narration :** pour se placer devant ces gens-là.
 
 **Scène (FR) :** Le banquier accroche son affiche juste devant la file d'adultes.
@@ -372,8 +343,8 @@ SCENE AND ENVIRONMENT: The same marble bank hall, seen from a lower angle lookin
 
 ---
 
-## PROMPT 38  —  beat 38 · 86.4s
-**Narration :** Résultat, les mêmes mille vues
+## PROMPT 35  —  beat 35 · 66.1s
+**Narration :** Résultat, les mêmes mille vues peuvent
 
 **Scène (FR) :** La même file de mille spectateurs, mais devant une caisse dorée.
 
@@ -382,8 +353,8 @@ SCENE AND ENVIRONMENT: The same long counting hall as before, now transformed wi
 
 ---
 
-## PROMPT 39  —  beat 39 · 88.4s
-**Narration :** peuvent rapporter vingt ou trente dollars.
+## PROMPT 36  —  beat 36 · 67.9s
+**Narration :** rapporter vingt ou trente dollars.
 
 **Scène (FR) :** La caisse déverse un torrent de pièces d'or dans les bras de Léo.
 
@@ -392,8 +363,88 @@ SCENE AND ENVIRONMENT: Close on the output tray of the same counting machine, no
 
 ---
 
-## PROMPT 40  —  beat 40 · 90.8s
-**Narration :** C'est exactement pour ça
+## PROMPT 37  —  beat 37 · 69.4s
+**Narration :** Faites le calcul une seconde.
+
+**Scène (FR) :** Léo lève un doigt et sort son carnet orange pour compter.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A calm dark teal room with a single warm overhead lamp throwing a tight pool of light onto a plain wooden table, deep shadow at the edges, faint dust turning in the beam. CHARACTERS: One stick figure, Leo, standing behind the table facing the viewer, one index finger raised at head height, the other hand pulling the orange spiral notebook from his hoodie pocket, eyebrows raised, mouth open mid sentence. KEY ACTION AND FOCAL POINT: His raised finger catches the lamp light as the notebook comes free of the pocket. The raised finger is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 38  —  beat 38 · 70.9s
+**Narration :** Cent mille vues à trois dollars,
+
+**Scène (FR) :** Une pile de mille vues et une petite pièce de trois dollars.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dark tabletop lit from directly above by a cold white lamp, the wood grain visible in the pool of light, the rest of the frame falling into deep blue shadow. CHARACTERS: One stick figure, Leo, leaning over the table from the left, one hand resting flat on the wood beside the objects, head lowered close to them, eyebrows level in concentration. KEY ACTION AND FOCAL POINT: A tall stack of small blank view cards stands on the left of the table and three dull grey coins sit beside it. The pairing of the huge stack and the three small coins is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 39  —  beat 39 · 72.8s
+**Narration :** ça fait trois cents dollars.
+
+**Scène (FR) :** Un petit tas de pièces ternes, à peine plus haut qu'un doigt.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same dark tabletop under the cold overhead lamp, camera pushed in low and close so the table surface fills the lower half of the frame, deep shadow behind. CHARACTERS: One stick figure, Leo, only his head and one hand in frame at the right edge, fingers spread beside the coins for scale, eyebrows dropping, mouth pulled flat. KEY ACTION AND FOCAL POINT: A small dull pile of grey coins sits on the table barely taller than Leo's finger held beside it. The tiny pile is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 40  —  beat 40 · 74.3s
+**Narration :** Cent mille vues à vingt-cinq dollars,
+
+**Scène (FR) :** La même pile de vues, mais devant une pièce dorée bien plus grosse.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same tabletop, the lamp now warmed to gold and brighter, the wood glowing amber and long warm shadows stretching behind the objects, the background shadow now deep brown instead of blue. CHARACTERS: One stick figure, Leo, leaning in from the left with both hands on the table edge, head lifted, eyebrows climbing, mouth opening slightly. KEY ACTION AND FOCAL POINT: The identical tall stack of blank view cards stands beside one large glowing gold coin far bigger than the grey ones. The single big gold coin is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 41  —  beat 41 · 76.1s
+**Narration :** ça fait deux mille cinq cents dollars.
+
+**Scène (FR) :** Une tour de pièces d'or qui monte hors du cadre.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same tabletop shot from a low angle looking up, warm gold lamp light blazing from above, the column of coins rising past the top edge of the frame, warm haze and floating light particles around it. CHARACTERS: One stick figure, Leo, standing at the base of the column in the lower left, head tipped fully back, both arms hanging, mouth wide open with teeth and tongue visible in astonishment. KEY ACTION AND FOCAL POINT: The tall column of gold coins climbs out of the top of the frame, its top lost in glow. The towering column is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 42  —  beat 42 · 78.3s
+**Narration :** Même travail, même durée, le même
+
+**Scène (FR) :** Deux horloges identiques et deux piles de travail identiques.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A symmetrical interior split down the middle by a thin dark line, both halves lit identically by cool grey daylight, each holding the same desk, the same round wall clock, and the same stack of blank paper. CHARACTERS: Two stick figures in identical postures, one per half, both seated with elbows on the desk and chin in hands, eyebrows flat, mouths small tired lines. Leo occupies the left half. KEY ACTION AND FOCAL POINT: Both clocks show exactly the same time and both paper stacks are exactly the same height. The perfect mirror symmetry is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 43  —  beat 43 · 80.1s
+**Narration :** nombre de personnes devant l'écran.
+
+**Scène (FR) :** Deux foules rigoureusement identiques devant deux écrans.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A wide symmetrical shot of two dark viewing rooms side by side, each with a large pale glowing screen at the back washing the seats in the same cool light, the same haze in both projector beams. CHARACTERS: Two identical crowds of small stick figures, the same number in each room, all seated facing their screen in identical postures with flat neutral eyebrows. Leo stands in the centre aisle between the two rooms, head turning from one to the other. KEY ACTION AND FOCAL POINT: The two crowds are pixel for pixel the same size and arrangement. The mirrored crowds are the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 44  —  beat 44 · 81.7s
+**Narration :** Huit fois l'écart, uniquement à cause du sujet choisi.
+
+**Scène (FR) :** Une balance penche violemment d'un seul côté, huit fois plus lourde.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dramatic dark hall in deep indigo with one hard overhead spotlight on a large simple balance scale, thick haze catching the beam, deep shadow beyond. CHARACTERS: One stick figure, Leo, standing beside the scale in the lower left, one hand raised toward the tilted beam, head tilted back, eyebrows high, mouth open. KEY ACTION AND FOCAL POINT: The right pan crashes down heaped with glowing gold coins while the left pan flies up nearly empty, the beam at an extreme angle with impact lines. The violent tilt is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 45  —  beat 45 · 84.4s
+**Narration :** C'est exactement pour ça que notre créateur
 
 **Scène (FR) :** Un projecteur unique éclaire Léo, doigt levé, comme pour dire voilà.
 
@@ -402,8 +453,8 @@ SCENE AND ENVIRONMENT: A dark stage space in deep indigo with one hard white spo
 
 ---
 
-## PROMPT 41  —  beat 41 · 92.4s
-**Narration :** que notre créateur avec cent mille vues
+## PROMPT 46  —  beat 46 · 86.5s
+**Narration :** avec cent mille vues bat
 
 **Scène (FR) :** Léo se tient sur un podium avec un petit compteur à cent mille.
 
@@ -412,8 +463,8 @@ SCENE AND ENVIRONMENT: A sports podium under stadium floodlights at night, deep 
 
 ---
 
-## PROMPT 42  —  beat 42 · 95.2s
-**Narration :** bat celui qui en a un million.
+## PROMPT 47  —  beat 47 · 88.1s
+**Narration :** celui qui en a un million.
 
 **Scène (FR) :** Le créateur au million se retrouve sur une marche plus basse.
 
@@ -422,7 +473,7 @@ SCENE AND ENVIRONMENT: The same floodlit arena podium, wider shot now showing bo
 
 ---
 
-## PROMPT 43  —  beat 43 · 98.0s
+## PROMPT 48  —  beat 48 · 89.9s
 **Narration :** Il n'a pas travaillé plus.
 
 **Scène (FR) :** Deux réveils identiques, deux piles de travail identiques.
@@ -432,8 +483,8 @@ SCENE AND ENVIRONMENT: A symmetrical night interior split down the middle by a t
 
 ---
 
-## PROMPT 44  —  beat 44 · 100.0s
-**Narration :** Il a simplement choisi un sujet
+## PROMPT 49  —  beat 49 · 91.4s
+**Narration :** Il a simplement choisi un sujet devant lequel
 
 **Scène (FR) :** Léo choisit une porte parmi plusieurs, dans un couloir de portes colorées.
 
@@ -442,8 +493,8 @@ SCENE AND ENVIRONMENT: A long corridor lined with many closed doors of different
 
 ---
 
-## PROMPT 45  —  beat 45 · 102.4s
-**Narration :** devant lequel les annonceurs font la queue.
+## PROMPT 50  —  beat 50 · 93.9s
+**Narration :** les annonceurs font la queue.
 
 **Scène (FR) :** Une file d'annonceurs en costume attend devant la porte de Léo.
 
@@ -452,7 +503,7 @@ SCENE AND ENVIRONMENT: The outside of a single door at the end of a warmly lit h
 
 ---
 
-## PROMPT 46  —  beat 46 · 105.2s
+## PROMPT 51  —  beat 51 · 95.4s
 **Narration :** La liste de ces sujets est courte
 
 **Scène (FR) :** Une courte liste est affichée, éclairée, sur un mur autrement vide.
@@ -462,7 +513,7 @@ SCENE AND ENVIRONMENT: A vast dark concrete wall stretching in every direction w
 
 ---
 
-## PROMPT 47  —  beat 47 · 108.0s
+## PROMPT 52  —  beat 52 · 97.6s
 **Narration :** et elle est toujours la même.
 
 **Scène (FR) :** Le même mur, mais on découvre que la liste ne change jamais d'une année à l'autre.
@@ -472,7 +523,7 @@ SCENE AND ENVIRONMENT: The same dark concrete wall, now revealed to hold a long 
 
 ---
 
-## PROMPT 48  —  beat 48 · 110.4s
+## PROMPT 53  —  beat 53 · 99.4s
 **Narration :** L'argent. L'assurance. L'immobilier. La technologie.
 
 **Scène (FR) :** Quatre enseignes lumineuses s'allument l'une après l'autre.
@@ -482,7 +533,7 @@ SCENE AND ENVIRONMENT: A night street corner in the rain, wet asphalt reflecting
 
 ---
 
-## PROMPT 49  —  beat 49 · 112.4s
+## PROMPT 54  —  beat 54 · 100.9s
 **Narration :** La santé. Le droit. Le voyage.
 
 **Scène (FR) :** Trois autres enseignes s'allument sur le bâtiment d'en face.
@@ -492,8 +543,8 @@ SCENE AND ENVIRONMENT: The opposite side of the same rainy night street, three m
 
 ---
 
-## PROMPT 50  —  beat 50 · 114.8s
-**Narration :** Derrière chacun de ces mots,
+## PROMPT 55  —  beat 55 · 102.8s
+**Narration :** Derrière chacun de ces mots, il y a
 
 **Scène (FR) :** Léo soulève l'un des mots comme on soulève une trappe.
 
@@ -502,18 +553,8 @@ SCENE AND ENVIRONMENT: A dark floor made of enormous stone letters, lit by a low
 
 ---
 
-## PROMPT 51  —  beat 51 · 116.8s
-**Narration :** il y a une marque
-
-**Scène (FR) :** Sous le mot, une marque entière est cachée avec ses bureaux.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: An underground chamber revealed beneath the giant letters, warm and richly lit, containing a miniature corporate world of small glass offices, glowing windows, tiny lamps, and a soft golden haze, with the raised stone letter forming a ceiling above. CHARACTERS: Two stick figures. The royal blue suited brand executive stands in the middle of the miniature offices looking up toward the opening, one arm raised in greeting, eyebrows up, mouth open in a broad welcome. Leo's head and shoulders lean in through the gap above, upside down in the frame, mouth open in surprise. KEY ACTION AND FOCAL POINT: Leo's face appears in the opening above the hidden company as the executive waves up at him. The meeting of the two faces across the gap is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 52  —  beat 52 · 118.8s
-**Narration :** qui a beaucoup à gagner
+## PROMPT 56  —  beat 56 · 105.2s
+**Narration :** une marque qui a beaucoup à gagner
 
 **Scène (FR) :** La marque montre une immense montagne de gains potentiels.
 
@@ -522,7 +563,7 @@ SCENE AND ENVIRONMENT: A high vantage point overlooking a vast golden valley at 
 
 ---
 
-## PROMPT 53  —  beat 53 · 120.8s
+## PROMPT 57  —  beat 57 · 107.3s
 **Narration :** et un budget pour aller le chercher.
 
 **Scène (FR) :** La marque ouvre une valise pleine de billets pour aller la chercher.
@@ -532,8 +573,58 @@ SCENE AND ENVIRONMENT: The same ledge above the golden valley, now shot close an
 
 ---
 
-## PROMPT 54  —  beat 54 · 123.6s
-**Narration :** Ce chiffre, ce que vous gagnez
+## PROMPT 58  —  beat 58 · 109.5s
+**Narration :** Ce n'est pas une question de mérite.
+
+**Scène (FR) :** Un ruban de mérite est décroché et posé de côté.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dim wood panelled room with a warm side lamp, a plain shelf running along the wall, deep brown shadow behind, dust drifting in the low light. CHARACTERS: One stick figure, Leo, standing at the shelf in three quarter view, both hands lowering a large blank award ribbon rosette onto the wood, head lowered, eyebrows level, mouth a calm flat line. KEY ACTION AND FOCAL POINT: The award ribbon is set down flat on the shelf and its trailing tails settle. The lowered ribbon is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 59  —  beat 59 · 111.6s
+**Narration :** Personne ne trouve votre travail meilleur
+
+**Scène (FR) :** Deux créateurs côte à côte, exactement le même travail entre les mains.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A plain evenly lit studio with a neutral grey seamless background, soft shadow beneath the figures, no props other than what they hold. CHARACTERS: Two stick figures standing side by side facing the viewer, both holding up an identical stack of blank film strips at the same height. Leo on the left in his grey hoodie, a second creator on the right in a rust orange jacket, both with the same neutral expression. KEY ACTION AND FOCAL POINT: The two identical stacks are held at exactly the same height. The matched pair of stacks is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 60  —  beat 60 · 113.5s
+**Narration :** parce que vous parlez d'assurance.
+
+**Scène (FR) :** Un des deux se retrouve baigné dans une lumière dorée venue d'ailleurs.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same grey studio, but a wide beam of warm gold light now falls from the upper right onto the right half only, leaving the left half in flat cool grey, the boundary between the two areas hard and clear on the floor. CHARACTERS: The same two stick figures in the same positions. The rust orange jacket creator on the right stands bathed in gold light, arms lowering, eyebrows raised. Leo on the left stays in the grey, looking across at him, one eyebrow up, mouth pulled sideways. KEY ACTION AND FOCAL POINT: The hard edge of the gold light falls between the two figures. That dividing line is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 61  —  beat 61 · 115.0s
+**Narration :** C'est juste que derrière vous,
+
+**Scène (FR) :** Léo se retourne et découvre quelqu'un debout derrière lui.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dim interior in deep blue with one warm light source behind the frame throwing a long shadow forward, atmospheric haze, the background dissolving into shadow. CHARACTERS: Two stick figures. Leo stands in the centre foreground twisting around to look over his shoulder, body still facing the viewer, eyebrows shot up in surprise, mouth open. Behind him a taller figure stands half in shadow, only the silhouette and a glint of a suit button visible. KEY ACTION AND FOCAL POINT: Leo's head snaps around toward the figure behind him with small motion arcs. His surprised face is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 62  —  beat 62 · 116.5s
+**Narration :** il y a un acheteur.
+
+**Scène (FR) :** Derrière lui, un acheteur en costume, portefeuille déjà ouvert.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same dim interior, now lit warmly from the side so the second figure is fully revealed, rich amber light on his suit, deep blue shadow behind, a soft glow rising from what he holds. CHARACTERS: Two stick figures. A buyer stands centre frame in a deep green three piece suit, both hands holding an open wallet that glows gold from inside, eyebrows level, mouth in a confident closed smile. Leo stands in the left foreground turned toward him, both hands lifted slightly, mouth open. KEY ACTION AND FOCAL POINT: The open wallet spills warm gold light up onto both faces. The glowing wallet is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 63  —  beat 63 · 118.0s
+**Narration :** Ce chiffre, ce que vous gagnez réellement
 
 **Scène (FR) :** Un chiffre unique flotte au-dessus d'une pile de mille vues.
 
@@ -542,8 +633,8 @@ SCENE AND ENVIRONMENT: A dark studio space in deep navy with a single wide beam 
 
 ---
 
-## PROMPT 55  —  beat 55 · 126.0s
-**Narration :** réellement pour mille vues, porte un nom.
+## PROMPT 64  —  beat 64 · 120.2s
+**Narration :** pour mille vues, porte un nom. On l'appelle le RPM.
 
 **Scène (FR) :** Une plaque gravée est dévoilée sous le chiffre.
 
@@ -552,17 +643,7 @@ SCENE AND ENVIRONMENT: The same dark navy studio and warm overhead beam, now wit
 
 ---
 
-## PROMPT 56  —  beat 56 · 128.8s
-**Narration :** On l'appelle le RPM.
-
-**Scène (FR) :** Trois lettres géantes en néon s'allument dans le noir.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: A pitch dark space where three enormous freestanding neon letters stand in a row, glowing hot amber gold, their light spilling in wide pools across a wet reflective black floor, thin haze in the air amplifying the glow, deep shadow everywhere else. CHARACTERS: One stick figure, Leo, standing small at the base of the letters in the lower centre, seen from behind, arms slightly raised, head tipped back, dwarfed by their scale. KEY ACTION AND FOCAL POINT: The three letters ignite together and their reflection burns across the wet floor toward the viewer. The blazing letters are the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 57  —  beat 57 · 130.4s
+## PROMPT 65  —  beat 65 · 123.2s
 **Narration :** Il existe un mot qui lui ressemble
 
 **Scène (FR) :** Un second néon presque identique s'allume à côté du premier.
@@ -572,7 +653,7 @@ SCENE AND ENVIRONMENT: The same pitch dark hall with the wet reflective black fl
 
 ---
 
-## PROMPT 58  —  beat 58 · 133.2s
+## PROMPT 66  —  beat 66 · 125.4s
 **Narration :** et qui trompe tout le monde.
 
 **Scène (FR) :** Une foule entière court vers le mauvais des deux néons.
@@ -582,7 +663,7 @@ SCENE AND ENVIRONMENT: The same dark hall in a wide shot, the two neon words sta
 
 ---
 
-## PROMPT 59  —  beat 59 · 135.6s
+## PROMPT 67  —  beat 67 · 127.2s
 **Narration :** Le CPM, c'est ce que paie l'annonceur.
 
 **Scène (FR) :** L'annonceur pose une grosse somme sur la table de départ.
@@ -592,8 +673,8 @@ SCENE AND ENVIRONMENT: A long dark wooden table lit by a single low hanging lamp
 
 ---
 
-## PROMPT 60  —  beat 60 · 138.4s
-**Narration :** Le RPM, c'est ce qui arrive
+## PROMPT 68  —  beat 68 · 129.4s
+**Narration :** Le RPM, c'est ce qui arrive vraiment
 
 **Scène (FR) :** La somme glisse le long de la table vers Léo, en rétrécissant.
 
@@ -602,8 +683,8 @@ SCENE AND ENVIRONMENT: The same long dark table shot down its length, a row of h
 
 ---
 
-## PROMPT 61  —  beat 61 · 140.8s
-**Narration :** vraiment sur votre compte,
+## PROMPT 69  —  beat 69 · 131.5s
+**Narration :** sur votre compte, une fois
 
 **Scène (FR) :** Une petite somme atterrit enfin dans un compte en banque ouvert.
 
@@ -612,8 +693,8 @@ SCENE AND ENVIRONMENT: A warm intimate corner of a room at night, a small wooden
 
 ---
 
-## PROMPT 62  —  beat 62 · 142.4s
-**Narration :** une fois que la plateforme a pris sa part.
+## PROMPT 70  —  beat 70 · 133.0s
+**Narration :** que la plateforme a pris sa part.
 
 **Scène (FR) :** Un péage géant prélève sa part au milieu du trajet.
 
@@ -622,7 +703,7 @@ SCENE AND ENVIRONMENT: A huge toll gate structure straddling the dark table road
 
 ---
 
-## PROMPT 63  —  beat 63 · 146.0s
+## PROMPT 71  —  beat 71 · 135.2s
 **Narration :** Beaucoup de débutants regardent le premier chiffre
 
 **Scène (FR) :** Un débutant, yeux écarquillés, ne regarde que le grand chiffre bleu.
@@ -632,8 +713,8 @@ SCENE AND ENVIRONMENT: A dark room lit almost entirely by the cold blue glow of 
 
 ---
 
-## PROMPT 64  —  beat 64 · 148.8s
-**Narration :** et se croient riches,
+## PROMPT 72  —  beat 72 · 137.3s
+**Narration :** et se croient riches, alors
 
 **Scène (FR) :** Le débutant se voit déjà en millionnaire, dans une bulle rêvée.
 
@@ -642,8 +723,8 @@ SCENE AND ENVIRONMENT: The same blue lit room, but a large soft edged dream bubb
 
 ---
 
-## PROMPT 65  —  beat 65 · 150.4s
-**Narration :** alors que seul le second existe pour eux.
+## PROMPT 73  —  beat 73 · 138.8s
+**Narration :** que seul le second existe pour eux.
 
 **Scène (FR) :** La bulle éclate et seul le petit chiffre doré reste, bien réel.
 
@@ -652,7 +733,77 @@ SCENE AND ENVIRONMENT: The same room, the giant blue number now switched off and
 
 ---
 
-## PROMPT 66  —  beat 66 · 153.6s
+## PROMPT 74  —  beat 74 · 141.0s
+**Narration :** Et ce chiffre bouge tout le temps.
+
+**Scène (FR) :** Le chiffre lumineux se met à osciller comme une aiguille de cadran.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dark space in deep navy with a single large glowing number floating at chest height, its light pulsing and spilling in soft waves across the floor, thin haze amplifying the glow, everything else in shadow. CHARACTERS: One stick figure, Leo, standing beneath the number with both arms slightly raised, head following its movement, eyebrows lifted, mouth pulled to one side in uncertainty. KEY ACTION AND FOCAL POINT: The floating number swings left and right through the air with motion arcs trailing behind it. The swinging number is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 75  —  beat 75 · 143.1s
+**Narration :** Il monte en fin d'année, quand les marques dépensent
+
+**Scène (FR) :** Une pluie de pièces tombe sur une ville décorée pour les fêtes.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A night city street seen from above, warm string lights strung between buildings, glowing shop windows, a light snow in the air and a deep violet winter sky with layered clouds. CHARACTERS: One stick figure, Leo, standing on a rooftop edge in the lower right, arms thrown wide, head tipped back, mouth open in a huge smile with teeth visible, gold light on his face. KEY ACTION AND FOCAL POINT: A heavy shower of gold coins falls through the string lights onto the street below with motion lines. The falling coins are the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 76  —  beat 76 · 145.9s
+**Narration :** ce qui leur reste de budget.
+
+**Scène (FR) :** Des mains vident les derniers fonds d'un coffre grand ouvert.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A warm vault interior with brass fittings and a heavy open door, golden lamp light raking across the metal, deep shadow in the corners and floating dust in the beams. CHARACTERS: Two stick figures. The royal blue suited executive tips a large chest forward with both hands, legs braced, torso rotated with effort, mouth open with exertion. Leo stands to the right with both hands cupped ready, eyebrows raised high. KEY ACTION AND FOCAL POINT: The last coins slide out of the tipped chest in a bright stream. The emptying chest is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 77  —  beat 77 · 147.7s
+**Narration :** Il redescend en janvier, quand les caisses sont vides.
+
+**Scène (FR) :** Le même coffre, en janvier, complètement vide et couvert de givre.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same vault interior, now cold and blue, frost creeping across the brass fittings, pale winter light coming through a high window, the warm lamps switched off and long cold shadows on the floor. CHARACTERS: One stick figure, Leo, leaning over the open chest with both hands on its rim, head lowered right down inside it, shoulders slumped, eyebrows curved sadly, mouth pulled small. KEY ACTION AND FOCAL POINT: The chest sits wide open and completely empty with a thin layer of frost on its floor. The empty frosted interior is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 78  —  beat 78 · 150.5s
+**Narration :** Il change aussi selon le pays de vos spectateurs,
+
+**Scène (FR) :** Un globe terrestre où certaines régions brillent plus que d'autres.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dark room in deep navy with a large glowing globe floating in the centre, its continents lit unevenly, some regions blazing warm gold and others dim blue, soft light rays spreading outward into the haze. CHARACTERS: One stick figure, Leo, standing in the lower left silhouetted against the globe, one hand raised and almost touching its surface, head tilted, eyebrows raised in curiosity. KEY ACTION AND FOCAL POINT: His fingertips hover just short of a brightly glowing region of the globe. The uneven glow across the continents is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 79  —  beat 79 · 153.2s
+**Narration :** parce qu'un annonceur ne paie pas le même prix
+
+**Scène (FR) :** Un annonceur compare deux billets de valeurs très différentes.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A warmly lit desk corner at night, a green shaded lamp throwing a tight pool onto the wood, deep shadow around, a blurred window with city lights behind. CHARACTERS: Two stick figures. The royal blue suited executive holds one large banknote in his left hand and one much smaller note in his right, arms spread apart, head turning between them, one eyebrow raised in appraisal. Leo watches from the right edge, chin resting on the desk. KEY ACTION AND FOCAL POINT: The two notes of wildly different size are held up at the same height under the lamp. The size difference is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 80  —  beat 80 · 156.0s
+**Narration :** pour toucher quelqu'un ici ou ailleurs.
+
+**Scène (FR) :** Deux spectateurs identiques, mais l'un sous un projecteur bien plus fort.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dark stage in deep indigo with two spotlights falling from above, the left beam narrow and pale, the right beam wide and blazing gold, both cones clearly visible in the haze. CHARACTERS: Two identical stick figure viewers standing in the two light pools in the same posture, arms at their sides, same neutral face. Leo stands between them in the shadow, head turning from one to the other, one eyebrow up. KEY ACTION AND FOCAL POINT: Two identical figures stand under two wildly different beams. The contrast between the two pools of light is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 81  —  beat 81 · 157.8s
 **Narration :** Mais avant de toucher le moindre centime,
 
 **Scène (FR) :** Léo tend la main vers une pièce posée hors de portée.
@@ -662,8 +813,8 @@ SCENE AND ENVIRONMENT: A dim stone chamber in deep blue shadow with a single nar
 
 ---
 
-## PROMPT 67  —  beat 67 · 156.4s
-**Narration :** il faut passer une porte.
+## PROMPT 82  —  beat 82 · 159.9s
+**Narration :** il faut passer une porte. Mille abonnés.
 
 **Scène (FR) :** Une porte massive et verrouillée barre le chemin.
 
@@ -672,8 +823,8 @@ SCENE AND ENVIRONMENT: An enormous iron door set into a towering stone wall that
 
 ---
 
-## PROMPT 68  —  beat 68 · 158.4s
-**Narration :** Mille abonnés. Quatre mille heures de visionnage.
+## PROMPT 83  —  beat 83 · 162.1s
+**Narration :** Quatre mille heures de visionnage.
 
 **Scène (FR) :** Deux énormes verrous numérotés maintiennent la porte fermée.
 
@@ -682,7 +833,7 @@ SCENE AND ENVIRONMENT: A close view of the centre of the same iron door, torch f
 
 ---
 
-## PROMPT 69  —  beat 69 · 161.2s
+## PROMPT 84  —  beat 84 · 163.6s
 **Narration :** Tant que vous n'avez pas ces deux chiffres,
 
 **Scène (FR) :** Léo pousse la porte de toutes ses forces, sans qu'elle bouge.
@@ -692,7 +843,7 @@ SCENE AND ENVIRONMENT: The same iron door and torchlit stone wall, shot from the
 
 ---
 
-## PROMPT 70  —  beat 70 · 164.4s
+## PROMPT 85  —  beat 85 · 166.1s
 **Narration :** vos vidéos peuvent faire des millions de vues
 
 **Scène (FR) :** De l'autre côté du mur, un compteur de vues explose dans le vide.
@@ -702,7 +853,7 @@ SCENE AND ENVIRONMENT: The far side of the same great stone wall at night, an em
 
 ---
 
-## PROMPT 71  —  beat 71 · 167.6s
+## PROMPT 86  —  beat 86 · 168.5s
 **Narration :** sans vous rapporter quoi que ce soit.
 
 **Scène (FR) :** Sous le compteur, la caisse enregistreuse reste désespérément vide.
@@ -712,8 +863,8 @@ SCENE AND ENVIRONMENT: Close on an old brass cash register standing alone on a s
 
 ---
 
-## PROMPT 72  —  beat 72 · 170.4s
-**Narration :** C'est pour ça que tant de gens
+## PROMPT 87  —  beat 87 · 170.6s
+**Narration :** C'est pour ça que tant de gens abandonnent
 
 **Scène (FR) :** Une longue file de créateurs découragés fait demi-tour devant le mur.
 
@@ -722,8 +873,8 @@ SCENE AND ENVIRONMENT: The base of the great stone wall at dusk, a wide muddy pa
 
 ---
 
-## PROMPT 73  —  beat 73 · 173.2s
-**Narration :** abandonnent au bout de quelques mois.
+## PROMPT 88  —  beat 88 · 173.1s
+**Narration :** au bout de quelques mois.
 
 **Scène (FR) :** Un créateur pose sa caméra par terre et s'en va sous la pluie.
 
@@ -732,7 +883,7 @@ SCENE AND ENVIRONMENT: A rain soaked path beside the great stone wall at dusk, p
 
 ---
 
-## PROMPT 74  —  beat 74 · 175.6s
+## PROMPT 89  —  beat 89 · 174.6s
 **Narration :** Ils voient les vues monter,
 
 **Scène (FR) :** Un graphique de vues grimpe joyeusement vers le haut de l'écran.
@@ -742,8 +893,8 @@ SCENE AND ENVIRONMENT: A dark control room with a huge glowing display wall show
 
 ---
 
-## PROMPT 75  —  beat 75 · 177.6s
-**Narration :** le compteur d'argent rester à zéro,
+## PROMPT 90  —  beat 90 · 176.1s
+**Narration :** le compteur d'argent rester à zéro, et
 
 **Scène (FR) :** Juste à côté, le compteur d'argent reste bloqué à zéro.
 
@@ -752,8 +903,8 @@ SCENE AND ENVIRONMENT: The same dark control room, camera panned to the right so
 
 ---
 
-## PROMPT 76  —  beat 76 · 180.0s
-**Narration :** et ils croient que le système est cassé.
+## PROMPT 91  —  beat 91 · 178.3s
+**Narration :** ils croient que le système est cassé.
 
 **Scène (FR) :** Un créateur furieux frappe la machine qu'il croit cassée.
 
@@ -762,7 +913,7 @@ SCENE AND ENVIRONMENT: The same control room, now lit by harsh red warning light
 
 ---
 
-## PROMPT 77  —  beat 77 · 183.2s
+## PROMPT 92  —  beat 92 · 180.4s
 **Narration :** Le système n'est pas cassé.
 
 **Scène (FR) :** La machine, elle, tourne parfaitement, engrenages huilés et réguliers.
@@ -772,7 +923,7 @@ SCENE AND ENVIRONMENT: The interior of the machine seen through an open inspecti
 
 ---
 
-## PROMPT 78  —  beat 78 · 185.2s
+## PROMPT 93  —  beat 93 · 182.0s
 **Narration :** Ils sont juste encore devant la porte.
 
 **Scène (FR) :** Les créateurs découragés sont tous encore du même côté de la porte.
@@ -782,8 +933,48 @@ SCENE AND ENVIRONMENT: A wide shot of the great iron door in the towering stone 
 
 ---
 
-## PROMPT 79  —  beat 79 · 188.0s
-**Narration :** Une fois la porte franchie,
+## PROMPT 94  —  beat 94 · 184.1s
+**Narration :** Ceux qui la franchissent ne le
+
+**Scène (FR) :** La grande porte de fer s'entrouvre enfin sur une lumière chaude.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The towering iron door in the stone wall, now open a hand's width, a blade of warm golden light cutting out through the gap across the dark ground, torches still burning at both sides with embers rising. CHARACTERS: One stick figure, Leo, standing in the gap with one hand on the edge of the door, body half lit gold and half in blue shadow, head turned back over his shoulder toward the viewer, eyebrows level, mouth calm. KEY ACTION AND FOCAL POINT: The narrow blade of gold light escapes through the opening. The lit gap is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 95  —  beat 95 · 185.9s
+**Narration :** font pas grâce à une vidéo miracle.
+
+**Scène (FR) :** Personne ne descend du ciel pour ouvrir la porte à sa place.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same stone wall at night under a wide empty violet sky with thin clouds and a low moon, the ground bare, the torches burning low, no other figure anywhere in the frame. CHARACTERS: One stick figure, Leo, standing alone in front of the door looking up at the vast empty sky, arms hanging at his sides, head tipped fully back, eyebrows flat. KEY ACTION AND FOCAL POINT: The enormous empty sky sits above one small figure with nothing in it at all. The emptiness above him is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 96  —  beat 96 · 188.1s
+**Narration :** Ils le font parce qu'ils ont
+
+**Scène (FR) :** Un long chemin de traces de pas mène jusqu'à la porte.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A wide muddy plain at dawn seen from a low angle, a long line of footprints running from the foreground all the way to the great stone wall in the distance, warm early light raking across the ground and picking out every print, layered clouds in a soft orange sky. CHARACTERS: One stick figure, Leo, standing small at the far end of the trail near the door, seen from behind, one arm raised in a tired wave. KEY ACTION AND FOCAL POINT: The unbroken line of footprints leads the eye from the bottom of the frame to the distant door. The trail is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 97  —  beat 97 · 189.9s
+**Narration :** continué pendant que les autres partaient.
+
+**Scène (FR) :** De part et d'autre du chemin, des équipements abandonnés dans la boue.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same muddy plain at dawn, camera lowered to ground level so the abandoned objects loom large in the foreground, warm light glinting on wet surfaces, the wall and door small in the misty distance. CHARACTERS: One stick figure, Leo, small in the mid ground continuing to walk away from the viewer along the trail, not looking back. KEY ACTION AND FOCAL POINT: Discarded cameras, tripods and coiled cables lie half sunk in the mud on both sides of the path while the single figure keeps walking. The abandoned gear is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 98  —  beat 98 · 191.7s
+**Narration :** Une fois la porte franchie, une autre règle apparaît.
 
 **Scène (FR) :** Les deux verrous s'ouvrent enfin dans une gerbe de lumière.
 
@@ -792,28 +983,8 @@ SCENE AND ENVIRONMENT: Close on the great iron door as both padlocks burst open,
 
 ---
 
-## PROMPT 80  —  beat 80 · 190.0s
-**Narration :** une autre règle apparaît.
-
-**Scène (FR) :** Derrière la porte, un panneau de règles attend déjà.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: The space just beyond the open door, a calm stone corridor lit by cool overhead light with the warm glow of the doorway behind, a large blank official notice board with a completely empty surface mounted on the wall ahead with a heavy frame and a small lamp above it, dust drifting in the corridor light. CHARACTERS: One stick figure, Leo, standing just inside the corridor, still half lit by the warm doorway behind him, head tilted up at the board, arms lowering slowly, eyebrows climbing, mouth pulling flat in surprise. KEY ACTION AND FOCAL POINT: The notice board stands directly in his path, lit by its own lamp. The board is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 81  —  beat 81 · 191.6s
-**Narration :** Sur une vidéo courte,
-
-**Scène (FR) :** Une vidéo courte, représentée par un ruban très bref, apparaît.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: A dark workshop space in deep teal with a long illuminated workbench running across the frame, warm lamps hanging low over it, tool shapes and reels in the shadowed background, and a soft light haze above the bench. CHARACTERS: One stick figure, Leo, standing behind the bench in the centre, holding a very short strip of film ribbon stretched between his two hands, arms close together, head lowered to inspect it, eyebrows raised, mouth pulled to one side. KEY ACTION AND FOCAL POINT: The short film strip stretches taut between his hands, glowing softly from within. The little strip is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 82  —  beat 82 · 193.2s
-**Narration :** il n'y a de la place
+## PROMPT 99  —  beat 99 · 194.5s
+**Narration :** Sur une vidéo courte, il n'y a de la place
 
 **Scène (FR) :** Léo cherche de la place sur le ruban et n'en trouve presque pas.
 
@@ -822,7 +993,7 @@ SCENE AND ENVIRONMENT: The same workshop bench under the hanging lamps, camera p
 
 ---
 
-## PROMPT 83  —  beat 83 · 195.6s
+## PROMPT 100  —  beat 100 · 197.6s
 **Narration :** que pour une seule coupure publicitaire.
 
 **Scène (FR) :** Une seule case publicitaire tient sur toute la longueur du ruban.
@@ -832,7 +1003,7 @@ SCENE AND ENVIRONMENT: The same workshop bench, now with a single small orange a
 
 ---
 
-## PROMPT 84  —  beat 84 · 198.0s
+## PROMPT 101  —  beat 101 · 199.4s
 **Narration :** Sur une vidéo qui dépasse huit minutes,
 
 **Scène (FR) :** Léo déroule un ruban beaucoup plus long à travers tout l'atelier.
@@ -842,8 +1013,8 @@ SCENE AND ENVIRONMENT: A wide view of the whole workshop, warm hanging lamps in 
 
 ---
 
-## PROMPT 85  —  beat 85 · 200.8s
-**Narration :** vous pouvez en placer plusieurs
+## PROMPT 102  —  beat 102 · 201.5s
+**Narration :** vous pouvez en placer plusieurs au milieu du contenu.
 
 **Scène (FR) :** Il glisse plusieurs cases publicitaires le long du long ruban.
 
@@ -852,28 +1023,8 @@ SCENE AND ENVIRONMENT: The same long ribbon stretched across the workshop, now w
 
 ---
 
-## PROMPT 86  —  beat 86 · 202.8s
-**Narration :** au milieu du contenu.
-
-**Scène (FR) :** Les cases se répartissent au milieu du contenu, pas seulement au début.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: An overhead view looking straight down at the long ribbon laid out on the workbench, warm lamp light falling evenly along it, the wood grain visible, deep shadow at the frame edges, the glowing cards spaced out along the middle section. CHARACTERS: One stick figure, Leo, seen from directly above standing beside the bench, arms spread over the ribbon, head bowed to look down the line, hoodie and red sneakers clearly visible from this angle. KEY ACTION AND FOCAL POINT: The evenly spaced glowing cards sit through the middle of the ribbon rather than clustered at its start. The rhythm of spaced glows is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 87  —  beat 87 · 204.4s
-**Narration :** Mais voilà le truc.
-
-**Scène (FR) :** Léo lève une main pour arrêter net l'enthousiasme.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: The workshop, lights dimmed to a single hard overhead lamp directly above, a tight bright circle around Leo and heavy teal shadow swallowing the rest, faint haze in the beam. CHARACTERS: One stick figure, Leo, standing centre frame facing the viewer, one arm thrust straight forward with palm flat toward the camera in a stop gesture, other hand on his hip, head tilted slightly down, eyebrows lowered, mouth pressed into a firm flat line. KEY ACTION AND FOCAL POINT: His flat palm fills the near foreground, lit hard by the overhead lamp. The stop hand is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 88  —  beat 88 · 206.0s
-**Narration :** Étirer une vidéo de trois minutes
+## PROMPT 103  —  beat 103 · 204.3s
+**Narration :** Mais voilà le truc. Étirer une vidéo de trois minutes
 
 **Scène (FR) :** Il tire de force sur un ruban court pour l'allonger.
 
@@ -882,7 +1033,7 @@ SCENE AND ENVIRONMENT: The workshop bench under harsh angled light, the backgrou
 
 ---
 
-## PROMPT 89  —  beat 89 · 208.4s
+## PROMPT 104  —  beat 104 · 207.3s
 **Narration :** pour la faire durer huit minutes ne marche pas.
 
 **Scène (FR) :** Le ruban étiré devient transparent et se déchire.
@@ -892,7 +1043,7 @@ SCENE AND ENVIRONMENT: The same bench, the swinging lamp now throwing wild shado
 
 ---
 
-## PROMPT 90  —  beat 90 · 212.0s
+## PROMPT 105  —  beat 105 · 210.1s
 **Narration :** Les gens sentent le remplissage et ils partent.
 
 **Scène (FR) :** Le public quitte la salle au milieu de la projection.
@@ -902,7 +1053,7 @@ SCENE AND ENVIRONMENT: A dark cinema interior seen from the front rows, a large 
 
 ---
 
-## PROMPT 91  —  beat 91 · 215.2s
+## PROMPT 106  —  beat 106 · 212.5s
 **Narration :** Et au moment où ils partent,
 
 **Scène (FR) :** La porte de sortie se referme sur les derniers spectateurs.
@@ -912,7 +1063,7 @@ SCENE AND ENVIRONMENT: The cinema exit doorway seen from inside, a bright green 
 
 ---
 
-## PROMPT 92  —  beat 92 · 217.6s
+## PROMPT 107  —  beat 107 · 214.4s
 **Narration :** la publicité du milieu n'est jamais vue,
 
 **Scène (FR) :** Sur l'écran, la publicité du milieu s'affiche pour des sièges vides.
@@ -922,7 +1073,7 @@ SCENE AND ENVIRONMENT: The cinema auditorium seen from the back, every seat empt
 
 ---
 
-## PROMPT 93  —  beat 93 · 220.4s
+## PROMPT 108  —  beat 108 · 216.5s
 **Narration :** donc elle n'est jamais payée.
 
 **Scène (FR) :** Le guichet reste fermé, aucun paiement pour cette publicité.
@@ -932,8 +1083,58 @@ SCENE AND ENVIRONMENT: A payment window in a stone wall with its metal roller sh
 
 ---
 
-## PROMPT 94  —  beat 94 · 222.4s
-**Narration :** La durée ne sert à rien
+## PROMPT 109  —  beat 109 · 218.0s
+**Narration :** Regardez n'importe quelle courbe de rétention.
+
+**Scène (FR) :** Une grande courbe lumineuse s'affiche sur un mur de contrôle.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dark control room with a huge display wall glowing cyan, banks of small indicator lights along a console below, cool blue light streaking across a polished floor and thin haze in the air. CHARACTERS: One stick figure, Leo, standing at the console seen from behind, both hands on its edge, head tilted up at the display. KEY ACTION AND FOCAL POINT: A single bright curve is drawn across the display wall from left to right. The glowing curve is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 110  —  beat 110 · 219.9s
+**Narration :** Elle chute d'un coup dans les premières secondes,
+
+**Scène (FR) :** La courbe plonge brutalement dès les premières secondes.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same control room, the display now dominated by a violent downward drop at the very start of the curve, red warning light pulsing from the ceiling and mixing with the cyan, sharp shadows swinging across the console. CHARACTERS: One stick figure, Leo, recoiling one step back from the console, both arms flung up, head snapped back, eyebrows shot up, mouth wide open with teeth and tongue visible in alarm. KEY ACTION AND FOCAL POINT: The curve falls off a cliff immediately after its start with speed lines trailing the drop. The cliff edge is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 111  —  beat 111 · 222.3s
+**Narration :** puis descend doucement jusqu'à la fin.
+
+**Scène (FR) :** La courbe continue ensuite à descendre lentement jusqu'au bord.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same control room, calmer now, the red warning light gone and only the cyan display glow remaining, the long gentle tail of the curve running away to the right edge of the wall into darkness. CHARACTERS: One stick figure, Leo, walking slowly along the console following the curve with one hand trailing beneath it, head lowered, shoulders relaxed, eyebrows level. KEY ACTION AND FOCAL POINT: The long slow decline runs off the right edge of the display. The fading tail of the curve is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 112  —  beat 112 · 224.2s
+**Narration :** Chaque personne qui part emporte avec elle toutes
+
+**Scène (FR) :** Chaque spectateur qui sort emporte une publicité sous le bras.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A cinema aisle seen from the side, a green exit lamp glowing at the end of the row, cold light spilling across the carpet, the seats in deep blue shadow and a pale screen glow behind. CHARACTERS: Several stick figures walking out along the aisle in a line, each carrying a small glowing orange advertising panel tucked under one arm, all with flat bored eyebrows. Leo stands in the foreground watching them pass, one arm half raised. KEY ACTION AND FOCAL POINT: Every departing figure carries away a glowing panel. The row of stolen glows moving toward the door is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 113  —  beat 113 · 226.6s
+**Narration :** les publicités qu'elle n'a pas vues.
+
+**Scène (FR) :** Dehors, une pile de publicités jamais vues s'entasse dans le noir.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A dark alley behind the cinema at night, one weak streetlamp overhead, wet cobblestones reflecting its light, a deep violet sky above the rooftops and cold mist at ground level. CHARACTERS: One stick figure, Leo, standing beside the pile with both hands on his head, elbows out, head lowered, eyebrows curved down, mouth pulled small in dismay. KEY ACTION AND FOCAL POINT: A tall untidy heap of dimmed orange advertising panels is stacked against the alley wall, none of them lit. The dark pile is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 114  —  beat 114 · 228.4s
+**Narration :** La durée ne sert à
 
 **Scène (FR) :** Une règle géante mesure une vidéo interminable dans le vide.
 
@@ -942,8 +1143,8 @@ SCENE AND ENVIRONMENT: A vast empty grey plain under a flat overcast sky with an
 
 ---
 
-## PROMPT 95  —  beat 95 · 224.8s
-**Narration :** si personne ne reste.
+## PROMPT 115  —  beat 115 · 230.0s
+**Narration :** rien si personne ne reste.
 
 **Scène (FR) :** Un unique siège vide dans une salle immense.
 
@@ -952,8 +1153,8 @@ SCENE AND ENVIRONMENT: A huge dark auditorium shot wide, hundreds of empty seats
 
 ---
 
-## PROMPT 96  —  beat 96 · 226.4s
-**Narration :** Une vidéo de six minutes
+## PROMPT 116  —  beat 116 · 231.5s
+**Narration :** Une vidéo de six minutes regardée en
 
 **Scène (FR) :** Un ruban court mais dense, entièrement doré sur toute sa longueur.
 
@@ -962,18 +1163,8 @@ SCENE AND ENVIRONMENT: The workshop bench again, warm and inviting, a single han
 
 ---
 
-## PROMPT 97  —  beat 97 · 228.4s
-**Narration :** regardée en entier vaut mieux
-
-**Scène (FR) :** Une salle comble regarde jusqu'à la toute dernière image.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: The cinema auditorium from the front corner, every seat filled, warm white screen light washing over the crowd from the left, deep shadow behind the back rows, faint dust drifting in the projector beam overhead. CHARACTERS: Many stick figures packed in the seats in mixed colourful casual clothes, all leaning slightly forward, eyebrows raised, eyes wide, mouths open in engagement, none looking away. Leo sits in the front row on the right, turned around in his seat to look back at the full house, mouth open in a delighted smile. KEY ACTION AND FOCAL POINT: The entire audience stays locked on the screen together while Leo looks back at them. The wall of attentive faces is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 98  —  beat 98 · 230.4s
-**Narration :** qu'une vidéo de douze minutes
+## PROMPT 117  —  beat 117 · 233.6s
+**Narration :** entier vaut mieux qu'une vidéo de douze minutes
 
 **Scène (FR) :** Un ruban très long, mais terne et gris après quelques centimètres.
 
@@ -982,7 +1173,7 @@ SCENE AND ENVIRONMENT: The same workshop bench, the lamp now cooler and dimmer, 
 
 ---
 
-## PROMPT 99  —  beat 99 · 232.4s
+## PROMPT 118  —  beat 118 · 236.1s
 **Narration :** que tout le monde quitte à la troisième.
 
 **Scène (FR) :** La foule se lève en masse au tiers de la projection.
@@ -992,7 +1183,7 @@ SCENE AND ENVIRONMENT: The cinema auditorium shot from the screen looking back a
 
 ---
 
-## PROMPT 100  —  beat 100 · 235.6s
+## PROMPT 119  —  beat 119 · 238.5s
 **Narration :** Et même en faisant tout ça correctement,
 
 **Scène (FR) :** Léo coche méthodiquement chaque case d'une longue liste.
@@ -1002,7 +1193,7 @@ SCENE AND ENVIRONMENT: A calm warmly lit study at night, a tall checklist board 
 
 ---
 
-## PROMPT 101  —  beat 101 · 238.4s
+## PROMPT 120  —  beat 120 · 240.7s
 **Narration :** il reste un plafond.
 
 **Scène (FR) :** Sa tête heurte un plafond de verre qu'il n'avait pas vu.
@@ -1012,7 +1203,7 @@ SCENE AND ENVIRONMENT: A bright vertical shaft of space with a huge transparent 
 
 ---
 
-## PROMPT 102  —  beat 102 · 240.0s
+## PROMPT 121  —  beat 121 · 241.9s
 **Narration :** La publicité, c'est le sol de vos revenus,
 
 **Scène (FR) :** Léo se tient sur un sol solide fait de pièces publicitaires.
@@ -1022,7 +1213,7 @@ SCENE AND ENVIRONMENT: A wide low angle view of a solid floor built from tightly
 
 ---
 
-## PROMPT 103  —  beat 103 · 243.2s
+## PROMPT 122  —  beat 122 · 244.3s
 **Narration :** ce n'est pas le sommet.
 
 **Scène (FR) :** Très haut au-dessus de lui, un sommet lumineux reste inatteignable.
@@ -1032,7 +1223,7 @@ SCENE AND ENVIRONMENT: An extreme low angle looking straight up from the coin fl
 
 ---
 
-## PROMPT 104  —  beat 104 · 245.2s
+## PROMPT 123  —  beat 123 · 245.9s
 **Narration :** Regardez ce que font les créateurs
 
 **Scène (FR) :** Léo écarte des rideaux et observe d'autres créateurs au travail.
@@ -1042,7 +1233,7 @@ SCENE AND ENVIRONMENT: A warm busy workshop hall seen through a parted curtain, 
 
 ---
 
-## PROMPT 105  —  beat 105 · 247.6s
+## PROMPT 124  —  beat 124 · 247.7s
 **Narration :** qui gagnent vraiment bien leur vie.
 
 **Scène (FR) :** Ces créateurs ont un atelier riche et bien équipé.
@@ -1052,18 +1243,8 @@ SCENE AND ENVIRONMENT: The full workshop hall in a wide shot, tall shelves loade
 
 ---
 
-## PROMPT 106  —  beat 106 · 250.0s
-**Narration :** Ils ne s'arrêtent pas
-
-**Scène (FR) :** Un créateur passe devant la caisse de la plateforme sans s'arrêter.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: The marble bank hall again with its brass counter and grille, cool daylight through arched windows and a warm lamp pool on the counter, polished floor with long reflections, columns receding into the background. CHARACTERS: Two stick figures. A creator in a rust orange jacket strides past the counter without turning her head, arms swinging, legs mid stride with motion lines, eyebrows level and purposeful. The burgundy uniformed clerk leans out of the grille holding a small envelope, eyebrows raised in surprise, mouth open. Leo stands to the right watching the pass by, one eyebrow up. KEY ACTION AND FOCAL POINT: The striding figure moves past the offered envelope without slowing. The unclaimed envelope in the clerk's hand is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 107  —  beat 107 · 251.6s
-**Narration :** au versement de la plateforme.
+## PROMPT 125  —  beat 125 · 249.5s
+**Narration :** Ils ne s'arrêtent pas au versement de la plateforme.
 
 **Scène (FR) :** La petite enveloppe de paiement reste seule sur le comptoir.
 
@@ -1072,7 +1253,7 @@ SCENE AND ENVIRONMENT: Close on the brass counter top, a single small pale envel
 
 ---
 
-## PROMPT 108  —  beat 108 · 253.6s
+## PROMPT 126  —  beat 126 · 252.3s
 **Narration :** Ils vendent quelque chose à côté.
 
 **Scène (FR) :** Les créateurs installent leur propre étal juste à côté.
@@ -1082,8 +1263,8 @@ SCENE AND ENVIRONMENT: A lively evening market street beside the bank building, 
 
 ---
 
-## PROMPT 109  —  beat 109 · 256.0s
-**Narration :** Une formation, un modèle,
+## PROMPT 127  —  beat 127 · 254.1s
+**Narration :** Une formation, un modèle, un outil, un accompagnement.
 
 **Scène (FR) :** Sur l'étal, un manuel lumineux et un modèle prêt à l'emploi.
 
@@ -1092,17 +1273,47 @@ SCENE AND ENVIRONMENT: Close on the market stall counter under warm string light
 
 ---
 
-## PROMPT 110  —  beat 110 · 257.6s
-**Narration :** un outil, un accompagnement.
+## PROMPT 128  —  beat 128 · 256.6s
+**Narration :** Ils ont souvent commencé par répondre
 
-**Scène (FR) :** À côté, un outil brillant et une main tendue pour accompagner.
+**Scène (FR) :** Une même question revient en boucle dans un fil de commentaires.
 
 **Prompt :**
-SCENE AND ENVIRONMENT: The other end of the same stall counter, warm string lights above, a small hanging lamp casting a tight glow, wooden shelves behind stacked with boxes, violet dusk and blurred market lights in the background. CHARACTERS: Two stick figures. Leo stands behind the counter on the left holding out a gleaming brass tool in one hand, the other hand extended open toward a customer. A customer in a charcoal blazer reaches back across the counter, both eyebrows raised, mouth open in a pleased smile. KEY ACTION AND FOCAL POINT: The two hands meet over the counter with the shining tool between them. The handshake over the tool is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+SCENE AND ENVIRONMENT: A dark room lit only by the glow of a tall vertical panel filling the back wall, covered with a long column of identical small speech bubbles receding upward, cool blue light spilling across the floor. CHARACTERS: One stick figure, Leo, standing in front of the panel seen from behind, head tipped back to follow the column upward, one hand raised and pointing. KEY ACTION AND FOCAL POINT: Every single bubble in the column is exactly the same shape and size, repeating up and out of frame. The endless repetition is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
 
 ---
 
-## PROMPT 111  —  beat 111 · 259.2s
+## PROMPT 129  —  beat 129 · 258.4s
+**Narration :** à la même question dans les commentaires.
+
+**Scène (FR) :** Léo répond à la même question pour la centième fois, épuisé.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A small desk at night lit by one warm lamp, the blue glow of the panel still visible behind, a mug and scattered blank paper on the desk, deep shadow at the frame edges. CHARACTERS: One stick figure, Leo, slumped at the desk with one elbow on the wood and his round head propped in that hand, the other arm hanging limp, eyes half lidded, eyebrows heavy and flat, mouth pulled down at one corner. KEY ACTION AND FOCAL POINT: Leo types wearily with one drooping hand while identical speech bubbles keep drifting in from the left. The exhausted slumped posture is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 130  —  beat 130 · 260.6s
+**Narration :** Puis ils ont mis la réponse dans un document.
+
+**Scène (FR) :** Il rassemble toutes ses réponses dans un seul document épais.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same desk, now lit warmly and brightly, the blue panel gone, golden lamp light on the wood, floating dust in the beam and a soft glow rising from the object on the desk. CHARACTERS: One stick figure, Leo, standing over the desk with both hands pressing down on the cover of a thick blank document, shoulders squared, chest lifted, eyebrows raised, mouth open in a satisfied smile with teeth visible. KEY ACTION AND FOCAL POINT: The thick blank document glows warmly under his two flat hands. The glowing document is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 131  —  beat 131 · 263.3s
+**Narration :** Puis ils ont vendu le document.
+
+**Scène (FR) :** Une main tend un billet, l'autre tend le document.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A market stall counter at dusk under warm string lights, worn wooden boards, blurred glowing stall lights in the background and a deep violet sky above the rooftops. CHARACTERS: Two stick figures. Leo stands behind the counter holding the thick glowing blank document out with both hands, eyebrows raised, mouth in an open smile. A customer in a charcoal blazer reaches across the counter holding out a folded banknote. KEY ACTION AND FOCAL POINT: The banknote and the document cross over the counter at the same instant. The point where the two hands pass each other is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 132  —  beat 132 · 265.1s
 **Narration :** Une même vidéo peut alors rapporter dix fois plus,
 
 **Scène (FR) :** Une seule vidéo projette un faisceau qui remplit dix coffres.
@@ -1112,7 +1323,7 @@ SCENE AND ENVIRONMENT: A dark hall in deep navy where a single glowing screen mo
 
 ---
 
-## PROMPT 112  —  beat 112 · 262.8s
+## PROMPT 133  —  beat 133 · 267.9s
 **Narration :** parce que quelques spectateurs achètent
 
 **Scène (FR) :** Dans la foule, quelques spectateurs lèvent la main pour acheter.
@@ -1122,7 +1333,7 @@ SCENE AND ENVIRONMENT: A crowd scene at the evening market under warm string lig
 
 ---
 
-## PROMPT 113  —  beat 113 · 264.8s
+## PROMPT 134  —  beat 134 · 269.4s
 **Narration :** au lieu de simplement regarder une publicité.
 
 **Scène (FR) :** Le reste de la foule se contente de regarder passer une publicité.
@@ -1132,8 +1343,28 @@ SCENE AND ENVIRONMENT: The same market crowd, now lit only by the flat orange gl
 
 ---
 
-## PROMPT 114  —  beat 114 · 267.6s
-**Narration :** C'est toute la différence
+## PROMPT 135  —  beat 135 · 271.6s
+**Narration :** Et cette part-là ne dépend d'aucun algorithme.
+
+**Scène (FR) :** La canalisation du produit contourne complètement la grande machine.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: A night exterior at the foot of the glowing building, the enormous steel machine wall standing on the left with its indicator lights, and one bright pipe running around it in a wide arc across the ground, deep blue sky above and warm light spilling from the windows. CHARACTERS: One stick figure, Leo, standing beside the bypassing pipe with one hand resting on it, head turned toward the machine, one eyebrow raised, mouth in a small knowing line. KEY ACTION AND FOCAL POINT: The glowing pipe curves clear around the machine without ever touching it. The bypass curve is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 136  —  beat 136 · 273.7s
+**Narration :** Personne ne peut décider demain de vous la retirer.
+
+**Scène (FR) :** Une main géante tente de couper le tuyau et n'y arrive pas.
+
+**Prompt :**
+SCENE AND ENVIRONMENT: The same night exterior, now dramatic with a hard cold spotlight from above and deep shadow below, sparks flying at the point of contact and warm light still pulsing along the pipe. CHARACTERS: Two stick figures. A huge oversized hand belonging to an unseen figure grips the pipe from above and squeezes, motion lines vibrating around it. Leo stands below with his arms crossed, chin lifted, eyebrows level, mouth in a calm confident line. KEY ACTION AND FOCAL POINT: The pipe holds firm under the squeezing hand and its glow never dims, sparks bursting off the grip. The unbroken pipe is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
+
+---
+
+## PROMPT 137  —  beat 137 · 276.5s
+**Narration :** C'est toute la différence entre
 
 **Scène (FR) :** Une ligne de lumière sépare nettement deux moitiés de l'image.
 
@@ -1142,8 +1373,8 @@ SCENE AND ENVIRONMENT: A dark studio space divided down the exact centre by a si
 
 ---
 
-## PROMPT 115  —  beat 115 · 269.2s
-**Narration :** entre un créateur et une entreprise.
+## PROMPT 138  —  beat 138 · 278.0s
+**Narration :** un créateur et une entreprise.
 
 **Scène (FR) :** À gauche un créateur seul, à droite une équipe et un bâtiment.
 
@@ -1152,7 +1383,7 @@ SCENE AND ENVIRONMENT: A wide split composition, the left half a small dim bedro
 
 ---
 
-## PROMPT 116  —  beat 116 · 271.6s
+## PROMPT 139  —  beat 139 · 279.5s
 **Narration :** Le créateur attend son virement
 
 **Scène (FR) :** Léo attend devant une boîte aux lettres, sous la pluie.
@@ -1162,7 +1393,7 @@ SCENE AND ENVIRONMENT: A grey suburban street corner in steady rain, a single me
 
 ---
 
-## PROMPT 117  —  beat 117 · 273.6s
+## PROMPT 140  —  beat 140 · 281.0s
 **Narration :** à la fin du mois.
 
 **Scène (FR) :** Un calendrier mural n'affiche qu'un seul jour entouré en rouge.
@@ -1172,7 +1403,7 @@ SCENE AND ENVIRONMENT: A plain dim room with a large wall calendar of plain blan
 
 ---
 
-## PROMPT 118  —  beat 118 · 275.6s
+## PROMPT 141  —  beat 141 · 282.6s
 **Narration :** L'entreprise possède plusieurs sources de revenus,
 
 **Scène (FR) :** Un bâtiment lumineux alimenté par plusieurs canalisations différentes.
@@ -1182,7 +1413,7 @@ SCENE AND ENVIRONMENT: A warm glowing building seen at night from a low angle, s
 
 ---
 
-## PROMPT 119  —  beat 119 · 278.0s
+## PROMPT 142  —  beat 142 · 284.4s
 **Narration :** et la publicité n'en est qu'une seule.
 
 **Scène (FR) :** Une seule de ces canalisations porte l'étiquette publicité.
@@ -1192,7 +1423,7 @@ SCENE AND ENVIRONMENT: Close on the base of the same building at night, one oran
 
 ---
 
-## PROMPT 120  —  beat 120 · 280.8s
+## PROMPT 143  —  beat 143 · 286.5s
 **Narration :** Alors avant de filmer quoi que ce soit,
 
 **Scène (FR) :** Léo repose sa caméra avant même d'avoir commencé à tourner.
@@ -1202,7 +1433,7 @@ SCENE AND ENVIRONMENT: A quiet bedroom studio at golden hour, warm low sunlight 
 
 ---
 
-## PROMPT 121  —  beat 121 · 284.0s
+## PROMPT 144  —  beat 144 · 289.0s
 **Narration :** posez-vous la question qui décide de tout.
 
 **Scène (FR) :** Une question géante en lettres de lumière apparaît devant lui.
@@ -1212,8 +1443,8 @@ SCENE AND ENVIRONMENT: The same bedroom studio, now dark except for an enormous 
 
 ---
 
-## PROMPT 122  —  beat 122 · 286.8s
-**Narration :** Qui regarde ce sujet,
+## PROMPT 145  —  beat 145 · 291.1s
+**Narration :** Qui regarde ce sujet, et qu'est-ce qu'une
 
 **Scène (FR) :** Un projecteur balaie la foule pour trouver qui regarde vraiment.
 
@@ -1222,18 +1453,8 @@ SCENE AND ENVIRONMENT: A dark crowd field at night seen from a raised angle, hun
 
 ---
 
-## PROMPT 123  —  beat 123 · 288.4s
-**Narration :** et qu'est-ce qu'une marque
-
-**Scène (FR) :** Un annonceur observe cette même foule, un produit à la main.
-
-**Prompt :**
-SCENE AND ENVIRONMENT: The edge of the same dark crowd field, a raised viewing platform in the foreground with a brass railing catching warm lamp light, the crowd stretching away into blue shadow below, a violet night sky with thin clouds and a low moon. CHARACTERS: Two stick figures. The royal blue suited brand executive leans on the railing holding a glowing product box under one arm, head lowered toward the crowd, one eyebrow raised in appraisal, mouth pursed in calculation. Leo stands beside him on the right, following his gaze, arms folded. KEY ACTION AND FOCAL POINT: The executive scans the crowd with his product tucked ready under his arm. His appraising downturned face is the focal point. LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, large white eyes with black pupils and visible irises, and wide open mouths with teeth and tongue visible when expressing strong emotions like anger, fear, surprise, or excitement. The character bodies are classic stick figure construction with thin black line arms and legs but the heads are the dominant visual feature at approximately one third of the total character height. Characters wear detailed thematic clothing rendered in the stick figure aesthetic, meaning clothing is drawn as clean cartoon outlines with flat colors and simple details that match the scene and story context, such as robes, suits, armor, casual clothes, or period appropriate costumes. Clothing must be colorful and visually specific to the character role in the scene. MAIN CHARACTER (LEO) - LOCKED APPEARANCE, IDENTICAL IN EVERY IMAGE: Leo is a stick figure with a large perfectly round pure white head, wearing a heather grey hooded sweatshirt with white drawstrings and a large front kangaroo pocket, a white t-shirt visible at the collar, dark blue jeans slightly rolled up at the ankles, and bright red sneakers with white soles. He permanently wears electric blue over-ear headphones resting around his neck, often holds a black-cased smartphone in both hands, and a small orange spiral notebook sticks out of his front pocket. His shoulders sit slightly hunched forward and his thick black eyebrows swing quickly between hope and confusion. His hood is ALWAYS down, resting flat behind his neck, and is NEVER pulled up over his head. His head is always completely bare, perfectly round, pure white, and has NO HAIR of any kind, no fringe, no strands, nothing on top of the head. This exact appearance must be reproduced identically in this image. LOCKED IMAGE STYLE: The overall image style is cinematic cartoon illustration with fully colored and rendered backgrounds that create dramatic atmospheric depth. Backgrounds are richly detailed cartoon environments with strong dramatic lighting, vivid color palettes, atmospheric effects like fire glow, moonlight, spotlights, storm clouds, or magical light, and multiple layers of depth from foreground elements to distant background details. The art style combines the simplicity of stick figure characters with the visual richness of a professionally illustrated cartoon short film, similar to a high quality web comic or animated series still frame. Line weights are bold and confident throughout. Colors are saturated and contrast-rich. The composition uses cinematic framing with clear foreground, midground, and background layers. Lighting is dramatic and purposeful, creating strong mood and atmosphere appropriate to the scene. 16:9 horizontal composition, ultra-detailed, professional cartoon illustration quality. MANDATORY CONSISTENCY RULES FOR THIS IMAGE SET: Every character's arms and legs are drawn as thin plain black lines with no thickness, no volume, and no sleeves or trouser legs wrapped around them. Clothing covers the torso only and stops at the shoulders and hips, so the limbs stay bare black lines in every single image. No character has hair of any kind and no character wears a hood pulled over the head; every head is a bare, perfectly round, pure white circle. There is NO text anywhere in the image: no words, no letters, no lettering on posters, signs, screens, labels, packaging, books, or walls, no logos, no watermarks, and no captions. The only exception is a number on a counter or display when the scene description above explicitly asks for one. The stick figure heads must be large, round, pure white, and highly expressive with cartoon facial features clearly visible. Character clothing must be fully colored and thematically appropriate. The background must be a fully rendered cinematic cartoon environment with rich color, dramatic lighting, and atmospheric depth. NOT minimalist, NOT black and white only, NOT flat or textureless. Full color cinematic cartoon stick figure illustration at professional quality, 16:9, ultra-detailed.
-
----
-
-## PROMPT 124  —  beat 124 · 290.0s
-**Narration :** a envie de leur vendre ?
+## PROMPT 146  —  beat 146 · 293.3s
+**Narration :** marque a envie de leur vendre ?
 
 **Scène (FR) :** La marque tend son produit vers la foule et sort son chéquier.
 
@@ -1242,7 +1463,7 @@ SCENE AND ENVIRONMENT: The same platform above the crowd, now warmly lit from be
 
 ---
 
-## PROMPT 125  —  beat 125 · 292.4s
+## PROMPT 147  —  beat 147 · 295.4s
 **Narration :** Parce que vous ne choisissez pas seulement un sujet.
 
 **Scène (FR) :** Léo tient un sujet dans une main et une foule entière dans l'autre.
@@ -1252,7 +1473,7 @@ SCENE AND ENVIRONMENT: A dark dramatic space in deep indigo with two hard overhe
 
 ---
 
-## PROMPT 126  —  beat 126 · 296.0s
+## PROMPT 148  —  beat 148 · 298.2s
 **Narration :** Vous choisissez qui a le droit de vous payer.
 
 **Scène (FR) :** Léo referme la main sur un billet, seul et sûr de lui, à l'aube.

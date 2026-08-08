@@ -17,10 +17,6 @@
    "asset": "c4c75210-9aba-47da-ab7d-6b2562ece5d6",
    "version": 3
   },
-  "68": {
-   "asset": "6e40f706-0469-4d4c-8358-b350ac50a11d",
-   "version": 2
-  },
   "3": {
    "asset": "a34608e9-0474-4265-8549-ed18693d66a7",
    "version": "compact"
@@ -88,7 +84,13 @@
   "20": {
    "asset": "55a636e5-92f0-4c82-99d0-863af2535910",
    "version": "compact"
+  },
+  "83": {
+   "asset": "6e40f706-0469-4d4c-8358-b350ac50a11d",
+   "version": 2
   }
  },
- "compact_template": true
+ "compact_template": true,
+ "total_beats": 148,
+ "words_per_second": 3.27
 }

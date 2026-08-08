@@ -2,6 +2,9 @@
 """Assemble les 126 prompts d'image stickman a partir des scenes + blocs verrouilles."""
 import json, pathlib
 
+# Cadence de parole mesuree sur la voix off ElevenLabs (eleven_v3, voix Yann).
+WPS = 3.27
+
 LOCKED_CHARACTER = (
     "LOCKED CHARACTER DESIGN: The stick figure characters have large perfectly round pure white heads "
     "with highly expressive cartoon faces featuring thick black eyebrow lines that show emotion clearly, "
@@ -79,7 +82,7 @@ def build(scenes, beats, out_md):
     parts = []
     cum = 0
     for i, (s, b) in enumerate(zip(scenes, beats), 1):
-        tc = cum / 2.5
+        tc = cum / WPS
         cum += len(b.split())
         parts.append(
             f"## PROMPT {i}  —  beat {i} · {tc:.1f}s\n"
@@ -90,8 +93,10 @@ def build(scenes, beats, out_md):
             f"{LOCKED_CHARACTER} {MAIN_CHARACTER} {LOCKED_STYLE} {CONSISTENCY_RULES} {CLOSER}\n"
         )
     out_md.write_text(
-        "# PROMPTS D'IMAGE STICKMAN — 126 BEATS\n"
-        "Vidéo : « Comment YouTube paie vraiment ses créateurs » — 5 minutes, 749 mots, 126 beats.\n"
+        f"# PROMPTS D'IMAGE STICKMAN — {len(parts)} BEATS\n"
+        f"Vidéo : « Comment YouTube paie vraiment ses créateurs » — 5 minutes, "
+        f"{sum(len(b.split()) for b in beats)} mots, {len(parts)} beats.\n"
+        f"Cadence de narration mesurée : {WPS} mots/seconde.\n"
         "Personnage principal verrouillé : Léo.\n\n"
         + "\n---\n\n".join(parts),
         encoding="utf-8",

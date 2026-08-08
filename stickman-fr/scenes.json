@@ -132,12 +132,6 @@
   "action": "KEY ACTION AND FOCAL POINT: An enormous chalk question mark is being drawn across the top of the board, far larger than every other chalk mark on the board. The giant question mark is the focal point."
  },
  {
-  "fr": "Une marque hésite, un carnet de chèques ouvert à la main.",
-  "env": "SCENE AND ENVIRONMENT: A dim wood panelled office at night, a green banker's lamp casting a tight warm pool on a heavy desk, rain streaking the tall window behind, city lights blurred beyond the glass in cold blue.",
-  "chars": "CHARACTERS: Two stick figures. The royal blue suited brand executive sits at the desk, pen hovering above an open blank chequebook, head tilted, one eyebrow up in calculation, mouth pressed sideways. Leo stands in the doorway on the far left, half in shadow, watching quietly.",
-  "action": "KEY ACTION AND FOCAL POINT: The pen tip hovers a hair above the blank cheque without touching it, a small glint of light on the nib. The hovering pen is the focal point."
- },
- {
   "fr": "La marque tend une liasse en pointant précisément un groupe de gens.",
   "env": "SCENE AND ENVIRONMENT: A raised balcony overlooking a crowd square at dusk, warm lantern light on the balcony rail, cool violet twilight over the crowd below, banners hanging from the balcony and a rich orange sky with layered clouds.",
   "chars": "CHARACTERS: Three stick figure groups. The blue suited executive stands at the rail centre frame, one arm thrust out pointing down at a specific cluster of people, the other hand holding out a thick banded stack of notes. Below, a dense crowd of small stick figures in muted clothes, with one cluster lit brightly by a shaft of light. Leo stands beside the executive, following the pointing arm with his eyes, eyebrows raised.",
@@ -156,12 +150,6 @@
   "action": "KEY ACTION AND FOCAL POINT: The abstract neon light panels blaze above the aisle and floods Leo with coloured light. The glowing wall of cabinets is the focal point."
  },
  {
-  "fr": "Des adolescents en sacs à dos remplissent toute la salle d'arcade.",
-  "env": "SCENE AND ENVIRONMENT: The same neon arcade, now shot lower and wider, cabinets glowing magenta and cyan on both sides forming a bright corridor, hazy coloured light, glossy reflective floor, dark ceiling above.",
-  "chars": "CHARACTERS: A crowd of small young stick figures packed shoulder to shoulder, wearing colourful backpacks, caps turned backwards, bright hoodies in lime, orange, and purple, all leaning toward the screens with wide eyes and open mouths. Leo stands squeezed at the right edge, taller than the crowd, looking down at them, one eyebrow raised.",
-  "action": "KEY ACTION AND FOCAL POINT: The young crowd surges forward toward the cabinets in one wave with motion lines behind them. The dense mass of backpacks and caps is the focal point."
- },
- {
   "fr": "Un annonceur regarde cette foule depuis la porte, peu enthousiaste.",
   "env": "SCENE AND ENVIRONMENT: The arcade entrance seen from inside, a rectangle of cold blue street night beyond the doorway, neon spill from the cabinets painting the door frame in magenta, cigarette-like haze drifting in the light shaft.",
   "chars": "CHARACTERS: Two stick figures. A brand representative stands in the doorway in a plain slate grey suit and thin brown tie, one hand on the door frame, head tilted, eyebrows lowered in doubt, mouth pulled sideways in hesitation. Leo stands inside on the right, turning to look back at him.",
@@ -172,12 +160,6 @@
   "env": "SCENE AND ENVIRONMENT: A tight view of the arcade doorway area, the neon glow now dimmer and cooler, background cabinets thrown out of focus into soft magenta bokeh, a single hard light from above picking out the hands.",
   "chars": "CHARACTERS: Two stick figures. The grey suited representative stands centre frame holding open a tiny coin purse with both hands, shoulders shrugged up, eyebrows raised apologetically, mouth an awkward wavy line. Leo leans in from the left, head lowered, peering into the purse, one eyebrow up.",
   "action": "KEY ACTION AND FOCAL POINT: Two small coins sit alone in the open purse under the hard light, casting long shadows inside it. The nearly empty purse is the focal point."
- },
- {
-  "fr": "Mille petites silhouettes de spectateurs s'alignent devant une caisse.",
-  "env": "SCENE AND ENVIRONMENT: A long counting hall with pale teal walls, a low ceiling with rows of hanging lamps, and a mechanical counter machine at the end with a large glowing dial. Cool even light with warm pools under each lamp, receding into haze.",
-  "chars": "CHARACTERS: A very long queue of small identical stick figure viewers in muted casual clothes stretching from the foreground to the machine in the far background, all facing the same way. Leo stands beside the machine at the end of the queue, hand on its lever, looking back along the line, mouth open slightly.",
-  "action": "KEY ACTION AND FOCAL POINT: The endless queue of viewers feeds one by one into the counting machine, which ticks over on its glowing dial. The receding line is the focal point."
  },
  {
   "fr": "La machine ne recrache que deux ou trois pièces ternes.",
@@ -232,6 +214,54 @@
   "env": "SCENE AND ENVIRONMENT: Close on the output tray of the same counting machine, now blazing with warm golden light that fills the frame and throws long dramatic shadows behind, the teal wall now lit amber, sparks of light dancing in the air.",
   "chars": "CHARACTERS: One stick figure, Leo, staggering back one step with both arms held out overflowing, legs braced apart under the weight, head thrown back, mouth wide open with teeth and tongue visible in shock, eyebrows shot up to the top of his head.",
   "action": "KEY ACTION AND FOCAL POINT: A torrent of gold coins pours out of the tray into and past his arms, bouncing across the floor with impact lines. The cascade of coins is the focal point."
+ },
+ {
+  "fr": "Léo lève un doigt et sort son carnet orange pour compter.",
+  "env": "SCENE AND ENVIRONMENT: A calm dark teal room with a single warm overhead lamp throwing a tight pool of light onto a plain wooden table, deep shadow at the edges, faint dust turning in the beam.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing behind the table facing the viewer, one index finger raised at head height, the other hand pulling the orange spiral notebook from his hoodie pocket, eyebrows raised, mouth open mid sentence.",
+  "action": "KEY ACTION AND FOCAL POINT: His raised finger catches the lamp light as the notebook comes free of the pocket. The raised finger is the focal point."
+ },
+ {
+  "fr": "Une pile de mille vues et une petite pièce de trois dollars.",
+  "env": "SCENE AND ENVIRONMENT: A dark tabletop lit from directly above by a cold white lamp, the wood grain visible in the pool of light, the rest of the frame falling into deep blue shadow.",
+  "chars": "CHARACTERS: One stick figure, Leo, leaning over the table from the left, one hand resting flat on the wood beside the objects, head lowered close to them, eyebrows level in concentration.",
+  "action": "KEY ACTION AND FOCAL POINT: A tall stack of small blank view cards stands on the left of the table and three dull grey coins sit beside it. The pairing of the huge stack and the three small coins is the focal point."
+ },
+ {
+  "fr": "Un petit tas de pièces ternes, à peine plus haut qu'un doigt.",
+  "env": "SCENE AND ENVIRONMENT: The same dark tabletop under the cold overhead lamp, camera pushed in low and close so the table surface fills the lower half of the frame, deep shadow behind.",
+  "chars": "CHARACTERS: One stick figure, Leo, only his head and one hand in frame at the right edge, fingers spread beside the coins for scale, eyebrows dropping, mouth pulled flat.",
+  "action": "KEY ACTION AND FOCAL POINT: A small dull pile of grey coins sits on the table barely taller than Leo's finger held beside it. The tiny pile is the focal point."
+ },
+ {
+  "fr": "La même pile de vues, mais devant une pièce dorée bien plus grosse.",
+  "env": "SCENE AND ENVIRONMENT: The same tabletop, the lamp now warmed to gold and brighter, the wood glowing amber and long warm shadows stretching behind the objects, the background shadow now deep brown instead of blue.",
+  "chars": "CHARACTERS: One stick figure, Leo, leaning in from the left with both hands on the table edge, head lifted, eyebrows climbing, mouth opening slightly.",
+  "action": "KEY ACTION AND FOCAL POINT: The identical tall stack of blank view cards stands beside one large glowing gold coin far bigger than the grey ones. The single big gold coin is the focal point."
+ },
+ {
+  "fr": "Une tour de pièces d'or qui monte hors du cadre.",
+  "env": "SCENE AND ENVIRONMENT: The same tabletop shot from a low angle looking up, warm gold lamp light blazing from above, the column of coins rising past the top edge of the frame, warm haze and floating light particles around it.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing at the base of the column in the lower left, head tipped fully back, both arms hanging, mouth wide open with teeth and tongue visible in astonishment.",
+  "action": "KEY ACTION AND FOCAL POINT: The tall column of gold coins climbs out of the top of the frame, its top lost in glow. The towering column is the focal point."
+ },
+ {
+  "fr": "Deux horloges identiques et deux piles de travail identiques.",
+  "env": "SCENE AND ENVIRONMENT: A symmetrical interior split down the middle by a thin dark line, both halves lit identically by cool grey daylight, each holding the same desk, the same round wall clock, and the same stack of blank paper.",
+  "chars": "CHARACTERS: Two stick figures in identical postures, one per half, both seated with elbows on the desk and chin in hands, eyebrows flat, mouths small tired lines. Leo occupies the left half.",
+  "action": "KEY ACTION AND FOCAL POINT: Both clocks show exactly the same time and both paper stacks are exactly the same height. The perfect mirror symmetry is the focal point."
+ },
+ {
+  "fr": "Deux foules rigoureusement identiques devant deux écrans.",
+  "env": "SCENE AND ENVIRONMENT: A wide symmetrical shot of two dark viewing rooms side by side, each with a large pale glowing screen at the back washing the seats in the same cool light, the same haze in both projector beams.",
+  "chars": "CHARACTERS: Two identical crowds of small stick figures, the same number in each room, all seated facing their screen in identical postures with flat neutral eyebrows. Leo stands in the centre aisle between the two rooms, head turning from one to the other.",
+  "action": "KEY ACTION AND FOCAL POINT: The two crowds are pixel for pixel the same size and arrangement. The mirrored crowds are the focal point."
+ },
+ {
+  "fr": "Une balance penche violemment d'un seul côté, huit fois plus lourde.",
+  "env": "SCENE AND ENVIRONMENT: A dramatic dark hall in deep indigo with one hard overhead spotlight on a large simple balance scale, thick haze catching the beam, deep shadow beyond.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing beside the scale in the lower left, one hand raised toward the tilted beam, head tilted back, eyebrows high, mouth open.",
+  "action": "KEY ACTION AND FOCAL POINT: The right pan crashes down heaped with glowing gold coins while the left pan flies up nearly empty, the beam at an extreme angle with impact lines. The violent tilt is the focal point."
  },
  {
   "fr": "Un projecteur unique éclaire Léo, doigt levé, comme pour dire voilà.",
@@ -300,12 +330,6 @@
   "action": "KEY ACTION AND FOCAL POINT: A bright golden shaft of light bursts out of the widening gap beneath the lifted letter and hits Leo's face. The escaping light is the focal point."
  },
  {
-  "fr": "Sous le mot, une marque entière est cachée avec ses bureaux.",
-  "env": "SCENE AND ENVIRONMENT: An underground chamber revealed beneath the giant letters, warm and richly lit, containing a miniature corporate world of small glass offices, glowing windows, tiny lamps, and a soft golden haze, with the raised stone letter forming a ceiling above.",
-  "chars": "CHARACTERS: Two stick figures. The royal blue suited brand executive stands in the middle of the miniature offices looking up toward the opening, one arm raised in greeting, eyebrows up, mouth open in a broad welcome. Leo's head and shoulders lean in through the gap above, upside down in the frame, mouth open in surprise.",
-  "action": "KEY ACTION AND FOCAL POINT: Leo's face appears in the opening above the hidden company as the executive waves up at him. The meeting of the two faces across the gap is the focal point."
- },
- {
   "fr": "La marque montre une immense montagne de gains potentiels.",
   "env": "SCENE AND ENVIRONMENT: A high vantage point overlooking a vast golden valley at sunrise, an enormous mountain of stacked gold coins rising in the distance, warm orange light breaking over its peak, layered clouds and long shadows across the valley floor.",
   "chars": "CHARACTERS: Two stick figures. The blue suited executive stands on the ledge in the left foreground, one arm swept wide presenting the view, chest out, eyebrows raised proudly. Leo stands beside him on the right, both hands on his head, mouth wide open with teeth and tongue visible, eyebrows shot up in stunned reaction.",
@@ -318,6 +342,36 @@
   "action": "KEY ACTION AND FOCAL POINT: The briefcase lid swings open and warm gold light floods out of it across both characters' faces. The opening case is the focal point."
  },
  {
+  "fr": "Un ruban de mérite est décroché et posé de côté.",
+  "env": "SCENE AND ENVIRONMENT: A dim wood panelled room with a warm side lamp, a plain shelf running along the wall, deep brown shadow behind, dust drifting in the low light.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing at the shelf in three quarter view, both hands lowering a large blank award ribbon rosette onto the wood, head lowered, eyebrows level, mouth a calm flat line.",
+  "action": "KEY ACTION AND FOCAL POINT: The award ribbon is set down flat on the shelf and its trailing tails settle. The lowered ribbon is the focal point."
+ },
+ {
+  "fr": "Deux créateurs côte à côte, exactement le même travail entre les mains.",
+  "env": "SCENE AND ENVIRONMENT: A plain evenly lit studio with a neutral grey seamless background, soft shadow beneath the figures, no props other than what they hold.",
+  "chars": "CHARACTERS: Two stick figures standing side by side facing the viewer, both holding up an identical stack of blank film strips at the same height. Leo on the left in his grey hoodie, a second creator on the right in a rust orange jacket, both with the same neutral expression.",
+  "action": "KEY ACTION AND FOCAL POINT: The two identical stacks are held at exactly the same height. The matched pair of stacks is the focal point."
+ },
+ {
+  "fr": "Un des deux se retrouve baigné dans une lumière dorée venue d'ailleurs.",
+  "env": "SCENE AND ENVIRONMENT: The same grey studio, but a wide beam of warm gold light now falls from the upper right onto the right half only, leaving the left half in flat cool grey, the boundary between the two areas hard and clear on the floor.",
+  "chars": "CHARACTERS: The same two stick figures in the same positions. The rust orange jacket creator on the right stands bathed in gold light, arms lowering, eyebrows raised. Leo on the left stays in the grey, looking across at him, one eyebrow up, mouth pulled sideways.",
+  "action": "KEY ACTION AND FOCAL POINT: The hard edge of the gold light falls between the two figures. That dividing line is the focal point."
+ },
+ {
+  "fr": "Léo se retourne et découvre quelqu'un debout derrière lui.",
+  "env": "SCENE AND ENVIRONMENT: A dim interior in deep blue with one warm light source behind the frame throwing a long shadow forward, atmospheric haze, the background dissolving into shadow.",
+  "chars": "CHARACTERS: Two stick figures. Leo stands in the centre foreground twisting around to look over his shoulder, body still facing the viewer, eyebrows shot up in surprise, mouth open. Behind him a taller figure stands half in shadow, only the silhouette and a glint of a suit button visible.",
+  "action": "KEY ACTION AND FOCAL POINT: Leo's head snaps around toward the figure behind him with small motion arcs. His surprised face is the focal point."
+ },
+ {
+  "fr": "Derrière lui, un acheteur en costume, portefeuille déjà ouvert.",
+  "env": "SCENE AND ENVIRONMENT: The same dim interior, now lit warmly from the side so the second figure is fully revealed, rich amber light on his suit, deep blue shadow behind, a soft glow rising from what he holds.",
+  "chars": "CHARACTERS: Two stick figures. A buyer stands centre frame in a deep green three piece suit, both hands holding an open wallet that glows gold from inside, eyebrows level, mouth in a confident closed smile. Leo stands in the left foreground turned toward him, both hands lifted slightly, mouth open.",
+  "action": "KEY ACTION AND FOCAL POINT: The open wallet spills warm gold light up onto both faces. The glowing wallet is the focal point."
+ },
+ {
   "fr": "Un chiffre unique flotte au-dessus d'une pile de mille vues.",
   "env": "SCENE AND ENVIRONMENT: A dark studio space in deep navy with a single wide beam of warm light falling from above onto a low pedestal, the rest of the room dissolving into atmospheric shadow, faint floating dust in the beam.",
   "chars": "CHARACTERS: One stick figure, Leo, standing beside the pedestal in three quarter view, one hand resting on its edge, the other pointing up at the floating number, eyebrows raised, mouth slightly open in explanation.",
@@ -328,12 +382,6 @@
   "env": "SCENE AND ENVIRONMENT: The same dark navy studio and warm overhead beam, now with a polished blank brass plaque mounted on the front face of the pedestal, catching a bright specular highlight, a small red velvet cloth sliding off it.",
   "chars": "CHARACTERS: One stick figure, Leo, standing behind the pedestal with both arms sweeping outward, having just pulled the cloth away, torso rotated with the motion, eyebrows raised high, mouth open in a proud announcing shape.",
   "action": "KEY ACTION AND FOCAL POINT: The red cloth flies away with motion lines and the brass plaque flashes under the beam. The revealed plaque is the focal point."
- },
- {
-  "fr": "Trois lettres géantes en néon s'allument dans le noir.",
-  "env": "SCENE AND ENVIRONMENT: A pitch dark space where three enormous freestanding neon letters stand in a row, glowing hot amber gold, their light spilling in wide pools across a wet reflective black floor, thin haze in the air amplifying the glow, deep shadow everywhere else.",
-  "chars": "CHARACTERS: One stick figure, Leo, standing small at the base of the letters in the lower centre, seen from behind, arms slightly raised, head tipped back, dwarfed by their scale.",
-  "action": "KEY ACTION AND FOCAL POINT: The three letters ignite together and their reflection burns across the wet floor toward the viewer. The blazing letters are the focal point."
  },
  {
   "fr": "Un second néon presque identique s'allume à côté du premier.",
@@ -388,6 +436,48 @@
   "env": "SCENE AND ENVIRONMENT: The same room, the giant blue number now switched off and dark, the walls cool and empty, with one small warm gold number glowing quietly at chest height in the centre, its little pool of amber light the only illumination.",
   "chars": "CHARACTERS: Two stick figures. The yellow t-shirt beginner stands with shoulders collapsed, head dropped forward, arms limp, eyebrows curved down, mouth pulled small. Leo stands beside him with one hand placed on his shoulder, head turned toward him, eyebrows raised gently, mouth calm and level.",
   "action": "KEY ACTION AND FOCAL POINT: Bubble fragments drift and fade around them while the small gold number holds steady. The small steady number is the focal point."
+ },
+ {
+  "fr": "Le chiffre lumineux se met à osciller comme une aiguille de cadran.",
+  "env": "SCENE AND ENVIRONMENT: A dark space in deep navy with a single large glowing number floating at chest height, its light pulsing and spilling in soft waves across the floor, thin haze amplifying the glow, everything else in shadow.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing beneath the number with both arms slightly raised, head following its movement, eyebrows lifted, mouth pulled to one side in uncertainty.",
+  "action": "KEY ACTION AND FOCAL POINT: The floating number swings left and right through the air with motion arcs trailing behind it. The swinging number is the focal point."
+ },
+ {
+  "fr": "Une pluie de pièces tombe sur une ville décorée pour les fêtes.",
+  "env": "SCENE AND ENVIRONMENT: A night city street seen from above, warm string lights strung between buildings, glowing shop windows, a light snow in the air and a deep violet winter sky with layered clouds.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing on a rooftop edge in the lower right, arms thrown wide, head tipped back, mouth open in a huge smile with teeth visible, gold light on his face.",
+  "action": "KEY ACTION AND FOCAL POINT: A heavy shower of gold coins falls through the string lights onto the street below with motion lines. The falling coins are the focal point."
+ },
+ {
+  "fr": "Des mains vident les derniers fonds d'un coffre grand ouvert.",
+  "env": "SCENE AND ENVIRONMENT: A warm vault interior with brass fittings and a heavy open door, golden lamp light raking across the metal, deep shadow in the corners and floating dust in the beams.",
+  "chars": "CHARACTERS: Two stick figures. The royal blue suited executive tips a large chest forward with both hands, legs braced, torso rotated with effort, mouth open with exertion. Leo stands to the right with both hands cupped ready, eyebrows raised high.",
+  "action": "KEY ACTION AND FOCAL POINT: The last coins slide out of the tipped chest in a bright stream. The emptying chest is the focal point."
+ },
+ {
+  "fr": "Le même coffre, en janvier, complètement vide et couvert de givre.",
+  "env": "SCENE AND ENVIRONMENT: The same vault interior, now cold and blue, frost creeping across the brass fittings, pale winter light coming through a high window, the warm lamps switched off and long cold shadows on the floor.",
+  "chars": "CHARACTERS: One stick figure, Leo, leaning over the open chest with both hands on its rim, head lowered right down inside it, shoulders slumped, eyebrows curved sadly, mouth pulled small.",
+  "action": "KEY ACTION AND FOCAL POINT: The chest sits wide open and completely empty with a thin layer of frost on its floor. The empty frosted interior is the focal point."
+ },
+ {
+  "fr": "Un globe terrestre où certaines régions brillent plus que d'autres.",
+  "env": "SCENE AND ENVIRONMENT: A dark room in deep navy with a large glowing globe floating in the centre, its continents lit unevenly, some regions blazing warm gold and others dim blue, soft light rays spreading outward into the haze.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing in the lower left silhouetted against the globe, one hand raised and almost touching its surface, head tilted, eyebrows raised in curiosity.",
+  "action": "KEY ACTION AND FOCAL POINT: His fingertips hover just short of a brightly glowing region of the globe. The uneven glow across the continents is the focal point."
+ },
+ {
+  "fr": "Un annonceur compare deux billets de valeurs très différentes.",
+  "env": "SCENE AND ENVIRONMENT: A warmly lit desk corner at night, a green shaded lamp throwing a tight pool onto the wood, deep shadow around, a blurred window with city lights behind.",
+  "chars": "CHARACTERS: Two stick figures. The royal blue suited executive holds one large banknote in his left hand and one much smaller note in his right, arms spread apart, head turning between them, one eyebrow raised in appraisal. Leo watches from the right edge, chin resting on the desk.",
+  "action": "KEY ACTION AND FOCAL POINT: The two notes of wildly different size are held up at the same height under the lamp. The size difference is the focal point."
+ },
+ {
+  "fr": "Deux spectateurs identiques, mais l'un sous un projecteur bien plus fort.",
+  "env": "SCENE AND ENVIRONMENT: A dark stage in deep indigo with two spotlights falling from above, the left beam narrow and pale, the right beam wide and blazing gold, both cones clearly visible in the haze.",
+  "chars": "CHARACTERS: Two identical stick figure viewers standing in the two light pools in the same posture, arms at their sides, same neutral face. Leo stands between them in the shadow, head turning from one to the other, one eyebrow up.",
+  "action": "KEY ACTION AND FOCAL POINT: Two identical figures stand under two wildly different beams. The contrast between the two pools of light is the focal point."
  },
  {
   "fr": "Léo tend la main vers une pièce posée hors de portée.",
@@ -468,22 +558,34 @@
   "action": "KEY ACTION AND FOCAL POINT: The whole crowd stands on the near side of one closed door. Leo's turned head and his hand on the iron form the focal point."
  },
  {
+  "fr": "La grande porte de fer s'entrouvre enfin sur une lumière chaude.",
+  "env": "SCENE AND ENVIRONMENT: The towering iron door in the stone wall, now open a hand's width, a blade of warm golden light cutting out through the gap across the dark ground, torches still burning at both sides with embers rising.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing in the gap with one hand on the edge of the door, body half lit gold and half in blue shadow, head turned back over his shoulder toward the viewer, eyebrows level, mouth calm.",
+  "action": "KEY ACTION AND FOCAL POINT: The narrow blade of gold light escapes through the opening. The lit gap is the focal point."
+ },
+ {
+  "fr": "Personne ne descend du ciel pour ouvrir la porte à sa place.",
+  "env": "SCENE AND ENVIRONMENT: The same stone wall at night under a wide empty violet sky with thin clouds and a low moon, the ground bare, the torches burning low, no other figure anywhere in the frame.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing alone in front of the door looking up at the vast empty sky, arms hanging at his sides, head tipped fully back, eyebrows flat.",
+  "action": "KEY ACTION AND FOCAL POINT: The enormous empty sky sits above one small figure with nothing in it at all. The emptiness above him is the focal point."
+ },
+ {
+  "fr": "Un long chemin de traces de pas mène jusqu'à la porte.",
+  "env": "SCENE AND ENVIRONMENT: A wide muddy plain at dawn seen from a low angle, a long line of footprints running from the foreground all the way to the great stone wall in the distance, warm early light raking across the ground and picking out every print, layered clouds in a soft orange sky.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing small at the far end of the trail near the door, seen from behind, one arm raised in a tired wave.",
+  "action": "KEY ACTION AND FOCAL POINT: The unbroken line of footprints leads the eye from the bottom of the frame to the distant door. The trail is the focal point."
+ },
+ {
+  "fr": "De part et d'autre du chemin, des équipements abandonnés dans la boue.",
+  "env": "SCENE AND ENVIRONMENT: The same muddy plain at dawn, camera lowered to ground level so the abandoned objects loom large in the foreground, warm light glinting on wet surfaces, the wall and door small in the misty distance.",
+  "chars": "CHARACTERS: One stick figure, Leo, small in the mid ground continuing to walk away from the viewer along the trail, not looking back.",
+  "action": "KEY ACTION AND FOCAL POINT: Discarded cameras, tripods and coiled cables lie half sunk in the mud on both sides of the path while the single figure keeps walking. The abandoned gear is the focal point."
+ },
+ {
   "fr": "Les deux verrous s'ouvrent enfin dans une gerbe de lumière.",
   "env": "SCENE AND ENVIRONMENT: Close on the great iron door as both padlocks burst open, brilliant golden light exploding from the seams of the door and cutting through the torch smoke, embers and metal fragments flying outward, the stone wall lit hot orange.",
   "chars": "CHARACTERS: One stick figure, Leo, staggering back one step with both arms flung up in front of his face, head turned slightly away, legs braced, eyebrows shot up, mouth wide open with teeth and tongue visible in shock and joy.",
   "action": "KEY ACTION AND FOCAL POINT: The two locks split apart with radiating impact lines and a blast of golden light. The bursting locks are the focal point."
- },
- {
-  "fr": "Derrière la porte, un panneau de règles attend déjà.",
-  "env": "SCENE AND ENVIRONMENT: The space just beyond the open door, a calm stone corridor lit by cool overhead light with the warm glow of the doorway behind, a large blank official notice board with a completely empty surface mounted on the wall ahead with a heavy frame and a small lamp above it, dust drifting in the corridor light.",
-  "chars": "CHARACTERS: One stick figure, Leo, standing just inside the corridor, still half lit by the warm doorway behind him, head tilted up at the board, arms lowering slowly, eyebrows climbing, mouth pulling flat in surprise.",
-  "action": "KEY ACTION AND FOCAL POINT: The notice board stands directly in his path, lit by its own lamp. The board is the focal point."
- },
- {
-  "fr": "Une vidéo courte, représentée par un ruban très bref, apparaît.",
-  "env": "SCENE AND ENVIRONMENT: A dark workshop space in deep teal with a long illuminated workbench running across the frame, warm lamps hanging low over it, tool shapes and reels in the shadowed background, and a soft light haze above the bench.",
-  "chars": "CHARACTERS: One stick figure, Leo, standing behind the bench in the centre, holding a very short strip of film ribbon stretched between his two hands, arms close together, head lowered to inspect it, eyebrows raised, mouth pulled to one side.",
-  "action": "KEY ACTION AND FOCAL POINT: The short film strip stretches taut between his hands, glowing softly from within. The little strip is the focal point."
  },
  {
   "fr": "Léo cherche de la place sur le ruban et n'en trouve presque pas.",
@@ -508,18 +610,6 @@
   "env": "SCENE AND ENVIRONMENT: The same long ribbon stretched across the workshop, now with several orange advertising cards slotted into it at intervals, each throwing its own warm pool of light onto the bench below, creating a rhythm of glows receding into the haze.",
   "chars": "CHARACTERS: One stick figure, Leo, moving along the ribbon in the mid ground, one hand pressing a fresh card into place, the other holding two spare cards, body turned into the work, eyebrows raised, mouth open in a pleased smile with teeth visible.",
   "action": "KEY ACTION AND FOCAL POINT: A new card clicks into the ribbon and lights up, joining the row of glows. The card being inserted is the focal point."
- },
- {
-  "fr": "Les cases se répartissent au milieu du contenu, pas seulement au début.",
-  "env": "SCENE AND ENVIRONMENT: An overhead view looking straight down at the long ribbon laid out on the workbench, warm lamp light falling evenly along it, the wood grain visible, deep shadow at the frame edges, the glowing cards spaced out along the middle section.",
-  "chars": "CHARACTERS: One stick figure, Leo, seen from directly above standing beside the bench, arms spread over the ribbon, head bowed to look down the line, hoodie and red sneakers clearly visible from this angle.",
-  "action": "KEY ACTION AND FOCAL POINT: The evenly spaced glowing cards sit through the middle of the ribbon rather than clustered at its start. The rhythm of spaced glows is the focal point."
- },
- {
-  "fr": "Léo lève une main pour arrêter net l'enthousiasme.",
-  "env": "SCENE AND ENVIRONMENT: The workshop, lights dimmed to a single hard overhead lamp directly above, a tight bright circle around Leo and heavy teal shadow swallowing the rest, faint haze in the beam.",
-  "chars": "CHARACTERS: One stick figure, Leo, standing centre frame facing the viewer, one arm thrust straight forward with palm flat toward the camera in a stop gesture, other hand on his hip, head tilted slightly down, eyebrows lowered, mouth pressed into a firm flat line.",
-  "action": "KEY ACTION AND FOCAL POINT: His flat palm fills the near foreground, lit hard by the overhead lamp. The stop hand is the focal point."
  },
  {
   "fr": "Il tire de force sur un ruban court pour l'allonger.",
@@ -558,6 +648,36 @@
   "action": "KEY ACTION AND FOCAL POINT: The blank receipt hovers in front of the locked shutter with nowhere to go. The closed shutter is the focal point."
  },
  {
+  "fr": "Une grande courbe lumineuse s'affiche sur un mur de contrôle.",
+  "env": "SCENE AND ENVIRONMENT: A dark control room with a huge display wall glowing cyan, banks of small indicator lights along a console below, cool blue light streaking across a polished floor and thin haze in the air.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing at the console seen from behind, both hands on its edge, head tilted up at the display.",
+  "action": "KEY ACTION AND FOCAL POINT: A single bright curve is drawn across the display wall from left to right. The glowing curve is the focal point."
+ },
+ {
+  "fr": "La courbe plonge brutalement dès les premières secondes.",
+  "env": "SCENE AND ENVIRONMENT: The same control room, the display now dominated by a violent downward drop at the very start of the curve, red warning light pulsing from the ceiling and mixing with the cyan, sharp shadows swinging across the console.",
+  "chars": "CHARACTERS: One stick figure, Leo, recoiling one step back from the console, both arms flung up, head snapped back, eyebrows shot up, mouth wide open with teeth and tongue visible in alarm.",
+  "action": "KEY ACTION AND FOCAL POINT: The curve falls off a cliff immediately after its start with speed lines trailing the drop. The cliff edge is the focal point."
+ },
+ {
+  "fr": "La courbe continue ensuite à descendre lentement jusqu'au bord.",
+  "env": "SCENE AND ENVIRONMENT: The same control room, calmer now, the red warning light gone and only the cyan display glow remaining, the long gentle tail of the curve running away to the right edge of the wall into darkness.",
+  "chars": "CHARACTERS: One stick figure, Leo, walking slowly along the console following the curve with one hand trailing beneath it, head lowered, shoulders relaxed, eyebrows level.",
+  "action": "KEY ACTION AND FOCAL POINT: The long slow decline runs off the right edge of the display. The fading tail of the curve is the focal point."
+ },
+ {
+  "fr": "Chaque spectateur qui sort emporte une publicité sous le bras.",
+  "env": "SCENE AND ENVIRONMENT: A cinema aisle seen from the side, a green exit lamp glowing at the end of the row, cold light spilling across the carpet, the seats in deep blue shadow and a pale screen glow behind.",
+  "chars": "CHARACTERS: Several stick figures walking out along the aisle in a line, each carrying a small glowing orange advertising panel tucked under one arm, all with flat bored eyebrows. Leo stands in the foreground watching them pass, one arm half raised.",
+  "action": "KEY ACTION AND FOCAL POINT: Every departing figure carries away a glowing panel. The row of stolen glows moving toward the door is the focal point."
+ },
+ {
+  "fr": "Dehors, une pile de publicités jamais vues s'entasse dans le noir.",
+  "env": "SCENE AND ENVIRONMENT: A dark alley behind the cinema at night, one weak streetlamp overhead, wet cobblestones reflecting its light, a deep violet sky above the rooftops and cold mist at ground level.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing beside the pile with both hands on his head, elbows out, head lowered, eyebrows curved down, mouth pulled small in dismay.",
+  "action": "KEY ACTION AND FOCAL POINT: A tall untidy heap of dimmed orange advertising panels is stacked against the alley wall, none of them lit. The dark pile is the focal point."
+ },
+ {
   "fr": "Une règle géante mesure une vidéo interminable dans le vide.",
   "env": "SCENE AND ENVIRONMENT: A vast empty grey plain under a flat overcast sky with an enormous ruler lying across the ground stretching to the horizon, cool desaturated light, thin mist along the ground, and a few dry weeds at the edges.",
   "chars": "CHARACTERS: One stick figure, Leo, standing on top of the ruler in the mid ground, hands on hips, head turning to follow it toward the horizon, eyebrows flat, mouth pulled sideways in doubt.",
@@ -574,12 +694,6 @@
   "env": "SCENE AND ENVIRONMENT: The workshop bench again, warm and inviting, a single hanging lamp with a rich amber glow, deep teal shadows behind, warm dust motes floating, the wood surface polished and gleaming.",
   "chars": "CHARACTERS: One stick figure, Leo, holding a short film strip up at eye level with both hands, head tilted to admire it, eyebrows raised, mouth open in a small satisfied smile with teeth visible.",
   "action": "KEY ACTION AND FOCAL POINT: The whole short strip glows solid gold from end to end with no dull sections at all. The evenly glowing strip is the focal point."
- },
- {
-  "fr": "Une salle comble regarde jusqu'à la toute dernière image.",
-  "env": "SCENE AND ENVIRONMENT: The cinema auditorium from the front corner, every seat filled, warm white screen light washing over the crowd from the left, deep shadow behind the back rows, faint dust drifting in the projector beam overhead.",
-  "chars": "CHARACTERS: Many stick figures packed in the seats in mixed colourful casual clothes, all leaning slightly forward, eyebrows raised, eyes wide, mouths open in engagement, none looking away. Leo sits in the front row on the right, turned around in his seat to look back at the full house, mouth open in a delighted smile.",
-  "action": "KEY ACTION AND FOCAL POINT: The entire audience stays locked on the screen together while Leo looks back at them. The wall of attentive faces is the focal point."
  },
  {
   "fr": "Un ruban très long, mais terne et gris après quelques centimètres.",
@@ -630,12 +744,6 @@
   "action": "KEY ACTION AND FOCAL POINT: The full richly stocked workshop opens out around Leo. The loaded shelves catching the window light are the focal point."
  },
  {
-  "fr": "Un créateur passe devant la caisse de la plateforme sans s'arrêter.",
-  "env": "SCENE AND ENVIRONMENT: The marble bank hall again with its brass counter and grille, cool daylight through arched windows and a warm lamp pool on the counter, polished floor with long reflections, columns receding into the background.",
-  "chars": "CHARACTERS: Two stick figures. A creator in a rust orange jacket strides past the counter without turning her head, arms swinging, legs mid stride with motion lines, eyebrows level and purposeful. The burgundy uniformed clerk leans out of the grille holding a small envelope, eyebrows raised in surprise, mouth open. Leo stands to the right watching the pass by, one eyebrow up.",
-  "action": "KEY ACTION AND FOCAL POINT: The striding figure moves past the offered envelope without slowing. The unclaimed envelope in the clerk's hand is the focal point."
- },
- {
   "fr": "La petite enveloppe de paiement reste seule sur le comptoir.",
   "env": "SCENE AND ENVIRONMENT: Close on the brass counter top, a single small pale envelope lying in a soft warm lamp pool, the marble surface stretching away into cool blue shadow, faint dust in the light, the grille bars out of focus behind.",
   "chars": "CHARACTERS: One stick figure, Leo, leaning on the counter from the left with both forearms on the marble, head resting near the envelope, eyebrows level and thoughtful, mouth pulled slightly to one side.",
@@ -654,10 +762,28 @@
   "action": "KEY ACTION AND FOCAL POINT: A thick glowing blank covered manual and a neat stacked blank template sit side by side on the counter, both giving off a soft warm light. The two lit products are the focal point."
  },
  {
-  "fr": "À côté, un outil brillant et une main tendue pour accompagner.",
-  "env": "SCENE AND ENVIRONMENT: The other end of the same stall counter, warm string lights above, a small hanging lamp casting a tight glow, wooden shelves behind stacked with boxes, violet dusk and blurred market lights in the background.",
-  "chars": "CHARACTERS: Two stick figures. Leo stands behind the counter on the left holding out a gleaming brass tool in one hand, the other hand extended open toward a customer. A customer in a charcoal blazer reaches back across the counter, both eyebrows raised, mouth open in a pleased smile.",
-  "action": "KEY ACTION AND FOCAL POINT: The two hands meet over the counter with the shining tool between them. The handshake over the tool is the focal point."
+  "fr": "Une même question revient en boucle dans un fil de commentaires.",
+  "env": "SCENE AND ENVIRONMENT: A dark room lit only by the glow of a tall vertical panel filling the back wall, covered with a long column of identical small speech bubbles receding upward, cool blue light spilling across the floor.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing in front of the panel seen from behind, head tipped back to follow the column upward, one hand raised and pointing.",
+  "action": "KEY ACTION AND FOCAL POINT: Every single bubble in the column is exactly the same shape and size, repeating up and out of frame. The endless repetition is the focal point."
+ },
+ {
+  "fr": "Léo répond à la même question pour la centième fois, épuisé.",
+  "env": "SCENE AND ENVIRONMENT: A small desk at night lit by one warm lamp, the blue glow of the panel still visible behind, a mug and scattered blank paper on the desk, deep shadow at the frame edges.",
+  "chars": "CHARACTERS: One stick figure, Leo, slumped at the desk with one elbow on the wood and his round head propped in that hand, the other arm hanging limp, eyes half lidded, eyebrows heavy and flat, mouth pulled down at one corner.",
+  "action": "KEY ACTION AND FOCAL POINT: Leo types wearily with one drooping hand while identical speech bubbles keep drifting in from the left. The exhausted slumped posture is the focal point."
+ },
+ {
+  "fr": "Il rassemble toutes ses réponses dans un seul document épais.",
+  "env": "SCENE AND ENVIRONMENT: The same desk, now lit warmly and brightly, the blue panel gone, golden lamp light on the wood, floating dust in the beam and a soft glow rising from the object on the desk.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing over the desk with both hands pressing down on the cover of a thick blank document, shoulders squared, chest lifted, eyebrows raised, mouth open in a satisfied smile with teeth visible.",
+  "action": "KEY ACTION AND FOCAL POINT: The thick blank document glows warmly under his two flat hands. The glowing document is the focal point."
+ },
+ {
+  "fr": "Une main tend un billet, l'autre tend le document.",
+  "env": "SCENE AND ENVIRONMENT: A market stall counter at dusk under warm string lights, worn wooden boards, blurred glowing stall lights in the background and a deep violet sky above the rooftops.",
+  "chars": "CHARACTERS: Two stick figures. Leo stands behind the counter holding the thick glowing blank document out with both hands, eyebrows raised, mouth in an open smile. A customer in a charcoal blazer reaches across the counter holding out a folded banknote.",
+  "action": "KEY ACTION AND FOCAL POINT: The banknote and the document cross over the counter at the same instant. The point where the two hands pass each other is the focal point."
  },
  {
   "fr": "Une seule vidéo projette un faisceau qui remplit dix coffres.",
@@ -676,6 +802,18 @@
   "env": "SCENE AND ENVIRONMENT: The same market crowd, now lit only by the flat orange glow of a large advertising panel mounted above the stalls, its light washing every face in the same uniform tone, the string lights dimmed, the sky a deep flat violet.",
   "chars": "CHARACTERS: Many stick figures standing still and facing the panel, arms at their sides, eyebrows flat, mouths small neutral lines, all identical in posture. Leo stands at the right edge in profile, looking not at the panel but back at the three departed customers, one eyebrow raised thoughtfully.",
   "action": "KEY ACTION AND FOCAL POINT: The uniform passive crowd faces the glowing panel in complete stillness. The sea of flat expressions is the focal point."
+ },
+ {
+  "fr": "La canalisation du produit contourne complètement la grande machine.",
+  "env": "SCENE AND ENVIRONMENT: A night exterior at the foot of the glowing building, the enormous steel machine wall standing on the left with its indicator lights, and one bright pipe running around it in a wide arc across the ground, deep blue sky above and warm light spilling from the windows.",
+  "chars": "CHARACTERS: One stick figure, Leo, standing beside the bypassing pipe with one hand resting on it, head turned toward the machine, one eyebrow raised, mouth in a small knowing line.",
+  "action": "KEY ACTION AND FOCAL POINT: The glowing pipe curves clear around the machine without ever touching it. The bypass curve is the focal point."
+ },
+ {
+  "fr": "Une main géante tente de couper le tuyau et n'y arrive pas.",
+  "env": "SCENE AND ENVIRONMENT: The same night exterior, now dramatic with a hard cold spotlight from above and deep shadow below, sparks flying at the point of contact and warm light still pulsing along the pipe.",
+  "chars": "CHARACTERS: Two stick figures. A huge oversized hand belonging to an unseen figure grips the pipe from above and squeezes, motion lines vibrating around it. Leo stands below with his arms crossed, chin lifted, eyebrows level, mouth in a calm confident line.",
+  "action": "KEY ACTION AND FOCAL POINT: The pipe holds firm under the squeezing hand and its glow never dims, sparks bursting off the grip. The unbroken pipe is the focal point."
  },
  {
   "fr": "Une ligne de lumière sépare nettement deux moitiés de l'image.",
@@ -730,12 +868,6 @@
   "env": "SCENE AND ENVIRONMENT: A dark crowd field at night seen from a raised angle, hundreds of small stick figures in shadow, with one wide searchlight beam sweeping across them from the upper left, its cone visible in the haze and its bright oval pool crossing the crowd, deep blue and violet everywhere else.",
   "chars": "CHARACTERS: Many small stick figures in muted clothes standing across the field with upturned round white heads. Leo stands on a raised platform in the lower right, both hands on the searchlight housing, swinging it across the crowd, eyebrows lowered in focus, mouth set.",
   "action": "KEY ACTION AND FOCAL POINT: The bright oval of light sweeps across the sea of upturned faces with motion lines behind the beam. The moving pool of light is the focal point."
- },
- {
-  "fr": "Un annonceur observe cette même foule, un produit à la main.",
-  "env": "SCENE AND ENVIRONMENT: The edge of the same dark crowd field, a raised viewing platform in the foreground with a brass railing catching warm lamp light, the crowd stretching away into blue shadow below, a violet night sky with thin clouds and a low moon.",
-  "chars": "CHARACTERS: Two stick figures. The royal blue suited brand executive leans on the railing holding a glowing product box under one arm, head lowered toward the crowd, one eyebrow raised in appraisal, mouth pursed in calculation. Leo stands beside him on the right, following his gaze, arms folded.",
-  "action": "KEY ACTION AND FOCAL POINT: The executive scans the crowd with his product tucked ready under his arm. His appraising downturned face is the focal point."
  },
  {
   "fr": "La marque tend son produit vers la foule et sort son chéquier.",
