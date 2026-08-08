@@ -1,0 +1,6 @@
+{
+  "name": "YouTube Movie Summary Generator",
+  "description": "Générez des résumés de films pour YouTube en associant vos scripts ou narrations audio à des extraits de films issus de Clip.Cafe.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
