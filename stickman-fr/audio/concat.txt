@@ -1,0 +1,5 @@
+file 'vo1.mp3'
+file 'sil.mp3'
+file 'vo2.mp3'
+file 'sil.mp3'
+file 'vo3.mp3'

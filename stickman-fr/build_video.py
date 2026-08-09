@@ -21,10 +21,14 @@ W, H = 1920, 1080
 XFADE = 0.4  # duree du fondu entre deux plans, en secondes
 
 
+WPS = 3.27  # cadence mesuree de la voix off ElevenLabs, en mots par seconde
+
+
 def beat_durations(beats_path, first, last):
-    """Duree de chaque beat retenu, a 2,5 mots par seconde."""
+    """Duree nominale de chaque beat retenu. La mise a l'echelle sur la voix off
+    corrige ensuite le total, seules les proportions comptent ici."""
     beats = [l.strip() for l in beats_path.read_text(encoding="utf-8").splitlines() if l.strip()]
-    return [len(b.split()) / 2.5 for b in beats[first - 1:last]]
+    return [len(b.split()) / WPS for b in beats[first - 1:last]]
 
 
 def audio_duration(path):
