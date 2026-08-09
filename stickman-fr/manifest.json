@@ -332,6 +332,30 @@
   "81": {
    "asset": "d66c1f81-501c-4a74-a610-0c2ef6fa3ccd",
    "version": "compact"
+  },
+  "82": {
+   "asset": "5a181a87-bdf7-4a8f-a560-e10e0949763a",
+   "version": "compact"
+  },
+  "84": {
+   "asset": "4f391de7-ea63-42dd-8620-68bb4e055c27",
+   "version": "compact"
+  },
+  "85": {
+   "asset": "f3c013ed-4044-4a4e-a0c0-081733ae6fe0",
+   "version": "compact"
+  },
+  "86": {
+   "asset": "13546752-aa5d-475d-a4d9-15e4bd78d9cf",
+   "version": "compact"
+  },
+  "87": {
+   "asset": "dc35a430-a945-4fe9-9412-7c4fdb0fdffa",
+   "version": "compact"
+  },
+  "88": {
+   "asset": "76e9f097-1578-4bd7-be23-428ed0ad1538",
+   "version": "compact"
   }
  },
  "compact_template": true,
