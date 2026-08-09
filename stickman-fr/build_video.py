@@ -35,26 +35,50 @@ def merge_shots(beats, durations, min_shot):
     """Regroupe les beats consecutifs jusqu'a atteindre min_shot secondes.
 
     Le decoupage en beats de 2 a 3 s vient du document, qui suppose un clip
-    anime par beat. Sur des images fixes, ce rythme est trop rapide : on garde
-    la premiere image de chaque groupe et on additionne les durees.
+    anime par beat. Sur des images fixes, ce rythme est trop rapide : on
+    additionne les durees et on ne garde qu'une image par groupe.
+
+    Retourne une liste de (membres, duree), membres etant la liste des beats
+    du groupe. Sans min_shot, chaque beat forme son propre groupe.
     """
     if not min_shot:
-        return [(b, d) for b, d in zip(beats, durations)]
-    groups, cur_beat, cur_dur = [], None, 0.0
+        return [([b], d) for b, d in zip(beats, durations)]
+    groups, cur, cur_dur = [], [], 0.0
     for b, d in zip(beats, durations):
-        if cur_beat is None:
-            cur_beat, cur_dur = b, d
-        else:
-            cur_dur += d
+        cur.append(b)
+        cur_dur += d
         if cur_dur >= min_shot:
-            groups.append((cur_beat, cur_dur))
-            cur_beat, cur_dur = None, 0.0
-    if cur_beat is not None:                     # reste de fin
+            groups.append((cur, cur_dur))
+            cur, cur_dur = [], 0.0
+    if cur:                                      # reste de fin
         if groups:
-            groups[-1] = (groups[-1][0], groups[-1][1] + cur_dur)
+            groups[-1] = (groups[-1][0] + cur, groups[-1][1] + cur_dur)
         else:
-            groups.append((cur_beat, cur_dur))
+            groups.append((cur, cur_dur))
     return groups
+
+
+def apply_selection(groups, selection_path):
+    """Remplace l'image par defaut (le premier beat) par celle choisie a la main.
+
+    Le fichier shot_selection.json donne, pour chaque groupe, le beat retenu.
+    On verifie que le decoupage correspond exactement a celui du fichier :
+    une selection faite pour un autre --min-shot serait silencieusement fausse.
+    """
+    sel = json.loads(pathlib.Path(selection_path).read_text(encoding="utf-8"))
+    picks = sel["picks"]
+    if len(picks) != len(groups):
+        sys.exit(f"selection incompatible : {len(picks)} groupes dans le fichier, "
+                 f"{len(groups)} calcules (verifier --min-shot / --first / --last)")
+    out = []
+    for (members, dur), p in zip(groups, picks):
+        if list(p["beats"]) != list(members):
+            sys.exit(f"selection incompatible au groupe {p['group']} : "
+                     f"{p['beats']} dans le fichier, {members} calcules")
+        if p["pick"] not in members:
+            sys.exit(f"beat {p['pick']} hors du groupe {p['group']}")
+        out.append((p["pick"], dur))
+    return out
 
 
 def audio_duration(path):
@@ -80,12 +104,17 @@ def find_image(images_dir, beat):
     return None
 
 
-def build(images_dir, out, audio, first, last, min_shot=0.0):
+def build(images_dir, out, audio, first, last, min_shot=0.0, selection=None):
     durations = beat_durations(HERE / "beats.txt", first, last)
     beats = list(range(first, last + 1))
-    grouped = merge_shots(beats, durations, min_shot)
+    groups = merge_shots(beats, durations, min_shot)
     if min_shot:
-        print(f"regroupement a {min_shot}s : {len(beats)} beats -> {len(grouped)} plans")
+        print(f"regroupement a {min_shot}s : {len(beats)} beats -> {len(groups)} plans")
+    if selection:
+        grouped = apply_selection(groups, selection)
+        print(f"selection manuelle appliquee : {selection}")
+    else:
+        grouped = [(members[0], dur) for members, dur in groups]
     pairs = [(b, find_image(images_dir, b), d) for b, d in grouped]
     missing = [b for b, p, _ in pairs if p is None]
     if missing:
@@ -151,6 +180,8 @@ if __name__ == "__main__":
     ap.add_argument("--last", type=int, default=20)
     ap.add_argument("--min-shot", type=float, default=0.0,
                     help="duree minimale d'un plan en secondes ; regroupe les beats")
+    ap.add_argument("--selection", default=None,
+                    help="fichier json d'images choisies a la main pour chaque groupe")
     a = ap.parse_args()
     build(HERE / a.images, HERE / a.out, pathlib.Path(a.audio) if a.audio else None,
-          a.first, a.last, a.min_shot)
+          a.first, a.last, a.min_shot, a.selection)
