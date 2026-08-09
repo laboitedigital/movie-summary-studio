@@ -31,6 +31,32 @@ def beat_durations(beats_path, first, last):
     return [len(b.split()) / WPS for b in beats[first - 1:last]]
 
 
+def merge_shots(beats, durations, min_shot):
+    """Regroupe les beats consecutifs jusqu'a atteindre min_shot secondes.
+
+    Le decoupage en beats de 2 a 3 s vient du document, qui suppose un clip
+    anime par beat. Sur des images fixes, ce rythme est trop rapide : on garde
+    la premiere image de chaque groupe et on additionne les durees.
+    """
+    if not min_shot:
+        return [(b, d) for b, d in zip(beats, durations)]
+    groups, cur_beat, cur_dur = [], None, 0.0
+    for b, d in zip(beats, durations):
+        if cur_beat is None:
+            cur_beat, cur_dur = b, d
+        else:
+            cur_dur += d
+        if cur_dur >= min_shot:
+            groups.append((cur_beat, cur_dur))
+            cur_beat, cur_dur = None, 0.0
+    if cur_beat is not None:                     # reste de fin
+        if groups:
+            groups[-1] = (groups[-1][0], groups[-1][1] + cur_dur)
+        else:
+            groups.append((cur_beat, cur_dur))
+    return groups
+
+
 def audio_duration(path):
     out = subprocess.run(
         [FFMPEG, "-i", str(path), "-f", "null", "-"],
@@ -54,10 +80,13 @@ def find_image(images_dir, beat):
     return None
 
 
-def build(images_dir, out, audio, first, last):
+def build(images_dir, out, audio, first, last, min_shot=0.0):
     durations = beat_durations(HERE / "beats.txt", first, last)
     beats = list(range(first, last + 1))
-    pairs = [(b, find_image(images_dir, b), d) for b, d in zip(beats, durations)]
+    grouped = merge_shots(beats, durations, min_shot)
+    if min_shot:
+        print(f"regroupement a {min_shot}s : {len(beats)} beats -> {len(grouped)} plans")
+    pairs = [(b, find_image(images_dir, b), d) for b, d in grouped]
     missing = [b for b, p, _ in pairs if p is None]
     if missing:
         print(f"images manquantes, beats ignores : {missing}")
@@ -120,5 +149,8 @@ if __name__ == "__main__":
     ap.add_argument("--audio", default=None)
     ap.add_argument("--first", type=int, default=1)
     ap.add_argument("--last", type=int, default=20)
+    ap.add_argument("--min-shot", type=float, default=0.0,
+                    help="duree minimale d'un plan en secondes ; regroupe les beats")
     a = ap.parse_args()
-    build(HERE / a.images, HERE / a.out, pathlib.Path(a.audio) if a.audio else None, a.first, a.last)
+    build(HERE / a.images, HERE / a.out, pathlib.Path(a.audio) if a.audio else None,
+          a.first, a.last, a.min_shot)
