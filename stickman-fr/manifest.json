@@ -212,6 +212,34 @@
   "51": {
    "asset": "8aa0c593-ce11-47ea-a2b4-65985b4ac23a",
    "version": "compact"
+  },
+  "52": {
+   "asset": "9ebfb65a-caec-48db-8ab2-5f14cffe5e13",
+   "version": "compact"
+  },
+  "53": {
+   "asset": "7fe078fd-4c37-4e95-8ce2-8ed76a84deff",
+   "version": "compact"
+  },
+  "54": {
+   "asset": "4a138508-bc34-41c0-b8ed-66b99d5af9f7",
+   "version": "compact"
+  },
+  "55": {
+   "asset": "5d15679c-943b-42c2-9b19-ce20c125e112",
+   "version": "compact"
+  },
+  "56": {
+   "asset": "37949737-2f03-49cf-9cc2-ebf0b993bd01",
+   "version": "compact"
+  },
+  "57": {
+   "asset": "bc600fdb-6afe-4543-821b-1add15ada5f0",
+   "version": "compact"
+  },
+  "58": {
+   "asset": "6307ecba-aa2c-4450-ac06-13938f75c0ed",
+   "version": "compact"
   }
  },
  "compact_template": true,
