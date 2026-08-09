@@ -240,6 +240,34 @@
   "58": {
    "asset": "6307ecba-aa2c-4450-ac06-13938f75c0ed",
    "version": "compact"
+  },
+  "59": {
+   "asset": "18f851da-52ca-4a1f-8a37-eacfffc8fef6",
+   "version": "compact"
+  },
+  "60": {
+   "asset": "2528e8d7-0cc5-4575-850a-9a1b133bf79c",
+   "version": "compact"
+  },
+  "61": {
+   "asset": "a0c69569-bf73-4c41-b48b-e4a328331a6f",
+   "version": "compact"
+  },
+  "62": {
+   "asset": "b8269b25-1155-4a59-8f6b-3db1b1d2b6de",
+   "version": "compact"
+  },
+  "63": {
+   "asset": "69b4bb2a-2ae2-451b-984e-98fd8e360615",
+   "version": "compact"
+  },
+  "64": {
+   "asset": "8153f631-9dd8-413a-b8cb-c7f42d83bffc",
+   "version": "compact"
+  },
+  "65": {
+   "asset": "dfd2fd5b-c253-4cd5-a41b-67097b318c3a",
+   "version": "compact"
   }
  },
  "compact_template": true,
