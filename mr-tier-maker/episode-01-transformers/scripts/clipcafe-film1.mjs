@@ -51,6 +51,10 @@ const SHOTS = [
 ];
 
 const CAP = 7.0; // plafond dur : aucun extrait ne depasse 7 s
+
+// Clip.cafe limite le plan PRO a 10 requetes par minute, soit une toutes les 6 s.
+// En dessous, l'API renvoie des 429 et le script echoue en cascade.
+const RATE_MS = 6500;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function api(params) {
@@ -73,6 +77,8 @@ function run(cmd, args) {
 
 async function search() {
   const choices = {};
+  console.log(`${SHOTS.length} requetes, une toutes les ${RATE_MS / 1000} s (limite PRO : 10/min).`);
+  console.log(`Duree estimee : ~${Math.ceil((SHOTS.length * RATE_MS) / 60000)} min.\n`);
   for (const s of SHOTS) {
     const tag = String(s.n).padStart(3, "0") + (s.suffix || "");
     process.stdout.write(`plan ${tag}  "${s.q}" ... `);
@@ -94,7 +100,7 @@ async function search() {
       console.log(`ECHEC : ${e.message}`);
       choices[tag] = [];
     }
-    await sleep(400); // on ne martele pas leur API
+    await sleep(RATE_MS);
   }
   fs.writeFileSync("choices.json", JSON.stringify(choices, null, 2));
   const picks = Object.fromEntries(SHOTS.map((s) => [String(s.n).padStart(3, "0") + (s.suffix || ""), 0]));
@@ -112,6 +118,8 @@ async function fetchAll() {
   const choices = JSON.parse(fs.readFileSync("choices.json", "utf8"));
   const picks = fs.existsSync("picks.json") ? JSON.parse(fs.readFileSync("picks.json", "utf8")) : {};
   fs.mkdirSync(OUT, { recursive: true });
+  console.log(`${SHOTS.length} extraits. Chacun consomme 1 requete + 1 telechargement`);
+  console.log(`du quota mensuel (plan PRO : 10 000 requetes, 1 000 telechargements).\n`);
 
   const manifest = [];
   for (const s of SHOTS) {
@@ -162,7 +170,7 @@ async function fetchAll() {
       console.log(`ECHEC : ${e.message}`);
       manifest.push({ shot: tag, status: "echec", erreur: e.message, query: s.q });
     }
-    await sleep(500);
+    await sleep(RATE_MS);
   }
 
   fs.writeFileSync("manifest-film1.json", JSON.stringify(manifest, null, 2));
