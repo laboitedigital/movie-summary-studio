@@ -121,6 +121,7 @@ async function catalogue() {
     duration: h.duration,
     movie: h.movie_title,
     year: h.movie_year,
+    poster: h.movie_poster ?? null,
     page: `https://clip.cafe/${h.movie_slug}/${h.slug}/`,
   }));
   fs.writeFileSync("catalogue.json", JSON.stringify(rows, null, 2));
@@ -131,6 +132,65 @@ async function catalogue() {
   }
   console.log(`\nEcrit catalogue.json. Assigne ensuite les slugs aux plans dans assign.json,`);
   console.log(`au format { "009": "slug-du-clip", "010": "...", ... }, puis lance fetch.`);
+}
+
+// Les neuf films de l'episode, dans l'ordre chronologique de sortie.
+// La vignette de chaque film alimente le carton de verdict et le tableau final.
+const FILMS = [
+  { tag: "1986", title: "Transformers", year: "1986", label: "The Transformers: The Movie" },
+  { tag: "2007", title: "Transformers", year: "2007", label: "Transformers" },
+  { tag: "2009", title: "Transformers", year: "2009", label: "Revenge of the Fallen" },
+  { tag: "2011", title: "Transformers", year: "2011", label: "Dark of the Moon" },
+  { tag: "2014", title: "Transformers", year: "2014", label: "Age of Extinction" },
+  { tag: "2017", title: "Transformers", year: "2017", label: "The Last Knight" },
+  { tag: "2018", title: "Bumblebee",    year: "2018", label: "Bumblebee" },
+  { tag: "2023", title: "Transformers", year: "2023", label: "Rise of the Beasts" },
+  { tag: "2024", title: "Transformers", year: "2024", label: "Transformers One" },
+];
+
+/**
+ * Recupere l'affiche de chaque film via le champ movie_poster renvoye par l'API.
+ * Une requete par film, soit neuf au total. L'affiche est une URL d'image directe :
+ * la telecharger ne consomme pas le quota de telechargements de clips.
+ */
+async function posters() {
+  const OUTP = "posters";
+  fs.mkdirSync(OUTP, { recursive: true });
+  console.log(`${FILMS.length} films, une requete toutes les ${RATE_MS / 1000} s.\n`);
+
+  const rows = [];
+  for (const f of FILMS) {
+    process.stdout.write(`${f.tag}  ${f.label} ... `);
+    try {
+      const p = new URLSearchParams({ movie_title: f.title, movie_year: f.year, size: "1" });
+      const hit = (await api(p.toString()))[0];
+      if (!hit) throw new Error("aucun resultat pour ce film");
+      const url = hit.movie_poster;
+      if (!url) throw new Error("pas de champ movie_poster");
+
+      const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
+      if (!res.ok) throw new Error(`affiche HTTP ${res.status}`);
+      const buf = Buffer.from(await res.arrayBuffer());
+      if (buf.length < 1024) throw new Error("image trop petite");
+
+      const ext = (url.split("?")[0].match(/\.(jpe?g|png|webp)$/i)?.[1] || "jpg").toLowerCase();
+      const file = path.join(OUTP, `${f.tag}-${f.label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.${ext}`);
+      fs.writeFileSync(file, buf);
+
+      console.log(`ok — ${hit.movie_title} (${hit.movie_year}) ${Math.round(buf.length / 1024)} Ko`);
+      rows.push({ ...f, file, url, movie: hit.movie_title, year: hit.movie_year, bytes: buf.length });
+    } catch (e) {
+      console.log(`ECHEC : ${e.message}`);
+      rows.push({ ...f, status: "echec", erreur: e.message });
+    }
+    await sleep(RATE_MS);
+  }
+
+  fs.writeFileSync("posters.json", JSON.stringify(rows, null, 2));
+  const ok = rows.filter((r) => r.file).length;
+  console.log(`\n${ok}/${FILMS.length} affiches recuperees dans ${OUTP}/`);
+  const bad = rows.filter((r) => !r.file);
+  if (bad.length) console.log(`A reprendre : ${bad.map((b) => b.label).join(", ")}`);
 }
 
 async function search() {
@@ -270,11 +330,13 @@ async function fetchAll() {
 
 const cmd = process.argv[2];
 if (cmd === "catalogue") await catalogue();
+else if (cmd === "posters") await posters();
 else if (cmd === "search") await search();
 else if (cmd === "fetch") await fetchAll();
 else {
   console.log("Usage :");
   console.log("  node clipcafe-film1.mjs catalogue   liste tous les extraits du film (1 requete)");
+  console.log("  node clipcafe-film1.mjs posters     recupere l affiche des 9 films (9 requetes)");
   console.log("  node clipcafe-film1.mjs search      cherche plan par plan (14 requetes)");
   console.log("  node clipcafe-film1.mjs fetch       telecharge selon assign.json ou picks.json");
   process.exit(1);
