@@ -12,11 +12,11 @@ on:
   workflow_dispatch:
     inputs:
       phase:
-        description: "search = cherche seulement (aucun quota de telechargement consomme) | complet = cherche puis telecharge"
+        description: "catalogue = liste tous les extraits du film en 1 requete (recommande) | search = cherche plan par plan | complet = telecharge selon assign.json"
         required: true
-        default: complet
+        default: catalogue
         type: choice
-        options: [search, complet]
+        options: [catalogue, search, complet]
 
 jobs:
   extraits:
@@ -51,7 +51,14 @@ jobs:
           fi
           echo "Secret present : ${#CLIP_CAFE_API_KEY} caracteres."
 
+      - name: Lister le catalogue du film
+        if: inputs.phase == 'catalogue'
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: node clipcafe-film1.mjs catalogue
+
       - name: Rechercher les extraits
+        if: inputs.phase == 'search'
         env:
           CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
         run: node clipcafe-film1.mjs search
@@ -68,8 +75,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: clipcafe-choix
+          name: clipcafe-catalogue
           path: |
+            mr-tier-maker/episode-01-transformers/scripts/catalogue.json
             mr-tier-maker/episode-01-transformers/scripts/choices.json
             mr-tier-maker/episode-01-transformers/scripts/picks.json
           if-no-files-found: warn
