@@ -33,8 +33,23 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Verifier ffmpeg
-        run: ffmpeg -version | head -1
+      # Les runners ubuntu-latest ne fournissent pas ffmpeg : il faut l'installer.
+      - name: Installer ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          ffmpeg -version | head -1
+
+      # Echoue tout de suite avec un message clair plutot qu'au milieu de la serie.
+      - name: Verifier le secret
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: |
+          if [ -z "$CLIP_CAFE_API_KEY" ]; then
+            echo "::error::Le secret CLIP_CAFE_API_KEY n'est pas defini. Va dans Settings > Secrets and variables > Actions > New repository secret, nomme-le CLIP_CAFE_API_KEY."
+            exit 1
+          fi
+          echo "Secret present : ${#CLIP_CAFE_API_KEY} caracteres."
 
       - name: Rechercher les extraits
         env:
