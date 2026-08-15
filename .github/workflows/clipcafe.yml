@@ -60,8 +60,10 @@ jobs:
           fi
           echo "Secret present : ${#CLIP_CAFE_API_KEY} caracteres."
 
+      # Tourne aussi en mode complet : le runner est vierge a chaque fois, et
+      # fetch a besoin du catalogue a jour pour resoudre les slugs de assign.json.
       - name: Lister le catalogue du film
-        if: inputs.phase == 'catalogue'
+        if: inputs.phase == 'catalogue' || inputs.phase == 'complet'
         env:
           CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
         run: node clipcafe-film1.mjs catalogue
@@ -71,6 +73,15 @@ jobs:
         env:
           CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
         run: node clipcafe-film1.mjs search
+
+      - name: Verifier assign.json
+        if: inputs.phase == 'complet'
+        run: |
+          if [ ! -f assign.json ]; then
+            echo "::error::assign.json est absent. Lance d'abord le mode catalogue, fais assigner les extraits aux plans, puis commite assign.json a cote du script. Sans ce fichier, fetch telechargerait plusieurs fois le meme extrait."
+            exit 1
+          fi
+          echo "assign.json present : $(grep -c ':' assign.json) plans assignes."
 
       - name: Telecharger et couper
         if: inputs.phase == 'complet'
