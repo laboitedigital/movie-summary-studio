@@ -12,11 +12,11 @@ on:
   workflow_dispatch:
     inputs:
       phase:
-        description: "catalogue = liste tous les extraits du film en 1 requete (recommande) | search = cherche plan par plan | complet = telecharge selon assign.json"
+        description: "catalogue = liste les extraits du film | posters = recupere les affiches des 9 films | search = cherche plan par plan | complet = telecharge selon assign.json"
         required: true
         default: catalogue
         type: choice
-        options: [catalogue, search, complet]
+        options: [catalogue, posters, search, complet]
 
 jobs:
   extraits:
@@ -67,6 +67,23 @@ jobs:
         env:
           CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
         run: node clipcafe-film1.mjs catalogue
+
+      - name: Recuperer les affiches des films
+        if: inputs.phase == 'posters'
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: node clipcafe-film1.mjs posters
+
+      - name: Publier les affiches
+        if: inputs.phase == 'posters'
+        uses: actions/upload-artifact@v4
+        with:
+          name: affiches-films
+          path: |
+            mr-tier-maker/episode-01-transformers/scripts/posters/
+            mr-tier-maker/episode-01-transformers/scripts/posters.json
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Rechercher les extraits
         if: inputs.phase == 'search'
