@@ -26,9 +26,31 @@ node clipcafe-film1.mjs search   # cherche, écrit choices.json et picks.json
 node clipcafe-film1.mjs fetch    # télécharge et coupe à la bonne durée
 ```
 
-Entre les deux, ouvre `choices.json` et vérifie la colonne `movie` de chaque plan :
-une requête peut ramener un extrait venu d'un autre film. Pour changer un choix,
+Entre les deux, ouvre `choices.json` et vérifie `movie` et `year` de chaque plan :
+tout doit dire Transformers 1986. Un plan marqué `[HORS FILM CIBLE]` n'a rien trouvé
+dans le film et a élargi sa recherche — à valider à la main. Pour changer un choix,
 mets l'index voulu dans `picks.json` (0 = premier résultat) puis relance `fetch`.
+
+### Ce que le script exploite de l'API
+
+D'après [la doc officielle](https://clip.cafe/api-docs/) :
+
+- **`movie_title` + `movie_year`** contraignent la recherche au bon film. Sans ça,
+  « Optimus Prime » ramène surtout des extraits des films Bay, qui dominent l'index.
+- **`captions`** fait de la recherche sémantique sur l'image, là où `transcript`
+  cherche dans les répliques. Les plans qui décrivent une action utilisent `captions`,
+  ceux qui citent une réplique utilisent `transcript`.
+- **`duration=3-30`** écarte les micro-clips inutilisables. Tous les entiers de l'API
+  acceptent des intervalles.
+- **Le téléchargement est un appel séparé** : `?api_key=..&slug=..&key=..`, où `key`
+  est générée à chaque recherche et **expire au bout de 5 minutes**. C'est pourquoi
+  `fetch` refait une recherche par slug juste avant de télécharger.
+
+### Quotas
+
+Le plan PRO donne **10 requêtes par minute, 10 000 requêtes et 1 000 téléchargements
+par mois**. L'épisode complet demande 117 extraits, soit environ 8 épisodes par mois.
+Le script espace ses appels de 6,5 s pour ne pas prendre de 429.
 
 Les extraits arrivent dans `scripts/clips-film1/`, déjà coupés, avec un
 `manifest-film1.json` qui relie chaque fichier à son numéro de plan.
