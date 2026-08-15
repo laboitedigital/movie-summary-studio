@@ -1,0 +1,71 @@
+name: Extraits Clip.cafe
+
+# Recupere les extraits d'un segment et les rend en zip telechargeable.
+# Se lance a la main depuis l'onglet Actions.
+#
+# Prerequis : ajouter la cle Clip.cafe dans
+# Settings > Secrets and variables > Actions > New repository secret
+#   Nom    : CLIP_CAFE_API_KEY
+#   Valeur : ta cle
+
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "search = cherche seulement (aucun quota de telechargement consomme) | complet = cherche puis telecharge"
+        required: true
+        default: complet
+        type: choice
+        options: [search, complet]
+
+jobs:
+  extraits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mr-tier-maker/episode-01-transformers/scripts
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verifier ffmpeg
+        run: ffmpeg -version | head -1
+
+      - name: Rechercher les extraits
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: node clipcafe-film1.mjs search
+
+      - name: Telecharger et couper
+        if: inputs.phase == 'complet'
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: node clipcafe-film1.mjs fetch
+
+      # choices.json d'abord : meme si le telechargement echoue, tu vois ce que
+      # l'API a trouve et tu peux corriger picks.json avant de relancer.
+      - name: Publier les resultats de recherche
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clipcafe-choix
+          path: |
+            mr-tier-maker/episode-01-transformers/scripts/choices.json
+            mr-tier-maker/episode-01-transformers/scripts/picks.json
+          if-no-files-found: warn
+
+      - name: Publier les extraits
+        if: inputs.phase == 'complet'
+        uses: actions/upload-artifact@v4
+        with:
+          name: extraits-film1-1986
+          path: |
+            mr-tier-maker/episode-01-transformers/scripts/clips-film1/
+            mr-tier-maker/episode-01-transformers/scripts/manifest-film1.json
+          if-no-files-found: error
+          retention-days: 7
