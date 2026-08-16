@@ -73,7 +73,7 @@ export const RemotionRoot: React.FC = () => (
       schema={verdictTableauSchema} defaultProps={{
         rows: DEMO_ROWS.map((r) => r.tier === 'B' ? {...r, posters: [P('2024-transformers-one.jpg')]} : r),
         poster: P('1986-the-transformers-the-movie.jpg'), tier: 'B' as const, slotIndex: 1,
-        offsetX: 0, colonneAvatar: 560}} />
+        offsetX: 0, colonneAvatar: 0}} />
     <Composition id="Trombinoscope" component={Trombinoscope} durationInFrames={350} fps={FPS} width={W} height={H}
       schema={trombinoscopeSchema} defaultProps={{
         names: ['Hot Rod', 'Kup', 'Blurr', 'Arcee', 'Ultra Magnus', 'Springer', 'Wheelie', 'Perceptor',
