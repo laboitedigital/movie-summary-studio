@@ -1,0 +1,96 @@
+name: Montage complet de l episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      debut:
+        description: "Premier plan a monter"
+        required: false
+        default: "1"
+      fin:
+        description: "Dernier plan (vide = jusqu au bout)"
+        required: false
+        default: ""
+      runs_extraits:
+        description: "Runs qui portent les extraits, du plus ancien au plus recent"
+        required: false
+        default: "31928598104 31948946566 31949254257 31951727721"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  montage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Installer ffmpeg
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          NEEDRESTART_MODE: a
+        timeout-minutes: 5
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      # Les extraits ne sont pas dans le depot : ils vivent dans les artefacts
+      # des runs Clip.cafe, et ils expirent. On les rapatrie ici.
+      - name: Recuperer les extraits
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUNS: ${{ inputs.runs_extraits }}
+        run: |
+          set -e
+          mkdir -p /tmp/artefacts
+          for r in $RUNS; do
+            mkdir -p "/tmp/artefacts/$r"
+            # par nom et non expire : .artifacts[0] pourrait tomber sur un
+            # artefact perime, qui se telecharge en 410
+            id=$(gh api "repos/${{ github.repository }}/actions/runs/$r/artifacts" \
+                 --jq '[.artifacts[] | select(.name=="extraits" and .expired==false)][0].id')
+            if [ -z "$id" ] || [ "$id" = "null" ]; then
+              echo "::error::le run $r n a plus d artefact « extraits » — il a expire."
+              echo "Relancer les extraits, ou committer clips/ dans le depot."
+              exit 1
+            fi
+            gh api "repos/${{ github.repository }}/actions/artifacts/$id/zip" \
+               > "/tmp/artefacts/$r.zip"
+            unzip -q -o "/tmp/artefacts/$r.zip" -d "/tmp/artefacts/$r"
+            echo "$r : $(ls /tmp/artefacts/$r/*.mp4 2>/dev/null | wc -l) extrait(s)"
+          done
+
+      - name: Remettre les extraits a la bonne numerotation
+        working-directory: mr-tier-maker/episode-01-transformers
+        run: sh scripts/assembler-extraits.sh /tmp/artefacts
+
+      - name: Installer le kit Remotion
+        working-directory: mr-tier-maker/kit-v2
+        run: npm ci --no-audit --no-fund
+
+      - name: Monter
+        working-directory: mr-tier-maker/episode-01-transformers
+        env:
+          FIN: ${{ inputs.fin }}
+          DEBUT: ${{ inputs.debut }}
+        run: |
+          set -e
+          python3 scripts/build.py $DEBUT $FIN
+
+      - name: Ce qui manque
+        if: always()
+        working-directory: mr-tier-maker/episode-01-transformers
+        run: cat scripts/montage/manquants.json 2>/dev/null || echo "aucun rapport"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: episode
+          path: |
+            mr-tier-maker/episode-01-transformers/scripts/montage/episode-01.mp4
+            mr-tier-maker/episode-01-transformers/scripts/montage/manquants.json
+          retention-days: 14

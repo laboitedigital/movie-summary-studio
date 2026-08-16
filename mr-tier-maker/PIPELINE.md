@@ -126,10 +126,22 @@ plaisent, tu déposes le reste dans le dossier de l'épisode.
 tout en 1920×1080 à 60 fps, je coupe **à la frame** sur les bornes du SRT, et
 j'assemble avec la voix off.
 
-`episode-01-transformers/scripts/build3.py` est le modèle : il monte les
-3 premières minutes de l'épisode 01 et sert de patron pour les suivants.
+Le montage tourne dans le job **Montage complet de l'épisode**, pas ici : les
+extraits vivent dans les artefacts Clip.cafe, et le stockage des artefacts est
+hors de ma politique de sortie réseau. Un runner GitHub, lui, y accède. Tu ne
+télécharges qu'un fichier à la fin.
 
-**Sort :** `episode.mp4`, 1920×1080, 60 fps.
+`episode-01-transformers/scripts/build.py` déduit la recette du plan de
+montage, famille par famille — extrait, verdict, carton titre, affiche, photo,
+rappel tableau, citation, chiffre clé, pour/contre. `build3.py` reste comme
+témoin : c'était la version écrite plan par plan, tenable jusqu'à 30 plans.
+
+**Ce qui n'a pas de matière sort en carton de remplacement, visible**, avec le
+numéro du plan et ce qui manque, et la liste part dans `manquants.json`. Un
+montage complet dont on voit les trous vaut mieux qu'un montage court dont on
+ne voit rien.
+
+**Sort :** `episode-01.mp4`, 1920×1080, 60 fps, et `manquants.json`.
 
 ---
 

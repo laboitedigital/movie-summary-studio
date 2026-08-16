@@ -189,11 +189,11 @@ Affiche ❌ affiche manquante · réaction S ❌ · 16 plans
 | 121 | 11:45.12 | 11:51.72 | 6.6 s | extrait | `— extrait a telecharger` | Les Decepticons sont plus forts et mieux équipés, ce qui obl… |
 | 122 | 11:51.72 | 11:59.30 | 7.6 s | verdict | `verdict.build(reac-S.mp4, affiche, row=0, zoom=True)` | C'est un film de transformers avec une âme. Il n'y en a pas … |
 
-## 11:59.30 → 13:05.30 — TRANSFORMERS ONE (2024) — verdict **B**
+## 11:59.30 → 13:05.30 — RISE OF THE BEASTS (2023) — verdict **B**
 
 Affiche ❌ affiche manquante · réaction B ❌ · 12 plans
 
-À l'ouverture : `kit.carton_titre("TRANSFORMERS ONE", "2024")`, puis `kit.etiquette(clip, "TRANSFORMERS ONE · 2024")` tenue sur les 8 premières secondes du segment.
+À l'ouverture : `kit.carton_titre("RISE OF THE BEASTS", "2023")`, puis `kit.etiquette(clip, "RISE OF THE BEASTS · 2023")` tenue sur les 8 premières secondes du segment.
 
 | # | in | out | durée | famille | élément | texte de la voix off |
 |---|----|-----|-------|---------|---------|----------------------|
@@ -210,11 +210,11 @@ Affiche ❌ affiche manquante · réaction B ❌ · 12 plans
 | 133 | 12:51.99 | 12:57.14 | 5.1 s | extrait | `— extrait a telecharger` | est exactement le genre de moment qu'un film comme celui -ci… |
 | 134 | 12:57.14 | 13:05.30 | 8.2 s | verdict | `verdict.build(reac-B.mp4, affiche, row=2, zoom=True)` | Un film correct, avec un tir du milieu qui le retient. Verdi… |
 
-## 13:05.30 → 15:16.56 — RISE OF THE BEASTS (2023) — verdict **A**
+## 13:05.30 → 15:16.56 — TRANSFORMERS ONE (2024) — verdict **A**
 
 Affiche ❌ affiche manquante · réaction A ❌ · 25 plans
 
-À l'ouverture : `kit.carton_titre("RISE OF THE BEASTS", "2023")`, puis `kit.etiquette(clip, "RISE OF THE BEASTS · 2023")` tenue sur les 8 premières secondes du segment.
+À l'ouverture : `kit.carton_titre("TRANSFORMERS ONE", "2024")`, puis `kit.etiquette(clip, "TRANSFORMERS ONE · 2024")` tenue sur les 8 premières secondes du segment.
 
 | # | in | out | durée | famille | élément | texte de la voix off |
 |---|----|-----|-------|---------|---------|----------------------|

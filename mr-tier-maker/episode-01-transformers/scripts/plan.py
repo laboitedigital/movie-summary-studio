@@ -18,8 +18,11 @@ FILMS=[  # (rangee du tier, titre, annee, slug d affiche, plan de verdict)
  (4,"AGE OF EXTINCTION","2014","2014-age-of-extinction",93),
  (4,"THE LAST KNIGHT","2017","2017-the-last-knight",106),
  (0,"BUMBLEBEE","2018","2018-bumblebee",122),
- (2,"TRANSFORMERS ONE","2024","2024-transformers-one",134),
- (1,"RISE OF THE BEASTS","2023","2023-rise-of-the-beasts",149),
+ # segment 7 = Rise of the Beasts, verdict B ; segment 8 = Transformers One,
+ # verdict A. Les deux etaient inverses : leur affiche partait dans la mauvaise
+ # rangee et leur carton titre au mauvais segment.
+ (2,"RISE OF THE BEASTS","2023","2023-rise-of-the-beasts",134),
+ (1,"TRANSFORMERS ONE","2024","2024-transformers-one",149),
 ]
 TIER="SABCDF"
 

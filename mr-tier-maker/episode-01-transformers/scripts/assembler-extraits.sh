@@ -1,5 +1,5 @@
 #!/bin/sh
-# Remet les 96 extraits dans clips/, en NOUVELLE numerotation.
+# Remet les 95 extraits dans clips/, en NOUVELLE numerotation.
 #
 # Ils sont eparpilles dans cinq artefacts GitHub, dont trois sont en ANCIENNE
 # numerotation — ils ont ete telecharges avant que le sous-titrage soit refait.
