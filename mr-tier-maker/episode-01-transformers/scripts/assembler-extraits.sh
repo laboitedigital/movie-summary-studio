@@ -15,6 +15,9 @@
 #   31948946566/    8 extraits, segment 5               (ancienne numerotation)
 #   31949254257/   11 extraits, segment 6               (ancienne numerotation)
 #   31951727721/    2 extraits, plans 085 et 111        (NOUVELLE)
+#   31970533637/   25 extraits, dont les segments 7 et 8 refaits dans le bon
+#                  film, apres l'inversion de la table FILMS     (NOUVELLE)
+#   31974243565/    3 extraits, 017 128 156                      (NOUVELLE)
 #
 # Ne PAS reprendre les artefacts des runs 31951890382 et 31952257833 : c etaient
 # les tentatives sur le plan 034, qui n est plus un extrait. Leur 034.mp4 serait
@@ -38,7 +41,9 @@ echo "$(ls "$DEST"/*.mp4 | wc -l) extraits en ancienne numerotation"
 (cd "$DEST" && sh "$ICI/renommer-extraits.sh")
 
 # 3. les rattrapages, deja au bon numero
-for r in 31951727721; do
+# L'ordre compte : le dernier ecrit gagne. 31974243565 refait trois plans qui
+# etaient deja dans 31970533637.
+for r in 31951727721 31970533637 31974243565; do
   [ -d "$SRC/$r" ] && cp "$SRC/$r"/*.mp4 "$DEST/"
 done
 # le 034 telecharge ne sert plus : le plan est passe en motion
