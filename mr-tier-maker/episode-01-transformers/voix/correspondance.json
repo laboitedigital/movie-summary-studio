@@ -1,0 +1,42 @@
+[
+ {
+  "partie": "a1",
+  "master_debut": 0.0,
+  "master_fin": 240.4,
+  "nouveau_debut": 0.0,
+  "nouveau_fin": 254.589,
+  "recupere_s": 14.189
+ },
+ {
+  "partie": "a2",
+  "master_debut": 240.4,
+  "master_fin": 435.4,
+  "nouveau_debut": 254.589,
+  "nouveau_fin": 459.179,
+  "recupere_s": 9.59
+ },
+ {
+  "partie": "ae",
+  "master_debut": 435.4,
+  "master_fin": 695.3,
+  "nouveau_debut": 459.179,
+  "nouveau_fin": 719.775,
+  "recupere_s": 0.696
+ },
+ {
+  "partie": "a4",
+  "master_debut": 695.3,
+  "master_fin": 892.63,
+  "nouveau_debut": 719.775,
+  "nouveau_fin": 917.104,
+  "recupere_s": -0.001
+ },
+ {
+  "partie": "conclusion",
+  "master_debut": 892.63,
+  "master_fin": 935.328,
+  "nouveau_debut": 917.104,
+  "nouveau_fin": 959.802,
+  "recupere_s": 0.0
+ }
+]
