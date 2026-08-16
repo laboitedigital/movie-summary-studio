@@ -10,7 +10,6 @@ flou). Fini les traits fins et le monospace.
 | Rangées | rectangle translucide | plaque arrondie `#16233F`, contour noir 6 px |
 | Lettres | DejaVu Sans **Mono** | DejaVu Sans **Bold**, contour noir 5 px |
 | Surbrillance du verdict | rectangle à angles droits | anneau arrondi à la couleur du tier |
-| Extraits Clip.cafe | plein écran | cadre à 90 %, coins arrondis, contour noir |
 
 ## Fichiers
 
@@ -18,21 +17,16 @@ flou). Fini les traits fins et le monospace.
   d'ImageMagick sur la machine, donc les PNG sont écrits à la main ; le lissage
   n'est calculé que dans les coins, ce qui rend le rendu instantané.
 - `tableau.py` — le tableau S→F et l'anneau de surbrillance
-- `cadre.py` — encadre un extrait à 90 %
 - `verdict.py` — le carton verdict complet
 
-## Le cadre à 90 %
+## Les extraits restent en plein écran
 
-`cadre.py` place l'extrait dans une ouverture de 1728×972 centrée, sur le fond
-de la chaîne, avec un contour noir arrondi. L'extrait est recadré (`crop`) et
-jamais déformé.
-
-**À savoir, sur la protection contre les réclamations.** Réduire l'image à
-90 % ne trompe pas Content ID : l'empreinte résiste au redimensionnement et au
-recadrage, et l'audio suffit à elle seule à déclencher une correspondance. Ce
-qui protège réellement, c'est le caractère transformatif — commentaire,
-critique, classement — et c'est déjà ce que fait la chaîne. Le cadre est donc
-à considérer comme un choix graphique, pas comme un bouclier juridique.
+Un cadre à 90 % avait été essayé pour limiter les réclamations YouTube, puis
+retiré : il ne protège de rien. L'empreinte Content ID résiste au
+redimensionnement et au recadrage, et la piste audio suffit seule à déclencher
+une correspondance. Ce qui protège réellement, c'est le caractère transformatif
+— commentaire, critique, classement — plus des extraits courts (moins de 7 s)
+et jamais d'audio original laissé seul.
 
 ## Piège corrigé
 
