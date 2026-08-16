@@ -69,4 +69,4 @@ mv 048.mp4 050.mp4
 mv 047.mp4 049.mp4
 
 # a telecharger, plans nes d une scission : 085, 111
-# abandonnes, leur plan a fusionne : 055, 069
+# abandonnes, leur plan a fusionne : 034, 055, 069

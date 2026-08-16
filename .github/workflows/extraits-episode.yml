@@ -19,6 +19,10 @@ on:
         description: "Slugs deja utilises pour ce film, a ne pas reprendre. Obligatoire avec plans"
         required: false
         default: ""
+      requete:
+        description: "Remplace la requete du plan. Plusieurs, separees par |, essayees a la suite"
+        required: false
+        default: ""
 
 jobs:
   extraits:
@@ -50,6 +54,7 @@ jobs:
           SEG: ${{ inputs.segment }}
           PLANS: ${{ inputs.plans }}
           EXCLURE: ${{ inputs.exclure }}
+          REQUETE: ${{ inputs.requete }}
         run: |
           set -e
           # le plan est reference depuis la racine du depot

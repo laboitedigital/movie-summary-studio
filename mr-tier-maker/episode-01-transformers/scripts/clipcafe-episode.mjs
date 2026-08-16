@@ -11,6 +11,7 @@
  *   node clipcafe-episode.mjs plan-episode-01.json          # tous les films
  *   node clipcafe-episode.mjs plan-episode-01.json 3        # segment 3 seulement
  *   PLANS=085,111 node clipcafe-episode.mjs plan.json       # ces deux plans
+ *   PLANS=034 REQUETE="a|b|c" node ...                      # essaie a, puis b, puis c
  *
  * PLANS permet de rattraper quelques plans sans repayer tout un segment. Mais
  * un run partiel ne voit pas ce que les runs precedents ont deja pris : sans
@@ -33,6 +34,7 @@ const ONLY = process.argv[3] ? Number(process.argv[3]) : null;
 const decoupe = (v) => (v || "").split(/[,\s]+/).filter(Boolean);
 const PLANS = decoupe(process.env.PLANS).map(Number);
 const EXCLURE = decoupe(process.env.EXCLURE);
+const REQUETE = (process.env.REQUETE || "").split("|").map((x) => x.trim()).filter(Boolean);
 
 const API = "https://api.clip.cafe/";
 const OUT = "clips";
@@ -94,6 +96,7 @@ if (PLANS.length) {
   if (absents.length) console.log(`! demandes mais pas des plans CLIP : ${absents.join(", ")}`);
 }
 if (EXCLURE.length) console.log(`${EXCLURE.length} slug(s) deja pris, ecartes d office`);
+if (REQUETE.length) console.log(`requete(s) imposee(s) : ${REQUETE.join("  |  ")}`);
 console.log("");
 
 // La recherche semantique de Clip.cafe converge : sur un catalogue etroit, elle
@@ -109,17 +112,21 @@ for (const s of shots) {
   if (fs.existsSync(dest)) { console.log(`= ${tag} deja la`); continue; }
 
   let hits = [];
+  const requetes = REQUETE.length ? REQUETE : [s.requete];
   // "captions" cherche sur ce qu'on voit, "transcript" sur les repliques.
   // On tente le visuel d'abord : la plupart des notes decrivent une action.
   // On cumule les deux au lieu de s'arreter au premier qui repond : plus le
   // vivier est large, moins on tombe sur un doublon.
-  for (const champ of ["captions", "transcript"]) {
-    try {
-      const r = await api(params(film, s.requete, champ));
-      for (const x of r) if (!hits.some((y) => y.slug === x.slug)) hits.push(x);
-    } catch (e) { console.log(`! ${tag} ${e.message}`); }
-    await sleep(RATE_MS);
-    if (hits.filter((x) => !pris.has(x.slug)).length >= 3) break;
+  boucle:
+  for (const q of requetes) {
+    for (const champ of ["captions", "transcript"]) {
+      try {
+        const r = await api(params(film, q, champ));
+        for (const x of r) if (!hits.some((y) => y.slug === x.slug)) hits.push(x);
+      } catch (e) { console.log(`! ${tag} ${e.message}`); }
+      await sleep(RATE_MS);
+      if (hits.filter((x) => !pris.has(x.slug)).length >= 3) break boucle;
+    }
   }
   // Pas assez de candidats neufs : on redemande large avant d abandonner. Le
   // plan 034 est mort comme ca — sur 8 resultats, 7 etaient deja pris et le
@@ -127,7 +134,7 @@ for (const s of shots) {
   if (hits.filter((x) => !pris.has(x.slug)).length < 2 && film) {
     for (const champ of ["captions", "transcript"]) {
       try {
-        const r = await api(params(film, s.requete, champ, 25));
+        const r = await api(params(film, requetes[0], champ, 25));
         for (const x of r) if (!hits.some((y) => y.slug === x.slug)) hits.push(x);
       } catch (e) { console.log(`! ${tag} ${e.message}`); }
       await sleep(RATE_MS);
