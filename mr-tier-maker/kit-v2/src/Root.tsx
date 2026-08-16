@@ -15,6 +15,7 @@ import {Versus, versusSchema} from './Versus';
 import {BoardRecap, boardRecapSchema} from './BoardRecap';
 import {Placeholder, placeholderSchema} from './Placeholder';
 import {VerdictTableau, verdictTableauSchema} from './VerdictTableau';
+import {CadreClip, cadreClipSchema} from './CadreClip';
 import {Commentaires, commentairesSchema} from './Commentaires';
 import {Trombinoscope, trombinoscopeSchema} from './Trombinoscope';
 import {Mecanismes, mecanismesSchema} from './Mecanismes';
@@ -78,6 +79,8 @@ export const RemotionRoot: React.FC = () => (
         rows: DEMO_ROWS.map((r) => r.tier === 'B' ? {...r, posters: [P('2024-transformers-one.jpg')]} : r),
         poster: P('1986-the-transformers-the-movie.jpg'), tier: 'B' as const, slotIndex: 1,
         offsetX: 0, colonneAvatar: 0}} />
+    <Composition id="CadreClip" component={CadreClip} durationInFrames={60} fps={FPS} width={W} height={H}
+      schema={cadreClipSchema} defaultProps={{marge: 46, trait: 14, rayon: 30}} />
     <Composition id="Commentaires" component={Commentaires} durationInFrames={320} fps={FPS} width={W} height={H}
       schema={commentairesSchema} defaultProps={{
         lignes: ['Le ton est beaucoup trop enfantin', "L'animation fait bizarre",
