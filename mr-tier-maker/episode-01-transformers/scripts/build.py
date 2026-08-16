@@ -269,14 +269,22 @@ def f_extrait(n, nfr, out):
         os.remove(tmp); return out
     return cut(src,nfr,out)
 
+# La mascotte passe DEVANT le tableau, a droite. Les affiches n occupent que le
+# tiers gauche de chaque rangee : elle ne cache donc rien d important, et elle
+# peut rester grande. Decalee de 320 px vers la droite pour degager la rangee D,
+# ou son bras mordait sur la troisieme affiche.
+AVATAR_L = 1600          # largeur de la mascotte detouree
+AVATAR_X = 440           # W - largeur + 440 : le decalage vers la droite
+AVATAR_Y = 40
+
 def f_verdict(n, nfr, out):
     f=next((x for x in FILMS if x[4]==n), None)
     if not f: return trou(n, nfr, out, 'aucun film ne porte le verdict du plan %d'%n)
     tier=TIERS[f[0]]; rows=rows_avant(n)
     slot=len(next(r for r in rows if r['tier']==tier)['posters'])
-    vc=remo('VerdictCard', f'{OUT}/el/verdict-{f[3]}.mov',
+    vc=remo('VerdictTableau', f'{OUT}/el/verdict-{f[3]}.mov',
             {"rows":rows,"poster":'posters/'+f[3]+'.jpg',"tier":tier,
-             "slotIndex":slot,"offsetX":260,"zoom":2.0}, alpha=True)
+             "slotIndex":slot,"offsetX":0,"colonneAvatar":0}, alpha=True)
     reac=next((c for c in (os.path.join(MASC,'reactions','reaction-%s.mp4'%tier),
                            os.path.join(MASC,'reactions','reac-%s.mp4'%tier),
                            os.path.join(MASC,'reac-%s.mp4'%tier))
@@ -284,8 +292,8 @@ def f_verdict(n, nfr, out):
     if reac:
         ins=['-i',reac]
         fc=(f'[0:v][1:v]overlay=0:0:format=auto[a];'
-            f'[2:v]scale={W}:{H},fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012[m];'
-            f'[a][m]overlay=0:0:format=auto:repeatlast=1[v]')
+            f'[2:v]fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012,scale={AVATAR_L}:-1[m];'
+            f'[a][m]overlay=W-w+{AVATAR_X}:H-h+{AVATAR_Y}:format=auto:repeatlast=1[v]')
     else:
         # sans mascotte le carton reste lisible, mais c est une perte : on le dit
         manquants.append((n, 'reaction-%s.mp4 introuvable, verdict sans mascotte'%tier))
