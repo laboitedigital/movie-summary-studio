@@ -79,6 +79,11 @@ rouge. Retirer le préfixe explicitement.
 **`zoompan` tronque x et y à l'entier**, ce qui fait vibrer l'image. Sur-
 échantillonner l'entrée ×4 avant le zoom.
 
+**Valider le YAML des workflows avant de pousser** (`yaml.safe_load`). Une
+continuation de ligne shell qui retombe en colonne 1 ferme le bloc `run: |` et
+rend le fichier illisible par GitHub — le job échoue alors sur chaque `push`
+en affichant son chemin au lieu de son nom.
+
 ## Découpage et calage
 
 Un plan par phrase du SRT. Les bornes viennent du **SRT mot à mot**, jamais
@@ -87,6 +92,13 @@ faite **à la frame**. C'est ce qui empêche une vidéo de 15 minutes de dérive
 
 Extraits Clip.cafe : **7 secondes maximum**. Requêtes de recherche **en
 anglais**.
+
+**La recherche sémantique de Clip.cafe converge.** Sur un catalogue étroit,
+elle renvoie les mêmes 4-5 extraits quelle que soit la requête : trois plans
+différents reçoivent le même clip. Toute récupération en lot doit tenir la
+liste des slugs déjà pris et descendre dans les résultats jusqu'à un slug neuf,
+puis vérifier le nombre d'extraits **distincts** — pas le nombre de
+téléchargements.
 
 ## Ce qui est acquis et ne se refait jamais
 
