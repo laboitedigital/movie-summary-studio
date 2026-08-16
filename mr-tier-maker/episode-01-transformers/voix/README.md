@@ -117,6 +117,17 @@ résultat.
 | à retélécharger | `085` *Lockdown bounty hunter*, `111` *Optimus Prime Cybertron battle* — leur plan est né d'une scission |
 | abandonnés | `055`, `069` — leur plan a fusionné avec le voisin |
 
+Et un troisième, qui n'a rien à voir avec la renumérotation : **`034`** était un
+404 dans le grand run et n'a jamais été relancé. Les runs de rattrapage ne
+couvraient que les segments 5 et 6, personne n'a vérifié le segment 1. On était
+donc à 93 extraits sur 96, pas 95.
+
+`voix/slugs-extraits.json` recense maintenant quel clip se trouve derrière
+chaque plan. Sans cette table, un rattrapage partiel ne sait pas ce qui est déjà
+pris et rechoisit le clip du plan voisin — la recherche sémantique de Clip.cafe
+converge, c'est le piège connu du projet. `scripts/slugs-extraits.py` la
+reconstruit et liste les plans encore vides.
+
 ## Ce qu'il reste à faire
 
 Plus rien sur la voix off. Le texte des fenêtres retrouvées est transcrit, les
