@@ -22,7 +22,49 @@ Actions → « Images d'archive (Wikimedia Commons) » → Run workflow
    requête : Transformers toy 1984
 ```
 
-## Mais pour deux des trois, l'archive n'est pas la meilleure option
+## Trois fonds, une planche contact
+
+Le job interroge maintenant **trois fonds** et ne garde que les licences
+réutilisables :
+
+| Fonds | Ce qu'on y trouve | Licences |
+|---|---|---|
+| **Wikimedia Commons** | large, très varié, métadonnées de licence fiables | PD, CC0, CC BY |
+| **Library of Congress** | photographie documentaire américaine, souvent 1930–1990 | domaine public pour l'essentiel |
+| **Openverse** | agrège Flickr, musées, banques sous CC | CC commercial + modification |
+
+Il sort une **planche contact numérotée** (`planche.jpg`) : tu regardes, tu me
+donnes les numéros, je les intègre au montage. `LICENCES.md` donne pour chaque
+image sa licence, son auteur et l'URL source.
+
+```
+Actions → « Images d'archive » → Run workflow
+requêtes : Orson Welles ; children watching television 1980s ; vintage robot toy 1980s
+```
+
+**Écris les requêtes en anglais.** Les métadonnées de ces trois fonds le sont
+presque toutes ; « enfants devant la télévision » ne renverra rien, *children
+watching television* renverra des dizaines de résultats.
+
+**Je n'ai pas pu tester ce job d'ici** — les trois hôtes sont bloqués par la
+politique réseau de la session. Il est écrit défensivement (chaque source
+échoue indépendamment sans tuer le run), mais la première exécution demandera
+peut-être un ajustement. Envoie-moi le log si ça sort vide.
+
+## Sur « recréer une photo quasi identique »
+
+Ça ne règle pas le problème que ça cherche à régler : une recréation fidèle
+d'une photographie protégée reste une œuvre dérivée de cette photographie. Et
+en pratique je ne peux pas la regarder pour la copier, puisque je n'ai accès à
+aucun dépôt d'images.
+
+La version qui marche, c'est de recréer **la situation**, pas la photo : des
+enfants génériques devant une télé cathodique, un jouet-robot 80s en blister
+sans logo. Aucune source à copier, aucune licence à tracer.
+
+## Reste que pour deux des trois
+
+, l'archive n'est pas la meilleure option
 
 | Plan | Ce que dit la voix off | Recommandation |
 |---|---|---|
