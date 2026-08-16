@@ -69,7 +69,10 @@ export const RemotionRoot: React.FC = () => (
         right: ['La mythologie se réécrit', 'Deux films se contredisent'],
         leftColor: 'D' as const, rightColor: 'S' as const}} />
     <Composition id="BoardRecap" component={BoardRecap} durationInFrames={300} fps={FPS} width={W} height={H}
-      schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, focus: 'D' as const, zoom: 2.4, offsetX: 0}} />
+      {/* pas de focus par defaut : --props FUSIONNE avec defaultProps, donc un
+          focus ici ferait zoomer sur cette rangee tous les rappels qui n'en
+          demandent aucun. C'est ce qui poussait la camera sur D partout. */}
+      schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, zoom: 2.4, offsetX: 0}} />
     <Composition id="VerdictTableau" component={VerdictTableau} durationInFrames={260} fps={FPS} width={W} height={H}
       schema={verdictTableauSchema} defaultProps={{
         rows: DEMO_ROWS.map((r) => r.tier === 'B' ? {...r, posters: [P('2024-transformers-one.jpg')]} : r),

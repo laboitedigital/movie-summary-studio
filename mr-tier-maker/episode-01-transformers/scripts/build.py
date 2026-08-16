@@ -385,7 +385,8 @@ def f_carton_titre(n, nfr, out):
         # en douce sur une citation donnait au plan 001, qui demandait « le
         # chiffre 9 plein ecran », une carte de citation.
         if n in CARTONS_INTRO:
-            src=remo('Citation', f'{OUT}/el/intro-{n:03d}.mp4', CARTONS_INTRO[n])
+            src=remo('Citation', f'{OUT}/el/intro-{n:03d}.mp4',
+                     {"source":"", **CARTONS_INTRO[n]})
             return cut(os.path.abspath(src), nfr, out)
         return trou(n, nfr, out, 'carton titre hors segment : '+PLAN[n]['note'][:40])
     src=remo('TitleCard', f'{OUT}/el/titre-{f[3]}.mp4',
@@ -464,8 +465,11 @@ def f_rappel(n, nfr, out):
     # Sans ca les six plans de la fin montraient le meme tableau fixe, et on ne
     # savait pas de quelle rangee on parlait.
     t = tier_nomme(n) or RAPPEL_FOCUS.get(n)
-    props={"rows":rows_avant(n),"offsetX":0}
-    props.update({"focus":t,"zoom":1.75} if t else {"zoom":1.0})
+    # Root.tsx ne donne plus de focus par defaut : --props FUSIONNE avec les
+    # defaultProps, donc un focus de demonstration la-bas poussait la camera sur
+    # cette rangee dans tous les rappels qui n en demandaient aucun.
+    props={"rows":rows_avant(n),"offsetX":0,"zoom":1.75 if t else 1.0}
+    if t: props["focus"]=t
     src=remo('BoardRecap', f'{OUT}/el/board-{n:03d}.mp4', props)
     sortie=cut(os.path.abspath(src), nfr, out)
     if n in AVEC_AVATAR: pose_avatar(out, nfr, AVEC_AVATAR[n], 0)
@@ -473,8 +477,12 @@ def f_rappel(n, nfr, out):
 
 def f_citation(n, nfr, out):
     f=film_de(n)
+    # source="" est OBLIGATOIRE. --props ne remplace pas les defaultProps, il
+    # FUSIONNE avec : un champ omis retombe sur la valeur de demonstration du
+    # kit. Les cinq citations du montage portaient donc « Le reproche
+    # habituel » en sous-titre, la valeur d exemple de Root.tsx.
     src=remo('Citation', f'{OUT}/el/cit-{n:03d}.mp4',
-             {"text":texte_court(n),"accent":TIERS[f[0]] if f else "B"})
+             {"text":texte_court(n),"source":"","accent":TIERS[f[0]] if f else "B"})
     return cut(os.path.abspath(src), nfr, out)
 
 def f_chiffre(n, nfr, out):
