@@ -35,12 +35,8 @@ def highlight(target, path=None):
 def lettre(i):
     """Couleur et contour de la lettre d un tier.
 
-    Un contour noir sur une lettre deja noire (A, B, C) l empatait jusqu a la
-    rendre illisible. Les lettres claires gardent leur contour noir ; les
-    lettres foncees prennent un contour blanc, ce qui les detache du fond
-    colore sans les epaissir.
+    Toutes les lettres sont blanches avec un petit contour noir : c est ce qui
+    reste lisible sur les six couleurs du logo, du rouge clair au violet
+    fonce, et ca donne une pastille uniforme d un tier a l autre.
     """
-    l,col,ink=TIERS[i]
-    if ink.upper()=='FFFFFF':
-        return l,'0xFFFFFF',5,'black'
-    return l,'0x0B0D10',4,'white'
+    return TIERS[i][0], '0xFFFFFF', 4, 'black'

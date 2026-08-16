@@ -46,16 +46,18 @@ droite de lui — sans elle, on ne saurait plus de quelle rangée il s'agit.
 
 ## Contour des lettres
 
-Les lettres foncées (A, B, C) avaient un contour **noir** de 5 px. Sur une
-lettre déjà noire, ça faisait une bouillie : le A et le B n'étaient plus
-lisibles.
+Toutes les lettres du tableau sont **blanches avec un petit contour noir**
+(4 px), définies en un seul endroit : `tableau.lettre()`.
 
-Règle appliquée, dans `tableau.lettre()` :
+Deux versions ont été écartées avant celle-là :
 
-- lettre claire (S, D, F) → contour **noir**
-- lettre foncée (A, B, C) → contour **blanc**
+- Lettre foncée + contour **noir** : sur un A ou un B déjà noirs, le contour
+  empâtait la lettre jusqu'à la rendre illisible.
+- Lettre foncée + contour **blanc** : lisible, mais chaque pastille avait un
+  traitement différent, et l'ensemble perdait son unité.
 
-Le contour détache la lettre du fond coloré au lieu de l'épaissir.
+Le blanc sur contour noir tient sur les six couleurs du logo, du rouge clair
+au violet foncé, et donne une pastille identique d'un tier à l'autre.
 
 ## Grain
 
