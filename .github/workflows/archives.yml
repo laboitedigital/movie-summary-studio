@@ -1,0 +1,124 @@
+name: Images d'archive
+
+on:
+  workflow_dispatch:
+    inputs:
+      requetes:
+        description: "Recherches separees par des ; (ex : Orson Welles 1985 ; family watching television 1980s ; robot toy 1984)"
+        required: true
+        default: "Orson Welles ; children watching television 1980s ; vintage robot toy 1980s"
+      par_source:
+        description: "Resultats max par source et par requete"
+        required: false
+        default: "10"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer ffmpeg
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          NEEDRESTART_MODE: a
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Chercher dans les trois fonds
+        env:
+          Q: ${{ inputs.requetes }}
+          N: ${{ inputs.par_source }}
+        run: |
+          set -uo pipefail
+          mkdir -p archives
+          UA="MRTierMaker/1.0 (github actions)"
+          MD=archives/LICENCES.md
+          printf '# Images trouvees\n\n| # | fichier | licence | auteur | fonds | source |\n|---|---|---|---|---|---|\n' > $MD
+          i=0
+
+          garder() {  # garder <url> <licence> <auteur> <fonds> <page>
+            local url="$1" lic="$2" auteur="$3" fonds="$4" page="$5"
+            [ -z "$url" ] && return 0
+            i=$((i+1)); local nom
+            nom=$(printf '%03d.jpg' "$i")
+            if curl -sSL -A "$UA" --max-time 45 -o "archives/$nom" "$url"; then
+              # un fichier de moins de 20 ko est une page d erreur, pas une photo
+              if [ "$(stat -c%s "archives/$nom")" -lt 20000 ]; then rm -f "archives/$nom"; i=$((i-1)); return 0; fi
+              printf '| %d | `%s` | %s | %s | %s | %s |\n' "$i" "$nom" "$lic" "${auteur:-?}" "$fonds" "$page" >> $MD
+              echo "  OK  $nom  [$fonds] $lic"
+            else
+              i=$((i-1))
+            fi
+          }
+
+          IFS=';' read -ra REQS <<< "$Q"
+          for raw in "${REQS[@]}"; do
+            q="$(echo "$raw" | sed 's/^ *//; s/ *$//')"
+            [ -z "$q" ] && continue
+            echo "=== $q ==="
+
+            # ---- 1. Wikimedia Commons -------------------------------------
+            curl -sS -A "$UA" --max-time 60 -G "https://commons.wikimedia.org/w/api.php" \
+              --data-urlencode "action=query" --data-urlencode "format=json" \
+              --data-urlencode "generator=search" --data-urlencode "gsrnamespace=6" \
+              --data-urlencode "gsrsearch=$q filetype:bitmap" \
+              --data-urlencode "gsrlimit=$N" --data-urlencode "prop=imageinfo" \
+              --data-urlencode "iiprop=url|extmetadata" --data-urlencode "iiurlwidth=1920" \
+              -o /tmp/wm.json || echo "  (Commons injoignable)"
+            if [ -s /tmp/wm.json ]; then
+              jq -r '(.query.pages // {}) | to_entries[] | .value as $p | ($p.imageinfo[0] // empty) as $x
+                | ($x.extmetadata // {}) as $m | ($m.LicenseShortName.value // "") as $l
+                | select($l | test("Public domain|CC0|CC BY|CC-BY|PD-"; "i"))
+                | [$x.thumburl, $l, (($m.Artist.value // "") | gsub("<[^>]*>";"") | gsub("\\|";"/")), $x.descriptionurl] | @tsv' \
+                /tmp/wm.json 2>/dev/null | while IFS=$'\t' read -r u l a p; do echo -e "$u\t$l\t$a\t$p"; done > /tmp/wm.tsv || true
+              while IFS=$'\t' read -r u l a p; do garder "$u" "$l" "$a" "Commons" "$p"; done < /tmp/wm.tsv
+            fi
+
+            # ---- 2. Library of Congress (domaine public americain) ---------
+            curl -sS -A "$UA" --max-time 60 -G "https://www.loc.gov/photos/" \
+              --data-urlencode "q=$q" --data-urlencode "fo=json" --data-urlencode "c=$N" \
+              -o /tmp/loc.json || echo "  (LoC injoignable)"
+            if [ -s /tmp/loc.json ]; then
+              jq -r '(.results // [])[] | select((.image_url // []) | length > 0)
+                | [((.image_url | last) | if startswith("http") then . else "https:" + . end),
+                   (.rights // "Library of Congress"), (.contributor // [] | join(", ")), .id] | @tsv' \
+                /tmp/loc.json 2>/dev/null > /tmp/loc.tsv || true
+              while IFS=$'\t' read -r u l a p; do garder "$u" "${l:0:60}" "$a" "LoC" "$p"; done < /tmp/loc.tsv
+            fi
+
+            # ---- 3. Openverse (agrege les banques sous licence CC) ---------
+            curl -sS -A "$UA" --max-time 60 -G "https://api.openverse.org/v1/images/" \
+              --data-urlencode "q=$q" --data-urlencode "license_type=commercial,modification" \
+              --data-urlencode "page_size=$N" -o /tmp/ov.json || echo "  (Openverse injoignable)"
+            if [ -s /tmp/ov.json ]; then
+              jq -r '(.results // [])[] | [.url, (.license + " " + (.license_version // "")),
+                     (.creator // ""), .foreign_landing_url] | @tsv' /tmp/ov.json 2>/dev/null > /tmp/ov.tsv || true
+              while IFS=$'\t' read -r u l a p; do garder "$u" "$l" "$a" "Openverse" "$p"; done < /tmp/ov.tsv
+            fi
+          done
+
+          echo "--- $i image(s) retenue(s) ---"
+
+      - name: Planche contact numerotee
+        run: |
+          set -e
+          cd archives
+          n=$(ls -1 *.jpg 2>/dev/null | wc -l)
+          [ "$n" -eq 0 ] && { echo "aucune image"; exit 0; }
+          k=0
+          for f in $(ls -1 *.jpg | sort); do
+            k=$((k+1))
+            ffmpeg -v error -y -i "$f" -vf \
+              "scale=420:236:force_original_aspect_ratio=decrease,pad=420:236:(ow-iw)/2:(oh-ih)/2:0x071027,\
+drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='$k':fontcolor=0xF7B632:\
+fontsize=44:borderw=6:bordercolor=black:x=12:y=8" -frames:v 1 "t_$k.png" || true
+          done
+          ffmpeg -v error -y -pattern_type glob -i 't_*.png' -filter_complex "tile=4x0:padding=6:color=0x071027" -frames:v 1 planche.jpg || true
+          rm -f t_*.png
+          ls -l
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archives
+          path: archives/
+          retention-days: 7
