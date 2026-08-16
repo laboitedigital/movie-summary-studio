@@ -13,6 +13,7 @@ avec un léger dépassement puis calage.
 | 5 | Transition | 1,2 s | Les six couleurs du logo balaient l'écran entre deux films |
 | 6 | Rappel du tableau | 4,6 s | Les affiches déjà classées tombent dans leurs rangées |
 | 7 | Zoom sur une rangée | 5,2 s | La caméra pousse dans la rangée dont on parle, tient, ressort |
+| 8 | Citation | 4,6 s | Une phrase se pose mot à mot, avec sa source |
 
 `demo-kit.mp4` enchaîne les six, séparés par la transition.
 
@@ -87,3 +88,12 @@ Deux détails qui comptent :
 - **`zoompan` tronque `x` et `y` à l'entier**, ce qui fait vibrer l'image
   pendant le mouvement. L'entrée est donc sur-échantillonnée ×4 avant le zoom,
   pour que la troncature devienne sous-pixellique.
+
+
+## Citation : un piège de mise en page
+
+Chaque ligne est **un seul `drawtext`** dont on révèle le texte par préfixes
+croissants (`Un`, `Un film`, `Un film pour`…). Placer chaque mot séparément
+paraissait plus simple, mais il faut alors recréer soi-même l'espacement et les
+approches de la fonte : les mots se chevauchaient et ne partageaient plus la
+même ligne de base.

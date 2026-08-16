@@ -242,3 +242,50 @@ def zoom_rangee(src, row, out, d=None, zmax=2.8, a=0.8, mont=0.8, tenue=2.2, des
     fc=(f"[0:v]scale={IW}:{IH}:flags=neighbor,"
         f"zoompan=z='{z}':x='{x}':y='{y}':d=1:s={W}x{H}:fps={FPS}[v]")
     run(fc,['-i',src],out,d)
+
+# ------------------------------------------------------------------ 8. citation
+def citation(texte, out, d=4.6, size=76, source=None, couleur='F7B632'):
+    """Une phrase qui se pose mot a mot.
+
+    Chaque ligne est UN seul drawtext dont on revele le texte par prefixes
+    croissants. Placer chaque mot separement paraissait plus simple, mais il
+    faut alors recreer soi-meme l espacement et les approches de la fonte : les
+    mots se chevauchaient et ne partageaient plus la meme ligne de base.
+    """
+    mots=texte.split()
+    lignes=[[]]
+    for m in mots:
+        essai=" ".join(lignes[-1]+[m])
+        if lignes[-1] and largeur(essai,size)>1360:
+            lignes.append([m])
+        else:
+            lignes[-1].append(m)
+    lw=[largeur(" ".join(L),size) for L in lignes]
+    pw=max(lw)+150; ph=len(lignes)*int(size*1.42)+80
+    px=(1920-pw)//2; py=(1080-ph)//2
+    c=cartoon.Canvas(1920,1080)
+    c.rrect(px,py,pw,ph,'16233F',r=40,stroke=10,shadow=(0,16))
+    c.rrect(px+36,py+32,12,ph-64,couleur,r=6,stroke=0,shadow=None)   # barre de citation
+    c.save('kit/_cit.png')
+    t0=0.55; step=0.13; steps=[]; k=0
+    for li,L in enumerate(lignes):
+        y=py+40+li*int(size*1.42)
+        for j in range(1,len(L)+1):
+            bout=" ".join(L[:j])
+            a=t0+k*step
+            b=t0+(k+1)*step if (j<len(L) or li<len(lignes)-1) else d
+            steps.append(dt(bout,size,'white',px+96,y,borderw=4,
+                            enable=f"between(t,{a:.3f},{b:.3f})"))
+            k+=1
+    if source:
+        steps.append(dt(source,38,'0xA8B4C8','(w-text_w)/2',py+ph+34,borderw=4,
+                        enable=f"gte(t,{t0+k*step+0.2:.3f})"))
+    cmd=pop(0.34,pw+40,ph+40,t0=0.18)
+    fc=[f"[0:v]vignette=a=PI/4.2[bgv]",
+        f"[1:v]crop={pw+40}:{ph+40}:{px-20}:{py-20},format=rgba,sendcmd=f={cmd},"
+        f"scale={pw+40}:{ph+40}:eval=frame[e]",
+        f"[bgv][e]overlay=x='(main_w-overlay_w)/2':y='{py+ph//2+20}-overlay_h/2':"
+        f"enable='gte(t,0.18)'[a]",
+        f"[a]{','.join(steps)}[v]"]
+    run(";".join(fc),['-f','lavfi','-i',f'color=c={NAVY}:s=1920x1080:r={FPS}:d={d}',
+                      '-loop','1','-i','kit/_cit.png'],out,d)
