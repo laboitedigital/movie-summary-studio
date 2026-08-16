@@ -279,6 +279,13 @@ RECETTE_MOTION = {
                  "mode": "trace", "color": "B"}),
  127:('Courbe', {"points": [0.82, 0.88, 0.34, 0.22, 0.30, 0.78, 0.90],
                  "mode": "effondre", "mot": "Perou", "color": "B"}),
+ 137:('Commentaires', {"vitesse": 70, "lignes": [
+      "Le ton est beaucoup trop enfantin",
+      "L'animation fait bizarre",
+      "On dirait un film pour enfants",
+      "L'origine de leur amitié ? Aucun intérêt",
+      "Encore un Transformers raté",
+      "Je ne vais pas payer pour ça"]}),
  98:('LignesEmpilees', {"mode": "tombe", "lines": [
       "Les Transformers etaient la depuis toujours",
       "La famille de Sam est une lignee magique",
@@ -417,6 +424,9 @@ def f_affiche(n, nfr, out):
 FLOUES = {6: '2017-the-last-knight', 7: '2018-bumblebee'}
 
 def f_photo(n, nfr, out):
+    # certains plans classes « photo » se font en motion : le 137 demandait une
+    # capture de commentaires YouTube, qu on ne fabrique pas
+    if n in RECETTE_MOTION: return f_motion(n, nfr, out)
     if n in FLOUES:
         aff=poster(FLOUES[n])
         if os.path.exists(aff): return flou(aff, nfr, out)
