@@ -13,6 +13,7 @@ import {Citation, citationSchema} from './Citation';
 import {BigStat, bigStatSchema} from './BigStat';
 import {Versus, versusSchema} from './Versus';
 import {BoardRecap, boardRecapSchema} from './BoardRecap';
+import {Placeholder, placeholderSchema} from './Placeholder';
 
 const P = (f: string) => `posters/${f}`;
 const DEMO_ROWS = [
@@ -60,5 +61,7 @@ export const RemotionRoot: React.FC = () => (
         leftColor: 'D' as const, rightColor: 'S' as const}} />
     <Composition id="BoardRecap" component={BoardRecap} durationInFrames={300} fps={FPS} width={W} height={H}
       schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, focus: 'D' as const, zoom: 2.4, offsetX: 0}} />
+    <Composition id="Placeholder" component={Placeholder} durationInFrames={240} fps={FPS} width={W} height={H}
+      schema={placeholderSchema} defaultProps={{what: "Photo d'archive", shot: '019'}} />
   </>
 );
