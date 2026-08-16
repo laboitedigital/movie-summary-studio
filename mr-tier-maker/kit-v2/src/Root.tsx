@@ -9,6 +9,10 @@ import {ScoreDials, scoreDialsSchema} from './ScoreDials';
 import {TierBoard, tierBoardSchema} from './TierBoard';
 import {PosterPlacement, posterPlacementSchema} from './PosterPlacement';
 import {VerdictCard, verdictSchema} from './VerdictCard';
+import {Citation, citationSchema} from './Citation';
+import {BigStat, bigStatSchema} from './BigStat';
+import {Versus, versusSchema} from './Versus';
+import {BoardRecap, boardRecapSchema} from './BoardRecap';
 
 const P = (f: string) => `posters/${f}`;
 const DEMO_ROWS = [
@@ -43,5 +47,18 @@ export const RemotionRoot: React.FC = () => (
         rows: DEMO_ROWS.map((r) => r.tier === 'B' ? {...r, posters: [P('2024-transformers-one.jpg')]} : r),
         poster: P('1986-the-transformers-the-movie.jpg'), tier: 'B' as const, slotIndex: 1, offsetX: 260, zoom: 2.0,
       }} />
+    <Composition id="Citation" component={Citation} durationInFrames={270} fps={FPS} width={W} height={H}
+      schema={citationSchema} defaultProps={{
+        text: 'Un film pour vendre des jouets.', source: 'Le reproche habituel', accent: 'B' as const}} />
+    <Composition id="BigStat" component={BigStat} durationInFrames={220} fps={FPS} width={W} height={H}
+      schema={bigStatSchema} defaultProps={{value: 80, unit: '', label: 'minutes', countUp: true, color: 'accent' as const}} />
+    <Composition id="Versus" component={Versus} durationInFrames={260} fps={FPS} width={W} height={H}
+      schema={versusSchema} defaultProps={{
+        leftTitle: 'Ennuyeux', rightTitle: 'Incohérent',
+        left: ['45 minutes de bataille', 'Aucun enjeu'],
+        right: ['La mythologie se réécrit', 'Deux films se contredisent'],
+        leftColor: 'D' as const, rightColor: 'S' as const}} />
+    <Composition id="BoardRecap" component={BoardRecap} durationInFrames={300} fps={FPS} width={W} height={H}
+      schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, focus: 'D' as const, zoom: 2.4, offsetX: 0}} />
   </>
 );

@@ -43,10 +43,21 @@ C'est pour ça que `VerdictCard` sort en **transparent** : le montage empile
 | `TierBoard` | 5 s | opaque | H.264 |
 | `PosterPlacement` | 2,5 s | **alpha** | ProRes 4444 |
 | `VerdictCard` | 6,7 s | **alpha** | ProRes 4444 |
+| `Citation` | 4,5 s | opaque | H.264 |
+| `BigStat` | 3,7 s | opaque | H.264 |
+| `Versus` | 4,3 s | opaque | H.264 |
+| `BoardRecap` | 5 s | opaque | H.264 |
 
 `VerdictCard` ne figurait pas dans le brief : c'est pourtant l'élément
 signature de la chaîne, le seul qui rend une vidéo reconnaissable en deux
 secondes.
+
+Les quatre dernières viennent du plan de montage, qui les appelle sans qu'elles
+existent : `Citation` (4 fois), `BigStat` (6 fois — les chiffres qui ne sont pas
+des pourcentages : « 80 MINUTES », « 40 TONNES »), `Versus` (les comparatifs à
+deux colonnes) et `BoardRecap` (11 fois — le rappel du tableau avec poussée sur
+une rangée). **Les douze compositions couvrent maintenant l'intégralité des
+156 plans** : plus un seul élément du montage sans implémentation.
 
 ## Deux points non évidents
 

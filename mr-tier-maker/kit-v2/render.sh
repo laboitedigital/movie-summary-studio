@@ -24,6 +24,10 @@ r TitleCard  "$OUT/TitleCard.mp4"  "${OPAQUE[@]}" --props='{"title":"THE TRANSFO
 r ProsCons   "$OUT/ProsCons.mp4"   "${OPAQUE[@]}"
 r ScoreDials "$OUT/ScoreDials.mp4" "${OPAQUE[@]}"
 r TierBoard  "$OUT/TierBoard.mp4"  "${OPAQUE[@]}"
+r Citation   "$OUT/Citation.mp4"   "${OPAQUE[@]}" --props='{"text":"Un film pour vendre des jouets.","source":"Le reproche habituel","accent":"B"}'
+r BigStat    "$OUT/BigStat.mp4"    "${OPAQUE[@]}" --props='{"value":80,"unit":"","label":"minutes","countUp":true,"color":"accent"}'
+r Versus     "$OUT/Versus.mp4"     "${OPAQUE[@]}"
+r BoardRecap "$OUT/BoardRecap.mp4" "${OPAQUE[@]}"
 
 # --- overlays a canal alpha ---------------------------------------------------
 r RainbowWipe     "$OUT/RainbowWipe.mov"     "${ALPHA[@]}"
