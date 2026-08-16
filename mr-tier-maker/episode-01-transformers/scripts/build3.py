@@ -5,6 +5,10 @@ Cold open + amorce + segment 1986 complet, jusqu au verdict B (0 -> 02:38.98).
 Chaque plan est coupe A LA FRAME sur les bornes du SRT : la video ne peut pas
 deriver par rapport a la voix off.
 
+La voix off de reference est `voix/voix-complete.mp3` — les quatre parties
+generees bout a bout, 917,11 s. Le master FlexClip a ete jete : il tronquait
+24,47 s de narration et finissait sur 42,7 s de silence.
+
 Tout est en 60 fps, y compris les extraits (24/25 fps a l origine, conformes par
 duplication). Sans ca, un overlay 60 fps pose sur un extrait 25 fps est tronque
 a 42 % de sa duree : overlay herite de la base de temps du premier flux.
@@ -172,6 +176,6 @@ if __name__=='__main__':
        '-c','copy',f'{OUT}/muet.mp4')
     dur=S[FIN+1]['a'] if (FIN+1) in S else S[FIN]['b']
     sh('ffmpeg','-y','-loglevel','error','-i',f'{OUT}/muet.mp4','-ss','0','-t',str(dur),
-       '-i','voix-episode.mp3','-map','0:v','-map','1:a','-c:v','copy','-c:a','aac','-b:a','192k',
+       '-i',shots.VOIX+'/voix-complete.mp3','-map','0:v','-map','1:a','-c:v','copy','-c:a','aac','-b:a','192k',
        '-shortest',f'{OUT}/test-3min.mp4')
     print('->', f'{OUT}/test-3min.mp4', 'jusqu a', round(dur,2),'s')

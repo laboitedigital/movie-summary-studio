@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+# ENQUETE, UNE SEULE FOIS — ne tourne plus.
+# Ce script comparait les parties generees au master FlexClip pour trouver ce
+# qu il tronquait. Le master a ete jete une fois le compte etabli (24,47 s de
+# narration perdue). Conserve pour la methode : correlation croisee des
+# enveloppes d energie, quand aucune transcription n est disponible.
 """Ou chaque fichier de voix off tombe-t-il dans le master ?
 
 On ne peut pas transcrire ici, mais on peut comparer les enveloppes d energie :
