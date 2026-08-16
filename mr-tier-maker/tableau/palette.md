@@ -20,9 +20,11 @@ Lignes vides du tableau : `#101A2E` à 82 % d'opacité.
 Mise en page (1920x1080) : label 104 px, ligne 760 px, hauteur 112 px,
 gap 9 px, tableau ancré à x=860.
 
-Ordre des calques : fond → tableau → affiche qui glisse → surbrillance de la
-rangée → **mascotte par-dessus**. La mascotte est donc au premier plan : ses
-cheveux et son épaule passent devant les pastilles S et F. Son bord droit
-s'efface en dégradé sur 220 px et elle est recadrée à 900 px de large pour
-couper avant les bandes du logo (sinon elles apparaissaient en fantôme
-par-dessus le tableau).
+Ordre des calques : fond uni → tableau → affiche qui glisse → surbrillance de
+la rangée → **avatar détouré par-dessus, à 100 % d'opacité**. Aucun fondu.
+
+Le détourage est un simple `colorkey=0x050D23:0.030:0.012` : il ne marche que
+parce que la plaque de la mascotte a un fond bleu nuit parfaitement uni et
+**plus aucune bande de couleur**. C'est la raison d'être de
+`mascotte/plaque-fond-uni-1920x1080.jpg` — les bandes du logo sont réservées
+au logo, elles ne doivent plus apparaître dans les plans de l'avatar.
