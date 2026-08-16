@@ -41,6 +41,22 @@ export const Fleche: React.FC<z.infer<typeof flecheSchema>> = ({x, y, texte, dep
   const pouls = Math.sin((frame - 24) / 9) * 7 * (vie > 0.9 ? 1 : 0);
   const recul = interpolate(vie, [0, 1], [70, 0]) + pouls;
 
+  // Le contour de la fleche. Queue fine (QUEUE), epaississement jusqu a la base
+  // de la tete (COL), puis la tete large (AILE). La courbure vient des points
+  // de controle des deux quadratiques.
+  const TETE = 104, AILE = 62, QUEUE = 9, COL = 23, COURBE = -30;
+  const b = L - TETE;
+  const pointe = [
+    `M0,${-QUEUE}`,
+    `Q${b * 0.55},${COURBE - COL * 0.5} ${b},${-COL}`,
+    `L${b},${-AILE}`,
+    `L${L},0`,
+    `L${b},${AILE}`,
+    `L${b},${COL}`,
+    `Q${b * 0.55},${COURBE + COL * 0.5} 0,${QUEUE}`,
+    'Z',
+  ].join(' ');
+
   return (
     <AbsoluteFill style={{fontFamily: FONT, background: 'transparent', opacity: vie}}>
       <FontFace />
@@ -49,15 +65,17 @@ export const Fleche: React.FC<z.infer<typeof flecheSchema>> = ({x, y, texte, dep
         transform: `translate(${dir[0] * recul}px, ${dir[1] * recul}px) rotate(${angle}deg)`,
         transformOrigin: '0 50%',
       }}>
-        <svg width={L + 40} height={120} viewBox={`0 -60 ${L + 40} 120`} style={{overflow: 'visible'}}>
-          {/* contour noir puis remplissage : le vocabulaire cartoon du kit */}
-          {[{w: 34, c: '#000', t: 46}, {w: 18, c: col, t: 30}].map((s, i) => (
-            <g key={i}>
-              <line x1={0} y1={0} x2={L - s.t} y2={0}
-                    stroke={s.c} strokeWidth={s.w} strokeLinecap="round" />
-              <polygon points={`${L},0 ${L - s.t},${-s.t * 0.72} ${L - s.t},${s.t * 0.72}`}
-                       fill={s.c} />
-            </g>
+        <svg width={L + 120} height={200} viewBox={`-20 -100 ${L + 140} 200`} style={{overflow: 'visible'}}>
+          {/* Une fleche cartoon n est pas un trait avec un triangle au bout :
+              elle est FUSELEE — fine a la queue, epaisse a la base de la tete —
+              et legerement courbee, comme un trait de marqueur. On dessine donc
+              un contour ferme et on le remplit, plutot que de tracer une ligne. */}
+          {[{dy: 12, fill: 'rgba(0,0,0,0.45)', stroke: 'none', sw: 0},
+            {dy: 0,  fill: col, stroke: '#000', sw: 16}].map((c, i) => (
+            <path key={i} transform={`translate(0,${c.dy})`}
+                  d={pointe} fill={c.fill}
+                  stroke={c.stroke} strokeWidth={c.sw}
+                  strokeLinejoin="round" strokeLinecap="round" />
           ))}
         </svg>
       </div>
