@@ -51,7 +51,7 @@ Affiche ❌ affiche manquante · réaction A ❌ · 17 plans
 | # | in | out | durée | famille | élément | texte de la voix off |
 |---|----|-----|-------|---------|---------|----------------------|
 | 030 | 02:38.72 | 02:42.40 | 3.7 s | carton titre | `kit.carton_titre(titre, annee)` | Et là, tout change. 2007. |
-| 031 | 02:42.40 | 02:47.96 | 5.6 s | photo | `— image a fournir` | Michael Bay prend une franchise de jouets et en fait un des … |
+| 031 | 02:42.40 | 02:47.96 | 5.6 s | affiche | `kit.affiche(slug) + LowerThird(titre, sous_titre)` | Michael Bay prend une franchise de jouets et en fait un des … |
 | 032 | 02:47.96 | 02:55.96 | 8.0 s | extrait | `— extrait a telecharger` | Et le plus fou, c'est que ça tient encore la route presque 2… |
 | 033 | 02:55.96 | 03:00.94 | 5.0 s | extrait | `— extrait a telecharger` | Ce film est encore plus lisible que la majorité des films à … |
 | 034 | 03:00.94 | 03:08.78 | 7.8 s | motion | `— a preciser` | Les transformations ne sont pas de la magie, ce sont des méc… |
@@ -219,7 +219,7 @@ Affiche ❌ affiche manquante · réaction A ❌ · 25 plans
 | # | in | out | durée | famille | élément | texte de la voix off |
 |---|----|-----|-------|---------|---------|----------------------|
 | 135 | 13:05.30 | 13:08.68 | 3.4 s | citation | `kit.citation(texte, source=...)` | La première bande-annonce de Transformers 1 était mauvaise. |
-| 136 | 13:08.68 | 13:12.94 | 4.3 s | photo | `— image a fournir` | Le ton semblait trop enfantin, l'animation semblait étrange … |
+| 136 | 13:08.68 | 13:12.94 | 4.3 s | pour / contre | `kit.pour_contre(pour, contre)` | Le ton semblait trop enfantin, l'animation semblait étrange … |
 | 137 | 13:12.94 | 13:18.14 | 5.2 s | photo | `— image a fournir` | d'une origine de l'amitié entre Optimus et Mégatron semblait… |
 | 138 | 13:18.14 | 13:20.38 | 2.2 s | extrait | `— extrait a telecharger` | Le film final est excellent. |
 | 139 | 13:20.38 | 13:27.16 | 6.8 s | extrait | `— extrait a telecharger` | L'animation est superbe, expressive et les transformations s… |
@@ -250,7 +250,7 @@ Affiche ❌ affiche manquante · réaction A ❌ · 25 plans
 disque, tous sur le film de 1986). Les requêtes sont dans `plan-episode-01.json`,
 champ `requete` — le job GitHub `complet` peut les tirer d'un coup.
 
-**9 images à fournir** (photos d'archive, jouets, plateaux de
+**7 images à fournir** (photos d'archive, jouets, plateaux de
 tournage). Je ne les génère pas : ce sont des personnes et des objets réels.
 
 **10 éléments de motion à préciser ou à construire :**

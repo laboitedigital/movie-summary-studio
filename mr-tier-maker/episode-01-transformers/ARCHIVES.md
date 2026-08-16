@@ -82,3 +82,30 @@ ajoute une question de droit à l'image d'une personne réelle pour un gain
 narratif nul.
 
 `apercus/plan-027-typo.jpg` montre le rendu.
+
+## Ce qu'il reste à fournir (à jour)
+
+| Plan | Image | État |
+|---|---|---|
+| `019` | Enfants devant une télé des années 80 | ✅ dans `images/` |
+| `021` | Jouets Transformers G1 en boîte | ✅ dans `images/` |
+| `027` | Portrait d'Orson Welles | ✅ dans `images/` |
+| `006` `007` | Deux affiches floutées | à fabriquer — je floute deux affiches déjà là |
+| `066` | Apollo 11 / NASA | **à déposer** — domaine public, [galerie NASA](https://www.nasa.gov/apollo11-gallery) |
+| `137` | Commentaires YouTube négatifs | **à déposer** — capture d'écran, pseudos à flouter |
+
+### Deux plans sont passés en motion plutôt qu'en photo
+
+**`031` — Michael Bay.** La seule photo libre de lui est en CC BY-SA 3.0, ce qui
+obligerait à créditer l'auteur dans la description de chaque vidéo. Le plan tient
+maintenant **l'affiche 2007** — qu'on a déjà — en Ken Burns lent, avec un bandeau
+`MICHAEL BAY / RÉALISATEUR`. Rien à fournir.
+
+**`136` — la bande-annonce et ses dislikes.** YouTube ne montre plus le nombre de
+dislikes depuis 2021 : la capture demandée était impossible sans extension, et un
+nombre inventé n'est pas une source. Le plan devient la **colonne des reproches**,
+une ligne par grief au rythme de la phrase — `TON TROP ENFANTIN`,
+`ANIMATION ÉTRANGE`, `CONCEPT CONDAMNÉ D'AVANCE`. La colonne « pour » reste vide
+jusqu'au plan `138`, qui la renverse.
+
+Ça fait passer les images à fournir de 6 à 2.
