@@ -114,7 +114,7 @@ class Canvas:
         self.buf[o+1]=int(g*t+self.buf[o+1]*it)
         self.buf[o+2]=int(b*t+self.buf[o+2]*it)
         self.buf[o+3]=min(255,int(a+da*it))
-    def rrect(self,x,y,w,h,fill,r=20,stroke=7,shadow=(0,8),shadow_a=0.40):
+    def rrect(self,x,y,w,h,fill,r=20,stroke=7,shadow=(0,8),shadow_a=0.40,sheen=0.16):
         fr,fg,fb=hexc(fill)
         if shadow:
             sx,sy=shadow
@@ -128,6 +128,17 @@ class Canvas:
             inn=rrect_mask(self.W,self.H,x+stroke,y+stroke,w-2*stroke,h-2*stroke,max(1,r-stroke))
             for i,a in enumerate(inn):
                 if a: self._blend(i,fr,fg,fb,a)
+            # liseré clair en haut : donne du relief sans casser l aplat
+            if sheen>0:
+                top=int(h*0.42)
+                for yy in range(y+stroke,min(self.H,y+stroke+top)):
+                    k=1.0-(yy-(y+stroke))/max(1,top)
+                    a_s=int(255*sheen*k*k)
+                    if a_s<=0: continue
+                    row=yy*self.W
+                    for xx in range(max(0,x+stroke),min(self.W,x+w-stroke)):
+                        i=row+xx
+                        if inn[i]: self._blend(i,255,255,255,min(a_s,inn[i]))
     def save(self,path): write_png(path,self.W,self.H,self.buf)
 
 def _ring(self,x,y,w,h,fill,r=24,thick=6):
@@ -139,3 +150,22 @@ def _ring(self,x,y,w,h,fill,r=24,thick=6):
         a=out[i]-inn[i]
         if a>0: self._blend(i,fr,fg,fb,a)
 Canvas.ring=_ring
+
+def _arc(self,cx,cy,r_out,r_in,frac,fill,start=-90.0):
+    """Anneau partiel, du haut dans le sens horaire. frac de 0 a 1."""
+    fr,fg,fb=hexc(fill)
+    end=start+360.0*max(0.0,min(1.0,frac))
+    for yy in range(max(0,cy-r_out-1),min(self.H,cy+r_out+2)):
+        row=yy*self.W
+        for xx in range(max(0,cx-r_out-1),min(self.W,cx+r_out+2)):
+            n=0
+            for i in range(2):
+                for j in range(2):
+                    dx=xx+(i+0.5)/2-cx; dy=yy+(j+0.5)/2-cy
+                    d=math.hypot(dx,dy)
+                    if d<r_in or d>r_out: continue
+                    ang=math.degrees(math.atan2(dy,dx))
+                    while ang<start: ang+=360.0
+                    if ang<=end: n+=1
+            if n: self._blend(row+xx,fr,fg,fb,int(255*n/4))
+Canvas.arc=_arc

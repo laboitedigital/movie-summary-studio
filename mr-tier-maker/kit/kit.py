@@ -49,12 +49,28 @@ def largeur(text,size):
     _cache[k]=w+1
     return w+1
 
-def ease(x0,x1,t0,dur,over=18):
-    """Glisse de x0 a x1 : arrivee rapide, depassement, retour."""
-    t1=t0+dur*0.72; t2=t0+dur
-    return (f"if(lt(t,{t0}),{x0},"
-            f"if(lt(t,{t1}),{x0}+({x1}-{x0}+{over})*(t-{t0})/{t1-t0},"
-            f"if(lt(t,{t2}),{x1}+{over}-{over}*(t-{t1})/{t2-t1},{x1})))")
+def ease(x0,x1,t0,dur,over=1.70158):
+    """Glisse de x0 a x1 en easeOutBack : demarre vite, depasse, revient.
+
+    Vraie courbe cubique, pas deux segments droits : c est ce qui distingue un
+    mouvement mecanique d un mouvement qui a du poids."""
+    u=f"min(1,max(0,(t-{t0})/{dur}))"
+    c1=over; c3=over+1
+    e=f"(1+{c3}*pow({u}-1,3)+{c1}*pow({u}-1,2))"
+    return f"if(lt(t,{t0}),{x0},{x0}+({x1}-{x0})*{e})"
+
+def pop(dur=0.34, w=None, h=None, fps=FPS, path=None, t0=0.0):
+    """Fichier sendcmd pour un rebond d echelle 0 -> 105 % -> 100 %."""
+    _n[0]+=1; path=path or f'kit/_pop{_n[0]}.txt'
+    n=max(2,int(dur*fps)); lines=[]
+    c1,c3=1.9,2.9
+    for i in range(n+1):
+        u=i/n
+        e=1+c3*(u-1)**3+c1*(u-1)**2
+        k=max(0.02,e)
+        lines.append(f"{t0+i/fps:.3f} scale w {max(2,int(w*k))}, scale h {max(2,int(h*k))};")
+    open(path,'w').write("\n".join(lines)+"\n")
+    return path
 
 def run(fc, inputs, out, d):
     cmd=['ffmpeg','-y','-loglevel','error']+inputs+['-filter_complex',fc,
@@ -73,12 +89,12 @@ def carton_titre(titre,annee,out,d=3.4):
     c.rrect(160,614,aw,104,'16233F',r=26,stroke=8,shadow=(0,12))
     c.save('kit/_titre.png')
     x=ease(-1750,0,0.10,0.55); x2=ease(-1750,0,0.28,0.55)
-    fc=(f"color=c={NAVY}:s=1920x1080:r={FPS}[bg];"
+    fc=(f"color=c={NAVY}:s=1920x1080:r={FPS},vignette=a=PI/4.2[bg];"
         f"[1:v]crop=1920:210:0:396[p1];[1:v]crop=1920:130:0:606[p2];"
         f"[bg][p1]overlay=x='{x}':y=396[a];"
         f"[a][p2]overlay=x='{x2}':y=606[b];"
-        f"[b]"+dt(titre,fs,'0x0B0D10',f"'220+({x})'",int(404+(190-fs*1.0)/2),borderw=0)+","
-        +dt(annee,56,'0xF7B632',f"'218+({x2})'",638)+"[v]")
+        f"[b]"+dt(titre,fs,'0x0B0D10',f"'220+({x})'","404+(190-text_h)/2",borderw=0)+","
+        +dt(annee,56,'0xF7B632',f"'218+({x2})'","606+(104-text_h)/2")+"[v]")
     run(fc,['-f','lavfi','-i',f'color=c={NAVY}:s=1920x1080:r={FPS}:d={d}',
             '-loop','1','-i','kit/_titre.png'],out,d)
 
@@ -90,7 +106,7 @@ def etiquette(clip,texte,out,d=4.0):
     x=ease(-900,70,0.35,0.5)
     fc=(f"[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1[c];"
         f"[c][1:v]overlay=x='{x}':y=880:shortest=1[a];"
-        f"[a]"+dt(texte,54,'white',f"'115+({x})'",908)+"[v]")
+        f"[a]"+dt(texte,54,'white',f"'115+({x})'","880+(110-text_h)/2")+"[v]")
     run(fc,['-i',clip,'-loop','1','-i','kit/_etiq.png'],out,d)
 
 # ------------------------------------------------------------- 3. pour / contre
@@ -100,32 +116,55 @@ def pour_contre(pour,contre,out,d=4.2):
         c=cartoon.Canvas(1920,1080); c.rrect(0,0,w,140,col,r=32,stroke=9,shadow=(0,12))
         c.save(f'kit/_pc{n}.png')
     xa=ease(-1500,240,0.25,0.5); xb=ease(-1500,240,0.95,0.5)
-    fc=(f"color=c={NAVY}:s=1920x1080:r={FPS}[bg];"
+    fc=(f"color=c={NAVY}:s=1920x1080:r={FPS},vignette=a=PI/4.2[bg];"
         f"[1:v]crop=1800:160:0:0[p];[2:v]crop=1800:160:0:0[q];"
         f"[bg][p]overlay=x='{xa}':y=380[a];"
         f"[a][q]overlay=x='{xb}':y=580[b];"
-        f"[b]"+dt('+  '+pour,58,'0x0B0D10',f"'60+({xa})'",416,borderw=0)+","
-        +dt('-  '+contre,58,'white',f"'60+({xb})'",616,borderw=4)+"[v]")
+        f"[b]"+dt('+  '+pour,58,'0x0B0D10',f"'60+({xa})'","380+(140-text_h)/2",borderw=0)+","
+        +dt('-  '+contre,58,'white',f"'60+({xb})'","580+(140-text_h)/2",borderw=4)+"[v]")
     run(fc,['-f','lavfi','-i',f'color=c={NAVY}:s=1920x1080:r={FPS}:d={d}',
             '-loop','1','-i','kit/_pc0.png','-loop','1','-i','kit/_pc1.png'],out,d)
 
 # --------------------------------------------------------------- 4. chiffre cle
-def chiffre(valeur,label,out,d=3.6,suffixe=''):
-    c=cartoon.Canvas(1920,1080); c.rrect(510,360,900,300,'3A5DAD',r=40,stroke=11,shadow=(0,16))
-    c.save('kit/_chiffre.png')
-    N=22; t0=0.45; dtp=0.055; steps=[]
+def chiffre(valeur,label,out,d=4.0,suffixe='',maxi=100,couleur='F7B632'):
+    """Jauge circulaire + compteur. Plutot qu un logo Rotten Tomatoes ou
+    Metacritic : ce sont des marques deposees, une jauge ne l est pas."""
+    PW=560; PX=(1920-PW)//2; PY=(1080-PW)//2
+    CX=1920//2; CY=PY+250; RO=170; RI=138
+    N=22; t0=0.55; dtp=0.055
+    base=cartoon.Canvas(1920,1080)
+    base.rrect(PX,PY,PW,PW,'16233F',r=48,stroke=11,shadow=(0,16))
+    base.arc(CX,CY,RO,RI,1.0,'0E1830')
+    base.save('kit/_ch_base.png')
     for i in range(N+1):
-        v=round(valeur*(i/N)**0.75)
+        v=(i/N)**0.75
+        c=cartoon.Canvas(1920,1080)
+        c.arc(CX,CY,RO,RI,v*valeur/maxi,couleur)
+        c.save(f'kit/_ch_a{i}.png')
+    cmd=pop(0.36,PW+40,PW+40,t0=0.18)
+    steps=[]
+    for i in range(N+1):
         a=t0+i*dtp; b=a+dtp if i<N else d
-        txt=f"{v}{suffixe}"
-        steps.append(dt(txt,140,'white','(w-text_w)/2',396,borderw=7,
+        steps.append(dt(f"{round(valeur*(i/N)**0.75)}{suffixe}",96,'white',
+                        '(w-text_w)/2',f"{CY}-text_h/2",borderw=6,
                         enable=f"between(t,{a:.3f},{b:.3f})"))
-    steps.append(dt(label,44,'0xA8B4C8','(w-text_w)/2',560,enable=f"gte(t,{t0})"))
-    fc=(f"color=c={NAVY}:s=1920x1080:r={FPS}[bg];"
-        f"[bg][1:v]overlay=x=0:y=0:enable='gte(t,0.25)'[a];"
-        f"[a]{','.join(steps)}[v]")
-    run(fc,['-f','lavfi','-i',f'color=c={NAVY}:s=1920x1080:r={FPS}:d={d}',
-            '-loop','1','-i','kit/_chiffre.png'],out,d)
+    steps.append(dt(label,44,'0xA8B4C8','(w-text_w)/2',f"{PY+PW}-120-text_h/2",
+                    enable=f"gte(t,{t0})"))
+    ins=['-f','lavfi','-i',f'color=c={NAVY}:s=1920x1080:r={FPS}:d={d}',
+         '-loop','1','-i','kit/_ch_base.png']
+    fc=[f"[0:v]vignette=a=PI/4.2[bgv]",
+        f"[1:v]crop={PW+40}:{PW+40}:{PX-20}:{PY-20},format=rgba,sendcmd=f={cmd},"
+        f"scale={PW+40}:{PW+40}:eval=frame[e]",
+        f"[bgv][e]overlay=x='(main_w-overlay_w)/2':y='{PY+PW//2+20}-overlay_h/2':"
+        f"enable='gte(t,0.18)'[a0]"]
+    prev='a0'
+    for i in range(N+1):
+        ins+=['-loop','1','-i',f'kit/_ch_a{i}.png']
+        a=t0+i*dtp; b=a+dtp if i<N else d
+        fc.append(f"[{prev}][{i+2}:v]overlay=x=0:y=0:enable='between(t,{a:.3f},{b:.3f})'[a{i+1}]")
+        prev=f"a{i+1}"
+    fc.append(f"[{prev}]{','.join(steps)}[v]")
+    run(";".join(fc),ins,out,d)
 
 # ---------------------------------------------------------------- 5. transition
 def transition(out,d=1.2):
@@ -138,7 +177,7 @@ def transition(out,d=1.2):
         t0=0.62+0.05*i; t1=t0+0.40
         x=f"if(lt(t,{t0}),1921,if(lt(t,{t1}),1920*(t-{t0})/{t1-t0},1920))"
         f.append(f"drawbox=x='{x}':y={i*bh}:w=1920:h={bh+1}:color={NAVY}:t=fill")
-    run(f"color=c={NAVY}:s=1920x1080:r={FPS}[bg];[bg]{','.join(f)}[v]",
+    run(f"color=c={NAVY}:s=1920x1080:r={FPS},vignette=a=PI/4.2[bg];[bg]{','.join(f)}[v]",
         ['-f','lavfi','-i',f'color=c={NAVY}:s=1920x1080:r={FPS}:d={d}'],out,d)
 
 # ------------------------------------------------------------ 6. rappel du tableau

@@ -37,3 +37,38 @@ faisait disparaître le compteur du chiffre clé.
 sur un canevas large et on relève l'extension de l'encre. Une estimation au
 nombre de caractères se trompait de 12 % sur un titre en capitales, et le
 texte débordait de sa pastille.
+
+## Révision « polish » (retour extérieur)
+
+Quatre points d'une critique reçue étaient justes et sont appliqués :
+
+- **Vraies courbes d'accélération.** `ease()` était deux segments droits avec un
+  dépassement — mécanique. C'est maintenant un *easeOutBack* cubique : démarrage
+  rapide, dépassement, retour amorti.
+- **Rebond d'échelle à l'apparition** (0 → 105 % → 100 %). ffmpeg ne sait pas
+  animer `scale` avec le temps ; `zoompan` ne descend pas sous z=1. La solution
+  est un fichier `sendcmd` qui pilote `scale` image par image — c'est ce que
+  fait `pop()`.
+- **Relief sur les pastilles.** Liseré clair dégradé sur les 42 % du haut,
+  16 % d'opacité. Assez pour donner du volume, pas assez pour casser l'aplat.
+- **Vignettage** sur les fonds unis (`vignette=a=PI/4.2`).
+- **Centrage vertical réel** via `text_h` plutôt qu'une constante.
+
+Trois autres points de cette critique décrivaient des choses **déjà présentes**
+— elles avaient été jugées sur des images fixes :
+
+- Le décalage temporel existe déjà (pour/contre 0,7 s, affiches 0,16 s, bandes
+  de transition 0,05 s).
+- Le compteur décélère déjà (`(i/N)**0.75` sur 22 paliers).
+- La transition arc-en-ciel est déjà un balayage en cascade, pas une image fixe.
+
+Deux points ont été écartés :
+
+- **Particules / grille animée en fond** : ça contredit le style du logo, qui
+  est en aplats francs. Le vignettage suffit à habiter le fond.
+- **Logo Rotten Tomatoes ou Metacritic** : marques déposées. Une jauge
+  circulaire dit la même chose sans le risque, et c'est ce qui a été fait.
+
+Reste ouvert et légitime : **la taille des affiches dans le tableau**, trop
+petites sur téléphone. Le vrai correctif est un zoom dynamique sur la rangée
+concernée au moment où on en parle — pas encore fait.
