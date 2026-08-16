@@ -79,6 +79,12 @@ rouge. Retirer le préfixe explicitement.
 **`zoompan` tronque x et y à l'entier**, ce qui fait vibrer l'image. Sur-
 échantillonner l'entrée ×4 avant le zoom.
 
+**Un export assemblé n'est pas la voix off.** Le master FlexClip de
+l'épisode 01 tronquait la fin de 3 des 4 parties générées — 24,47 s de
+narration, avec des raccords nets qui ne s'entendaient pas — et finissait sur
+42,7 s de silence numérique. La référence, ce sont les fichiers générés, dans
+`voix/sources/`, remis bout à bout par `scripts/rebuild.py`.
+
 **Valider le YAML des workflows avant de pousser** (`yaml.safe_load`). Une
 continuation de ligne shell qui retombe en colonne 1 ferme le bloc `run: |` et
 rend le fichier illisible par GitHub — le job échoue alors sur chaque `push`

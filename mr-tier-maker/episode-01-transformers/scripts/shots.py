@@ -1,10 +1,28 @@
 # -*- coding: utf-8 -*-
-import re
-SRT='/root/.claude/uploads/6766f008-556b-59c2-a547-c84c2948a887/2f6a5ad7-Untitled___Made_with_FlexClip.srt'
-def load():
-    src=open(SRT,encoding='utf-8').read()
-    src=src.replace('(Transcribed by TurboScribe. Go Unlimited to remove this message.) ','')
-    src=re.sub(r'Transcribed by TurboScribe\..*?message\.','',src)
+"""Les plans de l episode, un par phrase, decoupes sur le SRT.
+
+`voix/voix.srt` est cale sur `voix/voix-complete.mp3` : le sous-titrage a ete
+refait sur la voix off de reference, celle qui contient les 24,47 s que
+l ancien master tronquait. Timecodes et audio sont donc sur la meme base — il
+n y a plus rien a remapper.
+
+`voix/voix-master.srt` est l ancien sous-titrage, cale sur le master jete. Il
+ne sert qu a retrouver la numerotation d avant (voir correspondance-plans.json).
+"""
+import re, json, os
+
+ICI  = os.path.dirname(os.path.abspath(__file__))
+VOIX = os.path.join(os.path.dirname(ICI), 'voix')
+SRT  = os.path.join(VOIX, 'voix.srt')
+
+def load(srt=None):
+    """Les plans, decoupes sur le SRT. A utiliser partout."""
+    src=open(srt or SRT,encoding='utf-8').read()
+    # TurboScribe colle sa pub dans le premier sous-titre, en anglais ou en
+    # francais selon la langue detectee. Elle n est pas de la narration.
+    src=re.sub(r'\(Transcri(?:bed|t) par TurboScribe.*?\)\s*','',src)
+    src=re.sub(r'\((?:Transcribed|Transcrit) (?:by|par) TurboScribe.*?\)\s*','',src)
+    src=re.sub(r'(?:Transcribed by|Transcrit par) TurboScribe\..*?(?:message|message\.)\.?','',src)
     b=re.findall(r'\d+\n(\d\d:\d\d:\d\d,\d+) --> (\d\d:\d\d:\d\d,\d+)\n(.*?)(?=\n\n|\Z)',src,re.S)
     def sec(x):
         h,m,r=x.split(':'); s,ms=r.split(','); return int(h)*3600+int(m)*60+int(s)+int(ms)/1000
@@ -29,16 +47,18 @@ def load():
         for i in range(n):
             c=' '.join(w[i*per:(i+1)*per]) if i<n-1 else ' '.join(w[i*per:])
             if c.strip(): final.append((st+d*i/n,st+d*(i+1)/n,c))
-    # duree ECRAN : un plan tient jusqu'au debut du suivant
-    END=892.334  # fin reelle de la parole dans le mp3
+    # duree ECRAN : un plan tient jusqu au debut du suivant. Le dernier tient
+    # jusqu a la fin de la parole, mesuree sur le SRT lui-meme.
+    END=max(e for _,e,_ in items)
     out=[]
     for i,(a,b,txt) in enumerate(final):
         nxt = final[i+1][0] if i+1<len(final) else END
         out.append(dict(n=i+1, a=a, b=nxt, speech=b-a, screen=nxt-a, txt=txt))
     return out
+
 if __name__=='__main__':
     S=load()
-    print("plans:",len(S))
+    print("plans:",len(S), " (voix.srt sur voix-complete.mp3)")
     print("ecran  : total %.1fs | moy %.1fs | max %.1fs"%(sum(s['screen'] for s in S),
           sum(s['screen'] for s in S)/len(S), max(s['screen'] for s in S)))
     over=[s for s in S if s['screen']>7.5]

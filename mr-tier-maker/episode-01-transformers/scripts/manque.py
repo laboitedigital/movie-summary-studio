@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+# ENQUETE, UNE SEULE FOIS — ne tourne plus.
+# Ce script comparait les parties generees au master FlexClip pour trouver ce
+# qu il tronquait. Le master a ete jete une fois le compte etabli (24,47 s de
+# narration perdue). Conserve pour la methode : correlation croisee des
+# enveloppes d energie, quand aucune transcription n est disponible.
 """La fin de chaque partie existe-t-elle dans le master ?"""
 import subprocess, numpy as np
 SR=4000; HOP=80

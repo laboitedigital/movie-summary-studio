@@ -12,14 +12,14 @@ import annot, shots, json, os, re, glob
 
 FILMS=[  # (rangee du tier, titre, annee, slug d affiche, plan de verdict)
  (2,"THE TRANSFORMERS: THE MOVIE","1986","1986-the-transformers-the-movie",29),
- (1,"TRANSFORMERS","2007","2007-transformers",45),
- (4,"REVENGE OF THE FALLEN","2009","2009-revenge-of-the-fallen",62),
+ (1,"TRANSFORMERS","2007","2007-transformers",46),
+ (4,"REVENGE OF THE FALLEN","2009","2009-revenge-of-the-fallen",63),
  (1,"DARK OF THE MOON","2011","2011-dark-of-the-moon",79),
- (4,"AGE OF EXTINCTION","2014","2014-age-of-extinction",91),
- (4,"THE LAST KNIGHT","2017","2017-the-last-knight",104),
- (0,"BUMBLEBEE","2018","2018-bumblebee",119),
- (2,"TRANSFORMERS ONE","2024","2024-transformers-one",131),
- (1,"RISE OF THE BEASTS","2023","2023-rise-of-the-beasts",146),
+ (4,"AGE OF EXTINCTION","2014","2014-age-of-extinction",93),
+ (4,"THE LAST KNIGHT","2017","2017-the-last-knight",106),
+ (0,"BUMBLEBEE","2018","2018-bumblebee",122),
+ (2,"TRANSFORMERS ONE","2024","2024-transformers-one",134),
+ (1,"RISE OF THE BEASTS","2023","2023-rise-of-the-beasts",149),
 ]
 TIER="SABCDF"
 

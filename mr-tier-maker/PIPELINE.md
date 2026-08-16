@@ -52,10 +52,17 @@ Deux règles de sous-titrage qui ont déjà coûté une reprise : découper sur 
 frontières de mots (jamais « c'est une décision d » / « 'écriture »), et garder
 l'espace insécable avant `; : ! ?`.
 
-**Sort :** `voix.mp3` et `episode.srt`.
+**Ce qui fait foi, ce sont les fichiers générés, jamais un export
+assemblé.** Sur l'épisode 01, le master sorti de FlexClip avait mangé la fin de
+trois parties sur quatre — 24,47 s de narration, précisément les verdicts — et
+ajouté 42,7 s de silence à la fin. Les raccords étaient nets : rien ne se
+voyait, ni ne s'entendait. Les parties vont dans `voix/sources/`, numérotées
+dans l'ordre, et `scripts/rebuild.py` les met bout à bout.
 
-Si tu produis la voix toi-même, dépose simplement les deux fichiers dans le
-dossier de l'épisode et passe à l'étape 3.
+**Sort :** `voix/sources/*.mp3`, `voix/voix-complete.mp3` et `episode.srt`.
+
+Si tu produis la voix toi-même, dépose les parties dans `voix/sources/` et le
+SRT dans le dossier de l'épisode, puis passe à l'étape 3.
 
 ---
 
@@ -67,6 +74,12 @@ dossier de l'épisode et passe à l'étape 3.
 ou `PHOTO` avec son intention, et je produis le plan timecodé : pour chaque
 plan, ses bornes réelles, sa durée d'écran, la famille du kit et **l'appel
 exact** à passer.
+
+Le SRT doit être calé sur la voix off de référence — celle de `voix/sources/`
+mise bout à bout, pas sur un export. Si le sous-titrage change après coup, tout
+ce qui est indexé par numéro de plan glisse : les extraits Clip.cafe, les
+images, les annotations. `scripts/renumerote.py` fait le report, et
+`scripts/renommer-extraits.sh` renomme ce qui est déjà téléchargé.
 
 Les 12 compositions du kit couvrent tout : `TitleCard`, `LowerThird`,
 `RainbowWipe`, `ProsCons`, `ScoreDials`, `BigStat`, `Citation`, `Versus`,
