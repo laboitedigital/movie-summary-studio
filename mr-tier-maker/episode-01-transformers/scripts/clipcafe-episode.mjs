@@ -112,32 +112,47 @@ for (const s of shots) {
     continue;
   }
 
-  const h = hits.find((x) => !pris.has(x.slug));
-  if (!h) {
+  // Un 404 au telechargement ne veut pas dire "ce plan est perdu" : le clip
+  // existe dans l index mais son fichier n est pas servable. On passe donc au
+  // candidat suivant au lieu d abandonner. Sans ca, un second passage refait
+  // exactement les memes choix et rate exactement les memes extraits.
+  const candidats = hits.filter((x) => !pris.has(x.slug));
+  if (!candidats.length) {
     console.log(`x ${tag} tous les resultats sont deja utilises  "${s.requete}"`);
     rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, etat: "doublon inevitable",
                    proposes: hits.map((x) => x.slug) });
     continue;
   }
-  const rang = hits.indexOf(h);
-  pris.add(h.slug);
-  const url = h.download?.startsWith("http")
-    ? h.download
-    : `${API}?api_key=${encodeURIComponent(KEY)}&slug=${encodeURIComponent(h.slug)}&key=${encodeURIComponent(h.download)}`;
-  try {
-    const buf = await api(url.startsWith("http") && !url.includes("api_key")
-      ? url : url.split("?")[1], true);
-    fs.writeFileSync(`${OUT}/_${tag}.mp4`, buf);
-    // on coupe a 7 s : c'est la limite qu'on s'impose sur les extraits
-    await ffmpeg(["-y", "-loglevel", "error", "-i", `${OUT}/_${tag}.mp4`,
-      "-t", String(CAP), "-c", "copy", dest]);
-    fs.unlinkSync(`${OUT}/_${tag}.mp4`);
-    console.log(`+ ${tag} ${h.slug}${rang ? `   (${rang + 1}e resultat, les precedents etaient pris)` : ""}`);
-    rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, slug: h.slug,
-                   rang: rang + 1, etat: "ok" });
-  } catch (e) {
-    console.log(`! ${tag} telechargement : ${e.message}`);
-    rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, etat: "echec telechargement" });
+
+  let pose = false;
+  for (const [k, h] of candidats.entries()) {
+    const url = h.download?.startsWith("http")
+      ? h.download
+      : `${API}?api_key=${encodeURIComponent(KEY)}&slug=${encodeURIComponent(h.slug)}&key=${encodeURIComponent(h.download)}`;
+    try {
+      const buf = await api(url.startsWith("http") && !url.includes("api_key")
+        ? url : url.split("?")[1], true);
+      fs.writeFileSync(`${OUT}/_${tag}.mp4`, buf);
+      // on coupe a 7 s : c'est la limite qu'on s'impose sur les extraits
+      await ffmpeg(["-y", "-loglevel", "error", "-i", `${OUT}/_${tag}.mp4`,
+        "-t", String(CAP), "-c", "copy", dest]);
+      fs.unlinkSync(`${OUT}/_${tag}.mp4`);
+      pris.add(h.slug);
+      const suite = hits.indexOf(h) ? `   (${hits.indexOf(h) + 1}e resultat)` : "";
+      console.log(`+ ${tag} ${h.slug}${suite}${k ? `   apres ${k} echec(s)` : ""}`);
+      rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, slug: h.slug,
+                     rang: hits.indexOf(h) + 1, echecs: k, etat: "ok" });
+      pose = true;
+      break;
+    } catch (e) {
+      console.log(`  ${tag} ${h.slug} : ${e.message}, on essaie le suivant`);
+      await sleep(RATE_MS);
+    }
+  }
+  if (!pose) {
+    console.log(`x ${tag} aucun candidat telechargeable  "${s.requete}"`);
+    rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, etat: "aucun telechargeable",
+                   essayes: candidats.map((x) => x.slug) });
   }
   await sleep(RATE_MS);
 }
