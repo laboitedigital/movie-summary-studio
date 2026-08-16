@@ -75,6 +75,39 @@ def remo(comp, out, props=None, alpha=False):
     sh(*cmd, cwd=KIT, stdout=subprocess.DEVNULL)
     return out
 
+def remo_still(comp, out, props=None):
+    """Rend UNE image d une composition. Le cadre ne bouge pas : le rendre en
+    video serait 95 fois le meme calcul."""
+    if os.path.exists(out): return out
+    cmd=['npx','--no-install','remotion','still','src/index.ts',comp,
+         os.path.abspath(out),'--image-format=png']
+    if props: cmd+=['--props='+json.dumps(props,ensure_ascii=False)]
+    sh(*cmd, cwd=KIT, stdout=subprocess.DEVNULL)
+    return out
+
+# Le cadre cartoon pose sur tous les extraits. MARGE + TRAIT donnent la fenetre
+# ou l image passe : elle doit correspondre exactement au trou du PNG, sinon on
+# voit le fond de chaine deborder sous le trait.
+CADRE_MARGE, CADRE_TRAIT = 46, 14
+CADRE_W = W - 2*(CADRE_MARGE + CADRE_TRAIT)
+CADRE_H = H - 2*(CADRE_MARGE + CADRE_TRAIT)
+
+def pose_cadre(src, nfr, out):
+    """L extrait dans sa fenetre, le cadre par-dessus."""
+    png=remo_still('CadreClip', f'{OUT}/el/cadre.png',
+                   {"marge":CADRE_MARGE,"trait":CADRE_TRAIT,"rayon":30})
+    d=CADRE_MARGE+CADRE_TRAIT
+    sh('ffmpeg','-y','-loglevel','error','-i',src,'-i',os.path.abspath(png),
+       '-filter_complex',
+       f'[0:v]scale={CADRE_W}:{CADRE_H}:force_original_aspect_ratio=increase,'
+       f'crop={CADRE_W}:{CADRE_H},pad={W}:{H}:{d}:{d}:{NAVY},setsar=1,fps={FPS}[c];'
+       f'[c][1:v]overlay=0:0:format=auto',
+       '-frames:v',str(nfr),'-fps_mode','cfr','-r',str(FPS),'-c:v','libx264',
+       '-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',out)
+    got=nb_frames(out)
+    if got<nfr: combler(out, got, nfr)
+    return out
+
 def frames(n):
     """Duree du plan n, en frames a 60 ips, calee sur le debut du suivant."""
     a=S[n]['a']; b=S[n+1]['a'] if (n+1) in S else S[n]['b']
@@ -306,14 +339,14 @@ def f_extrait(n, nfr, out):
     if premier:
         lt=remo('LowerThird', f'{OUT}/el/lt-{f[3]}.mov',
                 {"label":f[1],"year":int(f[2]),"tier":TIERS[f[0]]}, alpha=True)
-        tmp=out+'.base.mp4'; cut(src,nfr,tmp)
+        tmp=out+'.base.mp4'; pose_cadre(src,nfr,tmp)
         # PAS de shortest=1 : il tronquerait l extrait a la duree du bandeau
         sh('ffmpeg','-y','-loglevel','error','-i',tmp,'-i',os.path.abspath(lt),
            '-filter_complex','[0:v][1:v]overlay=0:0:format=auto:repeatlast=1',
            '-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264','-preset','veryfast',
            '-crf','17','-pix_fmt','yuv420p','-an',out)
         os.remove(tmp); return out
-    return cut(src,nfr,out)
+    return pose_cadre(src,nfr,out)
 
 # La mascotte passe DEVANT le tableau, a droite. Les affiches n occupent que le
 # tiers gauche de chaque rangee : elle ne cache donc rien d important, et elle

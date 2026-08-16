@@ -16,6 +16,7 @@ import {BoardRecap, boardRecapSchema} from './BoardRecap';
 import {Placeholder, placeholderSchema} from './Placeholder';
 import {VerdictTableau, verdictTableauSchema} from './VerdictTableau';
 import {CadreClip, cadreClipSchema} from './CadreClip';
+import {Fleche, flecheSchema} from './Fleche';
 import {Commentaires, commentairesSchema} from './Commentaires';
 import {Trombinoscope, trombinoscopeSchema} from './Trombinoscope';
 import {Mecanismes, mecanismesSchema} from './Mecanismes';
@@ -79,6 +80,9 @@ export const RemotionRoot: React.FC = () => (
         rows: DEMO_ROWS.map((r) => r.tier === 'B' ? {...r, posters: [P('2024-transformers-one.jpg')]} : r),
         poster: P('1986-the-transformers-the-movie.jpg'), tier: 'B' as const, slotIndex: 1,
         offsetX: 0, colonneAvatar: 0}} />
+    <Composition id="Fleche" component={Fleche} durationInFrames={150} fps={FPS} width={W} height={H}
+      schema={flecheSchema} defaultProps={{
+        x: 0.42, y: 0.46, texte: 'Optimus Prime', depuis: 'droite' as const, couleur: 'A' as const}} />
     <Composition id="CadreClip" component={CadreClip} durationInFrames={60} fps={FPS} width={W} height={H}
       schema={cadreClipSchema} defaultProps={{marge: 46, trait: 14, rayon: 30}} />
     <Composition id="Commentaires" component={Commentaires} durationInFrames={320} fps={FPS} width={W} height={H}
