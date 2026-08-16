@@ -123,9 +123,10 @@ SEG6 = """107 after-i-kill-you-i-kill-her
 117 please
 118 they-literally-call-themselves-decepticons-s1"""
 
-# rattrapages, run 31951727721 — deja en NOUVELLE numerotation
+# rattrapages, runs 31951727721 et 31952025055 — deja en NOUVELLE numerotation
 RATTRAPAGES = """085 there-one-way-survive-s1
-111 lets-do-this-s17"""
+111 lets-do-this-s17
+034 are-samuel-james-witwicky-descendent-of-archibald-witwicky"""
 
 def lire(t):
     d={}

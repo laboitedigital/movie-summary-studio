@@ -439,7 +439,7 @@
   "element": "— extrait a telecharger",
   "requete": "the car transforms into a robot",
   "texte": "Les transformations ne sont pas de la magie, ce sont des mécanismes. On voit les plaques glisser, les pièces pivoter, les vis tourner.",
-  "note": "Ralenti 50% sur les pieces qui bougent. Zoom progressif."
+  "note": "Ralenti 50% sur les pieces qui bougent. Zoom progressif. A REVOIR : le seul clip disponible (are-samuel-james-witwicky...) est une scene de dialogue, pas une transformation. Le catalogue est indexe sur les repliques, un plan purement visuel n y existe pas toujours. Solution : reprendre un bout du 033, ou faire ce plan en motion."
  },
  {
   "n": 35,
