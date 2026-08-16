@@ -11,6 +11,8 @@ export const verdictTableauSchema = z.object({
   tier: z.enum(['S','A','B','C','D','F']),
   slotIndex: z.number().default(0),
   offsetX: z.number().default(0),
+  /** largeur reservee a droite pour la mascotte, en pixels. 0 = pas de mascotte */
+  colonneAvatar: z.number().default(0),
 });
 
 /**
@@ -25,7 +27,13 @@ export const verdictTableauSchema = z.object({
  * sa rangee accuse le coup. Rien d autre ne demande l attention.
  *
  * Fond transparent, aucune video : Chromium ne decode pas le ProRes. Le montage
- * empile fond de chaine -> ce rendu.
+ * empile fond de chaine -> ce rendu -> la mascotte detouree par ffmpeg.
+ *
+ * `colonneAvatar` reserve une bande a droite et REDUIT le tableau pour qu il y
+ * tienne, au lieu de poser la mascotte par-dessus. Le tableau fait 1520 px de
+ * large sur 858 de haut : il ne reste que 200 px de marge de chaque cote, donc
+ * toute mascotte posee en surimpression mange forcement des cases. Sur cet
+ * episode C et F sont vides et ca ne se verrait pas — sur le suivant, si.
  */
 export const VerdictTableau: React.FC<z.infer<typeof verdictTableauSchema>> = (p) => {
   const frame = useCurrentFrame();
@@ -33,6 +41,14 @@ export const VerdictTableau: React.FC<z.infer<typeof verdictTableauSchema>> = (p
   const i = TIERS.indexOf(p.tier);
   const col = TIER_COLOR[p.tier];
   const left = (1920 - BOARD.width) / 2 + p.offsetX;
+
+  // le tableau se replie vers la gauche pour laisser la colonne de la mascotte
+  const dispo = 1920 - p.colonneAvatar;
+  const replie = p.colonneAvatar > 0 ? Math.min(1, (dispo - 80) / (BOARD.width + 80)) : 1;
+  const cadre: React.CSSProperties = p.colonneAvatar > 0
+    ? {transform: `translateX(${(dispo - BOARD.width * replie) / 2 - left * replie}px) scale(${replie})`,
+       transformOrigin: '0 50%'}
+    : {};
 
   // La case visee, en coordonnees ecran
   const cible = {
@@ -77,6 +93,7 @@ export const VerdictTableau: React.FC<z.infer<typeof verdictTableauSchema>> = (p
   return (
     <AbsoluteFill style={{fontFamily: FONT, background: 'transparent'}}>
       <FontFace />
+      <AbsoluteFill style={cadre}>
       <AbsoluteFill style={{transform: `translateY(${kick}px)`}}>
         <BoardInner rows={p.rows} offsetX={p.offsetX} transparent />
       </AbsoluteFill>
@@ -98,6 +115,7 @@ export const VerdictTableau: React.FC<z.infer<typeof verdictTableauSchema>> = (p
         outline: `3px solid rgba(0,0,0,0.85)`,
         filter: `drop-shadow(0 0 ${18 * pose}px ${col})`,
       }} />
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
