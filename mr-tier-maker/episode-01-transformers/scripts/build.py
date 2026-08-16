@@ -276,6 +276,11 @@ def f_extrait(n, nfr, out):
 AVATAR_L = 1600          # largeur de la mascotte detouree
 AVATAR_X = 440           # W - largeur + 440 : le decalage vers la droite
 AVATAR_Y = 40
+# La mascotte n entre qu au moment ou l affiche se pose. Cette valeur DOIT
+# suivre la constante POSE de VerdictTableau.tsx : si l animation change la-bas,
+# elle change ici. Avant, la mascotte jouait sa reaction pendant que l affiche
+# volait encore — elle reagissait a un verdict qui n etait pas tombe.
+AVATAR_DEBUT = 92
 
 def f_verdict(n, nfr, out):
     f=next((x for x in FILMS if x[4]==n), None)
@@ -291,9 +296,15 @@ def f_verdict(n, nfr, out):
                if os.path.exists(c)), None)
     if reac:
         ins=['-i',reac]
+        d = AVATAR_DEBUT / FPS
+        # setpts decale ses images, enable l empeche d etre dessinee avant :
+        # les deux ensemble, sinon sa premiere frame reste collee a l ecran
+        # depuis le debut du plan
         fc=(f'[0:v][1:v]overlay=0:0:format=auto[a];'
-            f'[2:v]fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012,scale={AVATAR_L}:-1[m];'
-            f'[a][m]overlay=W-w+{AVATAR_X}:H-h+{AVATAR_Y}:format=auto:repeatlast=1[v]')
+            f'[2:v]fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012,'
+            f'scale={AVATAR_L}:-1,setpts=PTS+{d:.4f}/TB[m];'
+            f"[a][m]overlay=W-w+{AVATAR_X}:H-h+{AVATAR_Y}:format=auto:"
+            f"enable='gte(t,{d:.4f})':repeatlast=1[v]")
     else:
         # sans mascotte le carton reste lisible, mais c est une perte : on le dit
         manquants.append((n, 'reaction-%s.mp4 introuvable, verdict sans mascotte'%tier))
