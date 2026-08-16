@@ -54,33 +54,73 @@ ils ne tournent plus, le master n'existe plus.)
 | ae | 435,4 – 695,3 | 459,2 – 719,8 | +0,70 s |
 | a4 | 695,3 – 892,6 | 719,8 – 917,1 | — |
 
-## Le SRT et les 156 plans
+## Le sous-titrage a été refait
 
-`voix-master.srt` porte le **texte**, mais ses timecodes sont ceux du master :
-ils ne valent plus. `scripts/remap.py` les reporte sur la référence et écrit
-`plans-remappes.json` — c'est ce que `shots.load()` relit, et **la seule base de
-temps du montage**. La correspondance est linéaire par morceau : dans chaque
-partie le décalage est constant, donc aucun plan n'a eu besoin d'être
-re-découpé — seules ses bornes glissent.
+`voix.srt` est calé sur `voix-complete.mp3` : timecodes et audio sont enfin sur
+la même base, il n'y a plus rien à remapper. C'est ce que `shots.load()` lit.
 
-Le dernier plan (156) finit à 916,81 s.
+Il contient les 24,47 s que l'ancien n'avait pas, et le texte confirme mot pour
+mot ce que la corrélation avait annoncé — c'étaient bien les deux verdicts :
+
+| Fenêtre | Ce que le master avait mangé |
+|---|---|
+| 240,4 → 254,6 | « …et c'est pour ça que ça marche. Le film n'essaie jamais d'être plus gros que cette idée-là. **Verdict, il va en A.** Deux ans plus tard, tout part en fumée. » |
+| 449,6 → 459,2 | « …pas le temps de **la digérer**. Mais dans l'ensemble, c'est un très bon film d'action. **Verdict ? Il va en A.** Et ensuite, le vide. » |
+
+L'ancien SRT enchaînait « pas le temps de l'exagérer » sur « Mais dans
+l'ensemble, c'est plus long que… » — une phrase qui ne voulait rien dire.
+Il corrige aussi « tiers list » → « tier list », « un tiers du milieu » → « un
+tir du milieu », et « trilogie B. 3. » qui était un artefact.
+
+`voix-master.srt` est l'ancien, gardé pour une seule raison : retrouver la
+numérotation d'avant.
+
+## La renumérotation
+
+Le découpage passe de **156 à 159 plans** — les deux verdicts retrouvés et
+leurs deux transitions de segment font trois plans de plus. Tout ce qui suit le
+plan 043 glisse de 1 à 3 rangs.
+
+`scripts/renumerote.py` reporte les 156 annotations sur la nouvelle
+numérotation. Il apparie chaque nouveau plan à l'ancien dont le texte s'y
+retrouve, et **quand deux plans fusionnent il garde celui qui ouvre le plan** —
+c'est son image qui est à l'écran au moment de la coupe. Huit plans qu'aucun
+appariement ne pouvait trancher sont annotés à la main dans le script.
+
+Deux segments n'avaient pas de carton titre — *Revenge of the Fallen* et *Age
+of Extinction* — parce que le master avait mangé précisément leurs phrases de
+transition. Ils en ont un maintenant.
+
+L'ordre à respecter :
+
+```
+scripts/rebuild.py               # sources/ -> voix-complete.mp3
+scripts/remap.py                 # ancien SRT -> plans-remappes.json (le pont)
+scripts/renumerote.py            # -> annot.py renumeroté, ancien-vers-nouveau.json
+scripts/plan.py                  # -> plan-episode-01.json, plan-montage.md
+scripts/extraits-renumerotes.py  # -> renommer-extraits.sh
+```
+
+Les archives `voix/plan-ancien-156.json` et `voix/annot-ancien-156.py` sont les
+versions d'avant : les scripts repartent toujours de là, jamais du fichier
+qu'ils viennent de réécrire. Relancer la chaîne deux fois donne le même
+résultat.
+
+## Les extraits déjà téléchargés
+
+**94 des 96 sont réutilisables**, il suffit de les renommer :
+`scripts/renommer-extraits.sh` (61 `mv`, en ordre descendant pour ne jamais
+écraser un fichier pas encore déplacé).
+
+| | |
+|---|---|
+| à retélécharger | `085` *Lockdown bounty hunter*, `111` *Optimus Prime Cybertron battle* — leur plan est né d'une scission |
+| abandonnés | `055`, `069` — leur plan a fusionné avec le voisin |
 
 ## Ce qu'il reste à faire
 
-**Le texte des trois fenêtres récupérées n'est pas transcrit.** Pas de
-reconnaissance vocale disponible ici.
+Plus rien sur la voix off. Le texte des fenêtres retrouvées est transcrit, les
+plans sont renumérotés, le plan de montage est régénéré.
 
-| Fenêtre | Durée | Position |
-|---|---|---|
-| 240,40 → 254,59 | 14,19 s | juste avant le plan 043 |
-| 449,59 → 459,18 | 9,59 s | juste avant le plan 077 |
-| 719,08 → 719,78 | 0,70 s | juste avant le plan 120 |
-
-Deux façons de finir :
-
-- refaire passer `voix-complete.mp3` dans l'outil qui a produit le premier SRT,
-  ce qui redonne un sous-titrage complet et juste — puis relancer `remap.py` ;
-- ou écouter les trois fenêtres et me dicter le texte — 24 secondes en tout.
-
-Tant que ce n'est pas fait, les plans 043 et 077 portent le verdict sans que le
-plan de montage sache quoi afficher dessus.
+Côté matière : les deux extraits ci-dessus, et les images d'archives qui
+manquaient déjà.

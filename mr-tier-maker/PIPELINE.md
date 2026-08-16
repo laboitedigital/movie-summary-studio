@@ -75,6 +75,12 @@ ou `PHOTO` avec son intention, et je produis le plan timecodé : pour chaque
 plan, ses bornes réelles, sa durée d'écran, la famille du kit et **l'appel
 exact** à passer.
 
+Le SRT doit être calé sur la voix off de référence — celle de `voix/sources/`
+mise bout à bout, pas sur un export. Si le sous-titrage change après coup, tout
+ce qui est indexé par numéro de plan glisse : les extraits Clip.cafe, les
+images, les annotations. `scripts/renumerote.py` fait le report, et
+`scripts/renommer-extraits.sh` renomme ce qui est déjà téléchargé.
+
 Les 12 compositions du kit couvrent tout : `TitleCard`, `LowerThird`,
 `RainbowWipe`, `ProsCons`, `ScoreDials`, `BigStat`, `Citation`, `Versus`,
 `TierBoard`, `BoardRecap`, `PosterPlacement`, `VerdictCard`.
