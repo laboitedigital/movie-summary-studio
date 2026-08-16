@@ -1,0 +1,77 @@
+name: Copie legere de l episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Run du montage qui porte l artefact « episode »"
+        required: true
+      branche:
+        description: "Branche ou deposer la copie"
+        required: false
+        default: "claude/pipeline-fonctionnement-4b9hxp"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  apercu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      # Le master sort en 1080p60 CRF 17 : plusieurs centaines de Mo, trop lourd
+      # pour le depot. Mais le telechargement des artefacts est hors de la
+      # politique de sortie reseau de la session, donc c'est le seul chemin par
+      # lequel la video peut me revenir. On depose donc une copie de relecture
+      # 720p, assez legere pour vivre dans git, et le master reste dans
+      # l'artefact du montage.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branche }}
+
+      - name: Installer ffmpeg
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          NEEDRESTART_MODE: a
+        timeout-minutes: 5
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Recuperer le montage
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          id=$(gh api "repos/${{ github.repository }}/actions/runs/${{ inputs.run_id }}/artifacts" \
+               --jq '[.artifacts[] | select(.name=="episode" and .expired==false)][0].id')
+          if [ -z "$id" ] || [ "$id" = "null" ]; then
+            echo "::error::le run ${{ inputs.run_id }} n a pas d artefact « episode »"; exit 1
+          fi
+          gh api "repos/${{ github.repository }}/actions/artifacts/$id/zip" > /tmp/ep.zip
+          unzip -q -o /tmp/ep.zip -d /tmp/ep
+          find /tmp/ep -name '*.mp4' -o -name '*.json' | sed 's/^/  /'
+
+      - name: Compresser
+        run: |
+          set -e
+          SRC=$(find /tmp/ep -name 'episode-01.mp4' | head -1)
+          [ -n "$SRC" ] || { echo "::error::pas de episode-01.mp4 dans l artefact"; exit 1; }
+          mkdir -p mr-tier-maker/episode-01-transformers/apercu
+          # 720p30 : c'est une copie de relecture, pas un master. Le 60 fps et le
+          # 1080p restent dans l'artefact du montage.
+          ffmpeg -y -loglevel error -i "$SRC" \
+            -vf "scale=1280:720,fps=30" -c:v libx264 -preset slow -crf 30 \
+            -c:a aac -b:a 96k -movflags +faststart \
+            mr-tier-maker/episode-01-transformers/apercu/episode-01-apercu.mp4
+          cp /tmp/ep/manquants.json mr-tier-maker/episode-01-transformers/apercu/ 2>/dev/null || true
+          ls -la mr-tier-maker/episode-01-transformers/apercu/
+
+      - name: Deposer sur la branche
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mr-tier-maker/episode-01-transformers/apercu
+          git diff --cached --quiet && { echo "rien de neuf"; exit 0; }
+          git commit -m "Copie de relecture du montage (run ${{ inputs.run_id }})"
+          git push origin HEAD:${{ inputs.branche }}
