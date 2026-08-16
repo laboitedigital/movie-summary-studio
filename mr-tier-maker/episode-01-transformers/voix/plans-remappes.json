@@ -1,0 +1,1250 @@
+[
+ {
+  "n": 1,
+  "a": 0.34,
+  "b": 4.06,
+  "speech": 3.1,
+  "screen": 3.7199999999999998,
+  "txt": "Neuf films. Presque 40 ans d'écart entre le premier et le dernier."
+ },
+ {
+  "n": 2,
+  "a": 4.06,
+  "b": 8.18,
+  "speech": 4.12,
+  "screen": 4.12,
+  "txt": "Des robots géants, des explosions, des scénarios écrits visiblement en une fin de semaine,"
+ },
+ {
+  "n": 3,
+  "a": 8.18,
+  "b": 12.92,
+  "speech": 4.120000000000001,
+  "screen": 4.74,
+  "txt": "et au milieu de tout ça, deux ou trois films qui sont honnêtement excellents."
+ },
+ {
+  "n": 4,
+  "a": 12.92,
+  "b": 21.14,
+  "speech": 7.459999999999999,
+  "screen": 8.22,
+  "txt": "Aujourd'hui, on classe la franchise Transformers au complet. Du film d'animation de 1986 jusqu'à Transformers 1."
+ },
+ {
+  "n": 5,
+  "a": 21.14,
+  "b": 27.6,
+  "speech": 5.960000000000001,
+  "screen": 6.460000000000001,
+  "txt": "Chaque film passe sur le tableau, chaque film a droit à sa défense et à son procès. Petit avertissement tout de suite."
+ },
+ {
+  "n": 6,
+  "a": 27.6,
+  "b": 32.05,
+  "speech": 4.449999999999996,
+  "screen": 4.449999999999996,
+  "txt": "Il y a un film dans cette liste que tout le monde déteste et que je place plus haut que la"
+ },
+ {
+  "n": 7,
+  "a": 32.05,
+  "b": 37.16,
+  "speech": 4.450000000000003,
+  "screen": 5.109999999999999,
+  "txt": "moyenne, et un autre que les gens défendent encore aujourd'hui et que je place dans la case la plus basse du tableau."
+ },
+ {
+  "n": 8,
+  "a": 37.16,
+  "b": 42.18,
+  "speech": 3.8800000000000026,
+  "screen": 5.020000000000003,
+  "txt": "Vous allez comprendre pourquoi. On commence. On part de la source."
+ },
+ {
+  "n": 9,
+  "a": 42.18,
+  "b": 49.34,
+  "speech": 6.359999999999999,
+  "screen": 7.160000000000004,
+  "txt": "Le film d'animation de 1986, celui qui existe entre la deuxième et la troisième saison de la série originale."
+ },
+ {
+  "n": 10,
+  "a": 49.34,
+  "b": 53.66,
+  "speech": 4.319999999999993,
+  "screen": 4.319999999999993,
+  "txt": "Première chose à savoir, ce film ne prend pas une seconde pour expliquer qui est qui."
+ },
+ {
+  "n": 11,
+  "a": 53.66,
+  "b": 59.32,
+  "speech": 4.900000000000006,
+  "screen": 5.660000000000004,
+  "txt": "Il assume que vous avez regardé cent épisodes de dessins animés avant d'acheter votre billet."
+ },
+ {
+  "n": 12,
+  "a": 59.32,
+  "b": 64.19,
+  "speech": 4.869999999999997,
+  "screen": 4.869999999999997,
+  "txt": "Si vous arrivez là-dedans sans bagage, comme moi la première fois, vous passez les vingt premières minutes à"
+ },
+ {
+  "n": 13,
+  "a": 64.19,
+  "b": 70.0,
+  "speech": 4.8700000000000045,
+  "screen": 5.810000000000002,
+  "txt": "essayer de comprendre pourquoi vous devriez avoir de la peine pour un robot dont vous venez d'apprendre le nom."
+ },
+ {
+  "n": 14,
+  "a": 70.0,
+  "b": 77.32,
+  "speech": 6.540000000000006,
+  "screen": 7.319999999999993,
+  "txt": "Ceci dit, l'animation est magnifique. Il y a des plans dans ce film qui bougent mieux que des blockbusters d'aujourd 'hui."
+ },
+ {
+  "n": 15,
+  "a": 77.32,
+  "b": 82.76,
+  "speech": 4.940000000000012,
+  "screen": 5.440000000000012,
+  "txt": "Les transformations sont fluides, les designs sont lisibles, les couleurs sont saturées comme il faut."
+ },
+ {
+  "n": 16,
+  "a": 82.76,
+  "b": 89.46,
+  "speech": 6.699999999999989,
+  "screen": 6.699999999999989,
+  "txt": "C'est un film qui a l'air cher, et à l'époque il l'était. Et il y a ce moment. Vous savez lequel ?"
+ },
+ {
+  "n": 17,
+  "a": 89.46,
+  "b": 94.2,
+  "speech": 4.359999999999999,
+  "screen": 4.740000000000009,
+  "txt": "Optimus Prime meurt. Pas dans un troisième acte émouvant avec une musique douce."
+ },
+ {
+  "n": 18,
+  "a": 94.2,
+  "b": 98.46,
+  "speech": 3.3599999999999994,
+  "screen": 4.259999999999991,
+  "txt": "Il meurt tôt, il meurt vite, et le film continue sans lui."
+ },
+ {
+  "n": 19,
+  "a": 98.46,
+  "b": 102.68,
+  "speech": 3.440000000000012,
+  "screen": 4.220000000000013,
+  "txt": "Pour des enfants de huit ans à l 'époque, c'était un traumatisme collectif."
+ },
+ {
+  "n": 20,
+  "a": 102.68,
+  "b": 106.62,
+  "speech": 3.299999999999997,
+  "screen": 3.9399999999999977,
+  "txt": "Encore aujourd'hui, c'est une décision d 'écriture d'une audace complète."
+ },
+ {
+  "n": 21,
+  "a": 106.62,
+  "b": 111.4,
+  "speech": 4.780000000000001,
+  "screen": 4.780000000000001,
+  "txt": "Un film pour vendre des jouets qui tue son personnage principal pour vendre de nouveaux jouets."
+ },
+ {
+  "n": 22,
+  "a": 111.4,
+  "b": 119.58,
+  "speech": 7.319999999999993,
+  "screen": 8.179999999999993,
+  "txt": "C'est cynique, mais ça fonctionne dramatiquement. Le problème, c'est le rythme. Le film ne respire jamais."
+ },
+ {
+  "n": 23,
+  "a": 119.58,
+  "b": 125.84,
+  "speech": 5.439999999999998,
+  "screen": 6.260000000000005,
+  "txt": "C'est une bataille, une poursuite, une autre bataille, un nouveau personnage, une autre bataille."
+ },
+ {
+  "n": 24,
+  "a": 125.84,
+  "b": 130.28,
+  "speech": 3.63900000000001,
+  "screen": 4.439999999999998,
+  "txt": "80 minutes à fond de train, ce qui veut dire que personne n'a le temps d'exister."
+ },
+ {
+  "n": 25,
+  "a": 130.28,
+  "b": 137.14,
+  "speech": 6.199999999999989,
+  "screen": 6.859999999999985,
+  "txt": "Hot Rod est censé être le cœur émotionnel du film, et je serais incapable de vous nommer un seul trait de sa personnalité."
+ },
+ {
+  "n": 26,
+  "a": 137.14,
+  "b": 143.68,
+  "speech": 5.720000000000027,
+  "screen": 6.5400000000000205,
+  "txt": "Et Unicron, une planète qui mange des planètes, doublée par Orson Welles dans son dernier rôle."
+ },
+ {
+  "n": 27,
+  "a": 143.68,
+  "b": 148.26,
+  "speech": 3.8400000000000034,
+  "screen": 4.579999999999984,
+  "txt": "C'est le genre de fait qui n 'a aucun sens et qui rend ce film encore plus fascinant."
+ },
+ {
+  "n": 28,
+  "a": 148.26,
+  "b": 152.74,
+  "speech": 3.6599999999999966,
+  "screen": 4.480000000000018,
+  "txt": "C'est un bon film, court, énergique, historiquement important."
+ },
+ {
+  "n": 29,
+  "a": 152.74,
+  "b": 158.98,
+  "speech": 5.359999999999985,
+  "screen": 6.239999999999981,
+  "txt": "Mais c'est aussi un film qui demande des devoirs avant de l'apprécier pleinement. Verdict, il va en B."
+ },
+ {
+  "n": 30,
+  "a": 158.98,
+  "b": 162.42,
+  "speech": 2.6599999999999966,
+  "screen": 3.4399999999999977,
+  "txt": "Et là, tout change. 2007."
+ },
+ {
+  "n": 31,
+  "a": 162.42,
+  "b": 168.22,
+  "speech": 5.060000000000002,
+  "screen": 5.800000000000011,
+  "txt": "Michael Bay prend une franchise de jouets et en fait un des blockbusters les plus influents de la décennie."
+ },
+ {
+  "n": 32,
+  "a": 168.22,
+  "b": 176.0,
+  "speech": 6.939999999999998,
+  "screen": 7.780000000000001,
+  "txt": "Et le plus fou, c'est que ça tient encore la route presque 20 ans plus tard. Commençons par le plus évident, les effets visuels."
+ },
+ {
+  "n": 33,
+  "a": 176.0,
+  "b": 180.98,
+  "speech": 4.159999999999997,
+  "screen": 4.97999999999999,
+  "txt": "Ce film est encore plus lisible que la majorité des films à gros budget sortis l 'an dernier."
+ },
+ {
+  "n": 34,
+  "a": 180.98,
+  "b": 188.52,
+  "speech": 7.0,
+  "screen": 7.5400000000000205,
+  "txt": "Les transformations ne sont pas de la magie, ce sont des mécanismes. On voit les plaques glisser, les pièces pivoter, les vis tourner."
+ },
+ {
+  "n": 35,
+  "a": 188.52,
+  "b": 195.14,
+  "speech": 5.659999999999997,
+  "screen": 6.619999999999976,
+  "txt": "Ça donne du poids à ces personnages. On croit qu'ils pèsent 40 tonnes parce que le film prend le temps de nous le montrer."
+ },
+ {
+  "n": 36,
+  "a": 195.14,
+  "b": 200.8,
+  "speech": 4.800000000000011,
+  "screen": 5.660000000000025,
+  "txt": "Le film a aussi compris quelque chose que les suites vont oublier. Il faut faire attendre le spectateur."
+ },
+ {
+  "n": 37,
+  "a": 200.8,
+  "b": 208.62,
+  "speech": 6.9599999999999795,
+  "screen": 7.819999999999993,
+  "txt": "Blackout qui attaque la base au début, c 'est presque un film d'horreur. On ne voit pas le robot au complet, on voit ce qu'il fait aux humains."
+ },
+ {
+  "n": 38,
+  "a": 208.62,
+  "b": 212.44,
+  "speech": 2.819999999999993,
+  "screen": 3.819999999999993,
+  "txt": "Barricade qui poursuit Sam dans le stationnement, même principe."
+ },
+ {
+  "n": 39,
+  "a": 212.44,
+  "b": 216.77,
+  "speech": 4.329999999999984,
+  "screen": 4.329999999999984,
+  "txt": "Quand Optimus Prime arrive enfin et se présente, ça a un impact parce que"
+ },
+ {
+  "n": 40,
+  "a": 216.77,
+  "b": 222.08,
+  "speech": 4.3300000000000125,
+  "screen": 5.310000000000031,
+  "txt": "le film a passé 40 minutes à construire l'idée que ces choses-là sont terrifiantes."
+ },
+ {
+  "n": 41,
+  "a": 222.08,
+  "b": 228.28,
+  "speech": 5.47999999999999,
+  "screen": 6.199999999999989,
+  "txt": "Est-ce que tout fonctionne ? Non. Il y a une sous-intrigue gouvernementale complètement inutile."
+ },
+ {
+  "n": 42,
+  "a": 228.28,
+  "b": 234.6,
+  "speech": 5.47999999999999,
+  "screen": 6.319999999999993,
+  "txt": "Il y a un groupe de soldats dont je serais incapable de vous nommer un seul, sauf celui qui doit rentrer voir son bébé."
+ },
+ {
+  "n": 43,
+  "a": 234.6,
+  "b": 237.38,
+  "speech": 2.0,
+  "screen": 2.780000000000001,
+  "txt": "Il y a des blagues qui n'ont pas bien vieilli du tout."
+ },
+ {
+  "n": 44,
+  "a": 237.38,
+  "b": 258.489,
+  "speech": 6.920000000000016,
+  "screen": 6.920000000000016,
+  "txt": "Mais le noyau du film, un adolescent, sa première voiture et la voiture qui se lève, c'est une idée parfaite."
+ },
+ {
+  "n": 45,
+  "a": 258.489,
+  "b": 265.209,
+  "speech": 6.239999999999981,
+  "screen": 6.719999999999999,
+  "txt": "C'est simple, c'est universel. Et honnêtement, ça se sent à chaque scène. Ce film n'a pas une histoire."
+ },
+ {
+  "n": 46,
+  "a": 265.209,
+  "b": 271.909,
+  "speech": 6.02000000000001,
+  "screen": 6.700000000000017,
+  "txt": "Il a six histoires qui se disputent l 'écran et qui ne se terminent jamais correctement. Sam part à l'université."
+ },
+ {
+  "n": 47,
+  "a": 271.909,
+  "b": 279.489,
+  "speech": 7.0,
+  "screen": 7.579999999999984,
+  "txt": "Sam et Michaela ont des problèmes de couple. Les parents de Sam ont de la difficulté à le laisser partir. Sam abandonne Bumblebee."
+ },
+ {
+  "n": 48,
+  "a": 279.489,
+  "b": 284.209,
+  "speech": 4.71999999999997,
+  "screen": 4.71999999999997,
+  "txt": "Le gouvernement veut expulser les Autobots. Il y a une machine qui peut éteindre le soleil."
+ },
+ {
+  "n": 49,
+  "a": 284.209,
+  "b": 292.129,
+  "speech": 6.960000000000036,
+  "screen": 7.920000000000016,
+  "txt": "Et il y a un méchant, The Fallen, qui apparaît, qui explique ses motivations en une phrase et qui meurt en 15 secondes."
+ },
+ {
+  "n": 50,
+  "a": 292.129,
+  "b": 298.309,
+  "speech": 5.420000000000016,
+  "screen": 6.180000000000007,
+  "txt": "Le conflit entre Sam et Bumblebee, qui aurait pu être le cœur émotionnel du film, est réglé en une scène."
+ },
+ {
+  "n": 51,
+  "a": 298.309,
+  "b": 302.749,
+  "speech": 3.6000000000000227,
+  "screen": 4.439999999999998,
+  "txt": "Le conflit avec le gouvernement disparaît quand le personnage tombe d'un avion."
+ },
+ {
+  "n": 52,
+  "a": 302.749,
+  "b": 308.269,
+  "speech": 4.560000000000002,
+  "screen": 5.519999999999982,
+  "txt": "Tout ce qui est mis en place est jeté par la fenêtre dès que ça devient inconfortable à écrire."
+ },
+ {
+  "n": 53,
+  "a": 308.269,
+  "b": 310.629,
+  "speech": 2.3600000000000136,
+  "screen": 2.3600000000000136,
+  "txt": "Et l'humour, il faut parler de l 'humour."
+ },
+ {
+  "n": 54,
+  "a": 310.629,
+  "b": 314.809,
+  "speech": 4.180000000000007,
+  "screen": 4.180000000000007,
+  "txt": "Ce film contient une quantité de blagues qui n'auraient jamais dû sortir"
+ },
+ {
+  "n": 55,
+  "a": 314.809,
+  "b": 319.789,
+  "speech": 4.180000000000007,
+  "screen": 4.980000000000018,
+  "txt": "d'une salle de scénarisation, encore moins être filmées, encore moins survivre au montage."
+ },
+ {
+  "n": 56,
+  "a": 319.789,
+  "b": 325.489,
+  "speech": 5.479999999999961,
+  "screen": 5.699999999999989,
+  "txt": "Vous savez de quelle scène je parle. Alors pourquoi pas la dernière place ? Deux raisons. 1."
+ },
+ {
+  "n": 57,
+  "a": 325.489,
+  "b": 332.929,
+  "speech": 6.3799999999999955,
+  "screen": 7.439999999999998,
+  "txt": "Le combat 1 contre 3 dans la forêt. Optimus Prime seul contre Megatron, Starscream et Grindor."
+ },
+ {
+  "n": 58,
+  "a": 332.929,
+  "b": 336.569,
+  "speech": 3.0,
+  "screen": 3.6399999999999864,
+  "txt": "C'est une des meilleures séquences d'action de toute la franchise. Point."
+ },
+ {
+  "n": 59,
+  "a": 336.569,
+  "b": 344.349,
+  "speech": 7.240000000000009,
+  "screen": 7.78000000000003,
+  "txt": "La chorégraphie est claire, la caméra recule pour qu'on voit ce qui se passe et ça définit le personnage mieux que n'importe quel dialogue."
+ },
+ {
+  "n": 60,
+  "a": 344.349,
+  "b": 349.709,
+  "speech": 5.199999999999989,
+  "screen": 5.359999999999957,
+  "txt": "Il se bat seul, en infériorité, parce que quelqu'un d'autre est en danger. 2."
+ },
+ {
+  "n": 61,
+  "a": 349.709,
+  "b": 355.029,
+  "speech": 4.78000000000003,
+  "screen": 5.319999999999993,
+  "txt": "Le film est bête, mais il est bête d'une manière divertissante. Il ne s'ennuie jamais lui-même."
+ },
+ {
+  "n": 62,
+  "a": 355.029,
+  "b": 361.169,
+  "speech": 4.800000000000011,
+  "screen": 6.140000000000043,
+  "txt": "C'est un désastre, mais c'est un désastre qui bouge. Verdict, il va en D."
+ },
+ {
+  "n": 63,
+  "a": 361.169,
+  "b": 366.629,
+  "speech": 4.779999999999973,
+  "screen": 5.4599999999999795,
+  "txt": "Le film qui redresse la barre est le film le plus sous-estimé de la trilogie B. 3."
+ },
+ {
+  "n": 64,
+  "a": 366.629,
+  "b": 372.229,
+  "speech": 4.8799999999999955,
+  "screen": 5.600000000000023,
+  "txt": "Dark of the Moon fait quelque chose que les deux premiers ne faisaient pas. Il construit un mystère."
+ },
+ {
+  "n": 65,
+  "a": 372.229,
+  "b": 378.569,
+  "speech": 5.560000000000002,
+  "screen": 6.339999999999975,
+  "txt": "Les piliers, la mission Apollo, Sentinel Prime, les témoins assassinés un par un."
+ },
+ {
+  "n": 66,
+  "a": 378.569,
+  "b": 386.749,
+  "speech": 7.319999999999993,
+  "screen": 8.180000000000007,
+  "txt": "Pendant une heure, ce film ressemble plus à un thriller de conspiration qu'à un film de robot. Et ça fonctionne beaucoup mieux qu'on pourrait le croire."
+ },
+ {
+  "n": 67,
+  "a": 386.749,
+  "b": 393.449,
+  "speech": 6.160000000000025,
+  "screen": 6.699999999999989,
+  "txt": "Sam a aussi enfin un vrai arc. Il a sauvé le monde deux fois, il a une médaille et il ne trouve pas d'emploi."
+ },
+ {
+  "n": 68,
+  "a": 393.449,
+  "b": 396.189,
+  "speech": 2.019999999999982,
+  "screen": 2.740000000000009,
+  "txt": "Il vit dans le souvenir de ce qu 'il a été."
+ },
+ {
+  "n": 69,
+  "a": 396.189,
+  "b": 401.589,
+  "speech": 4.9599999999999795,
+  "screen": 5.399999999999977,
+  "txt": "C'est une idée honnêtement intéressante pour un personnage de blockbuster et le film l'amène jusqu'au bout."
+ },
+ {
+  "n": 70,
+  "a": 401.589,
+  "b": 407.809,
+  "speech": 5.020000000000039,
+  "screen": 6.220000000000027,
+  "txt": "À la fin, il ne retourne pas au combat pour être un héros, il y retourne pour une personne précise."
+ },
+ {
+  "n": 71,
+  "a": 407.809,
+  "b": 414.749,
+  "speech": 6.21999999999997,
+  "screen": 6.939999999999998,
+  "txt": "Sentinel Prime est probablement le meilleur antagoniste de la franchise en prise de vue réelle, parce que sa logique se tient."
+ },
+ {
+  "n": 72,
+  "a": 414.749,
+  "b": 417.409,
+  "speech": 1.9399999999999977,
+  "screen": 2.660000000000025,
+  "txt": "Il ne veut pas détruire le monde par méchanceté."
+ },
+ {
+  "n": 73,
+  "a": 417.409,
+  "b": 423.849,
+  "speech": 5.579999999999984,
+  "screen": 6.439999999999998,
+  "txt": "Il considère simplement que son espèce vaut plus que la nôtre et qu'un sacrifice humain est un prix acceptable."
+ },
+ {
+  "n": 74,
+  "a": 423.849,
+  "b": 430.749,
+  "speech": 6.119999999999948,
+  "screen": 6.899999999999977,
+  "txt": "Ça crée une opposition réelle avec Optimus, pas juste deux robots qui se frappent. Et la bataille de Chicago."
+ },
+ {
+  "n": 75,
+  "a": 430.749,
+  "b": 436.889,
+  "speech": 5.3799999999999955,
+  "screen": 6.139999999999986,
+  "txt": "45 minutes d'action urbaine, avec de la géographie, des enjeux et des morts qui comptent."
+ },
+ {
+  "n": 76,
+  "a": 436.889,
+  "b": 444.169,
+  "speech": 7.28000000000003,
+  "screen": 7.28000000000003,
+  "txt": "La séquence de l'édifice qui s'effondre est encore aujourd'hui un des meilleurs morceaux de mise en scène de Michael Bay. Les défauts ?"
+ },
+ {
+  "n": 77,
+  "a": 444.169,
+  "b": 459.279,
+  "speech": 5.439999999999998,
+  "screen": 5.519999999999982,
+  "txt": "Carly n'est pas un personnage, c'est une fonction. Le film dure 2h35 et on le sent."
+ },
+ {
+  "n": 78,
+  "a": 459.279,
+  "b": 463.699,
+  "speech": 3.8000000000000114,
+  "screen": 4.420000000000016,
+  "txt": "Et la mort d'Ironhide arrive tellement vite qu'on n'a pas le temps de l'exagérer."
+ },
+ {
+  "n": 79,
+  "a": 463.699,
+  "b": 471.699,
+  "speech": 7.139999999999986,
+  "screen": 8.0,
+  "txt": "Mais dans l'ensemble, c'est plus long que la majorité des films primés aux Oscars pour une histoire qui aurait pu être racontée en 90 minutes."
+ },
+ {
+  "n": 80,
+  "a": 471.699,
+  "b": 477.559,
+  "speech": 5.300000000000011,
+  "screen": 5.859999999999957,
+  "txt": "Le film a pourtant de bonnes idées. Les humains qui chassent les Transformers, c'est une excellente prémisse."
+ },
+ {
+  "n": 81,
+  "a": 477.559,
+  "b": 482.619,
+  "speech": 5.060000000000002,
+  "screen": 5.060000000000002,
+  "txt": "Une entreprise technologique qui démonte des Autobots pour fabriquer les siens, c'est une excellente prémisse."
+ },
+ {
+  "n": 82,
+  "a": 482.619,
+  "b": 486.519,
+  "speech": 3.3800000000000523,
+  "screen": 3.900000000000034,
+  "txt": "Le problème, c'est que le film ne développe aucune des deux."
+ },
+ {
+  "n": 83,
+  "a": 486.519,
+  "b": 495.079,
+  "speech": 7.539999999999964,
+  "screen": 8.560000000000002,
+  "txt": "Il les présente, il les met de côté, et il ajoute par-dessus un chasseur de primes extraterrestre qui n'a aucun lien thématique avec le reste."
+ },
+ {
+  "n": 84,
+  "a": 495.079,
+  "b": 502.519,
+  "speech": 6.699999999999989,
+  "screen": 7.439999999999998,
+  "txt": "La distribution humaine est la plus faible de la franchise. Le personnage principal est un inventeur qui n 'invente rien d'important."
+ },
+ {
+  "n": 85,
+  "a": 502.519,
+  "b": 508.059,
+  "speech": 5.539999999999964,
+  "screen": 5.539999999999964,
+  "txt": "Sa fille existe pour être en danger. Ce qui me dérange le plus, honnêtement, c 'est la mort de Ratchet."
+ },
+ {
+  "n": 86,
+  "a": 508.059,
+  "b": 515.499,
+  "speech": 6.480000000000018,
+  "screen": 7.440000000000055,
+  "txt": "Un personnage présent depuis le premier film, éliminé en 90 secondes, sans combat digne de ce nom."
+ },
+ {
+  "n": 87,
+  "a": 515.499,
+  "b": 519.959,
+  "speech": 4.4599999999999795,
+  "screen": 4.4599999999999795,
+  "txt": "Rien de ce qui a été construit avant lui. Les points positifs ?"
+ },
+ {
+  "n": 88,
+  "a": 519.959,
+  "b": 524.799,
+  "speech": 4.159999999999968,
+  "screen": 4.839999999999975,
+  "txt": "L'esthétique est différente, plus poussiéreuse, plus post -apocalyptique."
+ },
+ {
+  "n": 89,
+  "a": 524.799,
+  "b": 529.799,
+  "speech": 4.28000000000003,
+  "screen": 5.0,
+  "txt": "Optimus a un arc réel, celui d'un personnage amer qui redevient un héros."
+ },
+ {
+  "n": 90,
+  "a": 529.799,
+  "b": 537.639,
+  "speech": 6.980000000000018,
+  "screen": 7.840000000000032,
+  "txt": "Et Optimus qui chevauche un Dinobot est objectivement une image extraordinaire. Mais trois heures pour ça, non."
+ },
+ {
+  "n": 91,
+  "a": 537.639,
+  "b": 543.198,
+  "speech": 4.860000000000014,
+  "screen": 5.558999999999969,
+  "txt": "Verdict ? Il va en D. Et voici le film que je place au tout dernier rang."
+ },
+ {
+  "n": 92,
+  "a": 543.198,
+  "b": 549.319,
+  "speech": 5.421000000000049,
+  "screen": 6.120999999999981,
+  "txt": "The Last Knight a une ouverture avec le roi Arthur, des chevaliers et un dragon transformable."
+ },
+ {
+  "n": 93,
+  "a": 549.319,
+  "b": 556.579,
+  "speech": 6.560000000000059,
+  "screen": 7.259999999999991,
+  "txt": "C'est absurde et c'est franchement amusant. C'est aussi le meilleur moment du film et il arrive dans les dix premières minutes."
+ },
+ {
+  "n": 94,
+  "a": 556.579,
+  "b": 563.519,
+  "speech": 6.280000000000086,
+  "screen": 6.940000000000055,
+  "txt": "Après ça, le film se désintègre. Le ratio d'images change littéralement d'un plan à l'autre, sans raison."
+ },
+ {
+  "n": 95,
+  "a": 563.519,
+  "b": 570.039,
+  "speech": 5.720000000000027,
+  "screen": 6.519999999999982,
+  "txt": "Optimus Prime disparaît pendant plus d'une heure, revient sous contrôle mental et se libère en une minute et demie."
+ },
+ {
+  "n": 96,
+  "a": 570.039,
+  "b": 573.919,
+  "speech": 3.340000000000032,
+  "screen": 3.8799999999999955,
+  "txt": "Toute la mythologie établie dans les films précédents est réécrite."
+ },
+ {
+  "n": 97,
+  "a": 573.919,
+  "b": 581.879,
+  "speech": 7.039999999999964,
+  "screen": 7.960000000000036,
+  "txt": "Les Transformers étaient sur Terre depuis toujours, la famille de Sam était une lignée magique et la Terre est en fait un icron."
+ },
+ {
+  "n": 98,
+  "a": 581.879,
+  "b": 589.639,
+  "speech": 6.899999999999977,
+  "screen": 7.759999999999991,
+  "txt": "Ce n'est pas de l'audace narrative. C'est un film qui n'a aucune idée de ce qu'il raconte et qui espère que le volume sonore compense."
+ },
+ {
+  "n": 99,
+  "a": 589.639,
+  "b": 593.939,
+  "speech": 3.4600000000000364,
+  "screen": 4.2999999999999545,
+  "txt": "Quintessa est probablement le méchant le plus oubliable de la franchise."
+ },
+ {
+  "n": 100,
+  "a": 593.939,
+  "b": 600.119,
+  "speech": 5.280000000000086,
+  "screen": 6.180000000000064,
+  "txt": "Elle est à l'écran quelques minutes, ses motivations sont incompréhensibles et sa menace n'a aucun poids."
+ },
+ {
+  "n": 101,
+  "a": 600.119,
+  "b": 608.579,
+  "speech": 7.459999999999923,
+  "screen": 8.459999999999923,
+  "txt": "Il y a exactement deux choses que je sauve. Anthony Hopkins, qui joue à fond et qui semble s'amuser, et Cogman, qui est drôle."
+ },
+ {
+  "n": 102,
+  "a": 608.579,
+  "b": 615.719,
+  "speech": 7.1400000000001,
+  "screen": 7.1400000000001,
+  "txt": "Deux éléments dans un film de deux heures et demie. Age of Extinction est ennuyeux. The Last Knight est incohérent."
+ },
+ {
+  "n": 103,
+  "a": 615.719,
+  "b": 622.099,
+  "speech": 5.5,
+  "screen": 6.3799999999999955,
+  "txt": "Et je trouve l'incohérence plus impardonnable parce qu'elle détruit rétroactivement les films que j 'aime."
+ },
+ {
+  "n": 104,
+  "a": 622.099,
+  "b": 627.099,
+  "speech": 4.3799999999999955,
+  "screen": 5.0,
+  "txt": "Verdict, il va en D, tout en bas de la case. Petite pause."
+ },
+ {
+  "n": 105,
+  "a": 627.099,
+  "b": 631.999,
+  "speech": 4.039999999999964,
+  "screen": 4.899999999999977,
+  "txt": "Si vous avez un désaccord jusqu'ici, les commentaires sont ouverts et je les lis."
+ },
+ {
+  "n": 106,
+  "a": 631.999,
+  "b": 639.599,
+  "speech": 7.079999999999927,
+  "screen": 7.600000000000023,
+  "txt": "Si le format vous plaît, un abonnement aide énormément la chaîne. On continue. Le meilleur film de la franchise."
+ },
+ {
+  "n": 107,
+  "a": 639.599,
+  "b": 645.539,
+  "speech": 5.559999999999945,
+  "screen": 5.939999999999941,
+  "txt": "Et ce n'est même pas serré. Bumblebee commence par ce que les fans demandaient depuis onze ans."
+ },
+ {
+  "n": 108,
+  "a": 645.539,
+  "b": 654.199,
+  "speech": 7.639999999999986,
+  "screen": 8.659999999999968,
+  "txt": "Une vraie bataille sur Cybertron, avec des designs classiques, une échelle claire et Optimus Prime qui combat au sommet de sa forme."
+ },
+ {
+  "n": 109,
+  "a": 654.199,
+  "b": 661.599,
+  "speech": 6.5,
+  "screen": 7.400000000000091,
+  "txt": "Cinq minutes qui rendent mieux hommage à ses personnages que certains films complets. Mais ce n'est pas ça qui rend le film spécial."
+ },
+ {
+  "n": 110,
+  "a": 661.599,
+  "b": 666.139,
+  "speech": 3.699999999999932,
+  "screen": 4.539999999999964,
+  "txt": "Ce qui le rend spécial, c'est qu 'il réduit l'échelle au lieu de l 'augmenter."
+ },
+ {
+  "n": 111,
+  "a": 666.139,
+  "b": 670.399,
+  "speech": 3.740000000000009,
+  "screen": 4.259999999999991,
+  "txt": "Charlie est le meilleur personnage humain de la franchise, sans compétition."
+ },
+ {
+  "n": 112,
+  "a": 670.399,
+  "b": 678.619,
+  "speech": 7.580000000000041,
+  "screen": 8.220000000000027,
+  "txt": "Son père est mort, elle ne plonge plus, elle n'écoute plus la musique qu'ils écoutaient et elle répare une voiture qu'elle n'arrivera jamais à finir."
+ },
+ {
+  "n": 113,
+  "a": 678.619,
+  "b": 683.939,
+  "speech": 4.419999999999959,
+  "screen": 5.319999999999936,
+  "txt": "Le film ne l'explique pas en dialogue. Il le montre parce qu'elle refuse de faire."
+ },
+ {
+  "n": 114,
+  "a": 683.939,
+  "b": 690.539,
+  "speech": 5.580000000000041,
+  "screen": 6.600000000000023,
+  "txt": "Et quand elle plonge de nouveau dans le dernier acte, c'est un aboutissement complet, sans une seule ligne d'explication."
+ },
+ {
+  "n": 115,
+  "a": 690.539,
+  "b": 694.939,
+  "speech": 3.7000000000000455,
+  "screen": 4.399999999999977,
+  "txt": "Bumblebee, de son côté, arrive brisé, muet, en fuite."
+ },
+ {
+  "n": 116,
+  "a": 694.939,
+  "b": 702.359,
+  "speech": 6.560000000000059,
+  "screen": 7.420000000000073,
+  "txt": "La relation entre les deux personnages fonctionne parce qu'ils se réparent mutuellement, littéralement et émotionnellement."
+ },
+ {
+  "n": 117,
+  "a": 702.359,
+  "b": 705.159,
+  "speech": 2.2199999999999136,
+  "screen": 2.7999999999999545,
+  "txt": "L'action est plus petite, mais plus lisible."
+ },
+ {
+  "n": 118,
+  "a": 705.159,
+  "b": 711.739,
+  "speech": 5.740000000000009,
+  "screen": 6.580000000000041,
+  "txt": "Les Decepticons sont plus forts et mieux équipés, ce qui oblige Bumblebee à être plus intelligent qu'eux."
+ },
+ {
+  "n": 119,
+  "a": 711.739,
+  "b": 719.059,
+  "speech": 6.719999999999914,
+  "screen": 7.319999999999936,
+  "txt": "C'est un film de transformers avec une âme. Il n'y en a pas d'autre comme lui. Verdict, il va en S."
+ },
+ {
+  "n": 120,
+  "a": 719.059,
+  "b": 723.415,
+  "speech": 3.660000000000082,
+  "screen": 3.660000000000082,
+  "txt": "Un début solide, une fin solide et un ventre mou au milieu."
+ },
+ {
+  "n": 121,
+  "a": 723.415,
+  "b": 728.095,
+  "speech": 4.199999999999932,
+  "screen": 4.67999999999995,
+  "txt": "L'ouverture de Rise of the Beast est une des meilleures de la franchise."
+ },
+ {
+  "n": 122,
+  "a": 728.095,
+  "b": 735.135,
+  "speech": 6.419999999999959,
+  "screen": 7.039999999999964,
+  "txt": "On établit les Maximals, la clé Transwarp, Unicron et Scourge en quelques minutes, avec des enjeux clairs."
+ },
+ {
+  "n": 123,
+  "a": 735.135,
+  "b": 742.375,
+  "speech": 6.720000000000027,
+  "screen": 7.240000000000009,
+  "txt": "Scourge est un excellent antagoniste, imposant, patient et bien interprété. Le problème arrive au Pérou."
+ },
+ {
+  "n": 124,
+  "a": 742.375,
+  "b": 744.035,
+  "speech": 1.1599999999999682,
+  "screen": 1.6599999999999682,
+  "txt": "Le rythme s'effondre."
+ },
+ {
+  "n": 125,
+  "a": 744.035,
+  "b": 748.315,
+  "speech": 4.279999999999973,
+  "screen": 4.279999999999973,
+  "txt": "On a de longues séquences d'exposition dans un temple, un retournement de personnages"
+ },
+ {
+  "n": 126,
+  "a": 748.315,
+  "b": 753.515,
+  "speech": 4.280000000000086,
+  "screen": 5.2000000000000455,
+  "txt": "mal préparés et des arcs de personnages qui font du surplace pendant 40 minutes."
+ },
+ {
+  "n": 127,
+  "a": 753.515,
+  "b": 759.935,
+  "speech": 5.6200000000000045,
+  "screen": 6.420000000000073,
+  "txt": "Noah est un protagoniste correct. Ses motivations liées à sa famille sont concrètes et compréhensibles."
+ },
+ {
+  "n": 128,
+  "a": 759.935,
+  "b": 767.655,
+  "speech": 7.099999999999909,
+  "screen": 7.719999999999914,
+  "txt": "Elena, par contre, existe surtout pour expliquer des artefacts au reste du groupe. Le dernier acte remonte la note."
+ },
+ {
+  "n": 129,
+  "a": 767.655,
+  "b": 772.075,
+  "speech": 4.419999999999959,
+  "screen": 4.419999999999959,
+  "txt": "La bataille finale est chargée, lisible et satisfaisante et le retour de Bumblebee"
+ },
+ {
+  "n": 130,
+  "a": 772.075,
+  "b": 776.495,
+  "speech": 4.420000000000073,
+  "screen": 4.420000000000073,
+  "txt": "est exactement le genre de moment qu'un film comme celui -ci doit réussir."
+ },
+ {
+  "n": 131,
+  "a": 776.495,
+  "b": 783.075,
+  "speech": 5.82000000000005,
+  "screen": 6.580000000000041,
+  "txt": "Un film correct, avec un tiers du milieu qui le retient. Verdict, il va en B."
+ },
+ {
+  "n": 132,
+  "a": 783.075,
+  "b": 788.735,
+  "speech": 5.1200000000000045,
+  "screen": 5.659999999999968,
+  "txt": "Et on termine sur une surprise. La première bande-annonce de Transformers 1 était mauvaise."
+ },
+ {
+  "n": 133,
+  "a": 788.735,
+  "b": 793.015,
+  "speech": 4.279999999999973,
+  "screen": 4.279999999999973,
+  "txt": "Le ton semblait trop enfantin, l'animation semblait étrange et le concept"
+ },
+ {
+  "n": 134,
+  "a": 793.015,
+  "b": 797.995,
+  "speech": 4.280000000000086,
+  "screen": 4.980000000000018,
+  "txt": "d'une origine de l'amitié entre Optimus et Mégatron semblait condamné d'avance."
+ },
+ {
+  "n": 135,
+  "a": 797.995,
+  "b": 800.455,
+  "speech": 1.8799999999999955,
+  "screen": 2.4600000000000364,
+  "txt": "Le film final est excellent."
+ },
+ {
+  "n": 136,
+  "a": 800.455,
+  "b": 807.295,
+  "speech": 6.0,
+  "screen": 6.840000000000032,
+  "txt": "L'animation est superbe, expressive et les transformations sont les plus satisfaisantes de toute la franchise."
+ },
+ {
+  "n": 137,
+  "a": 807.295,
+  "b": 812.935,
+  "speech": 4.8599999999999,
+  "screen": 5.639999999999986,
+  "txt": "Chaque mouvement a un poids et une clarté que les films en prise de vue réelle n'atteignent pas toujours."
+ },
+ {
+  "n": 138,
+  "a": 812.935,
+  "b": 816.195,
+  "speech": 2.6399999999999864,
+  "screen": 3.259999999999991,
+  "txt": "Mais la vraie réussite, c'est la relation centrale."
+ },
+ {
+  "n": 139,
+  "a": 816.195,
+  "b": 824.015,
+  "speech": 7.3799999999999955,
+  "screen": 7.819999999999936,
+  "txt": "On comprend enfin comment ces deux personnages passent d'amis à ennemis et le film ne triche pas. La trahison ne vient pas de nulle part."
+ },
+ {
+  "n": 140,
+  "a": 824.015,
+  "b": 828.535,
+  "speech": 3.7000000000000455,
+  "screen": 4.519999999999982,
+  "txt": "Elle vient d'une différence réelle dans leur façon de réagir à la même injustice."
+ },
+ {
+  "n": 141,
+  "a": 828.535,
+  "b": 834.375,
+  "speech": 4.900000000000091,
+  "screen": 5.840000000000032,
+  "txt": "Le basculement du personnage est progressif, motivé et douloureux à regarder."
+ },
+ {
+  "n": 142,
+  "a": 834.375,
+  "b": 837.075,
+  "speech": 2.0400000000000773,
+  "screen": 2.7000000000000455,
+  "txt": "Le défaut principal, ce sont les dialogues."
+ },
+ {
+  "n": 143,
+  "a": 837.075,
+  "b": 842.935,
+  "speech": 4.980000000000018,
+  "screen": 5.860000000000014,
+  "txt": "Certaines scènes surexpliquent l'amitié des personnages comme si le film ne faisait pas confiance au public."
+ },
+ {
+  "n": 144,
+  "a": 842.935,
+  "b": 847.995,
+  "speech": 4.17999999999995,
+  "screen": 5.059999999999945,
+  "txt": "C'est dommage, parce que la mise en scène, elle, montre déjà tout ce qu'il faut."
+ },
+ {
+  "n": 145,
+  "a": 847.995,
+  "b": 856.455,
+  "speech": 7.659999999999968,
+  "screen": 8.460000000000036,
+  "txt": "Malgré ça, c'est le meilleur film de la franchise après Bumblebee et une preuve que ces personnages fonctionnent parfaitement sans humains à l 'écran."
+ },
+ {
+  "n": 146,
+  "a": 856.455,
+  "b": 860.135,
+  "speech": 3.67999999999995,
+  "screen": 3.67999999999995,
+  "txt": "Verdict, il va en A. Voilà le tableau final."
+ },
+ {
+  "n": 147,
+  "a": 860.135,
+  "b": 864.905,
+  "speech": 4.7700000000000955,
+  "screen": 4.7700000000000955,
+  "txt": "En S, Bumblebee, seul, parce que c'est le seul film de la franchise qui"
+ },
+ {
+  "n": 148,
+  "a": 864.905,
+  "b": 870.315,
+  "speech": 4.769999999999982,
+  "screen": 5.409999999999968,
+  "txt": "a compris que des robots géants sont plus intéressants quand quelqu'un tient à eux."
+ },
+ {
+  "n": 149,
+  "a": 870.315,
+  "b": 875.975,
+  "speech": 4.839999999999918,
+  "screen": 5.659999999999968,
+  "txt": "En A, Transformers 2007, Dark of the Moon et Transformers 1."
+ },
+ {
+  "n": 150,
+  "a": 875.975,
+  "b": 881.675,
+  "speech": 4.860000000000014,
+  "screen": 5.7000000000000455,
+  "txt": "En B, le film d'animation de 1986 et Rise of the Beast."
+ },
+ {
+  "n": 151,
+  "a": 881.675,
+  "b": 888.155,
+  "speech": 5.779999999999973,
+  "screen": 6.4799999999999045,
+  "txt": "En D, Revenge of the Fallen, Age of Extinction et tout en bas, The Last Knight."
+ },
+ {
+  "n": 152,
+  "a": 888.155,
+  "b": 894.795,
+  "speech": 6.0,
+  "screen": 6.6400000000001,
+  "txt": "9 films, 40 ans et une conclusion simple. Cette franchise fonctionne le mieux quand elle est petite."
+ },
+ {
+  "n": 153,
+  "a": 894.795,
+  "b": 902.075,
+  "speech": 6.419999999999959,
+  "screen": 7.279999999999973,
+  "txt": "Quand elle essaie d'être une mythologie cosmique avec des chevaliers, des lignées magiques et des planètes vivantes, elle s'effondre."
+ },
+ {
+  "n": 154,
+  "a": 902.075,
+  "b": 908.295,
+  "speech": 5.3799999999999955,
+  "screen": 6.220000000000027,
+  "txt": "Quand c'est une adolescente et une voiture jaune, c'est excellent. Dites-moi votre classement dans les commentaires."
+ },
+ {
+  "n": 155,
+  "a": 908.295,
+  "b": 913.555,
+  "speech": 4.599999999999909,
+  "screen": 5.259999999999991,
+  "txt": "Je veux surtout savoir qui va défendre Age of Extinction, parce que je sais que vous existez."
+ },
+ {
+  "n": 156,
+  "a": 913.555,
+  "b": 916.809,
+  "speech": 3.1200000000000045,
+  "screen": 3.2539999999999054,
+  "txt": "Merci d'avoir regardé et on se revoit dans la prochaine tiers list."
+ }
+]
