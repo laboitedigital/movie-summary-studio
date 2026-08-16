@@ -99,6 +99,13 @@ faite **à la frame**. C'est ce qui empêche une vidéo de 15 minutes de dérive
 Extraits Clip.cafe : **7 secondes maximum**. Requêtes de recherche **en
 anglais**.
 
+**Une requête Clip.cafe se rédige comme une réplique, pas comme une note de
+mise en scène.** `transformation plates pivot 2007` n'a rien donné d'utile —
+le catalogue est indexé sur les dialogues. `the car transforms into a robot`
+a répondu du premier coup. Et il faut tenir la liste des slugs déjà pris
+(`voix/slugs-extraits.json`) : un rattrapage partiel qui l'ignore rechoisit le
+clip du plan voisin.
+
 **La recherche sémantique de Clip.cafe converge.** Sur un catalogue étroit,
 elle renvoie les mêmes 4-5 extraits quelle que soit la requête : trois plans
 différents reçoivent le même clip. Toute récupération en lot doit tenir la

@@ -117,6 +117,40 @@ résultat.
 | à retélécharger | `085` *Lockdown bounty hunter*, `111` *Optimus Prime Cybertron battle* — leur plan est né d'une scission |
 | abandonnés | `055`, `069` — leur plan a fusionné avec le voisin |
 
+Et un troisième, qui n'a rien à voir avec la renumérotation : **`034`** était un
+404 dans le grand run et n'a jamais été relancé. Les runs de rattrapage ne
+couvraient que les segments 5 et 6, personne n'a vérifié le segment 1. On était
+donc à 93 extraits sur 96, pas 95.
+
+Les trois sont récupérés (runs `31951727721` et `31952025055`) :
+
+| Plan | Clip |
+|---|---|
+| `034` | `are-samuel-james-witwicky-descendent-of-archibald-witwicky` — **à revoir**, voir plus bas |
+| `085` | `there-one-way-survive-s1` |
+| `111` | `lets-do-this-s17` |
+
+`085` et `111` ont pris le **2ᵉ résultat** : le premier était déjà utilisé par un
+plan voisin. C'est exactement ce que la liste d'exclusion sert à éviter.
+
+**Le clip du plan 034 ne correspond pas à son intention.** La note dit « ralenti
+50 % sur les pièces qui bougent » — une transformation en gros plan. Le clip
+obtenu est une scène de dialogue. Le catalogue Clip.cafe est indexé sur les
+répliques : un plan purement visuel n'y existe pas toujours. Deux issues, au
+choix au montage : reprendre un bout du plan `033`, ou faire ce plan en motion
+plutôt qu'en extrait.
+
+Sa requête d'origine était `transformation plates pivot 2007` — une note de mise
+en scène, pas une phrase que le catalogue peut retrouver. C'est ce qui l'avait
+fait échouer deux fois. Une requête d'extrait se rédige comme une **réplique**
+ou une **action visible**, jamais comme une indication de réalisation.
+
+`voix/slugs-extraits.json` recense maintenant quel clip se trouve derrière
+chaque plan. Sans cette table, un rattrapage partiel ne sait pas ce qui est déjà
+pris et rechoisit le clip du plan voisin — la recherche sémantique de Clip.cafe
+converge, c'est le piège connu du projet. `scripts/slugs-extraits.py` la
+reconstruit et liste les plans encore vides.
+
 ## Ce qu'il reste à faire
 
 Plus rien sur la voix off. Le texte des fenêtres retrouvées est transcrit, les

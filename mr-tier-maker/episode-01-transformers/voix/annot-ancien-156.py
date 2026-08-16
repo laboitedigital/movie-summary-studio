@@ -36,7 +36,7 @@ A = [
 (31,"PHOTO","","Photo de Michael Bay sur un plateau + affiche Transformers 2007."),
 (32,"CLIP","I am Optimus Prime","Plan large heroique."),
 (33,"CLIP","Optimus Prime transformation 2007","Le plan de reference pour parler des VFX."),
-(34,"CLIP","transformation plates pivot 2007","Ralenti 50% sur les pieces qui bougent. Zoom progressif."),
+(34,"CLIP","the car transforms into a robot","Ralenti 50% sur les pieces qui bougent. Zoom progressif. A REVOIR : le seul clip disponible (are-samuel-james-witwicky...) est une scene de dialogue, pas une transformation. Le catalogue est indexe sur les repliques, un plan purement visuel n y existe pas toujours. Solution : reprendre un bout du 033, ou faire ce plan en motion."),
 (35,"MOTION","","Encart chiffre : 40 TONNES, avec fleches de poids sur le robot."),
 (36,"CLIP","something is coming","Plan d'attente, tension."),
 (37,"CLIP","Blackout attacks base","Traiter comme du film d'horreur : plans courts, noir entre les plans."),
