@@ -145,11 +145,11 @@ for (const s of shots) {
     console.log(`  ${tag} recherche elargie : ${hits.filter((x) => !pris.has(x.slug)).length} candidat(s) neufs`);
   }
 
-  // dernier recours : sans contrainte de film
-  if (!hits.length) {
-    try { hits = await api(params(null, s.requete, "captions")); } catch {}
-    await sleep(RATE_MS);
-  }
+  // PAS de repli sans contrainte de film. Il existait, et il a fait entrer un
+  // extrait d actualite indienne dans une tier list Transformers : le plan 128
+  // ne trouvait rien dans Rise of the Beasts, le script relachait la contrainte
+  // en silence, et prenait le premier resultat du catalogue entier. Mieux vaut
+  // un plan vide, qui se voit, qu un plan hors sujet, qui passe.
   if (!hits.length) {
     console.log(`x ${tag} aucun resultat  "${s.requete}"`);
     rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, etat: "aucun resultat" });
