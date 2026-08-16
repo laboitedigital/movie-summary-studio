@@ -82,7 +82,7 @@ export const RemotionRoot: React.FC = () => (
         offsetX: 0, colonneAvatar: 0}} />
     <Composition id="Fleche" component={Fleche} durationInFrames={150} fps={FPS} width={W} height={H}
       schema={flecheSchema} defaultProps={{
-        x: 0.42, y: 0.46, texte: 'Optimus Prime', depuis: 'droite' as const, couleur: 'A' as const}} />
+        x: 0.42, y: 0.46, depuis: 'droite' as const, couleur: 'blanc' as const}} />
     <Composition id="CadreClip" component={CadreClip} durationInFrames={60} fps={FPS} width={W} height={H}
       schema={cadreClipSchema} defaultProps={{marge: 46, trait: 14, rayon: 30}} />
     <Composition id="Commentaires" component={Commentaires} durationInFrames={320} fps={FPS} width={W} height={H}

@@ -2,14 +2,16 @@ import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {z} from 'zod';
 import {COLORS, SPRING_POP, TIER_COLOR} from './theme';
-import {FontFace, FONT, strokeStyle} from './shared';
+import {FontFace, FONT} from './shared';
 
 export const flecheSchema = z.object({
   x: z.number(),                 // 0-1, position de la POINTE dans le cadre
   y: z.number(),
-  texte: z.string(),
   depuis: z.enum(['gauche', 'droite', 'haut', 'bas']).default('droite'),
-  couleur: z.enum(['S','A','B','C','D','F']).default('A'),
+  /** blanc par defaut : lisible sur n importe quel plan. La couleur d un tier
+   *  reste possible quand l image s y prete — le jaune B sur un plan orange de
+   *  1986, lui, se noyait. */
+  couleur: z.enum(['blanc','S','A','B','C','D','F']).default('blanc'),
 });
 
 /**
@@ -20,11 +22,15 @@ export const flecheSchema = z.object({
  * annotation vaut pour l apercu 720p et le master 1080p.
  *
  * Fond transparent : elle se pose sur l extrait en ffmpeg, par-dessus le cadre.
+ *
+ * Pas d etiquette : la narration dit deja le nom du personnage au moment ou la
+ * fleche apparait. L ecrire une seconde fois a l ecran encombre l image sans
+ * rien apprendre.
  */
-export const Fleche: React.FC<z.infer<typeof flecheSchema>> = ({x, y, texte, depuis, couleur}) => {
+export const Fleche: React.FC<z.infer<typeof flecheSchema>> = ({x, y, depuis, couleur}) => {
   const frame = useCurrentFrame();
   const {fps, durationInFrames} = useVideoConfig();
-  const col = TIER_COLOR[couleur];
+  const col = couleur === 'blanc' ? COLORS.white : TIER_COLOR[couleur];
 
   const px = x * 1920, py = y * 1080;
   const L = 300;                                   // longueur de la hampe
@@ -80,17 +86,6 @@ export const Fleche: React.FC<z.infer<typeof flecheSchema>> = ({x, y, texte, dep
         </svg>
       </div>
 
-      <div style={{
-        position: 'absolute', left: qx, top: qy,
-        transform: `translate(${dir[0] * recul}px, ${dir[1] * recul}px) translate(${dir[0] < 0 ? -10 : -140}px, -110px)`,
-        background: col, borderRadius: 16, padding: '12px 30px',
-        borderTop: '2px solid rgba(255,255,255,0.25)', boxShadow: '0 8px 0 rgba(0,0,0,0.5)',
-        whiteSpace: 'nowrap',
-      }}>
-        <span style={{fontSize: 46, fontWeight: 700, color: COLORS.ink, letterSpacing: 1}}>
-          {texte.toUpperCase()}
-        </span>
-      </div>
     </AbsoluteFill>
   );
 };
