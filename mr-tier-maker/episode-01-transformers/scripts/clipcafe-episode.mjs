@@ -66,12 +66,12 @@ async function api(params, binary = false) {
   return (d?.hits?.hits || []).map((h) => h._source).filter(Boolean);
 }
 
-const params = (film, q, champ) => {
+const params = (film, q, champ, taille = 8) => {
   const p = new URLSearchParams();
   p.set(champ, q);
   if (film) { p.set("movie_title", film.titre); p.set("movie_year", film.annee); }
   p.set("duration", DURATION_RANGE);
-  p.set("size", "8");
+  p.set("size", String(taille));
   return p.toString();
 };
 
@@ -121,6 +121,20 @@ for (const s of shots) {
     await sleep(RATE_MS);
     if (hits.filter((x) => !pris.has(x.slug)).length >= 3) break;
   }
+  // Pas assez de candidats neufs : on redemande large avant d abandonner. Le
+  // plan 034 est mort comme ca — sur 8 resultats, 7 etaient deja pris et le
+  // huitieme rendait un 404. Il ne restait rien a essayer.
+  if (hits.filter((x) => !pris.has(x.slug)).length < 2 && film) {
+    for (const champ of ["captions", "transcript"]) {
+      try {
+        const r = await api(params(film, s.requete, champ, 25));
+        for (const x of r) if (!hits.some((y) => y.slug === x.slug)) hits.push(x);
+      } catch (e) { console.log(`! ${tag} ${e.message}`); }
+      await sleep(RATE_MS);
+    }
+    console.log(`  ${tag} recherche elargie : ${hits.filter((x) => !pris.has(x.slug)).length} candidat(s) neufs`);
+  }
+
   // dernier recours : sans contrainte de film
   if (!hits.length) {
     try { hits = await api(params(null, s.requete, "captions")); } catch {}

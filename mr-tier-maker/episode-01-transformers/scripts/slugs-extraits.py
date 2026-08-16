@@ -8,6 +8,9 @@ converge, c est le piege connu du projet. Les slugs sont donc recopies ici,
 depuis les logs des runs 31928598104 (tous les films), 31948946566 (segment 5)
 et 31949254257 (segment 6). Les deux derniers remplacent le premier.
 
+Les rattrapages faits APRES la renumerotation sont deja en nouvelle
+numerotation : ils vont dans RATTRAPAGES, pas dans les trois blocs du haut.
+
 Sortie : voix/slugs-extraits.json, en NOUVELLE numerotation, et la liste des
 plans encore sans extrait — a passer en EXCLURE= lors d un rattrapage.
 """
@@ -120,6 +123,10 @@ SEG6 = """107 after-i-kill-you-i-kill-her
 117 please
 118 they-literally-call-themselves-decepticons-s1"""
 
+# rattrapages, run 31951727721 — deja en NOUVELLE numerotation
+RATTRAPAGES = """085 there-one-way-survive-s1
+111 lets-do-this-s17"""
+
 def lire(t):
     d={}
     for l in t.strip().splitlines():
@@ -140,6 +147,7 @@ table={}
 for n in sorted(x for x in new if new[x]['famille']=='extrait'):
     o=src.get(n)
     if o is not None and o in anciens: table[n]=anciens[o]
+table.update(lire(RATTRAPAGES))
 sans=[n for n in sorted(x for x in new if new[x]['famille']=='extrait') if n not in table]
 print("\nextraits au plan : %d   avec un slug connu : %d"%(
       sum(1 for x in new.values() if x['famille']=='extrait'), len(table)))
