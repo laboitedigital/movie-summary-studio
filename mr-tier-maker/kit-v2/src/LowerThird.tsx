@@ -12,13 +12,17 @@ export const lowerThirdSchema = z.object({
 export const LowerThird: React.FC<z.infer<typeof lowerThirdSchema>> = ({label, year, tier}) => {
   const frame = useCurrentFrame();
   const {fps, durationInFrames} = useVideoConfig();
-  const out = durationInFrames - 18;
+  // La sortie doit se TERMINER avant la derniere frame. A duration-18 avec 18
+  // frames de course, elle finissait pile a la fin : la derniere image gardait
+  // un liseré du bandeau, et repeatlast le figeait pour tout le reste du plan.
+  // C'est le bandeau de 1986 qui restait a l'ecran a 48 s.
+  const out = durationInFrames - 34;
   const bg = tier ? TIER_COLOR[tier] : COLORS.tierS;
 
   const enter = spring({frame, fps, config: SPRING_POP, durationInFrames: 20});
-  const exit = interpolate(frame, [out, out + 18], [0, 1],
+  const exit = interpolate(frame, [out, out + 26], [0, 1],
     {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EASE_OUT_EXPO});
-  const x = interpolate(enter, [0, 1], [-900, 0]) - exit * 900;
+  const x = interpolate(enter, [0, 1], [-900, 0]) - exit * 1150;
   // micro-flottement : vivant sans etre distrayant
   const float = Math.sin((frame / fps) * (Math.PI * 2) / 4) * 3;
   const dot = interpolate(frame, [6, 16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});

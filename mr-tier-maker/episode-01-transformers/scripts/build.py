@@ -213,6 +213,15 @@ def film_de(n):
 # contre « IMPORTANT » sur le plan 028 : deux qualites presentees comme un
 # desaccord. Chaque entree suit la phrase dite a ce moment-la.
 # Les cartons de l intro, qui n appartiennent a aucun film
+# Quand la phrase ne nomme pas la rangee mais la continue
+RAPPEL_FOCUS = {151: 'S'}
+# La mascotte revient a la toute fin, sur le remerciement
+AVEC_AVATAR = {159: 'S'}
+# Le plan 158 relance vers les commentaires : un enieme tableau juste apres la
+# lecture des six rangees faisait doublon. C'est ce que Popol a releve.
+RAPPEL_REMPLACE = {158: {"text": "Qui va defendre Age of Extinction ?",
+                         "source": "Je sais que vous existez", "accent": "D"}}
+
 CARTONS_INTRO = {
  8: {"text": "On commence. On part de la source.", "accent": "B"},
 }
@@ -311,6 +320,23 @@ AVATAR_Y = 40
 # elle change ici. Avant, la mascotte jouait sa reaction pendant que l affiche
 # volait encore — elle reagissait a un verdict qui n etait pas tombe.
 AVATAR_DEBUT = 92
+
+def pose_avatar(out, nfr, tier, debut=AVATAR_DEBUT):
+    """La mascotte detouree, par-dessus un plan deja monte."""
+    reac=next((c for c in (os.path.join(MASC,'reactions','reaction-%s.mp4'%tier),
+                           os.path.join(MASC,'reac-%s.mp4'%tier))
+               if os.path.exists(c)), None)
+    if not reac: return out
+    d=debut/FPS
+    tmp=out+'.av.mp4'
+    sh('ffmpeg','-y','-loglevel','error','-i',out,'-i',reac,'-filter_complex',
+       f'[1:v]fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012,'
+       f'scale={AVATAR_L}:-1,setpts=PTS+{d:.4f}/TB[m];'
+       f"[0:v][m]overlay=W-w+{AVATAR_X}:H-h+{AVATAR_Y}:format=auto:"
+       f"enable='gte(t,{d:.4f})':repeatlast=1[v]",
+       '-map','[v]','-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264',
+       '-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',tmp)
+    os.replace(tmp,out); return out
 
 def f_verdict(n, nfr, out):
     f=next((x for x in FILMS if x[4]==n), None)
@@ -413,12 +439,27 @@ def flou(src, nfr, out):
        '-r',str(FPS),'-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p',out)
     os.remove(q); return out
 
+def tier_nomme(n):
+    """La rangee que la narration nomme dans ce plan : « En A, ... »."""
+    m=re.search(r"\bEn\s+([SABCDF])\b", PLAN[n]['texte'])
+    return m.group(1) if m else None
+
 def f_rappel(n, nfr, out):
+    if n in RAPPEL_REMPLACE:
+        src=remo('Citation', f'{OUT}/el/cit-{n:03d}.mp4', RAPPEL_REMPLACE[n])
+        return cut(os.path.abspath(src), nfr, out)
     if 'TITRE DE L' in PLAN[n]['note'].upper():
         return trou(n, nfr, out, 'titre a poser sur le board : '+PLAN[n]['note'][:36])
-    src=remo('BoardRecap', f'{OUT}/el/board-{n:03d}.mp4',
-             {"rows":rows_avant(n),"zoom":1.0,"offsetX":0})
-    return cut(os.path.abspath(src), nfr, out)
+    # Sur la lecture du tableau final, la camera pousse sur la rangee nommee.
+    # Sans ca les six plans de la fin montraient le meme tableau fixe, et on ne
+    # savait pas de quelle rangee on parlait.
+    t = tier_nomme(n) or RAPPEL_FOCUS.get(n)
+    props={"rows":rows_avant(n),"offsetX":0}
+    props.update({"focus":t,"zoom":1.75} if t else {"zoom":1.0})
+    src=remo('BoardRecap', f'{OUT}/el/board-{n:03d}.mp4', props)
+    sortie=cut(os.path.abspath(src), nfr, out)
+    if n in AVEC_AVATAR: pose_avatar(out, nfr, AVEC_AVATAR[n], 0)
+    return sortie
 
 def f_citation(n, nfr, out):
     f=film_de(n)
