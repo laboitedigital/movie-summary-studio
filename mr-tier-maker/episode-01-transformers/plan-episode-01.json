@@ -395,12 +395,12 @@
   "a": 162.4,
   "b": 167.96,
   "dur": 5.560000000000002,
-  "type": "PHOTO",
-  "famille": "photo",
-  "element": "— image a fournir",
+  "type": "MOTION",
+  "famille": "affiche",
+  "element": "kit.affiche(slug) + LowerThird(titre, sous_titre)",
   "requete": "",
   "texte": "Michael Bay prend une franchise de jouets et en fait un des blockbusters les plus influents de la décennie.",
-  "note": "Photo de Michael Bay sur un plateau + affiche Transformers 2007."
+  "note": "L AFFICHE 2007 tenue en grand, Ken Burns lent, avec un bandeau MICHAEL BAY / REALISATEUR. Pas de photo de lui : la seule libre est en CC BY-SA, qui obligerait a crediter dans la description de la video."
  },
  {
   "n": 32,
@@ -1760,12 +1760,12 @@
   "a": 788.68,
   "b": 792.94,
   "dur": 4.260000000000105,
-  "type": "PHOTO",
-  "famille": "photo",
-  "element": "— image a fournir",
+  "type": "MOTION",
+  "famille": "pour / contre",
+  "element": "kit.pour_contre(pour, contre)",
   "requete": "",
   "texte": "Le ton semblait trop enfantin, l'animation semblait étrange et le concept",
-  "note": "Capture de la bande-annonce Transformers One avec compteur de dislikes YouTube."
+  "note": "COLONNE des reproches, une ligne par grief au rythme de la phrase : TON TROP ENFANTIN / ANIMATION ETRANGE / CONCEPT CONDAMNE D AVANCE. Seule la colonne contre se remplit ; la colonne pour reste vide jusqu au plan 138, qui la renverse. Aucun nombre de dislikes a l ecran : YouTube ne les montre plus depuis 2021, et un nombre invente n est pas une source."
  },
  {
   "n": 137,

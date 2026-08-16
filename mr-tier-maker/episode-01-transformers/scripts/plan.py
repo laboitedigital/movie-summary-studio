@@ -42,6 +42,10 @@ def element(n,typ,note,dispo_clip):
         return ("carton titre", "kit.carton_titre(titre, annee)")
     if re.search(r"\b\d+\s*(MINUTES|TONNES)\b",u) or "CHRONO" in u or "ENCART CHIFFRE" in u or "COMPTEUR" in u:
         return ("chiffre cle", "kit.chiffre(valeur, label)")
+    # \b : « affichEES » (plan 083) ne doit pas matcher, et le COMPTEUR du
+    # plan 002 passe avant parce que sa regle est plus haut
+    if re.search(r"\bAFFICHE\b", u):
+        return ("affiche", "kit.affiche(slug) + LowerThird(titre, sous_titre)")
     if "COLONNE" in u or "COMPARATIF" in u or "DEUX " in u or "RECAP" in u:
         return ("pour / contre", "kit.pour_contre(pour, contre)")
     if "CITATION" in u or "CARTON " in u or "TYPO" in u:
