@@ -14,6 +14,13 @@ import {BigStat, bigStatSchema} from './BigStat';
 import {Versus, versusSchema} from './Versus';
 import {BoardRecap, boardRecapSchema} from './BoardRecap';
 import {Placeholder, placeholderSchema} from './Placeholder';
+import {Trombinoscope, trombinoscopeSchema} from './Trombinoscope';
+import {Mecanismes, mecanismesSchema} from './Mecanismes';
+import {LignesEmpilees, lignesSchema} from './LignesEmpilees';
+import {RatioDemo, ratioDemoSchema} from './RatioDemo';
+import {Courbe, courbeSchema} from './Courbe';
+import {EchelleFilms, echelleSchema} from './EchelleFilms';
+import {DeuxChiffres, deuxChiffresSchema} from './DeuxChiffres';
 
 const P = (f: string) => `posters/${f}`;
 const DEMO_ROWS = [
@@ -61,6 +68,33 @@ export const RemotionRoot: React.FC = () => (
         leftColor: 'D' as const, rightColor: 'S' as const}} />
     <Composition id="BoardRecap" component={BoardRecap} durationInFrames={300} fps={FPS} width={W} height={H}
       schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, focus: 'D' as const, zoom: 2.4, offsetX: 0}} />
+    <Composition id="Trombinoscope" component={Trombinoscope} durationInFrames={350} fps={FPS} width={W} height={H}
+      schema={trombinoscopeSchema} defaultProps={{
+        names: ['Hot Rod', 'Kup', 'Blurr', 'Arcee', 'Ultra Magnus', 'Springer', 'Wheelie', 'Perceptor',
+                'Cyclonus', 'Scourge', 'Galvatron', 'Wreck-Gar'],
+        cells: 8}} />
+    <Composition id="Mecanismes" component={Mecanismes} durationInFrames={470} fps={FPS} width={W} height={H}
+      schema={mecanismesSchema} defaultProps={{words: ['plaques', 'pivots', 'vis'], color: 'A' as const}} />
+    <Composition id="LignesEmpilees" component={LignesEmpilees} durationInFrames={380} fps={FPS} width={W} height={H}
+      schema={lignesSchema} defaultProps={{
+        lines: ["Sam part a l'universite", 'Sam et Michaela se disputent',
+                'Les parents ne le laissent pas partir', 'Sam abandonne Bumblebee',
+                'Le gouvernement expulse les Autobots', 'Une machine eteint le soleil'],
+        mode: 'empile' as const}} />
+    <Composition id="RatioDemo" component={RatioDemo} durationInFrames={420} fps={FPS} width={W} height={H}
+      schema={ratioDemoSchema} defaultProps={{
+        ratios: [2.39, 1.9, 2.39, 1.78], labels: ['2.39:1', '1.90:1', '2.39:1', '1.78:1']}} />
+    <Composition id="Courbe" component={Courbe} durationInFrames={240} fps={FPS} width={W} height={H}
+      schema={courbeSchema} defaultProps={{
+        points: [0.82, 0.88, 0.34, 0.22, 0.3, 0.78, 0.9], mode: 'trace' as const, color: 'B' as const}} />
+    <Composition id="EchelleFilms" component={EchelleFilms} durationInFrames={270} fps={FPS} width={W} height={H}
+      schema={echelleSchema} defaultProps={{
+        gros: [P('2009-revenge-of-the-fallen.jpg'), P('2014-age-of-extinction.jpg'),
+               P('2017-the-last-knight.jpg'), P('2011-dark-of-the-moon.jpg')],
+        petit: P('2018-bumblebee.jpg'), legende: 'plus petit, plus juste'}} />
+    <Composition id="DeuxChiffres" component={DeuxChiffres} durationInFrames={340} fps={FPS} width={W} height={H}
+      schema={deuxChiffresSchema} defaultProps={{
+        a: {value: 9, label: 'films'}, b: {value: 40, label: 'ans'}}} />
     <Composition id="Placeholder" component={Placeholder} durationInFrames={240} fps={FPS} width={W} height={H}
       schema={placeholderSchema} defaultProps={{what: "Photo d'archive", shot: '019'}} />
   </>
