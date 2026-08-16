@@ -201,3 +201,38 @@ def rappel(place,out,d=4.6):
          for i,(l,c,ink) in enumerate(tableau.TIERS)]
     fc.append(f"[{prev}]"+",".join(txt)+"[v]")
     run(";".join(fc),ins,out,d)
+
+# --------------------------------------------- 7. zoom dynamique sur une rangee
+def zoom_rangee(src, row, out, d=None, zmax=2.8, a=0.8, mont=0.8, tenue=2.2, desc=0.8,
+                cx=None, sur=4):
+    """Pousse la camera dans une rangee du tableau, tient, puis ressort.
+
+    Les affiches font 63 px de large dans le tableau : illisibles sur un
+    telephone. Plutot que d agrandir les rangees — ce qui ferait perdre la vue
+    d ensemble — on zoome sur celle dont on parle au moment ou on en parle.
+
+    zoompan tronque x et y a l entier, ce qui fait vibrer l image. On sur-echantillonne
+    donc l entree (x{sur}) pour que la troncature devienne sous-pixellique.
+    """
+    import tableau
+    if d is None: d=a+mont+tenue+desc+0.6
+    W,H=1920,1080; IW,IH=W*sur,H*sur
+    cy=(tableau.row_y(row)+tableau.RH/2)*sur
+    # cadrage horizontal : on garde la pastille du tier dans le champ,
+    # sinon on ne sait plus de quelle rangee il s agit
+    if cx is None: cx=tableau.BX-24+(1920/zmax)/2
+    cx=cx*sur
+    b=a+mont; c=b+tenue; e=c+desc
+    T="(on/25)"
+    u1=f"min(1,max(0,({T}-{a})/{mont}))"
+    u2=f"min(1,max(0,({T}-{c})/{desc}))"
+    E1=f"(1-pow(1-{u1},3))"; E2=f"(1-pow(1-{u2},3))"
+    z=(f"if(lt({T},{a}),1,"
+       f"if(lt({T},{b}),1+({zmax}-1)*{E1},"
+       f"if(lt({T},{c}),{zmax},"
+       f"if(lt({T},{e}),{zmax}-({zmax}-1)*{E2},1))))")
+    x=f"min(max({cx}-(iw/zoom)/2,0),iw-iw/zoom)"
+    y=f"min(max({cy}-(ih/zoom)/2,0),ih-ih/zoom)"
+    fc=(f"[0:v]scale={IW}:{IH}:flags=neighbor,"
+        f"zoompan=z='{z}':x='{x}':y='{y}':d=1:s={W}x{H}:fps={FPS}[v]")
+    run(fc,['-i',src],out,d)

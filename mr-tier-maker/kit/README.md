@@ -12,6 +12,7 @@ avec un léger dépassement puis calage.
 | 4 | Chiffre clé | 3,6 s | Un score ou un box-office qui monte en compteur |
 | 5 | Transition | 1,2 s | Les six couleurs du logo balaient l'écran entre deux films |
 | 6 | Rappel du tableau | 4,6 s | Les affiches déjà classées tombent dans leurs rangées |
+| 7 | Zoom sur une rangée | 5,2 s | La caméra pousse dans la rangée dont on parle, tient, ressort |
 
 `demo-kit.mp4` enchaîne les six, séparés par la transition.
 
@@ -69,6 +70,20 @@ Deux points ont été écartés :
 - **Logo Rotten Tomatoes ou Metacritic** : marques déposées. Une jauge
   circulaire dit la même chose sans le risque, et c'est ce qui a été fait.
 
-Reste ouvert et légitime : **la taille des affiches dans le tableau**, trop
-petites sur téléphone. Le vrai correctif est un zoom dynamique sur la rangée
-concernée au moment où on en parle — pas encore fait.
+**La taille des affiches sur téléphone** est réglée par l'élément 7,
+`zoom_rangee()`. Les affiches font 63 px de large dans le tableau : illisibles
+sur un petit écran. Agrandir les rangées ferait perdre la vue d'ensemble, donc
+la caméra pousse dans la rangée dont on parle au moment où on en parle, tient
+2,2 s, puis ressort.
+
+```python
+kit.zoom_rangee("rappel.mp4", row=2, out="zoom-B.mp4")   # 0 = S … 5 = F
+```
+
+Deux détails qui comptent :
+
+- **Le cadrage horizontal garde la pastille du tier dans le champ.** Zoomé sur
+  les seules affiches, on ne sait plus de quelle rangée il s'agit.
+- **`zoompan` tronque `x` et `y` à l'entier**, ce qui fait vibrer l'image
+  pendant le mouvement. L'entrée est donc sur-échantillonnée ×4 avant le zoom,
+  pour que la troncature devienne sous-pixellique.
