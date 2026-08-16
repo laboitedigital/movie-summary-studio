@@ -29,9 +29,17 @@ prompts interdisent explicitement tout logo, tout visage reconnaissable et
 tout texte. Citer un extrait de film pour le commenter se défend ; recréer
 un personnage sous licence, non.
 
+## Fichiers
+
+- `cold-open.mp4` — le montage muet
+- `cold-open-vo.mp4` — le même, avec les 21,12 premières secondes de la voix
+  off de l'épisode (piste complète : 935 s)
+- `plan-1.mp4` … `plan-5.mp4` — les plans séparés
+- `intro_graph.py` — fabrique les plans 1 et 5
+- `intro_build.py` — découpe à la frame et assemble
+
 ## Ce qui manque
 
-- **La voix off de l'intro.** Le montage est muet : seul le segment 1986
-  (116 s) est disponible ici, pas les 21 premières secondes de l'épisode.
-- **Une affiche sur neuf.** *Rise of the Beasts* renvoyait un 404 chez
-  Clip.cafe. Le plan 5 en défile huit.
+**Une affiche sur neuf.** *Rise of the Beasts* renvoyait un 404 chez
+Clip.cafe et n'est pas non plus dans le zip d'affiches fourni. Le plan 5 en
+défile huit.
