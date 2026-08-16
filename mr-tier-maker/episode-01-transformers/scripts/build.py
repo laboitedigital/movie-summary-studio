@@ -208,6 +208,32 @@ def film_de(n):
     seg=PLAN[n]['seg']
     return FILMS[seg] if 0 <= seg < len(FILMS) else None
 
+# ------------------------------------------- les colonnes pour / contre
+# Ecrites, pas extraites. Tirer des capitales de la note donnait « ENERGIQUE »
+# contre « IMPORTANT » sur le plan 028 : deux qualites presentees comme un
+# desaccord. Chaque entree suit la phrase dite a ce moment-la.
+# Les cartons de l intro, qui n appartiennent a aucun film
+CARTONS_INTRO = {
+ 8: {"text": "On commence. On part de la source.", "accent": "B"},
+}
+
+RECETTE_POURCONTRE = {
+ 28: (["Court et energique", "Historiquement important"],
+      ["Demande des devoirs avant de l'apprecier"]),
+ 41: ([],
+      ["Sous-intrigue gouvernementale inutile",
+       "Des soldats qu'on ne nomme jamais",
+       "Des blagues qui ont mal vieilli"]),
+ 57: (["Le 1 contre 3 dans la foret", "Bete, mais bete en bougeant"], []),
+ 83: (["Les humains qui chassent les Transformers",
+       "Une entreprise qui demonte des Autobots"],
+      ["Le film ne developpe ni l'une ni l'autre"]),
+ 89: (["Une esthetique plus poussiereuse", "Optimus a un vrai arc",
+       "Optimus chevauche un Dinobot"], []),
+ 144:(["Le basculement est progressif", "Motive, et douloureux a regarder"], []),
+ 145:([], ["Les dialogues surexpliquent l'amitie"]),
+}
+
 # ------------------------------------------------- les plans motion, ecrits
 # Ces dix plans n ont ni extrait ni photo : leur contenu est une figure. Il ne
 # se devine pas depuis la note, il s ecrit. Chaque entree donne la composition
@@ -244,6 +270,10 @@ RECETTE_MOTION = {
                  "mode": "trace", "color": "B"}),
  127:('Courbe', {"points": [0.82, 0.88, 0.34, 0.22, 0.30, 0.78, 0.90],
                  "mode": "effondre", "mot": "Perou", "color": "B"}),
+ 98:('LignesEmpilees', {"mode": "tombe", "lines": [
+      "Les Transformers etaient la depuis toujours",
+      "La famille de Sam est une lignee magique",
+      "La Terre est Unicron"]}),
  155:('DeuxChiffres', {"a": {"value": 9, "label": "films"},
                        "b": {"value": 40, "label": "ans"}}),
 }
@@ -317,9 +347,13 @@ def f_verdict(n, nfr, out):
 def f_carton_titre(n, nfr, out):
     f=film_de(n)
     if not f:
-        # un carton titre a besoin d un film ; l intro n appartient a aucun
-        # segment. Basculer en douce sur une citation donnait au plan 001, qui
-        # demandait « le chiffre 9 plein ecran », une carte de citation.
+        # Un carton titre a besoin d un film ; l intro n appartient a aucun
+        # segment. Ceux-la sont ecrits a la main plutot que devines : basculer
+        # en douce sur une citation donnait au plan 001, qui demandait « le
+        # chiffre 9 plein ecran », une carte de citation.
+        if n in CARTONS_INTRO:
+            src=remo('Citation', f'{OUT}/el/intro-{n:03d}.mp4', CARTONS_INTRO[n])
+            return cut(os.path.abspath(src), nfr, out)
         return trou(n, nfr, out, 'carton titre hors segment : '+PLAN[n]['note'][:40])
     src=remo('TitleCard', f'{OUT}/el/titre-{f[3]}.mp4',
              {"title":f[1],"year":int(f[2]),"tier":TIERS[f[0]]})
@@ -351,11 +385,33 @@ def f_affiche(n, nfr, out):
        '-crf','17','-pix_fmt','yuv420p','-an',tmp)
     os.replace(tmp,out); return out
 
+# Les deux affiches floutees du hook : « un film que tout le monde deteste » et
+# « un autre que les gens defendent ». Elles ne doivent PAS etre identifiables,
+# donc on les fabrique en floutant deux affiches qu on a deja. Rien a fournir.
+FLOUES = {6: '2017-the-last-knight', 7: '2018-bumblebee'}
+
 def f_photo(n, nfr, out):
+    if n in FLOUES:
+        aff=poster(FLOUES[n])
+        if os.path.exists(aff): return flou(aff, nfr, out)
     trouve=sorted(glob.glob(os.path.join(IMG,'%03d-*'%n)))
     if not trouve:
         return trou(n, nfr, out, PLAN[n]['note'][:60])
     return ken_burns(trouve[0], nfr, out)
+
+def flou(src, nfr, out):
+    """Affiche floutee avec un point d interrogation par-dessus."""
+    police='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+    q=out+'.q.txt'; open(q,'w').write('?')
+    vf=(f"scale=760:-1,boxblur=22:2,scale={W}:{H}:force_original_aspect_ratio=decrease,"
+        f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:{NAVY},fps={FPS},"
+        # textfile : drawtext casse sur l apostrophe et les deux-points, et un %
+        # sort une image entierement vide
+        f"drawtext=fontfile={police}:textfile={q}:expansion=none:fontcolor=0xF7B632:"
+        f"fontsize=420:borderw=14:bordercolor=black:x=(w-text_w)/2:y=(h-text_h)/2")
+    sh('ffmpeg','-y','-loglevel','error','-loop','1','-i',src,'-vf',vf,'-frames:v',str(nfr),
+       '-r',str(FPS),'-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p',out)
+    os.remove(q); return out
 
 def f_rappel(n, nfr, out):
     if 'TITRE DE L' in PLAN[n]['note'].upper():
@@ -371,6 +427,7 @@ def f_citation(n, nfr, out):
     return cut(os.path.abspath(src), nfr, out)
 
 def f_chiffre(n, nfr, out):
+    if n in RECETTE_MOTION: return f_motion(n, nfr, out)
     m=re.search(r'(\d[\d\s]*)', PLAN[n]['note'])
     val=int(re.sub(r'\D','',m.group(1))) if m else 0
     lab=etiquette(n)
@@ -383,7 +440,10 @@ def f_chiffre(n, nfr, out):
     return cut(os.path.abspath(src), nfr, out)
 
 def f_pour_contre(n, nfr, out):
-    pour, contre = colonnes(n)
+    if n in RECETTE_POURCONTRE:
+        pour, contre = RECETTE_POURCONTRE[n]
+    else:
+        pour, contre = colonnes(n)
     if not pour and not contre:
         return trou(n, nfr, out, 'pour / contre a ecrire : '+PLAN[n]['note'][:44])
     src=remo('ProsCons', f'{OUT}/el/pc-{n:03d}.mp4', {"pros":pour,"cons":contre})
