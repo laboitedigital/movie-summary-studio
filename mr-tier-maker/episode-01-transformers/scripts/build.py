@@ -191,7 +191,11 @@ def f_verdict(n, nfr, out):
 
 def f_carton_titre(n, nfr, out):
     f=film_de(n)
-    if not f: return f_citation(n, nfr, out)
+    if not f:
+        # un carton titre a besoin d un film ; l intro n appartient a aucun
+        # segment. Basculer en douce sur une citation donnait au plan 001, qui
+        # demandait « le chiffre 9 plein ecran », une carte de citation.
+        return trou(n, nfr, out, 'carton titre hors segment : '+PLAN[n]['note'][:40])
     src=remo('TitleCard', f'{OUT}/el/titre-{f[3]}.mp4',
              {"title":f[1],"year":int(f[2]),"tier":TIERS[f[0]]})
     return cut(os.path.abspath(src), nfr, out)
@@ -229,6 +233,8 @@ def f_photo(n, nfr, out):
     return ken_burns(trouve[0], nfr, out)
 
 def f_rappel(n, nfr, out):
+    if 'TITRE DE L' in PLAN[n]['note'].upper():
+        return trou(n, nfr, out, 'titre a poser sur le board : '+PLAN[n]['note'][:36])
     src=remo('BoardRecap', f'{OUT}/el/board-{n:03d}.mp4',
              {"rows":rows_avant(n),"zoom":1.0,"offsetX":0})
     return cut(os.path.abspath(src), nfr, out)
@@ -242,10 +248,12 @@ def f_citation(n, nfr, out):
 def f_chiffre(n, nfr, out):
     m=re.search(r'(\d[\d\s]*)', PLAN[n]['note'])
     val=int(re.sub(r'\D','',m.group(1))) if m else 0
-    if not val: return f_citation(n, nfr, out)
+    lab=etiquette(n)
+    if not val or len(lab) < 4 or lab in ('qui defile','qui claquent'):
+        return trou(n, nfr, out, 'chiffre a preciser : '+PLAN[n]['note'][:40])
     f=film_de(n)
     src=remo('BigStat', f'{OUT}/el/stat-{n:03d}.mp4',
-             {"value":val,"unit":"","label":etiquette(n),"countUp":True,
+             {"value":val,"unit":"","label":lab,"countUp":True,
               "color":TIERS[f[0]] if f else "accent"})
     return cut(os.path.abspath(src), nfr, out)
 
@@ -323,11 +331,20 @@ if __name__=='__main__':
     debut=int(sys.argv[1]) if len(sys.argv)>1 else 1
     fin  =int(sys.argv[2]) if len(sys.argv)>2 else max(S)
     parts=[]
+    # Le cold open n est pas un fond : il TIENT les 21 premieres secondes,
+    # c est-a-dire les plans 1 a 4. build3.py le coupait a l entree du plan 5 ;
+    # je l avais coupe a l entree du plan 1, soit 0,32 s — 19 images. Les 21
+    # secondes d animation Seedance disparaissaient et les plans 1 a 4 etaient
+    # rendus a leur place.
+    COLD_JUSQUA = 5
     co=f'{OUT}/p000.mp4'
     src=os.path.join(INTRO,'cold-open.mp4')
     if debut==1 and os.path.exists(src):
-        if not os.path.exists(co): cut(src, round(S[1]['a']*FPS), co)
+        if not os.path.exists(co): cut(src, round(S[COLD_JUSQUA]['a']*FPS), co)
         parts.append('p000.mp4')
+        debut=max(debut, COLD_JUSQUA)
+    elif debut==1:
+        manquants.append((0,'intro/cold-open.mp4 absent : les 21 premieres secondes'))
     for n in range(debut, fin+1):
         plan(n); parts.append('p%03d.mp4'%n)
         print('.', end='', flush=True)
