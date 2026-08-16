@@ -82,8 +82,14 @@ qui contient aussi les **requêtes de recherche Clip.cafe, en anglais**.
 C'est la seule étape que tu dois lancer toi-même, parce que les sources sont
 bloquées depuis ma session.
 
-**Si un workflow est nouveau ou modifié : merger d'abord.** Un job GitHub
-n'apparaît dans l'onglet Actions que depuis la branche par défaut.
+**Je te donne le lien du merge à chaque épisode, sans que tu aies à le
+demander.** Un job GitHub n'apparaît dans l'onglet Actions que depuis la
+branche par défaut : tant que le travail de l'épisode est sur une branche, les
+jobs ne sont pas lançables. J'ouvre donc la pull request et je te donne le lien
+dès que le plan de montage est prêt — c'est le moment exact où tu en as besoin.
+
+Attention à l'ordre : si je pousse encore des fichiers **après** ton merge, ils
+ne sont pas sur `main`. Dans ce cas je rouvre une PR et je te redonne le lien.
 
 Puis dans **Actions** :
 
