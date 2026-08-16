@@ -89,13 +89,79 @@ def cut(src, nfr, out, extra=''):
        '-fps_mode','cfr','-r',str(FPS),'-c:v','libx264','-preset','veryfast','-crf','17',
        '-pix_fmt','yuv420p','-an',out)
     got=nb_frames(out)
-    if got<nfr:
-        tmp=out+'.pad.mp4'
-        sh('ffmpeg','-y','-loglevel','error','-i',out,'-vf',
-           f"tpad=stop_mode=clone:stop_duration={(nfr-got)/FPS+0.2}",'-frames:v',str(nfr),
-           '-r',str(FPS),'-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p',tmp)
-        os.replace(tmp,out)
+    if got<nfr: combler(out, got, nfr)
     return out
+
+# on ne ralentit pas au-dela : a x1.6 le mouvement devient sirupeux et ca se voit
+RALENTI_MAX = 1.6
+
+def combler(out, got, nfr):
+    """Amene un plan trop court a sa duree, sans jamais figer l image.
+
+    L ancienne version clonait la derniere frame (tpad). Sur un extrait de 4 s
+    pose dans un plan de 7 s, ca donnait trois secondes d arret net : l image
+    s arrete et attend le plan suivant. C est le defaut le plus visible du
+    premier montage.
+
+    Maintenant on etire le temps (setpts). Si l etirement necessaire depasse
+    RALENTI_MAX, on ralentit jusqu a cette limite et on comble le reste par un
+    gel — mais un gel qui DERIVE : une poussee lente couvre tout le plan, donc
+    meme la portion figee continue de bouger. Rien ne s arrete jamais net.
+    """
+    facteur = nfr / got
+    tmp = out + '.fit.mp4'
+    if facteur <= RALENTI_MAX:
+        sh('ffmpeg','-y','-loglevel','error','-i',out,'-filter:v',
+           f"setpts={facteur:.5f}*PTS",'-frames:v',str(nfr),'-fps_mode','cfr','-r',str(FPS),
+           '-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',tmp)
+    else:
+        # Deux passes, et pas une seule chaine de filtres : setpts ne change que
+        # les timestamps, tpad clone au rythme d entree, et zoompan re-cadence
+        # derriere. Enchaines d un coup, ils ne rendaient plus le bon nombre de
+        # frames — 330 au lieu de 420. On fige d abord a la bonne longueur, on
+        # fait deriver ensuite, sur une source dont on connait la duree.
+        reste = nfr - round(got * RALENTI_MAX)
+        etape = out + '.gel.mp4'
+        sh('ffmpeg','-y','-loglevel','error','-i',out,'-filter:v',
+           f"setpts={RALENTI_MAX}*PTS,tpad=stop_mode=clone:stop_duration={reste/FPS+0.4}",
+           '-frames:v',str(nfr),'-fps_mode','cfr','-r',str(FPS),
+           '-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',etape)
+        # zoompan : d est le nombre de frames de sortie PAR IMAGE D ENTREE. Sur
+        # une photo fixe (-loop 1) d=nfr est juste ; sur une video il faut d=1,
+        # sinon la premiere image tient tout le plan et rien ne bouge. Le zoom
+        # est donc pilote par « on », le numero de frame de sortie.
+        pas = 0.06 / nfr
+        sh('ffmpeg','-y','-loglevel','error','-i',etape,'-filter:v',
+           f"scale={W*4}:-2,zoompan=z='min(1+on*{pas:.8f},1.06)':"
+           f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}",
+           '-frames:v',str(nfr),'-fps_mode','cfr','-r',str(FPS),
+           '-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',tmp)
+        os.remove(etape)
+    os.replace(tmp, out)
+
+def ouvre_un_segment(n):
+    """Le plan n est-il le premier de son film ?"""
+    seg = PLAN[n]['seg']
+    return seg >= 0 and (n-1 not in PLAN or PLAN[n-1]['seg'] != seg)
+
+def pose_wipe(out, nfr):
+    """Le wipe arc-en-ciel par-dessus l entree d un segment.
+
+    Il etait dans le kit depuis le debut et n a jamais ete pose : aucune regle
+    ne le selectionnait, donc la transition signature de la chaine n a jamais
+    ete a l ecran. Il se place ici, aux huit changements de film.
+
+    PAS de shortest=1 : le wipe fait 42 frames, le plan bien plus. Sa derniere
+    image est entierement transparente — les bandes sont sorties du cadre —
+    donc la figer est invisible.
+    """
+    w = remo('RainbowWipe', f'{OUT}/el/wipe.mov', None, alpha=True)
+    tmp = out + '.wipe.mp4'
+    sh('ffmpeg','-y','-loglevel','error','-i',out,'-i',os.path.abspath(w),
+       '-filter_complex','[0:v][1:v]overlay=0:0:format=auto:repeatlast=1',
+       '-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264','-preset','veryfast',
+       '-crf','17','-pix_fmt','yuv420p','-an',tmp)
+    os.replace(tmp, out)
 
 def poster(slug):
     return os.path.join(KIT,'public','posters',slug+'.jpg')
@@ -362,12 +428,14 @@ FAMILLES={'extrait':f_extrait,'verdict':f_verdict,'carton titre':f_carton_titre,
 def plan(n):
     out=f'{OUT}/p{n:03d}.mp4'
     if os.path.exists(out) and nb_frames(out)==frames(n): return out
-    fam=PLAN[n]['famille']
+    fam=PLAN[n]['famille']; nfr=frames(n)
     try:
-        return FAMILLES.get(fam, f_motion)(n, frames(n), out)
+        FAMILLES.get(fam, f_motion)(n, nfr, out)
     except subprocess.CalledProcessError:
         print('  plan %03d (%s) a echoue, carton de remplacement'%(n,fam))
-        return trou(n, frames(n), out, '%s : echec du rendu'%fam)
+        trou(n, nfr, out, '%s : echec du rendu'%fam)
+    if ouvre_un_segment(n): pose_wipe(out, nfr)
+    return out
 
 if __name__=='__main__':
     for tier,titre,annee,slug,pv in FILMS:
