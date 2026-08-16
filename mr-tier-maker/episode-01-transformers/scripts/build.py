@@ -142,6 +142,46 @@ def film_de(n):
     seg=PLAN[n]['seg']
     return FILMS[seg] if 0 <= seg < len(FILMS) else None
 
+# ------------------------------------------------- les plans motion, ecrits
+# Ces dix plans n ont ni extrait ni photo : leur contenu est une figure. Il ne
+# se devine pas depuis la note, il s ecrit. Chaque entree donne la composition
+# et ses props ; ce qui n est pas ici sort en carton de remplacement.
+RECETTE_MOTION = {
+ 13: ('Trombinoscope', {
+      "names": ["Hot Rod","Kup","Blurr","Arcee","Ultra Magnus","Springer","Wheelie",
+                "Perceptor","Cyclonus","Scourge","Galvatron","Wreck-Gar","Sludge","Kranix"],
+      "cells": 8}),
+ 34: ('Mecanismes', {"words": ["plaques","pivots","vis"], "color": "A"}),
+ 48: ('LignesEmpilees', {"mode": "empile", "lines": [
+      "Sam part a l'universite",
+      "Sam et Michaela se disputent",
+      "Les parents ne le laissent pas partir",
+      "Sam abandonne Bumblebee",
+      "Le gouvernement expulse les Autobots",
+      "Une machine peut eteindre le soleil"]}),
+ 54: ('LignesEmpilees', {"mode": "tombe", "lines": [
+      "Sam part a l'universite",
+      "Sam et Michaela se disputent",
+      "Les parents ne le laissent pas partir",
+      "Sam abandonne Bumblebee",
+      "Le gouvernement expulse les Autobots",
+      "Une machine peut eteindre le soleil"]}),
+ 61: ('BigStat', {"value": 2, "unit": "", "label": "deuxieme raison",
+                  "countUp": False, "color": "D"}),
+ 96: ('RatioDemo', {"ratios": [2.39, 1.90, 2.39, 1.78],
+                    "labels": ["2.39:1","1.90:1","2.39:1","1.78:1"]}),
+ 113:('EchelleFilms', {
+      "gros": ["posters/2009-revenge-of-the-fallen.jpg","posters/2014-age-of-extinction.jpg",
+               "posters/2017-the-last-knight.jpg","posters/2011-dark-of-the-moon.jpg"],
+      "petit": "posters/2018-bumblebee.jpg", "legende": "plus petit, plus juste"}),
+ 123:('Courbe', {"points": [0.82, 0.88, 0.34, 0.22, 0.30, 0.78, 0.90],
+                 "mode": "trace", "color": "B"}),
+ 127:('Courbe', {"points": [0.82, 0.88, 0.34, 0.22, 0.30, 0.78, 0.90],
+                 "mode": "effondre", "mot": "Perou", "color": "B"}),
+ 155:('DeuxChiffres', {"a": {"value": 9, "label": "films"},
+                       "b": {"value": 40, "label": "ans"}}),
+}
+
 # ---------------------------------------------------------------- les familles
 
 def f_extrait(n, nfr, out):
@@ -265,7 +305,11 @@ def f_pour_contre(n, nfr, out):
     return cut(os.path.abspath(src), nfr, out)
 
 def f_motion(n, nfr, out):
-    return trou(n, nfr, out, PLAN[n]['note'][:60])
+    if n not in RECETTE_MOTION:
+        return trou(n, nfr, out, PLAN[n]['note'][:60])
+    comp, props = RECETTE_MOTION[n]
+    src=remo(comp, f'{OUT}/el/motion-{n:03d}.mp4', props)
+    return cut(os.path.abspath(src), nfr, out)
 
 def trou(n, nfr, out, quoi):
     manquants.append((n, quoi))
