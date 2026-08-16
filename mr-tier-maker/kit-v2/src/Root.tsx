@@ -68,10 +68,10 @@ export const RemotionRoot: React.FC = () => (
         left: ['45 minutes de bataille', 'Aucun enjeu'],
         right: ['La mythologie se réécrit', 'Deux films se contredisent'],
         leftColor: 'D' as const, rightColor: 'S' as const}} />
+    {/* Pas de focus dans les defaultProps : --props FUSIONNE avec elles, donc
+        un focus de demonstration ici pousse la camera sur cette rangee dans
+        tous les rappels qui n en demandent aucun. */}
     <Composition id="BoardRecap" component={BoardRecap} durationInFrames={300} fps={FPS} width={W} height={H}
-      {/* pas de focus par defaut : --props FUSIONNE avec defaultProps, donc un
-          focus ici ferait zoomer sur cette rangee tous les rappels qui n'en
-          demandent aucun. C'est ce qui poussait la camera sur D partout. */}
       schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, zoom: 2.4, offsetX: 0}} />
     <Composition id="VerdictTableau" component={VerdictTableau} durationInFrames={260} fps={FPS} width={W} height={H}
       schema={verdictTableauSchema} defaultProps={{
