@@ -1,0 +1,52 @@
+name: Extraits de tout un episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      plan:
+        description: "Chemin du plan de montage"
+        required: true
+        default: "mr-tier-maker/episode-01-transformers/plan-episode-01.json"
+      segment:
+        description: "Numero de segment (0 = 1986, 8 = Rise of the Beasts). Vide = tous les films"
+        required: false
+        default: ""
+
+jobs:
+  extraits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verifier la cle
+        run: |
+          if [ -z "${{ secrets.CLIP_CAFE_API_KEY }}" ]; then
+            echo "Le secret CLIP_CAFE_API_KEY est absent."
+            echo "Settings > Secrets and variables > Actions > New repository secret"
+            exit 1
+          fi
+
+      - name: Installer ffmpeg
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          NEEDRESTART_MODE: a
+        timeout-minutes: 5
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Telecharger les extraits
+        working-directory: mr-tier-maker/episode-01-transformers/scripts
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+          PLAN: ${{ inputs.plan }}
+          SEG: ${{ inputs.segment }}
+        run: |
+          set -e
+          # le plan est reference depuis la racine du depot
+          node clipcafe-episode.mjs "$GITHUB_WORKSPACE/$PLAN" $SEG
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extraits
+          path: mr-tier-maker/episode-01-transformers/scripts/clips/
+          retention-days: 7
