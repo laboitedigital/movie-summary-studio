@@ -327,6 +327,43 @@ RECETTE_MOTION = {
                        "b": {"value": 40, "label": "ans"}}),
 }
 
+# ------------------------------------------------------------------ les fleches
+#
+# Quand la narration nomme un personnage, une fleche cartoon vient le designer
+# dans l extrait. Les coordonnees sont RELATIVES (fraction du cadre) et relevees
+# sur l image, jamais estimees : un personnage n est presque jamais au centre.
+#
+#   n : [{"x":.., "y":.., "depuis":"gauche|droite|haut|bas",
+#         "couleur":"blanc|S..F", "debut": frame d apparition}]
+#
+# La fleche vit 150 frames (2,5 s) et se retire toute seule. « debut » se cale
+# sur le moment ou le nom est PRONONCE, pas sur le debut du plan.
+FLECHE_FRAMES = 150
+RECETTE_FLECHES = {}
+
+def pose_fleche(out, nfr, specs):
+    """Les fleches d un plan, posees par-dessus l extrait et son cadre."""
+    for i, sp in enumerate(specs):
+        props={"x":round(float(sp['x']),4),"y":round(float(sp['y']),4),
+               "depuis":sp.get('depuis','droite'),"couleur":sp.get('couleur','blanc')}
+        cle='-'.join(str(props[k]) for k in ('x','y','depuis','couleur'))
+        mov=remo('Fleche', f'{OUT}/el/fleche-{cle}.mov', props, alpha=True)
+        d=int(sp.get('debut',0))/FPS
+        fin=d+FLECHE_FRAMES/FPS
+        tmp=out+'.fl%d.mp4'%i
+        # setpts ET enable : setpts decale le flux, enable empeche la premiere
+        # frame de rester collee a l ecran avant l entree. repeatlast=0 : la
+        # fleche disparait apres sa sortie au lieu de se figer.
+        sh('ffmpeg','-y','-loglevel','error','-i',out,'-i',os.path.abspath(mov),
+           '-filter_complex',
+           f'[1:v]fps={FPS},setpts=PTS+{d:.4f}/TB[f];'
+           f"[0:v][f]overlay=0:0:format=auto:enable='between(t,{d:.4f},{fin:.4f})'"
+           f':repeatlast=0[v]',
+           '-map','[v]','-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264',
+           '-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',tmp)
+        os.replace(tmp,out)
+    return out
+
 # ---------------------------------------------------------------- les familles
 
 def f_extrait(n, nfr, out):
@@ -345,8 +382,11 @@ def f_extrait(n, nfr, out):
            '-filter_complex','[0:v][1:v]overlay=0:0:format=auto:repeatlast=1',
            '-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264','-preset','veryfast',
            '-crf','17','-pix_fmt','yuv420p','-an',out)
-        os.remove(tmp); return out
-    return pose_cadre(src,nfr,out)
+        os.remove(tmp)
+    else:
+        pose_cadre(src,nfr,out)
+    if n in RECETTE_FLECHES: pose_fleche(out, nfr, RECETTE_FLECHES[n])
+    return out
 
 # La mascotte passe DEVANT le tableau, a droite. Les affiches n occupent que le
 # tiers gauche de chaque rangee : elle ne cache donc rien d important, et elle

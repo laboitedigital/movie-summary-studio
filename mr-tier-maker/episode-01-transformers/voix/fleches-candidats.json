@@ -1,0 +1,371 @@
+[
+ {
+  "n": 17,
+  "personnages": [
+   {
+    "nom": "Optimus Prime",
+    "debut": 0
+   }
+  ],
+  "texte": "Optimus Prime meurt. Pas dans un troisième acte émouvant avec une musique douce.",
+  "duree_frames": 277
+ },
+ {
+  "n": 25,
+  "personnages": [
+   {
+    "nom": "Hot Rod",
+    "debut": 0
+   }
+  ],
+  "texte": "Hot Rod est censé être le cœur émotionnel du film, et je serais incapable de vous nommer un seul trait de sa personnalité.",
+  "duree_frames": 444
+ },
+ {
+  "n": 26,
+  "personnages": [
+   {
+    "nom": "Unicron",
+    "debut": 10
+   }
+  ],
+  "texte": "Et Unicron. Une planète qui mange des planètes, doublée par Orson Welles dans son dernier rôle.",
+  "duree_frames": 377
+ },
+ {
+  "n": 37,
+  "personnages": [
+   {
+    "nom": "Blackout",
+    "debut": 0
+   }
+  ],
+  "texte": "Blackout qui attaque la base au début, c 'est presque un film d'horreur. On ne voit pas le robot au complet, on voit ce qu'il fait aux humains.",
+  "duree_frames": 469
+ },
+ {
+  "n": 38,
+  "personnages": [
+   {
+    "nom": "Barricade",
+    "debut": 0
+   },
+   {
+    "nom": "Sam",
+    "debut": 62
+   }
+  ],
+  "texte": "Barricade qui poursuit Sam dans le stationnement, même principe.",
+  "duree_frames": 214
+ },
+ {
+  "n": 39,
+  "personnages": [
+   {
+    "nom": "Optimus Prime",
+    "debut": 21
+   }
+  ],
+  "texte": "Quand Optimus Prime arrive enfin et se présente, ça a un impact, parce que",
+  "duree_frames": 252
+ },
+ {
+  "n": 49,
+  "personnages": [
+   {
+    "nom": "Sam",
+    "debut": 0
+   },
+   {
+    "nom": "Michaela",
+    "debut": 149
+   }
+  ],
+  "texte": "Sam part à l'université. Sam et Michaela ont des problèmes de couple. Les parents de Sam ont de la difficulté à le laisser partir.",
+  "duree_frames": 469
+ },
+ {
+  "n": 50,
+  "personnages": [
+   {
+    "nom": "Bumblebee",
+    "debut": 48
+   },
+   {
+    "nom": "Sam",
+    "debut": 0
+   }
+  ],
+  "texte": "Sam abandonne Bumblebee. Le gouvernement veut expulser les Autobots. Il y a une machine qui peut éteindre le soleil.",
+  "duree_frames": 429
+ },
+ {
+  "n": 52,
+  "personnages": [
+   {
+    "nom": "Bumblebee",
+    "debut": 77
+   },
+   {
+    "nom": "Sam",
+    "debut": 55
+   }
+  ],
+  "texte": "Le conflit entre Sam et Bumblebee, qui aurait pu être le cœur émotionnel du film, est réglé en une scène.",
+  "duree_frames": 336
+ },
+ {
+  "n": 58,
+  "personnages": [
+   {
+    "nom": "Optimus Prime",
+    "debut": 169
+   },
+   {
+    "nom": "Starscream",
+    "debut": 311
+   },
+   {
+    "nom": "Megatron",
+    "debut": 271
+   }
+  ],
+  "texte": "Le combat 1 contre 3 dans la forêt. Optimus Prime seul contre Megatron, Starscream et Grindor.",
+  "duree_frames": 442
+ },
+ {
+  "n": 68,
+  "personnages": [
+   {
+    "nom": "Sam",
+    "debut": 0
+   }
+  ],
+  "texte": "Sam a aussi enfin un vrai arc. Il a sauvé le monde deux fois, il a une médaille, et il ne trouve pas d'emploi.",
+  "duree_frames": 415
+ },
+ {
+  "n": 71,
+  "personnages": [
+   {
+    "nom": "Sentinel Prime",
+    "debut": 0
+   }
+  ],
+  "texte": "Sentinel Prime est probablement le meilleur antagoniste de la franchise en prise de vue réelle, parce que sa logique se tient.",
+  "duree_frames": 421
+ },
+ {
+  "n": 74,
+  "personnages": [
+   {
+    "nom": "Optimus",
+    "debut": 118
+   }
+  ],
+  "texte": "Ça crée une opposition réelle avec Optimus, pas juste deux robots qui se frappent. Et la bataille de Chicago.",
+  "duree_frames": 415
+ },
+ {
+  "n": 77,
+  "personnages": [
+   {
+    "nom": "Carly",
+    "debut": 0
+   }
+  ],
+  "texte": "Carly n'est pas un personnage, c'est une fonction. Le film dure 2h35 et on le sent.",
+  "duree_frames": 361
+ },
+ {
+  "n": 78,
+  "personnages": [
+   {
+    "nom": "Ironhide",
+    "debut": 37
+   }
+  ],
+  "texte": "Et la mort d'Ironhide arrive tellement vite qu'on n'a pas le temps de la digérer. Mais dans l'ensemble, c'est un très bon film d'action.",
+  "duree_frames": 450
+ },
+ {
+  "n": 91,
+  "personnages": [
+   {
+    "nom": "Optimus",
+    "debut": 0
+   }
+  ],
+  "texte": "Optimus a un arc réel, celui d'un personnage amer qui redevient un héros.",
+  "duree_frames": 298
+ },
+ {
+  "n": 92,
+  "personnages": [
+   {
+    "nom": "Optimus",
+    "debut": 10
+   }
+  ],
+  "texte": "Et Optimus qui chevauche un Dinobot est objectivement une image extraordinaire. Mais trois heures pour ça, non.",
+  "duree_frames": 470
+ },
+ {
+  "n": 97,
+  "personnages": [
+   {
+    "nom": "Optimus Prime",
+    "debut": 0
+   }
+  ],
+  "texte": "Optimus Prime disparaît pendant plus d'une heure, revient sous contrôle mental et se libère en une minute et demie.",
+  "duree_frames": 371
+ },
+ {
+  "n": 99,
+  "personnages": [
+   {
+    "nom": "Sam",
+    "debut": 215
+   }
+  ],
+  "texte": "Les Transformers étaient sur Terre depuis toujours, la famille de Sam était une lignée magique et la Terre est en fait un icron.",
+  "duree_frames": 477
+ },
+ {
+  "n": 101,
+  "personnages": [
+   {
+    "nom": "Quintessa",
+    "debut": 0
+   }
+  ],
+  "texte": "Quintessa est probablement le méchant le plus oubliable de la franchise.",
+  "duree_frames": 228
+ },
+ {
+  "n": 109,
+  "personnages": [
+   {
+    "nom": "Bumblebee",
+    "debut": 142
+   }
+  ],
+  "texte": "Et ce n'est même pas serré. Bumblebee commence par ce que les fans demandaient depuis onze ans.",
+  "duree_frames": 328
+ },
+ {
+  "n": 111,
+  "personnages": [
+   {
+    "nom": "Optimus Prime",
+    "debut": 87
+   }
+  ],
+  "texte": "claire, et Optimus Prime qui combat au sommet de sa forme.",
+  "duree_frames": 304
+ },
+ {
+  "n": 114,
+  "personnages": [
+   {
+    "nom": "Charlie",
+    "debut": 0
+   }
+  ],
+  "texte": "Charlie est le meilleur personnage humain de la franchise, sans compétition.",
+  "duree_frames": 255
+ },
+ {
+  "n": 118,
+  "personnages": [
+   {
+    "nom": "Bumblebee",
+    "debut": 0
+   }
+  ],
+  "texte": "Bumblebee, de son côté, arrive brisé, muet, en fuite.",
+  "duree_frames": 222
+ },
+ {
+  "n": 121,
+  "personnages": [
+   {
+    "nom": "Bumblebee",
+    "debut": 218
+   }
+  ],
+  "texte": "Les Decepticons sont plus forts et mieux équipés, ce qui oblige Bumblebee à être plus intelligent qu'eux.",
+  "duree_frames": 396
+ },
+ {
+  "n": 125,
+  "personnages": [
+   {
+    "nom": "Unicron",
+    "debut": 171
+   },
+   {
+    "nom": "Scourge",
+    "debut": 210
+   }
+  ],
+  "texte": "On établit les Maximals, la clé Transwarp, Unicron et Scourge en quelques minutes, avec des enjeux clairs.",
+  "duree_frames": 422
+ },
+ {
+  "n": 126,
+  "personnages": [
+   {
+    "nom": "Scourge",
+    "debut": 0
+   }
+  ],
+  "texte": "Scourge est un excellent antagoniste, imposant, patient et bien interprété. Le problème arrive au Pérou.",
+  "duree_frames": 435
+ },
+ {
+  "n": 130,
+  "personnages": [
+   {
+    "nom": "Noah",
+    "debut": 0
+   }
+  ],
+  "texte": "Noah est un protagoniste correct. Ses motivations liées à sa famille sont concrètes et compréhensibles.",
+  "duree_frames": 405
+ },
+ {
+  "n": 131,
+  "personnages": [
+   {
+    "nom": "Elena",
+    "debut": 0
+   }
+  ],
+  "texte": "Elena, par contre, existe surtout pour expliquer des artefacts au reste du groupe. Le dernier acte remonte la note.",
+  "duree_frames": 464
+ },
+ {
+  "n": 133,
+  "personnages": [
+   {
+    "nom": "Bumblebee",
+    "debut": 13
+   }
+  ],
+  "texte": "est exactement le genre de moment qu'un film comme celui -ci doit réussir.",
+  "duree_frames": 309
+ },
+ {
+  "n": 148,
+  "personnages": [
+   {
+    "nom": "Bumblebee",
+    "debut": 192
+   }
+  ],
+  "texte": "Malgré ça, c'est le meilleur film de la franchise après Bumblebee et une preuve que ces personnages fonctionnent parfaitement sans humains à l 'écran.",
+  "duree_frames": 512
+ }
+]
