@@ -10,6 +10,17 @@
  *   export CLIP_CAFE_API_KEY="..."
  *   node clipcafe-episode.mjs plan-episode-01.json          # tous les films
  *   node clipcafe-episode.mjs plan-episode-01.json 3        # segment 3 seulement
+ *   PLANS=085,111 node clipcafe-episode.mjs plan.json       # ces deux plans
+ *
+ * PLANS permet de rattraper quelques plans sans repayer tout un segment. Mais
+ * un run partiel ne voit pas ce que les runs precedents ont deja pris : sans
+ * garde-fou il choisirait le meme clip qu un plan voisin, exactement le piege
+ * que la deduplication evite a l interieur d un run. EXCLURE sert a ca — on y
+ * met les slugs deja utilises pour le meme film (ils sont dans le log du run
+ * precedent, ou dans clips/rapport.json).
+ *
+ *   PLANS=085 EXCLURE=so-what-about-the-deal-is-done,calling-all-autobots-s1 \
+ *     node clipcafe-episode.mjs plan.json
  */
 import fs from "node:fs";
 import { spawn } from "node:child_process";
@@ -19,6 +30,9 @@ if (!KEY) { console.error("Manque CLIP_CAFE_API_KEY"); process.exit(1); }
 
 const PLAN = process.argv[2] || "plan-episode-01.json";
 const ONLY = process.argv[3] ? Number(process.argv[3]) : null;
+const decoupe = (v) => (v || "").split(/[,\s]+/).filter(Boolean);
+const PLANS = decoupe(process.env.PLANS).map(Number);
+const EXCLURE = decoupe(process.env.EXCLURE);
 
 const API = "https://api.clip.cafe/";
 const OUT = "clips";
@@ -71,16 +85,22 @@ function ffmpeg(args) {
 
 const plan = JSON.parse(fs.readFileSync(PLAN, "utf8"));
 const shots = plan.filter((r) => r.type === "CLIP" && r.requete
-  && (ONLY === null || r.seg === ONLY));
+  && (PLANS.length ? PLANS.includes(r.n) : (ONLY === null || r.seg === ONLY)));
 
 fs.mkdirSync(OUT, { recursive: true });
-console.log(`${shots.length} extrait(s) a chercher\n`);
+console.log(`${shots.length} extrait(s) a chercher`);
+if (PLANS.length) {
+  const absents = PLANS.filter((n) => !shots.some((s) => s.n === n));
+  if (absents.length) console.log(`! demandes mais pas des plans CLIP : ${absents.join(", ")}`);
+}
+if (EXCLURE.length) console.log(`${EXCLURE.length} slug(s) deja pris, ecartes d office`);
+console.log("");
 
 // La recherche semantique de Clip.cafe converge : sur un catalogue etroit, elle
 // renvoie les memes 4-5 extraits quelle que soit la requete. Sans garde-fou,
 // trois plans differents recoivent le meme clip. On tient donc la liste de ce
 // qui est deja pris et on descend dans les resultats jusqu a un slug neuf.
-const pris = new Set();
+const pris = new Set(EXCLURE);
 const rapport = [];
 for (const s of shots) {
   const film = FILMS[s.seg] || null;

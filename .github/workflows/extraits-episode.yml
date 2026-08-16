@@ -11,6 +11,14 @@ on:
         description: "Numero de segment (0 = 1986, 8 = Rise of the Beasts). Vide = tous les films"
         required: false
         default: ""
+      plans:
+        description: "Numeros de plan precis, separes par des virgules. Prioritaire sur le segment"
+        required: false
+        default: ""
+      exclure:
+        description: "Slugs deja utilises pour ce film, a ne pas reprendre. Obligatoire avec plans"
+        required: false
+        default: ""
 
 jobs:
   extraits:
@@ -40,6 +48,8 @@ jobs:
           CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
           PLAN: ${{ inputs.plan }}
           SEG: ${{ inputs.segment }}
+          PLANS: ${{ inputs.plans }}
+          EXCLURE: ${{ inputs.exclure }}
         run: |
           set -e
           # le plan est reference depuis la racine du depot
