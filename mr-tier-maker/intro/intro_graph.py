@@ -56,10 +56,12 @@ def plan5(out, d=4.14):
     fc.append(f"[{ti}:v]format=rgba,fade=in:st={t0:.2f}:d=0.30:alpha=1[tab]")
     fc.append(f"[{prev}][tab]overlay=x={dx}:y=0:format=auto[tb]")
     txt=[]
-    for i2,(l,c,ink) in enumerate(TIERS):
-        y=tableau.row_y(i2)
-        txt.append(f"drawtext=fontfile={SANS}:text='{l}':fontcolor=0x{ink}:fontsize=76:"
-                   f"borderw=5:bordercolor=black:x={tableau.BX+dx}+({tableau.LAB}-text_w)/2:"
+    for i2 in range(len(TIERS)):
+        l,fcol,bw,bc=tableau.lettre(i2); y=tableau.row_y(i2)
+        open(f'intro/_l{i2}.txt','w').write(l)
+        txt.append(f"drawtext=fontfile={SANS}:textfile=intro/_l{i2}.txt:expansion=none:"
+                   f"fontcolor={fcol}:fontsize=76:borderw={bw}:bordercolor={bc}:"
+                   f"x={tableau.BX+dx}+({tableau.LAB}-text_w)/2:"
                    f"y={y}+({tableau.RH}-text_h)/2-4:enable='gte(t,{t0+0.18:.2f})'")
     fc.append("[tb]"+",".join(txt)+"[v]")
     cmd=['ffmpeg','-y','-loglevel','error']+ins+['-filter_complex',";".join(fc),

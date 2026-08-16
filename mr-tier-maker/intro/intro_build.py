@@ -20,11 +20,13 @@ def plan4(src, n, out):
     import tableau
     tab=tableau.build()
     txt=[]
-    for i2,(l,c,ink) in enumerate(G.TIERS):
-        y=tableau.row_y(i2)
-        txt.append(f"drawtext=fontfile={MONO}:text='{l}':fontcolor=0x{ink}:fontsize=76:"
-                   f"borderw=5:bordercolor=black:x={tableau.BX}+({tableau.LAB}-text_w)/2:"
+    for i2 in range(len(G.TIERS)):
+        l,fcol,bw,bc=tableau.lettre(i2); y=tableau.row_y(i2)
+        txt.append(f"drawtext=fontfile={MONO}:textfile=intro/_l{i2}.txt:expansion=none:"
+                   f"fontcolor={fcol}:fontsize=76:borderw={bw}:bordercolor={bc}:"
+                   f"x={tableau.BX}+({tableau.LAB}-text_w)/2:"
                    f"y={y}+({tableau.RH}-text_h)/2-4")
+        open(f'intro/_l{i2}.txt','w').write(l)
     fc=(f"[1:v][2:v]overlay=x=0:y=0[bg0];"
         f"[bg0]{','.join(txt)}[bg];"
         f"[0:v]scale=1920:1080,format=rgba,colorkey={KEY}:0.030:0.012[av];"

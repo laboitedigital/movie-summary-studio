@@ -16,12 +16,12 @@ FPS=25
 os.makedirs('kit',exist_ok=True)
 _n=[0]
 
-def dt(text, size, color, x, y, borderw=5, enable=None):
+def dt(text, size, color, x, y, borderw=5, enable=None, bordercolor='black'):
     _n[0]+=1; p=f'kit/_t{_n[0]}.txt'
     open(p,'w',encoding='utf-8').write(text)
     s=(f"drawtext=fontfile={SANS}:textfile={p}:expansion=none:fontcolor={color}:"
        f"fontsize={size}:x={x}:y={y}")
-    if borderw: s+=f":borderw={borderw}:bordercolor=black"
+    if borderw: s+=f":borderw={borderw}:bordercolor={bordercolor}"
     if enable: s+=f":enable='{enable}'"
     return s
 
@@ -72,9 +72,12 @@ def pop(dur=0.34, w=None, h=None, fps=FPS, path=None, t0=0.0):
     open(path,'w').write("\n".join(lines)+"\n")
     return path
 
-def run(fc, inputs, out, d):
+def run(fc, inputs, out, d, grain=True):
+    # Grain tres leger : sur un fond bleu nuit, H.264 fait apparaitre des
+    # cercles concentriques (banding). Un peu de bruit temporel les dissout.
+    if grain: fc=fc+";[v]noise=alls=5:allf=t+u[vg]"
     cmd=['ffmpeg','-y','-loglevel','error']+inputs+['-filter_complex',fc,
-         '-map','[v]','-t',str(d),'-r',str(FPS),'-c:v','libx264','-preset','veryfast',
+         '-map','[vg]' if grain else '[v]','-t',str(d),'-r',str(FPS),'-c:v','libx264','-preset','veryfast',
          '-crf','18','-pix_fmt','yuv420p','-an',out]
     subprocess.run(cmd,check=True); print("ok ->",out)
 
@@ -196,9 +199,12 @@ def rappel(place,out,d=4.6):
             fc.append(f"[{k}:v]scale={pw}:{ph}[a{k}]")
             fc.append(f"[{prev}][a{k}]overlay=x={x}:y='if(lt(t,{t0}),1200,{y})':shortest=1[b{k}]")
             prev=f"b{k}"; k+=1; n+=1
-    txt=[dt(l,76,'0x'+ink,f"{tableau.BX}+({tableau.LAB}-text_w)/2",
-            f"{tableau.row_y(i)}+({tableau.RH}-text_h)/2-4")
-         for i,(l,c,ink) in enumerate(tableau.TIERS)]
+    txt=[]
+    for i in range(len(tableau.TIERS)):
+        l,fcol,bw,bc=tableau.lettre(i)
+        txt.append(dt(l,76,fcol,f"{tableau.BX}+({tableau.LAB}-text_w)/2",
+                      f"{tableau.row_y(i)}+({tableau.RH}-text_h)/2-4",
+                      borderw=bw,bordercolor=bc))
     fc.append(f"[{prev}]"+",".join(txt)+"[v]")
     run(";".join(fc),ins,out,d)
 

@@ -32,3 +32,33 @@ et jamais d'audio original laissé seul.
 
 `hexc()` n'utilise **pas** `lstrip('0x')` : sur `'071027'`, `lstrip` mange le
 zéro de tête et renvoyait un rouge sombre au lieu du bleu nuit.
+
+## Poussée de caméra sur la rangée du verdict
+
+Après la surbrillance, la caméra pousse dans la rangée classée (zoom 2,2 ×),
+tient 1,5 s, puis ressort.
+
+**Le zoom ne porte que sur le plateau, pas sur l'avatar.** Zoomer l'image
+entière l'agrandirait et le sortirait du cadre : on ne verrait plus qu'un bout
+de son épaule. Ici le tableau grandit derrière lui pendant qu'il reste posé à
+l'échelle 1. Le centre du zoom est calé pour que la pastille du tier reste à
+droite de lui — sans elle, on ne saurait plus de quelle rangée il s'agit.
+
+## Contour des lettres
+
+Les lettres foncées (A, B, C) avaient un contour **noir** de 5 px. Sur une
+lettre déjà noire, ça faisait une bouillie : le A et le B n'étaient plus
+lisibles.
+
+Règle appliquée, dans `tableau.lettre()` :
+
+- lettre claire (S, D, F) → contour **noir**
+- lettre foncée (A, B, C) → contour **blanc**
+
+Le contour détache la lettre du fond coloré au lieu de l'épaissir.
+
+## Grain
+
+Un bruit temporel très léger (`noise=alls=5`) est ajouté en fin de chaîne. La
+raison est technique, pas décorative : sur un aplat bleu nuit, H.264 fait
+apparaître des cercles concentriques (banding). Le grain les dissout.

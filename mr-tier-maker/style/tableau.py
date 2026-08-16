@@ -31,3 +31,16 @@ def highlight(target, path=None):
     c=cartoon.Canvas(1920,1080)
     c.ring(BX-10, y-10, (RX+RW+10)-(BX-10), RH+20, TIERS[target][1], r=28, thick=7)
     c.save(path); return path
+
+def lettre(i):
+    """Couleur et contour de la lettre d un tier.
+
+    Un contour noir sur une lettre deja noire (A, B, C) l empatait jusqu a la
+    rendre illisible. Les lettres claires gardent leur contour noir ; les
+    lettres foncees prennent un contour blanc, ce qui les detache du fond
+    colore sans les epaissir.
+    """
+    l,col,ink=TIERS[i]
+    if ink.upper()=='FFFFFF':
+        return l,'0xFFFFFF',5,'black'
+    return l,'0x0B0D10',4,'white'
