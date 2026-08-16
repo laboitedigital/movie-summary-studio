@@ -2,12 +2,10 @@
 # Plans 1 et 5 du cold open : fabriques en ffmpeg, pas en IA.
 # Plan 1 = neuf barres qui s allument (le compte doit etre exact).
 # Plan 5 = travelling sur les vraies affiches, puis le tableau.
-import subprocess, os, glob
+import subprocess, os, glob, tableau
 NAVY='0x071027'; FPS=25
-MONO='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf'
-TIERS=[("S",'0xE6354F','0xFFFFFF'),("A",'0xF47025','0x0B0D10'),
-       ("B",'0xF7B632','0x0B0D10'),("C",'0x72AB54','0x0B0D10'),
-       ("D",'0x3A5DAD','0xFFFFFF'),("F",'0x7242AA','0xFFFFFF')]
+SANS='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+TIERS=tableau.TIERS
 
 def plan1(out, d=3.72):
     N=9; bw=34; gap=104; H=460
@@ -51,16 +49,19 @@ def plan5(out, d=4.14):
         fc.append(f"[{prev}][p{i}]overlay=x='{xi}':y={(1080-ph)//2}:shortest=1[s{i}]")
         prev=f"s{i}"
     # le tableau vide monte en fondu sur la derniere seconde
-    lab_w=104; rw=800; gap2=9; rh=112; bx=(1920-(104+800))//2
-    ry=(1080-(6*rh+5*gap2))//2
-    board=[]
-    for i,(l,c,ink) in enumerate(TIERS):
-        y=ry+i*(rh+gap2)
-        board.append(f"drawbox=x={bx}:y={y}:w={lab_w}:h={rh}:color={c}@0.92:t=fill:enable='gte(t,{d-1.15:.2f})'")
-        board.append(f"drawbox=x={bx+lab_w}:y={y}:w={rw}:h={rh}:color=0x101A2E@0.80:t=fill:enable='gte(t,{d-1.15:.2f})'")
-        board.append(f"drawtext=fontfile={MONO}:text='{l}':fontcolor={ink}:fontsize=72:"
-                     f"x={bx}+({lab_w}-text_w)/2:y={y}+({rh}-text_h)/2-5:enable='gte(t,{d-1.15:.2f})'")
-    fc.append(f"[{prev}]"+",".join(board)+"[v]")
+    tab=tableau.build(); t0=d-1.15
+    ins += ['-loop','1','-i',tab]
+    ti=len(aff)
+    dx=(1920-(tableau.RX+tableau.RW-tableau.BX))//2-tableau.BX   # on le recentre
+    fc.append(f"[{ti}:v]format=rgba,fade=in:st={t0:.2f}:d=0.30:alpha=1[tab]")
+    fc.append(f"[{prev}][tab]overlay=x={dx}:y=0:format=auto[tb]")
+    txt=[]
+    for i2,(l,c,ink) in enumerate(TIERS):
+        y=tableau.row_y(i2)
+        txt.append(f"drawtext=fontfile={SANS}:text='{l}':fontcolor=0x{ink}:fontsize=76:"
+                   f"borderw=5:bordercolor=black:x={tableau.BX+dx}+({tableau.LAB}-text_w)/2:"
+                   f"y={y}+({tableau.RH}-text_h)/2-4:enable='gte(t,{t0+0.18:.2f})'")
+    fc.append("[tb]"+",".join(txt)+"[v]")
     cmd=['ffmpeg','-y','-loglevel','error']+ins+['-filter_complex',";".join(fc),
         '-map','[v]','-t',str(d),'-r',str(FPS),
         '-c:v','libx264','-preset','veryfast','-crf','18','-pix_fmt','yuv420p',out]
