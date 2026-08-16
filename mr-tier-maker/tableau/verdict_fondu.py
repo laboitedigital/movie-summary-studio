@@ -8,10 +8,10 @@ NAVY='0x071027'; DIM='0x8794A8'; INK='0x0B0D10'
 TIERS=[("S",'0xE6354F','0xFFFFFF'),("A",'0xF47025','0x0B0D10'),("B",'0xF7B632','0x0B0D10'),("C",'0x72AB54','0x0B0D10'),("D",'0x3A5DAD','0xFFFFFF'),("F",'0x7242AA','0xFFFFFF')]   # couleurs echantillonnees sur les bandes du logo
 
 def build(masc, poster, target, d, out):
-    MW=980          # largeur de la zone mascotte avant fondu
-    FADE=260        # longueur du degrade
+    MW=900          # largeur de la mascotte : on coupe avant les bandes du logo
+    FADE=220        # longueur du degrade
     lab_w=104; rw=760; gap=9; rh=112
-    bx=900                       # debut du tableau : il mord sur le fondu
+    bx=860                       # debut du tableau : la mascotte le recouvre en partie
     rx=bx+lab_w
     ry=(1080-(len(TIERS)*rh+(len(TIERS)-1)*gap))//2
     yT=ry+target*(rh+gap)
@@ -26,15 +26,17 @@ def build(masc, poster, target, d, out):
         f.append(f"drawbox=x={rx}:y={y}:w={rw}:h={rh}:color=0x101A2E@0.82:t=fill:enable='gte(t,0.4)'")
     board=",".join(f)
     fc=(
-      # mascotte recadree, puis alpha qui descend a zero sur les 260 derniers pixels
-      f"[1:v]scale=1920:1080,crop={MW}:1080:400:0,format=rgba,"
-      f"geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,max(0,({MW}-X)/{FADE}))'[m];"
-      f"[0:v][m]overlay=x=0:y=0:format=auto[bg1];"
-      f"[bg1]{board}[bg];"
+      # 1. le tableau se dessine sur le fond bleu nuit
+      f"[0:v]{board}[bg];"
+      # 2. l affiche glisse dans sa rangee
       f"[2:v]scale={pw}:{ph}[pv];"
       f"[bg][pv]overlay=x='{xe}':y={yT+7}:enable='gte(t,2.4)'[o];"
       f"[o]drawbox=x={rx}:y={yT}:w={rw}:h={rh}:color={col}@0.24:t=fill:enable='between(t,3.05,3.5)',"
-      f"drawbox=x={bx}:y={yT}:w={rw+lab_w}:h={rh}:color={col}:t=3:enable='gte(t,3.05)'[v]"
+      f"drawbox=x={bx}:y={yT}:w={rw+lab_w}:h={rh}:color={col}:t=3:enable='gte(t,3.05)'[plateau];"
+      # 3. la mascotte passe PAR-DESSUS, son bord droit s efface en degrade
+      f"[1:v]scale=1920:1080,crop={MW}:1080:400:0,format=rgba,"
+      f"geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,max(0,({MW}-X)/{FADE}))'[m];"
+      f"[plateau][m]overlay=x=0:y=0:format=auto[v]"
     )
     subprocess.run(['ffmpeg','-y','-loglevel','error',
         '-f','lavfi','-i',f'color=c={NAVY}:s=1920x1080:r=25:d={d}',
