@@ -97,7 +97,39 @@ def cut(src, nfr, out, extra=''):
         os.replace(tmp,out)
     return out
 
-def poster(slug): return os.path.join(KIT,'public','posters',slug+'.jpg')
+def poster(slug):
+    return os.path.join(KIT,'public','posters',slug+'.jpg')
+
+def assure_affiche(slug, titre, annee):
+    """Fabrique une affiche de remplacement si la vraie manque.
+
+    Sans ca une seule affiche absente fait tomber TOUT le tableau : le
+    BoardRecap charge les neuf, et Remotion annule le rendu des qu une image
+    rend 404. L affiche de Rise of the Beasts manquait, et avec elle les douze
+    rappels de tableau de la fin plus les deux derniers cartons verdict.
+
+    Le remplacement est volontairement moche : fond de chaine, titre, et
+    AFFICHE A FOURNIR en toutes lettres. On doit le voir au montage.
+    """
+    f=poster(slug)
+    if os.path.exists(f): return f
+    manquants.append((0, 'affiche %s.jpg absente, carton de remplacement'%slug))
+    os.makedirs(os.path.dirname(f), exist_ok=True)
+    # drawtext casse sur l apostrophe et les deux-points meme entre quotes,
+    # et un % sort une image vide : on passe par textfile
+    t1=f+'.t1.txt'; t2=f+'.t2.txt'
+    open(t1,'w',encoding='utf-8').write(titre.replace(':',' ')+"\n"+str(annee))
+    open(t2,'w',encoding='utf-8').write("AFFICHE A FOURNIR")
+    FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+    sh('ffmpeg','-y','-loglevel','error','-f','lavfi','-i','color=c=0x0D1730:s=600x900',
+       '-vf',(f"drawbox=x=14:y=14:w=572:h=872:color=0x2A3757:t=6,"
+              f"drawtext=fontfile={FONT}:textfile={t1}:expansion=none:fontcolor=white:"
+              f"fontsize=44:line_spacing=18:x=(w-text_w)/2:y=(h-text_h)/2-40,"
+              f"drawtext=fontfile={FONT}:textfile={t2}:expansion=none:fontcolor=0xF7B632:"
+              f"fontsize=26:x=(w-text_w)/2:y=h-120"),
+       '-frames:v','1',f)
+    os.remove(t1); os.remove(t2)
+    return f
 
 def rows_avant(n):
     """L etat du tableau juste avant le plan n : les films deja juges."""
@@ -286,6 +318,8 @@ def plan(n):
         return trou(n, frames(n), out, '%s : echec du rendu'%fam)
 
 if __name__=='__main__':
+    for tier,titre,annee,slug,pv in FILMS:
+        assure_affiche(slug, titre, annee)
     debut=int(sys.argv[1]) if len(sys.argv)>1 else 1
     fin  =int(sys.argv[2]) if len(sys.argv)>2 else max(S)
     parts=[]
