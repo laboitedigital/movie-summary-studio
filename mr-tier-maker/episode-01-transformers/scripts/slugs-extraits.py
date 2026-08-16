@@ -125,8 +125,12 @@ SEG6 = """107 after-i-kill-you-i-kill-her
 
 # rattrapages, runs 31951727721 et 31952025055 — deja en NOUVELLE numerotation
 RATTRAPAGES = """085 there-one-way-survive-s1
-111 lets-do-this-s17
-034 are-samuel-james-witwicky-descendent-of-archibald-witwicky"""
+111 lets-do-this-s17"""
+# Le plan 034 n est plus un extrait. Huit formulations en 2 campagnes ont rendu
+# deux clips (are-samuel-james-witwicky-descendent-of-archibald-witwicky, puis
+# four-its-coming-off-the-hinges-pal-hes-counting) : aucun ne montre une
+# transformation. Les 11 clips du segment 2007 sont tous des repliques — le
+# catalogue est indexe sur les dialogues. Le plan passe en MOTION.
 
 def lire(t):
     d={}

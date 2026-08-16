@@ -15,7 +15,10 @@
 #   31948946566/    8 extraits, segment 5               (ancienne numerotation)
 #   31949254257/   11 extraits, segment 6               (ancienne numerotation)
 #   31951727721/    2 extraits, plans 085 et 111        (NOUVELLE)
-#   RATTRAPAGE34/   1 extrait,  plan 034                (NOUVELLE)
+#
+# Ne PAS reprendre les artefacts des runs 31951890382 et 31952257833 : c etaient
+# les tentatives sur le plan 034, qui n est plus un extrait. Leur 034.mp4 serait
+# signale en trop a la verification.
 #
 # Les artefacts expirent le 2026-08-23.
 set -e
@@ -35,9 +38,11 @@ echo "$(ls "$DEST"/*.mp4 | wc -l) extraits en ancienne numerotation"
 (cd "$DEST" && sh "$ICI/renommer-extraits.sh")
 
 # 3. les rattrapages, deja au bon numero
-for r in 31951727721 RATTRAPAGE34; do
+for r in 31951727721; do
   [ -d "$SRC/$r" ] && cp "$SRC/$r"/*.mp4 "$DEST/"
 done
+# le 034 telecharge ne sert plus : le plan est passe en motion
+rm -f "$DEST/034.mp4"
 
 # 4. verification contre le plan : chaque plan CLIP doit avoir son fichier
 python3 - "$DEST" "$ICI/../plan-episode-01.json" <<'PY'

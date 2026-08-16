@@ -434,12 +434,12 @@
   "a": 180.94,
   "b": 188.78,
   "dur": 7.840000000000003,
-  "type": "CLIP",
-  "famille": "extrait",
-  "element": "— extrait a telecharger",
-  "requete": "the car transforms into a robot",
+  "type": "MOTION",
+  "famille": "motion",
+  "element": "— a preciser",
+  "requete": "",
   "texte": "Les transformations ne sont pas de la magie, ce sont des mécanismes. On voit les plaques glisser, les pièces pivoter, les vis tourner.",
-  "note": "Ralenti 50% sur les pieces qui bougent. Zoom progressif. A REVOIR : le seul clip disponible (are-samuel-james-witwicky...) est une scene de dialogue, pas une transformation. Le catalogue est indexe sur les repliques, un plan purement visuel n y existe pas toujours. Solution : reprendre un bout du 033, ou faire ce plan en motion."
+  "note": "Ralenti 50% sur les pieces qui bougent. Zoom progressif. CE PLAN N EST PAS UN EXTRAIT. Apres huit formulations en 2 campagnes : Clip.cafe n a aucun plan de transformation pour ce film. Les 11 clips du segment 2007 sont tous des repliques — le catalogue est indexe sur les dialogues, un plan muet n y entre pas. A faire en motion : les mots PLAQUES / PIVOTS / VIS qui s emboitent, ou un bout du plan 033 rejoue au ralenti."
  },
  {
   "n": 35,

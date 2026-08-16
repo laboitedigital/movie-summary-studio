@@ -54,7 +54,7 @@ Affiche ❌ affiche manquante · réaction A ❌ · 17 plans
 | 031 | 02:42.40 | 02:47.96 | 5.6 s | photo | `— image a fournir` | Michael Bay prend une franchise de jouets et en fait un des … |
 | 032 | 02:47.96 | 02:55.96 | 8.0 s | extrait | `— extrait a telecharger` | Et le plus fou, c'est que ça tient encore la route presque 2… |
 | 033 | 02:55.96 | 03:00.94 | 5.0 s | extrait | `— extrait a telecharger` | Ce film est encore plus lisible que la majorité des films à … |
-| 034 | 03:00.94 | 03:08.78 | 7.8 s | extrait | `— extrait a telecharger` | Les transformations ne sont pas de la magie, ce sont des méc… |
+| 034 | 03:00.94 | 03:08.78 | 7.8 s | motion | `— a preciser` | Les transformations ne sont pas de la magie, ce sont des méc… |
 | 035 | 03:08.78 | 03:15.12 | 6.3 s | chiffre cle | `kit.chiffre(valeur, label)` | Ça donne du poids à ces personnages. On croit qu'ils pèsent … |
 | 036 | 03:15.12 | 03:20.80 | 5.7 s | extrait | `— extrait a telecharger` | Le film a aussi compris quelque chose que les suites vont ou… |
 | 037 | 03:20.80 | 03:28.62 | 7.8 s | extrait | `— extrait a telecharger` | Blackout qui attaque la base au début, c 'est presque un fil… |
@@ -246,16 +246,17 @@ Affiche ❌ affiche manquante · réaction A ❌ · 25 plans
 
 ## Ce qu'il manque pour monter
 
-**96 extraits à télécharger** sur Clip.cafe (14 sont déjà sur le
+**95 extraits à télécharger** sur Clip.cafe (14 sont déjà sur le
 disque, tous sur le film de 1986). Les requêtes sont dans `plan-episode-01.json`,
 champ `requete` — le job GitHub `complet` peut les tirer d'un coup.
 
 **9 images à fournir** (photos d'archive, jouets, plateaux de
 tournage). Je ne les génère pas : ce sont des personnes et des objets réels.
 
-**9 éléments de motion à préciser ou à construire :**
+**10 éléments de motion à préciser ou à construire :**
 
 - `013` à 01:04.19 — *motion* — Trombinoscope de robots avec des noms qui apparaissent trop vite pour etre lus. Gag visuel.
+- `034` à 03:00.94 — *motion* — Ralenti 50% sur les pieces qui bougent. Zoom progressif. CE PLAN N EST PAS UN EXTRAIT. Apres huit formulations en 2 campagnes : Clip.cafe n a aucun plan de transformation pour ce film. Les 11 clips du segment 2007 sont tous des repliques — le catalogue est indexe sur les dialogues, un plan muet n y entre pas. A faire en motion : les mots PLAQUES / PIVOTS / VIS qui s emboitent, ou un bout du plan 033 rejoue au ralenti.
 - `048` à 04:23.32 — *motion* — Six lignes de titres qui s'empilent a l'ecran, illisibles a la fin. Illustre le chaos.
 - `054` à 05:02.68 — *motion* — Les six lignes du plan 046 tombent hors cadre une par une.
 - `061` à 05:44.22 — *motion* — Chiffre 2 qui apparait, meme animation que le 1.

@@ -99,12 +99,15 @@ faite **à la frame**. C'est ce qui empêche une vidéo de 15 minutes de dérive
 Extraits Clip.cafe : **7 secondes maximum**. Requêtes de recherche **en
 anglais**.
 
-**Une requête Clip.cafe se rédige comme une réplique, pas comme une note de
-mise en scène.** `transformation plates pivot 2007` n'a rien donné d'utile —
-le catalogue est indexé sur les dialogues. `the car transforms into a robot`
-a répondu du premier coup. Et il faut tenir la liste des slugs déjà pris
-(`voix/slugs-extraits.json`) : un rattrapage partiel qui l'ignore rechoisit le
-clip du plan voisin.
+**Clip.cafe est indexé sur les dialogues.** Une requête se rédige donc comme
+une réplique, jamais comme une note de mise en scène. Et un plan **muet** —
+une transformation, un mouvement, un détail — peut n'exister nulle part dans
+le catalogue : les 11 clips du segment Transformers 2007 sont tous des
+répliques. Huit formulations n'ont pas trouvé un seul plan de transformation.
+Quand ça arrive, le plan se fait en motion, il ne se force pas.
+
+Tenir la liste des slugs déjà pris (`voix/slugs-extraits.json`) : un rattrapage
+partiel qui l'ignore rechoisit le clip du plan voisin.
 
 **La recherche sémantique de Clip.cafe converge.** Sur un catalogue étroit,
 elle renvoie les mêmes 4-5 extraits quelle que soit la requête : trois plans
