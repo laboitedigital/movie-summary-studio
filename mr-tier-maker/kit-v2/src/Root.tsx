@@ -14,6 +14,7 @@ import {BigStat, bigStatSchema} from './BigStat';
 import {Versus, versusSchema} from './Versus';
 import {BoardRecap, boardRecapSchema} from './BoardRecap';
 import {Placeholder, placeholderSchema} from './Placeholder';
+import {VerdictTableau, verdictTableauSchema} from './VerdictTableau';
 import {Trombinoscope, trombinoscopeSchema} from './Trombinoscope';
 import {Mecanismes, mecanismesSchema} from './Mecanismes';
 import {LignesEmpilees, lignesSchema} from './LignesEmpilees';
@@ -68,6 +69,10 @@ export const RemotionRoot: React.FC = () => (
         leftColor: 'D' as const, rightColor: 'S' as const}} />
     <Composition id="BoardRecap" component={BoardRecap} durationInFrames={300} fps={FPS} width={W} height={H}
       schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, focus: 'D' as const, zoom: 2.4, offsetX: 0}} />
+    <Composition id="VerdictTableau" component={VerdictTableau} durationInFrames={260} fps={FPS} width={W} height={H}
+      schema={verdictTableauSchema} defaultProps={{
+        rows: DEMO_ROWS.map((r) => r.tier === 'B' ? {...r, posters: [P('2024-transformers-one.jpg')]} : r),
+        poster: P('1986-the-transformers-the-movie.jpg'), tier: 'B' as const, slotIndex: 1, offsetX: 0}} />
     <Composition id="Trombinoscope" component={Trombinoscope} durationInFrames={350} fps={FPS} width={W} height={H}
       schema={trombinoscopeSchema} defaultProps={{
         names: ['Hot Rod', 'Kup', 'Blurr', 'Arcee', 'Ultra Magnus', 'Springer', 'Wheelie', 'Perceptor',
