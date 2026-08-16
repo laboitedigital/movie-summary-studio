@@ -51,8 +51,11 @@ const FILMS = [
   { titre: "Transformers",  annee: "2014" },
   { titre: "Transformers",  annee: "2017" },
   { titre: "Bumblebee",     annee: "2018" },
-  { titre: "Transformers One", annee: "2024" },
+  // segment 7 = Rise of the Beasts, segment 8 = Transformers One. Les deux
+  // etaient inverses ici comme dans plan.py : les 19 extraits de ces deux
+  // segments ont ete cherches dans le mauvais film.
   { titre: "Transformers Rise of the Beasts", annee: "2023" },
+  { titre: "Transformers One", annee: "2024" },
 ];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
