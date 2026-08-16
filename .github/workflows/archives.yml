@@ -1,0 +1,76 @@
+name: Images d'archive (Wikimedia Commons)
+
+on:
+  workflow_dispatch:
+    inputs:
+      requete:
+        description: "Recherche Commons (ex : Orson Welles 1985)"
+        required: true
+        default: "Orson Welles"
+      limite:
+        description: "Nombre de resultats"
+        required: false
+        default: "8"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Chercher et telecharger avec la licence
+        env:
+          Q: ${{ inputs.requete }}
+          N: ${{ inputs.limite }}
+        run: |
+          set -euo pipefail
+          mkdir -p archives
+          API=https://commons.wikimedia.org/w/api.php
+          UA="MRTierMaker/1.0 (github actions; contact via repo)"
+
+          # 1. recherche restreinte aux fichiers image
+          curl -sS -A "$UA" -G "$API" \
+            --data-urlencode "action=query" \
+            --data-urlencode "format=json" \
+            --data-urlencode "generator=search" \
+            --data-urlencode "gsrnamespace=6" \
+            --data-urlencode "gsrsearch=$Q filetype:bitmap" \
+            --data-urlencode "gsrlimit=$N" \
+            --data-urlencode "prop=imageinfo" \
+            --data-urlencode "iiprop=url|extmetadata|size" \
+            --data-urlencode "iiurlwidth=1920" > archives/_raw.json
+
+          # 2. on ne garde QUE ce dont la licence est explicite et reutilisable
+          jq -r '
+            (.query.pages // {}) | to_entries[] | .value as $p
+            | ($p.imageinfo[0] // empty) as $i
+            | ($i.extmetadata // {}) as $m
+            | ($m.LicenseShortName.value // "") as $lic
+            | select($lic | test("Public domain|CC0|CC BY|CC-BY|PD-"; "i"))
+            | [$p.title, $lic, ($m.Artist.value // "" | gsub("<[^>]*>";"")),
+               ($m.LicenseUrl.value // ""), $i.thumburl, $i.descriptionurl]
+            | @tsv
+          ' archives/_raw.json > archives/_ok.tsv || true
+
+          echo "| fichier | licence | auteur | source |" > archives/LICENCES.md
+          echo "|---|---|---|---|" >> archives/LICENCES.md
+
+          i=0
+          while IFS=$'\t' read -r titre lic auteur licurl url page; do
+            [ -z "${url:-}" ] && continue
+            i=$((i+1))
+            nom=$(printf '%02d' "$i")-$(echo "$titre" | sed 's/^File://; s/[^A-Za-z0-9._-]/-/g' | cut -c1-60)
+            curl -sS -A "$UA" -o "archives/$nom" "$url"
+            echo "| \`$nom\` | $lic | ${auteur:-?} | $page |" >> archives/LICENCES.md
+            echo "OK  $nom  [$lic]"
+          done < archives/_ok.tsv
+
+          rm -f archives/_raw.json archives/_ok.tsv
+          echo "--- $i image(s) retenue(s) ---"
+          cat archives/LICENCES.md
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archives
+          path: archives/
+          retention-days: 7
