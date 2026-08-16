@@ -76,6 +76,11 @@ const shots = plan.filter((r) => r.type === "CLIP" && r.requete
 fs.mkdirSync(OUT, { recursive: true });
 console.log(`${shots.length} extrait(s) a chercher\n`);
 
+// La recherche semantique de Clip.cafe converge : sur un catalogue etroit, elle
+// renvoie les memes 4-5 extraits quelle que soit la requete. Sans garde-fou,
+// trois plans differents recoivent le meme clip. On tient donc la liste de ce
+// qui est deja pris et on descend dans les resultats jusqu a un slug neuf.
+const pris = new Set();
 const rapport = [];
 for (const s of shots) {
   const film = FILMS[s.seg] || null;
@@ -86,11 +91,15 @@ for (const s of shots) {
   let hits = [];
   // "captions" cherche sur ce qu'on voit, "transcript" sur les repliques.
   // On tente le visuel d'abord : la plupart des notes decrivent une action.
+  // On cumule les deux au lieu de s'arreter au premier qui repond : plus le
+  // vivier est large, moins on tombe sur un doublon.
   for (const champ of ["captions", "transcript"]) {
-    try { hits = await api(params(film, s.requete, champ)); } catch (e) {
-      console.log(`! ${tag} ${e.message}`); }
+    try {
+      const r = await api(params(film, s.requete, champ));
+      for (const x of r) if (!hits.some((y) => y.slug === x.slug)) hits.push(x);
+    } catch (e) { console.log(`! ${tag} ${e.message}`); }
     await sleep(RATE_MS);
-    if (hits.length) break;
+    if (hits.filter((x) => !pris.has(x.slug)).length >= 3) break;
   }
   // dernier recours : sans contrainte de film
   if (!hits.length) {
@@ -103,7 +112,15 @@ for (const s of shots) {
     continue;
   }
 
-  const h = hits[0];
+  const h = hits.find((x) => !pris.has(x.slug));
+  if (!h) {
+    console.log(`x ${tag} tous les resultats sont deja utilises  "${s.requete}"`);
+    rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, etat: "doublon inevitable",
+                   proposes: hits.map((x) => x.slug) });
+    continue;
+  }
+  const rang = hits.indexOf(h);
+  pris.add(h.slug);
   const url = h.download?.startsWith("http")
     ? h.download
     : `${API}?api_key=${encodeURIComponent(KEY)}&slug=${encodeURIComponent(h.slug)}&key=${encodeURIComponent(h.download)}`;
@@ -115,8 +132,9 @@ for (const s of shots) {
     await ffmpeg(["-y", "-loglevel", "error", "-i", `${OUT}/_${tag}.mp4`,
       "-t", String(CAP), "-c", "copy", dest]);
     fs.unlinkSync(`${OUT}/_${tag}.mp4`);
-    console.log(`+ ${tag} ${h.slug}`);
-    rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, slug: h.slug, etat: "ok" });
+    console.log(`+ ${tag} ${h.slug}${rang ? `   (${rang + 1}e resultat, les precedents etaient pris)` : ""}`);
+    rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, slug: h.slug,
+                   rang: rang + 1, etat: "ok" });
   } catch (e) {
     console.log(`! ${tag} telechargement : ${e.message}`);
     rapport.push({ plan: s.n, seg: s.seg, requete: s.requete, etat: "echec telechargement" });
@@ -125,5 +143,7 @@ for (const s of shots) {
 }
 
 fs.writeFileSync(`${OUT}/rapport.json`, JSON.stringify(rapport, null, 1));
-const ok = rapport.filter((r) => r.etat === "ok").length;
-console.log(`\n${ok}/${shots.length} extraits recuperes`);
+const ok = rapport.filter((r) => r.etat === "ok");
+const distincts = new Set(ok.map((r) => r.slug)).size;
+console.log(`\n${ok.length}/${shots.length} extraits recuperes, ${distincts} distincts`);
+if (distincts < ok.length) console.log("ATTENTION : des doublons subsistent, voir rapport.json");
