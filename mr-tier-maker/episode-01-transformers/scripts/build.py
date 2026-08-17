@@ -387,8 +387,11 @@ RECETTE_FLECHES = {
   # pas encore la. La queue part vers la droite, sur la foret : fond clair et
   # calme, la fleche blanche s y detache.
   114: [{"x":0.635,"y":0.52,"depuis":"droite","couleur":"blanc","debut":160}],
-  # Bumblebee de profil a gauche, face au Terrorcon ; l oeil bleu est le point vise
-  133: [{"x":0.235,"y":0.40,"depuis":"haut","couleur":"blanc","debut":13}],
+  # Bumblebee de profil a gauche, face au Terrorcon ; l oeil bleu est le point vise.
+  # Releve a la frame 13, mais la camera derive : a la frame 60, la ou la fleche
+  # est pleinement installee, la pointe tombait sur l epaule. Le releve doit se
+  # faire au moment ou la fleche est VUE, pas au moment ou elle entre.
+  133: [{"x":0.21,"y":0.36,"depuis":"haut","couleur":"blanc","debut":13}],
 }
 
 def pose_fleche(out, nfr, specs):
