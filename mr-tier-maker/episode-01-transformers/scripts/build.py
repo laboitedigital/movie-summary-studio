@@ -364,6 +364,46 @@ RECETTE_MOTION = {
       "Scourge"]}),
 }
 
+# -------------------------------------------------------------------- les memes
+#
+# La mascotte entre par le bord, reagit, et ressort. C est la ponctuation de la
+# chaine : elle ne remplace aucun plan, elle se pose PAR-DESSUS celui qui joue.
+#
+# Une reaction se cale sur le mot qui pique, pas sur le debut du plan — et elle
+# doit tenir entiere avant la coupe, sinon elle sort du cadre en meme temps que
+# l image change et ca ressemble a un bug.
+#
+# Pas de texte : la voix dit deja la phrase. Le champ « texte » existe pour les
+# cas ou un mot AJOUTE quelque chose que la narration ne prononce pas.
+MEME_FRAMES = 150
+
+RECETTE_MEMES = {
+  56 : ('cache-yeux', 139),   # les blagues de Revenge of the Fallen
+  77 : ('blase',      211),   # « le film dure 2h35 et on le sent »
+  87 : ('facepalm',   222),   # la mort de Ratchet
+  99 : ('hallucine',  291),   # « la famille de Sam etait une lignee magique »
+  148: ('satisfait',   69),   # « le meilleur film de la franchise apres Bumblebee »
+}
+
+def pose_meme(out, nfr, pose, debut):
+    """La reaction de la mascotte, par-dessus le plan deja monte."""
+    mov=remo('Meme', f'{OUT}/el/meme-{pose}.mov',
+             {"pose":pose,"cote":"droite","taille":0.62,"texte":"","couleur":"B"},
+             alpha=True)
+    d=int(debut)/FPS
+    fin=d+MEME_FRAMES/FPS
+    tmp=out+'.meme.mp4'
+    # setpts pour decaler, enable pour que la premiere frame ne reste pas collee
+    # avant l entree, repeatlast=0 pour qu elle disparaisse apres sa sortie
+    sh('ffmpeg','-y','-loglevel','error','-i',out,'-i',os.path.abspath(mov),
+       '-filter_complex',
+       f'[1:v]fps={FPS},setpts=PTS+{d:.4f}/TB[m];'
+       f"[0:v][m]overlay=0:0:format=auto:enable='between(t,{d:.4f},{fin:.4f})'"
+       f':repeatlast=0[v]',
+       '-map','[v]','-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264',
+       '-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',tmp)
+    os.replace(tmp,out); return out
+
 # ------------------------------------------------------------------ les fleches
 #
 # Quand la narration nomme un personnage, une fleche cartoon vient le designer
@@ -702,6 +742,9 @@ def plan(n):
         print('  plan %03d (%s) a echoue, carton de remplacement'%(n,fam))
         trou(n, nfr, out, '%s : echec du rendu'%fam)
     if ouvre_un_segment(n): pose_wipe(out, nfr)
+    # la reaction passe en dernier : elle doit etre AU-DESSUS de tout le reste,
+    # cadre, bandeau et wipe compris
+    if n in RECETTE_MEMES: pose_meme(out, nfr, *RECETTE_MEMES[n])
     return out
 
 if __name__=='__main__':

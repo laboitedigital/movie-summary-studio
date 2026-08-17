@@ -17,6 +17,7 @@ import {Placeholder, placeholderSchema} from './Placeholder';
 import {VerdictTableau, verdictTableauSchema} from './VerdictTableau';
 import {CadreClip, cadreClipSchema} from './CadreClip';
 import {Fleche, flecheSchema} from './Fleche';
+import {Meme, memeSchema} from './Meme';
 import {Commentaires, commentairesSchema} from './Commentaires';
 import {Trombinoscope, trombinoscopeSchema} from './Trombinoscope';
 import {Mecanismes, mecanismesSchema} from './Mecanismes';
@@ -83,6 +84,12 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Fleche" component={Fleche} durationInFrames={150} fps={FPS} width={W} height={H}
       schema={flecheSchema} defaultProps={{
         x: 0.42, y: 0.46, depuis: 'droite' as const, couleur: 'blanc' as const}} />
+    {/* 150 frames = 2,5 s : le temps d entrer, de tenir, et de ressortir. Au-dela
+        la reaction cesse d etre une ponctuation et devient un plan. */}
+    <Composition id="Meme" component={Meme} durationInFrames={150} fps={FPS} width={W} height={H}
+      schema={memeSchema} defaultProps={{
+        pose: 'facepalm' as const, cote: 'droite' as const, taille: 0.62,
+        texte: '', couleur: 'B' as const}} />
     <Composition id="CadreClip" component={CadreClip} durationInFrames={60} fps={FPS} width={W} height={H}
       schema={cadreClipSchema} defaultProps={{marge: 46, trait: 14, rayon: 30}} />
     <Composition id="Commentaires" component={Commentaires} durationInFrames={320} fps={FPS} width={W} height={H}
