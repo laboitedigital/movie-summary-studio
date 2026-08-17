@@ -75,6 +75,39 @@ def remo(comp, out, props=None, alpha=False):
     sh(*cmd, cwd=KIT, stdout=subprocess.DEVNULL)
     return out
 
+def remo_still(comp, out, props=None):
+    """Rend UNE image d une composition. Le cadre ne bouge pas : le rendre en
+    video serait 95 fois le meme calcul."""
+    if os.path.exists(out): return out
+    cmd=['npx','--no-install','remotion','still','src/index.ts',comp,
+         os.path.abspath(out),'--image-format=png']
+    if props: cmd+=['--props='+json.dumps(props,ensure_ascii=False)]
+    sh(*cmd, cwd=KIT, stdout=subprocess.DEVNULL)
+    return out
+
+# Le cadre cartoon pose sur tous les extraits. MARGE + TRAIT donnent la fenetre
+# ou l image passe : elle doit correspondre exactement au trou du PNG, sinon on
+# voit le fond de chaine deborder sous le trait.
+CADRE_MARGE, CADRE_TRAIT = 46, 14
+CADRE_W = W - 2*(CADRE_MARGE + CADRE_TRAIT)
+CADRE_H = H - 2*(CADRE_MARGE + CADRE_TRAIT)
+
+def pose_cadre(src, nfr, out):
+    """L extrait dans sa fenetre, le cadre par-dessus."""
+    png=remo_still('CadreClip', f'{OUT}/el/cadre.png',
+                   {"marge":CADRE_MARGE,"trait":CADRE_TRAIT,"rayon":30})
+    d=CADRE_MARGE+CADRE_TRAIT
+    sh('ffmpeg','-y','-loglevel','error','-i',src,'-i',os.path.abspath(png),
+       '-filter_complex',
+       f'[0:v]scale={CADRE_W}:{CADRE_H}:force_original_aspect_ratio=increase,'
+       f'crop={CADRE_W}:{CADRE_H},pad={W}:{H}:{d}:{d}:{NAVY},setsar=1,fps={FPS}[c];'
+       f'[c][1:v]overlay=0:0:format=auto',
+       '-frames:v',str(nfr),'-fps_mode','cfr','-r',str(FPS),'-c:v','libx264',
+       '-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',out)
+    got=nb_frames(out)
+    if got<nfr: combler(out, got, nfr)
+    return out
+
 def frames(n):
     """Duree du plan n, en frames a 60 ips, calee sur le debut du suivant."""
     a=S[n]['a']; b=S[n+1]['a'] if (n+1) in S else S[n]['b']
@@ -208,6 +241,41 @@ def film_de(n):
     seg=PLAN[n]['seg']
     return FILMS[seg] if 0 <= seg < len(FILMS) else None
 
+# ------------------------------------------- les colonnes pour / contre
+# Ecrites, pas extraites. Tirer des capitales de la note donnait « ENERGIQUE »
+# contre « IMPORTANT » sur le plan 028 : deux qualites presentees comme un
+# desaccord. Chaque entree suit la phrase dite a ce moment-la.
+# Les cartons de l intro, qui n appartiennent a aucun film
+# Quand la phrase ne nomme pas la rangee mais la continue
+RAPPEL_FOCUS = {151: 'S'}
+# La mascotte revient a la toute fin, sur le remerciement
+AVEC_AVATAR = {159: 'S'}
+# Le plan 158 relance vers les commentaires : un enieme tableau juste apres la
+# lecture des six rangees faisait doublon. C'est ce que Popol a releve.
+RAPPEL_REMPLACE = {158: {"text": "Qui va defendre Age of Extinction ?",
+                         "source": "Je sais que vous existez", "accent": "D"}}
+
+CARTONS_INTRO = {
+ 8: {"text": "On commence. On part de la source.", "accent": "B"},
+}
+
+RECETTE_POURCONTRE = {
+ 28: (["Court et energique", "Historiquement important"],
+      ["Demande des devoirs avant de l'apprecier"]),
+ 41: ([],
+      ["Sous-intrigue gouvernementale inutile",
+       "Des soldats qu'on ne nomme jamais",
+       "Des blagues qui ont mal vieilli"]),
+ 57: (["Le 1 contre 3 dans la foret", "Bete, mais bete en bougeant"], []),
+ 83: (["Les humains qui chassent les Transformers",
+       "Une entreprise qui demonte des Autobots"],
+      ["Le film ne developpe ni l'une ni l'autre"]),
+ 89: (["Une esthetique plus poussiereuse", "Optimus a un vrai arc",
+       "Optimus chevauche un Dinobot"], []),
+ 144:(["Le basculement est progressif", "Motive, et douloureux a regarder"], []),
+ 145:([], ["Les dialogues surexpliquent l'amitie"]),
+}
+
 # ------------------------------------------------- les plans motion, ecrits
 # Ces dix plans n ont ni extrait ni photo : leur contenu est une figure. Il ne
 # se devine pas depuis la note, il s ecrit. Chaque entree donne la composition
@@ -244,13 +312,117 @@ RECETTE_MOTION = {
                  "mode": "trace", "color": "B"}),
  127:('Courbe', {"points": [0.82, 0.88, 0.34, 0.22, 0.30, 0.78, 0.90],
                  "mode": "effondre", "mot": "Perou", "color": "B"}),
+ 137:('Commentaires', {"vitesse": 70, "lignes": [
+      "Le ton est beaucoup trop enfantin",
+      "L'animation fait bizarre",
+      "On dirait un film pour enfants",
+      "L'origine de leur amitié ? Aucun intérêt",
+      "Encore un Transformers raté",
+      "Je ne vais pas payer pour ça"]}),
+ 98:('LignesEmpilees', {"mode": "tombe", "lines": [
+      "Les Transformers etaient la depuis toujours",
+      "La famille de Sam est une lignee magique",
+      "La Terre est Unicron"]}),
  155:('DeuxChiffres', {"a": {"value": 9, "label": "films"},
                        "b": {"value": 40, "label": "ans"}}),
+ # ---- les six plans qui devaient etre des extraits.
+ # Deux passes de requetes ont echoue sur chacun : ce sont des moments d action
+ # ou de mise en place, sans replique qui les porte, et Clip.cafe est indexe sur
+ # les dialogues. On ne force pas, on fait le plan en motion.
+ # Chaque champ du schema est donne, meme les optionnels : --props FUSIONNE avec
+ # les defaultProps, un champ omis retombe sur la valeur de demonstration du kit.
+ 37:('LignesEmpilees', {"mode": "empile", "lines": [
+      "On ne voit jamais le robot au complet",
+      "Une silhouette",
+      "Un impact",
+      "Ce qu il fait aux humains"]}),
+ 74:('Versus', {"leftTitle": "Deux robots qui se frappent",
+                "rightTitle": "Une opposition",
+                "left": ["Aucun enjeu", "On attend la fin"],
+                "right": ["Sentinel a une raison", "Optimus a quelque chose a perdre"],
+                "leftColor": "F", "rightColor": "A"}),
+ # mode tombe : les trois lignes s en vont avant qu on ait fini de les lire.
+ # C est exactement ce que dit la narration — on n a pas le temps de la digerer.
+ 78:('LignesEmpilees', {"mode": "tombe", "lines": [
+      "Ironhide encaisse",
+      "Ironhide rouille",
+      "Ironhide meurt"]}),
+ # l arc, litteralement : ca descend, ca remonte
+ # couleur A et pas D : le bleu #3A5DAD du tier D sur le fond #071027 ne se
+ # lit pas. La couleur du film cede devant la lisibilite.
+ 91:('Courbe', {"points": [0.72, 0.44, 0.20, 0.16, 0.38, 0.72, 0.92],
+                "mode": "trace", "mot": "", "color": "A"}),
+ # source="" est OBLIGATOIRE : omis, il retombe sur « Le reproche habituel »,
+ # la valeur de demonstration de Root.tsx
+ 101:('Citation', {"text": "Le mechant le plus oubliable de la franchise.",
+                   "source": "", "accent": "A"}),
+ # les quatre elements que la narration enumere, dans son ordre
+ 125:('LignesEmpilees', {"mode": "empile", "lines": [
+      "Les Maximals",
+      "La cle Transwarp",
+      "Unicron",
+      "Scourge"]}),
 }
+
+# ------------------------------------------------------------------ les fleches
+#
+# Quand la narration nomme un personnage, une fleche cartoon vient le designer
+# dans l extrait. Les coordonnees sont RELATIVES (fraction du cadre) et relevees
+# sur l image, jamais estimees : un personnage n est presque jamais au centre.
+#
+#   n : [{"x":.., "y":.., "depuis":"gauche|droite|haut|bas",
+#         "couleur":"blanc|S..F", "debut": frame d apparition}]
+#
+# La fleche vit 150 frames (2,5 s) et se retire toute seule. « debut » se cale
+# sur le moment ou le nom est PRONONCE, pas sur le debut du plan.
+FLECHE_FRAMES = 150
+# Releve sur les frames du montage, pas estime. Une seule entree pour l instant :
+# sur les 38 mentions de personnage, une seule tombe sur un plan ou le personnage
+# est A LA FOIS present, identifiable, et assez petit pour qu une fleche serve.
+# Voir voix/fleches-annotation.md — c est un probleme de matiere, pas d outil.
+RECETTE_FLECHES = {
+  # Charlie marche derriere Bumblebee : elle est minuscule a cote de lui, c est
+  # exactement le cas ou une fleche sert. Relevee a la frame 166, la ou elle
+  # entre dans le champ — le nom est prononce des la frame 0, mais elle n est
+  # pas encore la. La queue part vers la droite, sur la foret : fond clair et
+  # calme, la fleche blanche s y detache.
+  114: [{"x":0.635,"y":0.52,"depuis":"droite","couleur":"blanc","debut":160}],
+  # Bumblebee de profil a gauche, face au Terrorcon ; l oeil bleu est le point vise.
+  # Releve a la frame 13, mais la camera derive : a la frame 60, la ou la fleche
+  # est pleinement installee, la pointe tombait sur l epaule. Le releve doit se
+  # faire au moment ou la fleche est VUE, pas au moment ou elle entre.
+  133: [{"x":0.21,"y":0.36,"depuis":"haut","couleur":"blanc","debut":13}],
+}
+
+def pose_fleche(out, nfr, specs):
+    """Les fleches d un plan, posees par-dessus l extrait et son cadre."""
+    for i, sp in enumerate(specs):
+        props={"x":round(float(sp['x']),4),"y":round(float(sp['y']),4),
+               "depuis":sp.get('depuis','droite'),"couleur":sp.get('couleur','blanc')}
+        cle='-'.join(str(props[k]) for k in ('x','y','depuis','couleur'))
+        mov=remo('Fleche', f'{OUT}/el/fleche-{cle}.mov', props, alpha=True)
+        d=int(sp.get('debut',0))/FPS
+        fin=d+FLECHE_FRAMES/FPS
+        tmp=out+'.fl%d.mp4'%i
+        # setpts ET enable : setpts decale le flux, enable empeche la premiere
+        # frame de rester collee a l ecran avant l entree. repeatlast=0 : la
+        # fleche disparait apres sa sortie au lieu de se figer.
+        sh('ffmpeg','-y','-loglevel','error','-i',out,'-i',os.path.abspath(mov),
+           '-filter_complex',
+           f'[1:v]fps={FPS},setpts=PTS+{d:.4f}/TB[f];'
+           f"[0:v][f]overlay=0:0:format=auto:enable='between(t,{d:.4f},{fin:.4f})'"
+           f':repeatlast=0[v]',
+           '-map','[v]','-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264',
+           '-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',tmp)
+        os.replace(tmp,out)
+    return out
 
 # ---------------------------------------------------------------- les familles
 
 def f_extrait(n, nfr, out):
+    # un plan qu on a renonce a trouver chez Clip.cafe se fait en motion, meme
+    # si le plan de montage le classe encore en extrait
+    if n in RECETTE_MOTION: return f_motion(n, nfr, out)
     src=os.path.join(CLIPS, '%03d.mp4'%n)
     if not os.path.exists(src):
         return trou(n, nfr, out, 'extrait %03d.mp4 absent'%n)
@@ -260,32 +432,71 @@ def f_extrait(n, nfr, out):
     if premier:
         lt=remo('LowerThird', f'{OUT}/el/lt-{f[3]}.mov',
                 {"label":f[1],"year":int(f[2]),"tier":TIERS[f[0]]}, alpha=True)
-        tmp=out+'.base.mp4'; cut(src,nfr,tmp)
+        tmp=out+'.base.mp4'; pose_cadre(src,nfr,tmp)
         # PAS de shortest=1 : il tronquerait l extrait a la duree du bandeau
         sh('ffmpeg','-y','-loglevel','error','-i',tmp,'-i',os.path.abspath(lt),
            '-filter_complex','[0:v][1:v]overlay=0:0:format=auto:repeatlast=1',
            '-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264','-preset','veryfast',
            '-crf','17','-pix_fmt','yuv420p','-an',out)
-        os.remove(tmp); return out
-    return cut(src,nfr,out)
+        os.remove(tmp)
+    else:
+        pose_cadre(src,nfr,out)
+    if n in RECETTE_FLECHES: pose_fleche(out, nfr, RECETTE_FLECHES[n])
+    return out
+
+# La mascotte passe DEVANT le tableau, a droite. Les affiches n occupent que le
+# tiers gauche de chaque rangee : elle ne cache donc rien d important, et elle
+# peut rester grande. Decalee de 320 px vers la droite pour degager la rangee D,
+# ou son bras mordait sur la troisieme affiche.
+AVATAR_L = 1600          # largeur de la mascotte detouree
+AVATAR_X = 440           # W - largeur + 440 : le decalage vers la droite
+AVATAR_Y = 40
+# La mascotte n entre qu au moment ou l affiche se pose. Cette valeur DOIT
+# suivre la constante POSE de VerdictTableau.tsx : si l animation change la-bas,
+# elle change ici. Avant, la mascotte jouait sa reaction pendant que l affiche
+# volait encore — elle reagissait a un verdict qui n etait pas tombe.
+AVATAR_DEBUT = 92
+
+def pose_avatar(out, nfr, tier, debut=AVATAR_DEBUT):
+    """La mascotte detouree, par-dessus un plan deja monte."""
+    reac=next((c for c in (os.path.join(MASC,'reactions','reaction-%s.mp4'%tier),
+                           os.path.join(MASC,'reac-%s.mp4'%tier))
+               if os.path.exists(c)), None)
+    if not reac: return out
+    d=debut/FPS
+    tmp=out+'.av.mp4'
+    sh('ffmpeg','-y','-loglevel','error','-i',out,'-i',reac,'-filter_complex',
+       f'[1:v]fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012,'
+       f'scale={AVATAR_L}:-1,setpts=PTS+{d:.4f}/TB[m];'
+       f"[0:v][m]overlay=W-w+{AVATAR_X}:H-h+{AVATAR_Y}:format=auto:"
+       f"enable='gte(t,{d:.4f})':repeatlast=1[v]",
+       '-map','[v]','-frames:v',str(nfr),'-r',str(FPS),'-c:v','libx264',
+       '-preset','veryfast','-crf','17','-pix_fmt','yuv420p','-an',tmp)
+    os.replace(tmp,out); return out
 
 def f_verdict(n, nfr, out):
     f=next((x for x in FILMS if x[4]==n), None)
     if not f: return trou(n, nfr, out, 'aucun film ne porte le verdict du plan %d'%n)
     tier=TIERS[f[0]]; rows=rows_avant(n)
     slot=len(next(r for r in rows if r['tier']==tier)['posters'])
-    vc=remo('VerdictCard', f'{OUT}/el/verdict-{f[3]}.mov',
+    vc=remo('VerdictTableau', f'{OUT}/el/verdict-{f[3]}.mov',
             {"rows":rows,"poster":'posters/'+f[3]+'.jpg',"tier":tier,
-             "slotIndex":slot,"offsetX":260,"zoom":2.0}, alpha=True)
+             "slotIndex":slot,"offsetX":0,"colonneAvatar":0}, alpha=True)
     reac=next((c for c in (os.path.join(MASC,'reactions','reaction-%s.mp4'%tier),
                            os.path.join(MASC,'reactions','reac-%s.mp4'%tier),
                            os.path.join(MASC,'reac-%s.mp4'%tier))
                if os.path.exists(c)), None)
     if reac:
         ins=['-i',reac]
+        d = AVATAR_DEBUT / FPS
+        # setpts decale ses images, enable l empeche d etre dessinee avant :
+        # les deux ensemble, sinon sa premiere frame reste collee a l ecran
+        # depuis le debut du plan
         fc=(f'[0:v][1:v]overlay=0:0:format=auto[a];'
-            f'[2:v]scale={W}:{H},fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012[m];'
-            f'[a][m]overlay=0:0:format=auto:repeatlast=1[v]')
+            f'[2:v]fps={FPS},format=rgba,colorkey={KEY}:0.030:0.012,'
+            f'scale={AVATAR_L}:-1,setpts=PTS+{d:.4f}/TB[m];'
+            f"[a][m]overlay=W-w+{AVATAR_X}:H-h+{AVATAR_Y}:format=auto:"
+            f"enable='gte(t,{d:.4f})':repeatlast=1[v]")
     else:
         # sans mascotte le carton reste lisible, mais c est une perte : on le dit
         manquants.append((n, 'reaction-%s.mp4 introuvable, verdict sans mascotte'%tier))
@@ -298,9 +509,14 @@ def f_verdict(n, nfr, out):
 def f_carton_titre(n, nfr, out):
     f=film_de(n)
     if not f:
-        # un carton titre a besoin d un film ; l intro n appartient a aucun
-        # segment. Basculer en douce sur une citation donnait au plan 001, qui
-        # demandait « le chiffre 9 plein ecran », une carte de citation.
+        # Un carton titre a besoin d un film ; l intro n appartient a aucun
+        # segment. Ceux-la sont ecrits a la main plutot que devines : basculer
+        # en douce sur une citation donnait au plan 001, qui demandait « le
+        # chiffre 9 plein ecran », une carte de citation.
+        if n in CARTONS_INTRO:
+            src=remo('Citation', f'{OUT}/el/intro-{n:03d}.mp4',
+                     {"source":"", **CARTONS_INTRO[n]})
+            return cut(os.path.abspath(src), nfr, out)
         return trou(n, nfr, out, 'carton titre hors segment : '+PLAN[n]['note'][:40])
     src=remo('TitleCard', f'{OUT}/el/titre-{f[3]}.mp4',
              {"title":f[1],"year":int(f[2]),"tier":TIERS[f[0]]})
@@ -332,26 +548,74 @@ def f_affiche(n, nfr, out):
        '-crf','17','-pix_fmt','yuv420p','-an',tmp)
     os.replace(tmp,out); return out
 
+# Les deux affiches floutees du hook : « un film que tout le monde deteste » et
+# « un autre que les gens defendent ». Elles ne doivent PAS etre identifiables,
+# donc on les fabrique en floutant deux affiches qu on a deja. Rien a fournir.
+FLOUES = {6: '2017-the-last-knight', 7: '2018-bumblebee'}
+
 def f_photo(n, nfr, out):
+    # certains plans classes « photo » se font en motion : le 137 demandait une
+    # capture de commentaires YouTube, qu on ne fabrique pas
+    if n in RECETTE_MOTION: return f_motion(n, nfr, out)
+    if n in FLOUES:
+        aff=poster(FLOUES[n])
+        if os.path.exists(aff): return flou(aff, nfr, out)
     trouve=sorted(glob.glob(os.path.join(IMG,'%03d-*'%n)))
     if not trouve:
         return trou(n, nfr, out, PLAN[n]['note'][:60])
     return ken_burns(trouve[0], nfr, out)
 
+def flou(src, nfr, out):
+    """Affiche floutee avec un point d interrogation par-dessus."""
+    police='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+    q=out+'.q.txt'; open(q,'w').write('?')
+    vf=(f"scale=760:-1,boxblur=22:2,scale={W}:{H}:force_original_aspect_ratio=decrease,"
+        f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:{NAVY},fps={FPS},"
+        # textfile : drawtext casse sur l apostrophe et les deux-points, et un %
+        # sort une image entierement vide
+        f"drawtext=fontfile={police}:textfile={q}:expansion=none:fontcolor=0xF7B632:"
+        f"fontsize=420:borderw=14:bordercolor=black:x=(w-text_w)/2:y=(h-text_h)/2")
+    sh('ffmpeg','-y','-loglevel','error','-loop','1','-i',src,'-vf',vf,'-frames:v',str(nfr),
+       '-r',str(FPS),'-c:v','libx264','-preset','veryfast','-crf','17','-pix_fmt','yuv420p',out)
+    os.remove(q); return out
+
+def tier_nomme(n):
+    """La rangee que la narration nomme dans ce plan : « En A, ... »."""
+    m=re.search(r"\bEn\s+([SABCDF])\b", PLAN[n]['texte'])
+    return m.group(1) if m else None
+
 def f_rappel(n, nfr, out):
+    if n in RAPPEL_REMPLACE:
+        src=remo('Citation', f'{OUT}/el/cit-{n:03d}.mp4', RAPPEL_REMPLACE[n])
+        return cut(os.path.abspath(src), nfr, out)
     if 'TITRE DE L' in PLAN[n]['note'].upper():
         return trou(n, nfr, out, 'titre a poser sur le board : '+PLAN[n]['note'][:36])
-    src=remo('BoardRecap', f'{OUT}/el/board-{n:03d}.mp4',
-             {"rows":rows_avant(n),"zoom":1.0,"offsetX":0})
-    return cut(os.path.abspath(src), nfr, out)
+    # Sur la lecture du tableau final, la camera pousse sur la rangee nommee.
+    # Sans ca les six plans de la fin montraient le meme tableau fixe, et on ne
+    # savait pas de quelle rangee on parlait.
+    t = tier_nomme(n) or RAPPEL_FOCUS.get(n)
+    # Root.tsx ne donne plus de focus par defaut : --props FUSIONNE avec les
+    # defaultProps, donc un focus de demonstration la-bas poussait la camera sur
+    # cette rangee dans tous les rappels qui n en demandaient aucun.
+    props={"rows":rows_avant(n),"offsetX":0,"zoom":1.75 if t else 1.0}
+    if t: props["focus"]=t
+    src=remo('BoardRecap', f'{OUT}/el/board-{n:03d}.mp4', props)
+    sortie=cut(os.path.abspath(src), nfr, out)
+    if n in AVEC_AVATAR: pose_avatar(out, nfr, AVEC_AVATAR[n], 0)
+    return sortie
 
 def f_citation(n, nfr, out):
     f=film_de(n)
+    # source="" est OBLIGATOIRE. --props ne remplace pas les defaultProps, il
+    # FUSIONNE avec : un champ omis retombe sur la valeur de demonstration du
+    # kit. Les cinq citations du montage portaient donc « Le reproche
+    # habituel » en sous-titre, la valeur d exemple de Root.tsx.
     src=remo('Citation', f'{OUT}/el/cit-{n:03d}.mp4',
-             {"text":texte_court(n),"accent":TIERS[f[0]] if f else "B"})
+             {"text":texte_court(n),"source":"","accent":TIERS[f[0]] if f else "B"})
     return cut(os.path.abspath(src), nfr, out)
 
 def f_chiffre(n, nfr, out):
+    if n in RECETTE_MOTION: return f_motion(n, nfr, out)
     m=re.search(r'(\d[\d\s]*)', PLAN[n]['note'])
     val=int(re.sub(r'\D','',m.group(1))) if m else 0
     lab=etiquette(n)
@@ -364,7 +628,10 @@ def f_chiffre(n, nfr, out):
     return cut(os.path.abspath(src), nfr, out)
 
 def f_pour_contre(n, nfr, out):
-    pour, contre = colonnes(n)
+    if n in RECETTE_POURCONTRE:
+        pour, contre = RECETTE_POURCONTRE[n]
+    else:
+        pour, contre = colonnes(n)
     if not pour and not contre:
         return trou(n, nfr, out, 'pour / contre a ecrire : '+PLAN[n]['note'][:44])
     src=remo('ProsCons', f'{OUT}/el/pc-{n:03d}.mp4', {"pros":pour,"cons":contre})

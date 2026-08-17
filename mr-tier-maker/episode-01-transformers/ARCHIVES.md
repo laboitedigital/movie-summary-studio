@@ -91,8 +91,8 @@ narratif nul.
 | `021` | Jouets Transformers G1 en boîte | ✅ dans `images/` |
 | `027` | Portrait d'Orson Welles | ✅ dans `images/` |
 | `006` `007` | Deux affiches floutées | à fabriquer — je floute deux affiches déjà là |
-| `066` | Apollo 11 / NASA | **à déposer** — domaine public, [galerie NASA](https://www.nasa.gov/apollo11-gallery) |
-| `137` | Commentaires YouTube négatifs | **à déposer** — capture d'écran, pseudos à flouter |
+| `066` | Apollo 11 / NASA | ✅ **illustration assumée**, générée dans Yapper — voir plus bas |
+| `137` | Commentaires YouTube négatifs | ✅ passé en motion — composition `Commentaires`, sans pseudos |
 
 ### Deux plans sont passés en motion plutôt qu'en photo
 
@@ -109,3 +109,23 @@ une ligne par grief au rythme de la phrase — `TON TROP ENFANTIN`,
 jusqu'au plan `138`, qui la renverse.
 
 Ça fait passer les images à fournir de 6 à 2.
+
+
+## Deux plans qui ne prennent pas de document
+
+**`066` — la mission Apollo.** Le plan illustre un élément de l'intrigue de
+*Dark of the Moon*, pas un fait historique à établir. On a donc fait une
+**illustration assumée** plutôt qu'une fausse archive : aplats, contours noirs
+épais, fond `#071027`, flamme ambre — le vocabulaire de l'avatar. L'astronaute
+porte une visière dorée entièrement réfléchissante : **aucun visage**, parce que
+les astronautes d'Apollo 11 sont des personnes réelles et qu'on ne leur invente
+pas de traits. Généré dans Yapper, `gpt-image-2`, 10 crédits.
+
+Les vraies photos NASA restent en domaine public si tu changes d'avis :
+[galerie Apollo 11](https://www.nasa.gov/apollo11-gallery).
+
+**`137` — les commentaires YouTube.** Une capture inventée aurait donné de faux
+commentaires attribués à de vraies personnes, sur un plan qui sert à établir un
+fait. Le plan passe en motion : des bulles aux couleurs de la chaîne, sans
+pseudo et sans imiter l'interface de YouTube, qui remettent à l'écran les
+reproches que la narration énonce déjà.

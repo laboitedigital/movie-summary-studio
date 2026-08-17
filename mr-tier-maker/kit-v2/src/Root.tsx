@@ -14,6 +14,10 @@ import {BigStat, bigStatSchema} from './BigStat';
 import {Versus, versusSchema} from './Versus';
 import {BoardRecap, boardRecapSchema} from './BoardRecap';
 import {Placeholder, placeholderSchema} from './Placeholder';
+import {VerdictTableau, verdictTableauSchema} from './VerdictTableau';
+import {CadreClip, cadreClipSchema} from './CadreClip';
+import {Fleche, flecheSchema} from './Fleche';
+import {Commentaires, commentairesSchema} from './Commentaires';
 import {Trombinoscope, trombinoscopeSchema} from './Trombinoscope';
 import {Mecanismes, mecanismesSchema} from './Mecanismes';
 import {LignesEmpilees, lignesSchema} from './LignesEmpilees';
@@ -66,8 +70,27 @@ export const RemotionRoot: React.FC = () => (
         left: ['45 minutes de bataille', 'Aucun enjeu'],
         right: ['La mythologie se réécrit', 'Deux films se contredisent'],
         leftColor: 'D' as const, rightColor: 'S' as const}} />
+    {/* Pas de focus dans les defaultProps : --props FUSIONNE avec elles, donc
+        un focus de demonstration ici pousse la camera sur cette rangee dans
+        tous les rappels qui n en demandent aucun. */}
     <Composition id="BoardRecap" component={BoardRecap} durationInFrames={300} fps={FPS} width={W} height={H}
-      schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, focus: 'D' as const, zoom: 2.4, offsetX: 0}} />
+      schema={boardRecapSchema} defaultProps={{rows: DEMO_ROWS, zoom: 2.4, offsetX: 0}} />
+    <Composition id="VerdictTableau" component={VerdictTableau} durationInFrames={260} fps={FPS} width={W} height={H}
+      schema={verdictTableauSchema} defaultProps={{
+        rows: DEMO_ROWS.map((r) => r.tier === 'B' ? {...r, posters: [P('2024-transformers-one.jpg')]} : r),
+        poster: P('1986-the-transformers-the-movie.jpg'), tier: 'B' as const, slotIndex: 1,
+        offsetX: 0, colonneAvatar: 0}} />
+    <Composition id="Fleche" component={Fleche} durationInFrames={150} fps={FPS} width={W} height={H}
+      schema={flecheSchema} defaultProps={{
+        x: 0.42, y: 0.46, depuis: 'droite' as const, couleur: 'blanc' as const}} />
+    <Composition id="CadreClip" component={CadreClip} durationInFrames={60} fps={FPS} width={W} height={H}
+      schema={cadreClipSchema} defaultProps={{marge: 46, trait: 14, rayon: 30}} />
+    <Composition id="Commentaires" component={Commentaires} durationInFrames={320} fps={FPS} width={W} height={H}
+      schema={commentairesSchema} defaultProps={{
+        lignes: ['Le ton est beaucoup trop enfantin', "L'animation fait bizarre",
+                 'On dirait un film pour enfants', "L'origine de leur amitié ? Aucun intérêt",
+                 'Encore un Transformers raté', 'Je ne vais pas payer pour ça'],
+        vitesse: 70}} />
     <Composition id="Trombinoscope" component={Trombinoscope} durationInFrames={350} fps={FPS} width={W} height={H}
       schema={trombinoscopeSchema} defaultProps={{
         names: ['Hot Rod', 'Kup', 'Blurr', 'Arcee', 'Ultra Magnus', 'Springer', 'Wheelie', 'Perceptor',
