@@ -325,6 +325,43 @@ RECETTE_MOTION = {
       "La Terre est Unicron"]}),
  155:('DeuxChiffres', {"a": {"value": 9, "label": "films"},
                        "b": {"value": 40, "label": "ans"}}),
+ # ---- les six plans qui devaient etre des extraits.
+ # Deux passes de requetes ont echoue sur chacun : ce sont des moments d action
+ # ou de mise en place, sans replique qui les porte, et Clip.cafe est indexe sur
+ # les dialogues. On ne force pas, on fait le plan en motion.
+ # Chaque champ du schema est donne, meme les optionnels : --props FUSIONNE avec
+ # les defaultProps, un champ omis retombe sur la valeur de demonstration du kit.
+ 37:('LignesEmpilees', {"mode": "empile", "lines": [
+      "On ne voit jamais le robot au complet",
+      "Une silhouette",
+      "Un impact",
+      "Ce qu il fait aux humains"]}),
+ 74:('Versus', {"leftTitle": "Deux robots qui se frappent",
+                "rightTitle": "Une opposition",
+                "left": ["Aucun enjeu", "On attend la fin"],
+                "right": ["Sentinel a une raison", "Optimus a quelque chose a perdre"],
+                "leftColor": "F", "rightColor": "A"}),
+ # mode tombe : les trois lignes s en vont avant qu on ait fini de les lire.
+ # C est exactement ce que dit la narration — on n a pas le temps de la digerer.
+ 78:('LignesEmpilees', {"mode": "tombe", "lines": [
+      "Ironhide encaisse",
+      "Ironhide rouille",
+      "Ironhide meurt"]}),
+ # l arc, litteralement : ca descend, ca remonte
+ # couleur A et pas D : le bleu #3A5DAD du tier D sur le fond #071027 ne se
+ # lit pas. La couleur du film cede devant la lisibilite.
+ 91:('Courbe', {"points": [0.72, 0.44, 0.20, 0.16, 0.38, 0.72, 0.92],
+                "mode": "trace", "mot": "", "color": "A"}),
+ # source="" est OBLIGATOIRE : omis, il retombe sur « Le reproche habituel »,
+ # la valeur de demonstration de Root.tsx
+ 101:('Citation', {"text": "Le mechant le plus oubliable de la franchise.",
+                   "source": "", "accent": "A"}),
+ # les quatre elements que la narration enumere, dans son ordre
+ 125:('LignesEmpilees', {"mode": "empile", "lines": [
+      "Les Maximals",
+      "La cle Transwarp",
+      "Unicron",
+      "Scourge"]}),
 }
 
 # ------------------------------------------------------------------ les fleches
@@ -374,6 +411,9 @@ def pose_fleche(out, nfr, specs):
 # ---------------------------------------------------------------- les familles
 
 def f_extrait(n, nfr, out):
+    # un plan qu on a renonce a trouver chez Clip.cafe se fait en motion, meme
+    # si le plan de montage le classe encore en extrait
+    if n in RECETTE_MOTION: return f_motion(n, nfr, out)
     src=os.path.join(CLIPS, '%03d.mp4'%n)
     if not os.path.exists(src):
         return trou(n, nfr, out, 'extrait %03d.mp4 absent'%n)

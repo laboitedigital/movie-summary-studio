@@ -14,7 +14,7 @@ on:
       runs_extraits:
         description: "Runs qui portent les extraits, du plus ancien au plus recent"
         required: false
-        default: "31928598104 31948946566 31949254257 31951727721 31970533637 31974243565"
+        default: "31928598104 31948946566 31949254257 31951727721 31970533637 31974243565 31986407345 31986855720"
 
 permissions:
   contents: read
