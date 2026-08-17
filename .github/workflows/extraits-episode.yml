@@ -23,6 +23,13 @@ on:
         description: "Remplace la requete du plan. Plusieurs, separees par |, essayees a la suite"
         required: false
         default: ""
+      planche:
+        description: "Deposer une planche de controle des extraits sur la branche (true / false)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
 
 jobs:
   extraits:
@@ -65,3 +72,50 @@ jobs:
           name: extraits
           path: mr-tier-maker/episode-01-transformers/scripts/clips/
           retention-days: 7
+
+      # Les artefacts ne sont pas telechargeables depuis la session : sans ca,
+      # le seul moyen de VOIR ce que Clip.cafe a rendu etait de relancer un
+      # montage complet, 85 minutes, pour decouvrir qu un extrait est hors
+      # sujet. La planche coute quelques secondes et se lit tout de suite.
+      - name: Planche de controle
+        if: ${{ inputs.planche == 'true' }}
+        working-directory: mr-tier-maker/episode-01-transformers
+        run: |
+          set -e
+          rm -rf planche && mkdir -p planche/f apercu
+          legende="| ligne | plan | duree |"
+          legende="$legende\n|---|---|---|"
+          i=0
+          for c in $(ls scripts/clips/*.mp4 | sort); do
+            n=$(basename "$c" .mp4)
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$c")
+            i=$((i+1))
+            for q in 20 50 80; do
+              t=$(awk -v d="$d" -v q="$q" 'BEGIN{printf "%.3f", d*q/100}')
+              ffmpeg -y -loglevel error -ss "$t" -i "$c" -frames:v 1 \
+                -vf "scale=480:270:force_original_aspect_ratio=decrease,pad=480:270:-1:-1:black" \
+                "planche/f/$(printf '%03d' $i)-$n-$q.png"
+            done
+            legende="$legende\n| $i | $n | ${d}s |"
+          done
+          # tile assemble dans l ordre alphabetique des fichiers : une ligne par
+          # extrait, les trois instants dans l ordre. Six extraits par planche —
+          # au-dela l image devient trop haute pour se lire d un coup.
+          rm -f apercu/planche-extraits-*.jpg
+          ffmpeg -y -loglevel error -pattern_type glob -i 'planche/f/*.png' \
+            -vf "tile=3x6:margin=6:padding=4:color=0x101018" \
+            apercu/planche-extraits-%02d.jpg
+          printf "%b\n" "$legende" > apercu/planche-extraits.md
+          rm -rf planche
+          ls -la apercu/
+
+      - name: Deposer la planche sur la branche
+        if: ${{ inputs.planche == 'true' }}
+        run: |
+          set -e
+          git config user.name  "Claude"
+          git config user.email "noreply@anthropic.com"
+          git add mr-tier-maker/episode-01-transformers/apercu/planche-extraits-*.jpg \
+                  mr-tier-maker/episode-01-transformers/apercu/planche-extraits.md
+          git commit -m "Planche de controle des extraits (run ${{ github.run_id }})" || exit 0
+          git push origin HEAD:${{ github.ref_name }}
