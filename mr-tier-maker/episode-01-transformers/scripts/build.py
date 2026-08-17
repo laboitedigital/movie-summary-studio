@@ -339,7 +339,14 @@ RECETTE_MOTION = {
 # La fleche vit 150 frames (2,5 s) et se retire toute seule. « debut » se cale
 # sur le moment ou le nom est PRONONCE, pas sur le debut du plan.
 FLECHE_FRAMES = 150
-RECETTE_FLECHES = {}
+# Releve sur les frames du montage, pas estime. Une seule entree pour l instant :
+# sur les 38 mentions de personnage, une seule tombe sur un plan ou le personnage
+# est A LA FOIS present, identifiable, et assez petit pour qu une fleche serve.
+# Voir voix/fleches-annotation.md — c est un probleme de matiere, pas d outil.
+RECETTE_FLECHES = {
+  # Bumblebee de profil a gauche, face au Terrorcon ; l oeil bleu est le point vise
+  133: [{"x":0.235,"y":0.40,"depuis":"haut","couleur":"blanc","debut":13}],
+}
 
 def pose_fleche(out, nfr, specs):
     """Les fleches d un plan, posees par-dessus l extrait et son cadre."""
