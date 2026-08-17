@@ -72,3 +72,54 @@ muet, chercher ce qu on lui dit.
 017, 026, 049, 071, 077, 099, 126, 148 : pas litteraux, mais l image tient le
 propos. 026 montre meme Unicron en forme de planete a 30 % du plan — la
 mention tombe juste trop tot pour qu une fleche s y pose.
+
+---
+
+# Ce que les deux passes de rattrapage ont donne
+
+Verifie sur planche de controle, pas devine : le job d extraits depose
+maintenant une planche 3 instants x 6 extraits sur la branche. C est ce qui a
+permis de juger 16 extraits en deux minutes au lieu de 85.
+
+## 1re passe — requetes reecrites en repliques (12 plans)
+
+**5 sur 12 ont fait mouche.** La regle tient.
+
+| plan | ce qu on voit maintenant |
+|---|---|
+| 039 | les Autobots qui arrivent, **Optimus Prime bien visible** au centre |
+| 111 | **Cybertron**, le chasseur au-dessus de la cite, la cite en feu |
+| 114 | Bumblebee dans la foret, **Charlie qui court**, son visage |
+| 121 | **Bumblebee au sol dans la poussiere**, un Decepticon qui le domine |
+| 131 | une grotte, **la dalle gravee**, **Elena** |
+
+## 2e passe — repliques celebres du personnage (4 plans)
+
+**1 sur 4.** Le plan 017 retrouve la navette et **Optimus dans le poste de
+pilotage**. 074, 091 et 101 restent a cote apres deux passes.
+
+## On arrete de forcer : 6 plans passent en motion
+
+037 (Blackout attaque), 074 (bataille de Chicago), 078 (mort d Ironhide),
+091 (l arc d Optimus), 101 (Quintessa), 125 (les Maximals et la cle
+Transwarp). Six moments d action ou de mise en place, sans replique qui les
+porte. Deux passes ont echoue sur chacun. C est le cas que le pipeline decrit
+depuis le debut : **un plan muet peut n exister nulle part dans un catalogue
+indexe sur la parole.**
+
+## Le piege du registre — paye, a ne pas repayer
+
+`slugs-extraits.json` ne garde que l affectation **courante**. Quand on y ecrit
+le nouveau slug, l ancien disparait — et il n est donc plus dans la liste
+d exclusion du rattrapage suivant. Les plans 017 et 091 sont ainsi **revenus a
+leur slug d origine** au 2e essai, celui qu on venait justement de rejeter.
+
+D ou `voix/slugs-essayes.json` : l **union de tout ce qui a deja ete essaye**.
+C est cette liste-la qui va dans `EXCLURE`, pas les valeurs du registre.
+
+## Les fleches, apres rattrapage
+
+On passe de 1 posable a 5 : **017** (Optimus dans le poste de pilotage),
+**039** (Optimus qui arrive), **114** (Charlie qui court), **121** (Bumblebee
+au sol), **131** (Elena) — plus **133** deja branchee. Les coordonnees se
+relevent sur le prochain montage, au moment ou le nom est prononce.
