@@ -381,6 +381,12 @@ FLECHE_FRAMES = 150
 # est A LA FOIS present, identifiable, et assez petit pour qu une fleche serve.
 # Voir voix/fleches-annotation.md — c est un probleme de matiere, pas d outil.
 RECETTE_FLECHES = {
+  # Charlie marche derriere Bumblebee : elle est minuscule a cote de lui, c est
+  # exactement le cas ou une fleche sert. Relevee a la frame 166, la ou elle
+  # entre dans le champ — le nom est prononce des la frame 0, mais elle n est
+  # pas encore la. La queue part vers la droite, sur la foret : fond clair et
+  # calme, la fleche blanche s y detache.
+  114: [{"x":0.635,"y":0.52,"depuis":"droite","couleur":"blanc","debut":160}],
   # Bumblebee de profil a gauche, face au Terrorcon ; l oeil bleu est le point vise
   133: [{"x":0.235,"y":0.40,"depuis":"haut","couleur":"blanc","debut":13}],
 }

@@ -123,3 +123,40 @@ On passe de 1 posable a 5 : **017** (Optimus dans le poste de pilotage),
 **039** (Optimus qui arrive), **114** (Charlie qui court), **121** (Bumblebee
 au sol), **131** (Elena) — plus **133** deja branchee. Les coordonnees se
 relevent sur le prochain montage, au moment ou le nom est prononce.
+
+---
+
+# Verification sur le montage du run 32019005340
+
+## Un bug du kit, trouve en verifiant les motions
+
+Le plan 078 etait **vide pendant 4,5 des 7,5 secondes**. En remontant :
+`LignesEmpilees` mode `tombe` faisait tomber ses lignes a partir de 25 % de la
+composition, et la chute etait finie a 53 %. Comme `cut()` etire ensuite le
+motion sur toute la duree du plan, la fin du plan restait sur le fond de chaine.
+
+Ce n est pas un bug de mes six motions : **il touchait deja les plans 054 et
+098**, dans le montage depuis le debut. Trois plans de l episode tombaient dans
+le vide pendant 2 a 4,5 secondes chacun. C est probablement une partie de ce
+que la relecture appelait « la video arrete avant que l autre commence ».
+
+Corrige : la chute est calee sur la FIN de la composition
+(`t0 = durationInFrames - chuteSpan - 8 + i * 16`). La pile tient maintenant de
+15 % a 80 %, tombe de 80 % a 97 %, et il ne reste plus que 3 % de vide.
+
+## Les fleches : 2 sur 38, et c est le bon chiffre
+
+Sur les cinq candidates du rattrapage, **une seule tient**.
+
+| plan | verdict |
+|---|---|
+| **114 Charlie** | **retenue.** Elle marche derriere Bumblebee, minuscule a cote de lui. C est exactement le cas ou une fleche sert. Relevee a la frame 166. |
+| 017 Optimus | ecartee. Il est bien la, mais il est rouge, il porte le logo Autobot et il occupe le tiers gauche du cadre. Pointer l evidence encombre l image. |
+| 039 Optimus | ecartee. Au moment ou le nom tombe, le plan est un flou de transformation illisible. |
+| 121 Bumblebee | ecartee. Il est seul dans le cadre, et jaune sur un fond brun. |
+| 131 Elena | ecartee. Gros plan sur son visage, trop grand pour qu une fleche serve. |
+
+Avec le plan 133 deja branche, l episode porte **deux fleches**. Ce n est pas un
+echec de l outil : c est le critere qui se tient. Une fleche sert quand le
+personnage est **present, identifiable, et petit dans le cadre**. Les trois
+conditions ensemble sont rares dans un catalogue de gros plans de dialogue.

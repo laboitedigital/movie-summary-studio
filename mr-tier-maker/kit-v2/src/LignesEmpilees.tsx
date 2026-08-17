@@ -39,8 +39,16 @@ export const LignesEmpilees: React.FC<z.infer<typeof lignesSchema>> = ({lines, m
             let rot = interpolate(arrive, [0, 1], [-4, i % 2 ? 1.5 : -1.5]);
 
             if (mode === 'tombe') {
-              // chacune sort par le bas, dans l ordre, sur la derniere moitie
-              const t0 = durationInFrames * 0.25 + i * 16;
+              // Chacune sort par le bas, dans l ordre, et la DERNIERE quitte le
+              // cadre juste avant la fin.
+              //
+              // Avant : t0 = durationInFrames * 0.25 + i * 16. La chute etait
+              // finie a 53 % de la composition, et comme cut() etire ensuite le
+              // motion sur toute la duree du plan, les plans 054, 078 et 098
+              // finissaient sur 2 a 4,5 secondes de fond de chaine vide.
+              // On cale donc la chute sur la FIN, pas sur le debut.
+              const chuteSpan = (n - 1) * 16 + 26;
+              const t0 = durationInFrames - chuteSpan - 8 + i * 16;
               const chute = interpolate(frame, [t0, t0 + 26], [0, 1],
                 {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EASE_OUT_EXPO});
               x += 0;
