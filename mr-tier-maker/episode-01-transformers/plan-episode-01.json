@@ -216,7 +216,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "soon I shall be one with the Matrix",
+  "requete": "do not grieve|I shall be one with the matrix|the matrix of leadership",
   "texte": "Optimus Prime meurt. Pas dans un troisième acte émouvant avec une musique douce.",
   "note": "Le plan cle du segment. Ne pas couper trop tot."
  },
@@ -476,7 +476,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Blackout attacks base",
+  "requete": "we are under attack|it took out our communications|get to the weapons",
   "texte": "Blackout qui attaque la base au début, c 'est presque un film d'horreur. On ne voit pas le robot au complet, on voit ce qu'il fait aux humains.",
   "note": "Traiter comme du film d'horreur : plans courts, noir entre les plans."
  },
@@ -502,7 +502,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "my name is Optimus Prime",
+  "requete": "we are autonomous robotic organisms from the planet Cybertron|my name is Optimus Prime|I am Optimus Prime",
   "texte": "Quand Optimus Prime arrive enfin et se présente, ça a un impact, parce que",
   "note": "L'arrivee. Plan le plus large disponible."
  },
@@ -957,7 +957,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Chicago battle Decepticons",
+  "requete": "it was the only way Optimus|we were going to lose the war|you would have done the same",
   "texte": "Ça crée une opposition réelle avec Optimus, pas juste deux robots qui se frappent. Et la bataille de Chicago.",
   "note": "Debut de la sequence Chicago."
  },
@@ -1009,7 +1009,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Ironhide dies",
+  "requete": "Prime what is happening to me|I am rusting|hold on Ironhide",
   "texte": "Et la mort d'Ironhide arrive tellement vite qu'on n'a pas le temps de la digérer. Mais dans l'ensemble, c'est un très bon film d'action.",
   "note": "Plan de la mort d'Ironhide, coupe volontairement trop tot. Le texte dit « la digerer » — l'ancien SRT avait transcrit « l'exagerer »."
  },
@@ -1178,7 +1178,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Optimus Prime I will kill you",
+  "requete": "I send this message to any surviving Autobots|Autobots I need your help|we are being hunted",
   "texte": "Optimus a un arc réel, celui d'un personnage amer qui redevient un héros.",
   "note": "Plan d'Optimus amer."
  },
@@ -1308,7 +1308,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Quintessa",
+  "requete": "I am Quintessa|the prime of life|my planet is dying",
   "texte": "Quintessa est probablement le méchant le plus oubliable de la franchise.",
   "note": "Plan de Quintessa."
  },
@@ -1438,7 +1438,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Optimus Prime Cybertron battle",
+  "requete": "Bumblebee this is our last chance|the war is lost|Autobots retreat",
   "texte": "claire, et Optimus Prime qui combat au sommet de sa forme.",
   "note": "Plans de designs classiques G1. Montage plus genereux ici."
  },
@@ -1477,7 +1477,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Charlie Watson garage",
+  "requete": "I am going to call you Bumblebee|my dad and I used to fix cars|happy birthday to me",
   "texte": "Charlie est le meilleur personnage humain de la franchise, sans compétition.",
   "note": "Plan de presentation de Charlie."
  },
@@ -1568,7 +1568,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Bumblebee outsmarts Decepticons",
+  "requete": "hand over the Autobot|you cannot win|where is the Autobot",
   "texte": "Les Decepticons sont plus forts et mieux équipés, ce qui oblige Bumblebee à être plus intelligent qu'eux.",
   "note": "Plan de ruse."
  },
@@ -1620,7 +1620,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "transwarp key",
+  "requete": "the transwarp key|it opens portals through space and time|we must find the key",
   "texte": "On établit les Maximals, la clé Transwarp, Unicron et Scourge en quelques minutes, avec des enjeux clairs.",
   "note": "4 plans de 1.5s : Maximals / cle / Unicron / Scourge."
  },
@@ -1698,7 +1698,7 @@
   "type": "CLIP",
   "famille": "extrait",
   "element": "— extrait a telecharger",
-  "requete": "Elena artifact museum",
+  "requete": "I am just an intern|it is a Maximal artifact|this symbol is not Nubian",
   "texte": "Elena, par contre, existe surtout pour expliquer des artefacts au reste du groupe. Le dernier acte remonte la note.",
   "note": "Plan d'Elena. Puis transition, la courbe remonte."
  },
