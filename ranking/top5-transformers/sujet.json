@@ -12,7 +12,8 @@
     "nom": "Sébastien - French Male (jeune, radio/podcast)",
     "cible": "5 a 8 s par piste — environ 17 mots",
     "choisi": "essai du 30 aout, asset ccfa766e-c45c-42e4-bdb9-2fd2f8d9e383, 6,69 s",
-    "note": "eleven_v3 n'accepte pas de parametre de debit : la duree se regle au nombre de mots."
+    "note": "eleven_v3 n'accepte pas de parametre de debit : la duree se regle au nombre de mots.",
+    "source": "fichiers Yapper deposes par Popol le 30 aout — ce sont eux qui font foi"
   },
   "audio": {
     "volumeExtrait": 0.12,
@@ -30,7 +31,7 @@
         "movie_year": "2011"
       },
       "texte": "Numéro cinq, Dark of the Moon, scénario désastreux, mais la bataille de Chicago reste la plus belle.",
-      "dureeVoix": 5.329,
+      "dureeVoix": 5.355,
       "assetYapper": "b80a4afe-1bdd-4911-bfb1-9c275cc3ef46"
     },
     {
@@ -43,7 +44,7 @@
         "movie_year": "2007"
       },
       "texte": "Numéro quatre, Transformers deux mille sept, Optimus se transforme à l'écran, pis on a tous eu douze ans.",
-      "dureeVoix": 5.146,
+      "dureeVoix": 5.172,
       "assetYapper": "d945a646-e3e2-42f7-a75b-ac8e7c402056"
     },
     {
@@ -56,7 +57,7 @@
         "movie_year": "1986"
       },
       "texte": "Numéro trois, The Transformers The Movie, y ont tué Optimus Prime dans un film pour enfants.",
-      "dureeVoix": 5.486,
+      "dureeVoix": 5.512,
       "assetYapper": "fa3506ee-2c70-4ed2-a78b-35e1d3420ac7"
     },
     {
@@ -69,7 +70,7 @@
         "movie_year": "2018"
       },
       "texte": "Numéro deux, Bumblebee, enfin un film avec un cœur pis pas juste des explosions, le meilleur live action.",
-      "dureeVoix": 5.721,
+      "dureeVoix": 5.747,
       "assetYapper": "e19f03e8-95ef-443b-9125-8d570fce9824"
     },
     {
@@ -82,7 +83,7 @@
         "movie_year": "2024"
       },
       "texte": "Numéro un, Transformers One, Optimus pis Megatron avant la guerre, brutal, magnifique, le meilleur de la saga.",
-      "dureeVoix": 7.079,
+      "dureeVoix": 7.105,
       "assetYapper": "43d46f25-bf31-47ac-aa46-e14ecd8aef0a"
     }
   ]
