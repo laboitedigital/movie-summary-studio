@@ -1,0 +1,119 @@
+name: Ranking - videoclips
+
+# Fabrique un mp4 vertical par entree du classement : extrait Clip.cafe recadre en
+# 9:16, voix off Yapper par-dessus, son d'origine baisse. Les mp4 partent ensuite
+# dans VSUB pour le montage du ranking.
+#
+# Se lance a la main depuis l'onglet Actions, et seulement depuis la branche par
+# defaut : un workflow n'y apparait pas tant qu'il n'est pas merge.
+#
+# Prerequis : Settings > Secrets and variables > Actions > New repository secret
+#   Nom    : CLIP_CAFE_API_KEY
+
+on:
+  workflow_dispatch:
+    inputs:
+      projet:
+        description: "Dossier du projet sous ranking/"
+        required: true
+        default: top5-transformers
+        type: string
+      phase:
+        description: "catalogue = liste les extraits de 7 a 10 s | montage = telecharge, recadre et muxe la voix"
+        required: true
+        default: catalogue
+        type: choice
+        options: [catalogue, montage]
+
+jobs:
+  ranking:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: ranking/scripts
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Les runners ubuntu-latest ne fournissent pas ffmpeg. Il ne sert qu'au
+      # montage, donc on l'evite en phase catalogue. DEBIAN_FRONTEND et
+      # NEEDRESTART_MODE evitent les invites qui ont deja fait rester un run
+      # bloque sept minutes sur cette etape.
+      - name: Installer ffmpeg
+        if: inputs.phase == 'montage'
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          NEEDRESTART_MODE: a
+          NEEDRESTART_SUSPEND: 1
+        timeout-minutes: 5
+        run: |
+          sudo -E apt-get update -qq
+          sudo -E apt-get install -y -qq --no-install-recommends ffmpeg
+          ffmpeg -version | head -1
+
+      # Echoue tout de suite avec un message clair plutot qu'au milieu de la serie.
+      - name: Verifier le secret
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: |
+          if [ -z "$CLIP_CAFE_API_KEY" ]; then
+            echo "::error::Le secret CLIP_CAFE_API_KEY n'est pas defini. Va dans Settings > Secrets and variables > Actions > New repository secret, nomme-le CLIP_CAFE_API_KEY."
+            exit 1
+          fi
+          echo "Secret present : ${#CLIP_CAFE_API_KEY} caracteres."
+
+      # En phase montage aussi : le runner est vierge a chaque fois, et le choix
+      # automatique d'un extrait a besoin du catalogue a jour.
+      - name: Lister les extraits de 7 a 10 s
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: node ranking.mjs catalogue "${{ inputs.projet }}"
+
+      - name: Verifier les voix off
+        if: inputs.phase == 'montage'
+        run: |
+          manquantes=0
+          for tag in $(node -e "
+            const s = require('../${{ inputs.projet }}/sujet.json');
+            console.log(s.clips.map(c => c.tag).join(' '));
+          "); do
+            f="../${{ inputs.projet }}/voix/$tag.mp3"
+            if [ ! -f "$f" ]; then
+              echo "::error::Voix manquante : ranking/${{ inputs.projet }}/voix/$tag.mp3"
+              manquantes=$((manquantes + 1))
+            fi
+          done
+          if [ "$manquantes" -gt 0 ]; then exit 1; fi
+          echo "Toutes les voix off sont la."
+
+      - name: Telecharger, recadrer et muxer
+        if: inputs.phase == 'montage'
+        env:
+          CLIP_CAFE_API_KEY: ${{ secrets.CLIP_CAFE_API_KEY }}
+        run: node ranking.mjs montage "${{ inputs.projet }}"
+
+      # Le catalogue sort meme si le montage echoue : tu vois ce que l'API a
+      # trouve et tu peux corriger choix.json avant de relancer.
+      - name: Publier le catalogue
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ranking-catalogue
+          path: ranking/${{ inputs.projet }}/catalogue.json
+          if-no-files-found: warn
+
+      - name: Publier les videoclips
+        if: inputs.phase == 'montage'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ranking-videoclips
+          path: |
+            ranking/${{ inputs.projet }}/sortie/
+            ranking/${{ inputs.projet }}/manifeste.json
+          if-no-files-found: error
+          retention-days: 14

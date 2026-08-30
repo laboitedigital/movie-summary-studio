@@ -1,0 +1,78 @@
+{
+  "sujet": "Top 5 des films Transformers",
+  "slug": "top5-transformers",
+  "format": {
+    "largeur": 1080,
+    "hauteur": 1920,
+    "fps": 30
+  },
+  "voix": {
+    "modele": "A CHOISIR",
+    "voiceId": "A CHOISIR",
+    "nom": "en cours d'essai — voir essais-voix/",
+    "note": "Les modeles Cartesia (sonic-3.5) acceptent speed 0.6-1.5 ; eleven_v3 non.",
+    "cible": "5 a 8 s par piste — environ 17 mots"
+  },
+  "audio": {
+    "volumeExtrait": 0.12,
+    "volumeVoix": 1.0,
+    "queueSecondes": 0.4
+  },
+  "clips": [
+    {
+      "rang": 5,
+      "tag": "05",
+      "film": "Transformers: Dark of the Moon",
+      "annee": 2011,
+      "recherche": {
+        "movie_title": "Transformers",
+        "movie_year": "2011"
+      },
+      "texte": "Numéro cinq, Dark of the Moon, scénario désastreux, mais la bataille de Chicago reste la plus belle."
+    },
+    {
+      "rang": 4,
+      "tag": "04",
+      "film": "Transformers",
+      "annee": 2007,
+      "recherche": {
+        "movie_title": "Transformers",
+        "movie_year": "2007"
+      },
+      "texte": "Numéro quatre, Transformers deux mille sept, Optimus se transforme à l'écran, pis on a tous eu douze ans."
+    },
+    {
+      "rang": 3,
+      "tag": "03",
+      "film": "The Transformers: The Movie",
+      "annee": 1986,
+      "recherche": {
+        "movie_title": "Transformers",
+        "movie_year": "1986"
+      },
+      "texte": "Numéro trois, The Transformers The Movie, y ont tué Optimus Prime dans un film pour enfants."
+    },
+    {
+      "rang": 2,
+      "tag": "02",
+      "film": "Bumblebee",
+      "annee": 2018,
+      "recherche": {
+        "movie_title": "Bumblebee",
+        "movie_year": "2018"
+      },
+      "texte": "Numéro deux, Bumblebee, enfin un film avec un cœur pis pas juste des explosions, le meilleur live action."
+    },
+    {
+      "rang": 1,
+      "tag": "01",
+      "film": "Transformers One",
+      "annee": 2024,
+      "recherche": {
+        "movie_title": "Transformers",
+        "movie_year": "2024"
+      },
+      "texte": "Numéro un, Transformers One, Optimus pis Megatron avant la guerre, brutal, magnifique, le meilleur de la saga."
+    }
+  ]
+}
