@@ -90,42 +90,89 @@ const aDuSon = async (f) =>
  * soit la requete. Lister le film puis choisir est la seule facon fiable d'avoir
  * cinq extraits reellement differents.
  */
+/** Normalise un titre : Clip.cafe rend parfois des espaces multiples. */
+const memeTitre = (a, b) =>
+  String(a || "").replace(/\s+/g, " ").trim().toLowerCase() ===
+  String(b || "").replace(/\s+/g, " ").trim().toLowerCase();
+
+const ligne = (h) => ({
+  slug: h.slug,
+  duree: h.duration,
+  film: h.movie_title,
+  annee: h.movie_year,
+  replique: h.title,
+  page: `https://clip.cafe/${h.movie_slug}/${h.slug}/`,
+});
+
+/**
+ * Deux listes par entree : les extraits qui contiennent la replique du personnage,
+ * puis le reste du film en repli.
+ *
+ * Deux pieges couverts ici, tous deux payes sur ce sujet :
+ *
+ * movie_title est une recherche FLOUE, pas un filtre. "Silence of the Lambs" a
+ * ramene trente-deux films de 1991 — Star Trek VI, Robin des Bois, La Belle et la
+ * Bete — et les premiers resultats ne venaient pas du film vise. On filtre donc
+ * sur titreExact, releve tel que l'API le rend.
+ *
+ * Et le bon film ne suffit pas : un extrait de The Dark Knight ou le Joker
+ * n'apparait pas ne sert a rien dans un top des mechants. La requete cible la
+ * replique du personnage, en anglais, puisque l'index porte sur les dialogues.
+ */
 async function catalogue() {
   const cat = {};
-  console.log(`${sujet.clips.length} films, une requete toutes les ${RATE_MS / 1000} s. Aucun telechargement.\n`);
+  console.log(`${sujet.clips.length} entrees, deux requetes chacune, une toutes les ${RATE_MS / 1000} s. Aucun telechargement.\n`);
 
   for (const c of sujet.clips) {
-    process.stdout.write(`#${c.rang}  ${c.film} (${c.annee}) ... `);
-    try {
-      const p = new URLSearchParams({ ...c.recherche, duration: DUREE_EXTRAIT, size: "100", sort: "duration", order: "desc" });
-      const hits = await api(p.toString());
-      cat[c.tag] = hits.map((h) => ({
-        slug: h.slug,
-        duree: h.duration,
-        film: h.movie_title,
-        annee: h.movie_year,
-        replique: h.title,
-        page: `https://clip.cafe/${h.movie_slug}/${h.slug}/`,
-      }));
-      // Le film matche, pas seulement le nombre de resultats : un titre partiel
-      // comme "Infinity War" ou "Empire Strikes Back" peut tomber sur autre chose,
-      // et on ne veut pas s'en apercevoir une fois les videoclips montes.
-      const films = [...new Set(cat[c.tag].map((r) => `${r.film} (${r.annee})`))];
-      const bon = films.length === 1 && films[0] === `${c.film} (${c.annee})`;
-      console.log(`${hits.length} extrait(s) de 7 a 10 s${bon ? "" : `  [A VERIFIER : ${films.join(" / ") || "aucun"}]`}`);
-      cat[c.tag].slice(0, 6).forEach((r, i) =>
-        console.log(`      [${i}] ${String(r.duree ?? "?").padStart(2)}s  ${r.slug.padEnd(44)} ${String(r.replique || "").slice(0, 52)}`)
-      );
-      if (!hits.length) console.log("      AUCUN extrait dans cette fenetre — elargis DUREE_EXTRAIT ou verifie le titre/annee");
-    } catch (e) {
-      console.log(`ECHEC : ${e.message}`);
-      cat[c.tag] = [];
+    const { titreExact, requete, ...filtre } = c.recherche;
+    const attendu = titreExact || c.film;
+    const qui = c.mechant || c.film;
+    console.log(`#${c.rang}  ${qui} — ${c.film} (${c.annee})`);
+
+    const interroge = async (params) => {
+      const brut = await api(params.toString());
+      const garde = brut.map(ligne).filter((r) => memeTitre(r.film, attendu));
+      return { garde, ecartes: brut.length - garde.length };
+    };
+
+    let cible = { garde: [], ecartes: 0 };
+    let film = { garde: [], ecartes: 0 };
+
+    // 1. La replique du personnage.
+    if (requete) {
+      try {
+        const p = new URLSearchParams({ ...filtre, transcript: requete, duration: DUREE_EXTRAIT, size: "50" });
+        cible = await interroge(p);
+        console.log(`      replique "${requete}" : ${cible.garde.length} extrait(s) du bon film` +
+                    `${cible.ecartes ? ` (${cible.ecartes} ecarte(s), autre film)` : ""}`);
+        cible.garde.slice(0, 4).forEach((r, i) =>
+          console.log(`        [${i}] ${String(r.duree ?? "?").padStart(2)}s  ${r.slug.padEnd(42)} ${String(r.replique || "").slice(0, 46)}`));
+      } catch (e) {
+        console.log(`      replique : ECHEC ${e.message}`);
+      }
+      await sleep(RATE_MS);
     }
+
+    // 2. Le reste du film, en repli.
+    try {
+      const p = new URLSearchParams({ ...filtre, duration: DUREE_EXTRAIT, size: "100", sort: "duration", order: "desc" });
+      film = await interroge(p);
+      console.log(`      film entier : ${film.garde.length} extrait(s) de 7 a 10 s` +
+                  `${film.ecartes ? ` (${film.ecartes} ecarte(s), autre film)` : ""}`);
+      if (!film.garde.length) console.log(`      AUCUN extrait de "${attendu}" — verifie titreExact`);
+      film.garde.slice(0, 4).forEach((r, i) =>
+        console.log(`        [${i}] ${String(r.duree ?? "?").padStart(2)}s  ${r.slug.padEnd(42)} ${String(r.replique || "").slice(0, 46)}`));
+    } catch (e) {
+      console.log(`      film entier : ECHEC ${e.message}`);
+    }
+
+    cat[c.tag] = { cible: cible.garde, film: film.garde };
+    console.log("");
     await sleep(RATE_MS);
   }
 
   fs.writeFileSync(path.join(RACINE, "catalogue.json"), JSON.stringify(cat, null, 2));
-  console.log(`\nEcrit catalogue.json.`);
+  console.log(`Ecrit catalogue.json.`);
   console.log(`Pour forcer un extrait, mets son slug dans choix.json : { "05": "slug", ... }`);
   console.log(`Puis : node ranking.mjs montage ${projet}`);
 }
@@ -199,7 +246,9 @@ async function montage() {
     // Le slug force passe en tete, le catalogue sert de repli. Un slug peut etre
     // indexe et pourtant renvoyer 404 au telechargement : sans repli, l'entree est
     // perdue et il faut un run entier pour la rattraper.
-    const repli = (cat[c.tag] || []).map((r) => r.slug).filter((sl) => !pris.has(sl));
+    const entree = cat[c.tag] || {};
+    const ordonnes = [...(entree.cible || []), ...(entree.film || [])].map((r) => r.slug);
+    const repli = ordonnes.filter((sl) => !pris.has(sl));
     const candidats = [...new Set([choix[c.tag], ...repli].filter(Boolean))].slice(0, 4);
     if (!candidats.length) {
       console.log("ECHEC : aucun extrait disponible dans le catalogue");

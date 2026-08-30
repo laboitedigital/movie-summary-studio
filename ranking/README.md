@@ -52,22 +52,45 @@ Tu télécharges l'artefact `ranking-videoclips`, tu déposes les cinq mp4 dans 
 **Le job ne s'exécute que depuis la branche par défaut.** Un workflow n'apparaît
 dans l'onglet Actions qu'une fois mergé — c'est pour ça que la PR passe avant.
 
-## Choisir les extraits plutôt que les subir
+## Trouver le personnage, pas seulement le film
 
-La phase `catalogue` **liste** le film au lieu de chercher par mot-clé. C'est
-délibéré : sur un catalogue étroit, la recherche sémantique de Clip.cafe converge
-et renvoie les mêmes quatre ou cinq extraits quelle que soit la requête. Lister
-puis choisir est la seule façon d'avoir cinq extraits réellement différents.
+La phase `catalogue` fait **deux requêtes par entrée** et écrit deux listes :
+`cible`, les extraits qui contiennent la réplique du personnage, puis `film`, le
+reste du film en repli. Le montage descend dans cet ordre.
 
-Sans `choix.json`, le montage prend le premier slug encore libre. Pour imposer le
-tien, lis `catalogue.json` et écris :
+Deux pièges, tous deux payés sur le Top 5 des méchants :
+
+**`movie_title` est une recherche floue, pas un filtre.** « Silence of the Lambs »
+a ramené trente-deux films de 1991 — Star Trek VI, Robin des Bois, La Belle et la
+Bête — et aucun des premiers résultats ne venait du film visé. `titreExact` porte
+le titre tel que l'API le rend, et tout ce qui ne correspond pas est écarté. Le
+compte des écartés s'affiche : s'il est énorme, c'est que le titre dérape.
+
+**Le bon film ne suffit pas.** Un extrait de The Dark Knight où le Joker n'apparaît
+pas ne sert à rien dans un top des méchants. `requete` cible la réplique du
+personnage, **en anglais**, puisque l'index porte sur les dialogues.
+
+```json
+"recherche": {
+  "movie_title": "The Dark Knight",
+  "movie_year": "2008",
+  "titreExact": "The Dark Knight",
+  "requete": "why so serious"
+}
+```
+
+Sans `choix.json`, le montage prend le premier slug encore libre — donc un extrait
+de `cible` avant un extrait de `film`. Pour imposer le tien, lis `catalogue.json`
+et écris :
 
 ```json
 { "05": "slug-du-clip", "04": "...", "03": "...", "02": "...", "01": "..." }
 ```
 
 Les slugs déjà pris sont tenus dans une liste pendant le run : deux entrées ne
-peuvent pas retomber sur le même extrait.
+peuvent pas retomber sur le même extrait. Et si un slug renvoie 404 au
+téléchargement — ça arrive sur des slugs pourtant indexés — le montage descend
+tout seul jusqu'à quatre candidats.
 
 ## Ce que le montage garantit
 

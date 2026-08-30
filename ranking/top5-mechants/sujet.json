@@ -5,7 +5,12 @@
     "registre": "français neutre",
     "note": "Demande explicite de Popol le 30 août : ce projet vise tous les francophones, pas le Québec. C'est une exception au CLAUDE.md, qui impose le québécois parlé à MR TierMaker. Ne pas réécrire en joual."
   },
-  "format": { "largeur": 1080, "hauteur": 1920, "fps": 30, "cadrage": "plein" },
+  "format": {
+    "largeur": 1080,
+    "hauteur": 1920,
+    "fps": 30,
+    "cadrage": "plein"
+  },
   "voix": {
     "modele": "eleven_v3",
     "voiceId": "BUJMBsQ3Oq4cEeWSb48y",
@@ -26,7 +31,12 @@
       "film": "No Country for Old Men",
       "annee": 2007,
       "mechant": "Anton Chigurh",
-      "recherche": { "movie_title": "No Country for Old Men", "movie_year": "2007" },
+      "recherche": {
+        "movie_title": "No Country for Old Men",
+        "movie_year": "2007",
+        "titreExact": "No Country for Old Men",
+        "requete": "what's the most you ever lost on a coin toss"
+      },
       "texte": "Numéro cinq, Anton Chigurh, il ne menace jamais, il pose une pièce sur le comptoir et vous laisse choisir."
     },
     {
@@ -35,7 +45,12 @@
       "film": "The Silence of the Lambs",
       "annee": 1991,
       "mechant": "Hannibal Lecter",
-      "recherche": { "movie_title": "Silence of the Lambs", "movie_year": "1991" },
+      "recherche": {
+        "movie_title": "Silence of the Lambs",
+        "movie_year": "1991",
+        "titreExact": "The Silence of the Lambs",
+        "requete": "fava beans and a nice chianti"
+      },
       "texte": "Numéro quatre, Hannibal Lecter, enfermé, immobile, sans arme, et pourtant c'est lui qui dirige chaque conversation."
     },
     {
@@ -44,7 +59,12 @@
       "film": "The Empire Strikes Back",
       "annee": 1980,
       "mechant": "Dark Vador",
-      "recherche": { "movie_title": "Empire Strikes Back", "movie_year": "1980" },
+      "recherche": {
+        "movie_title": "Empire Strikes Back",
+        "movie_year": "1980",
+        "titreExact": "Star Wars: Episode V   The Empire Strikes Back",
+        "requete": "I am your father"
+      },
       "texte": "Numéro trois, Dark Vador, une seule respiration suffit à faire taire une salle, et la révélation a marqué le siècle."
     },
     {
@@ -53,7 +73,12 @@
       "film": "The Dark Knight",
       "annee": 2008,
       "mechant": "Le Joker",
-      "recherche": { "movie_title": "The Dark Knight", "movie_year": "2008" },
+      "recherche": {
+        "movie_title": "The Dark Knight",
+        "movie_year": "2008",
+        "titreExact": "The Dark Knight",
+        "requete": "why so serious"
+      },
       "texte": "Numéro deux, le Joker de Heath Ledger, aucun plan, aucune logique, juste l'envie de voir le monde brûler."
     },
     {
@@ -62,7 +87,12 @@
       "film": "Avengers: Infinity War",
       "annee": 2018,
       "mechant": "Thanos",
-      "recherche": { "movie_title": "Infinity War", "movie_year": "2018" },
+      "recherche": {
+        "movie_title": "Infinity War",
+        "movie_year": "2018",
+        "titreExact": "Avengers: Infinity War",
+        "requete": "perfectly balanced as all things should be"
+      },
       "texte": "Numéro un, Thanos, le seul méchant qui gagne à la fin, et qui pense sincèrement rendre service à l'univers."
     }
   ]
