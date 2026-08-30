@@ -85,6 +85,17 @@ narration, avec des raccords nets qui ne s'entendaient pas — et finissait sur
 42,7 s de silence numérique. La référence, ce sont les fichiers générés, dans
 `voix/sources/`, remis bout à bout par `scripts/rebuild.py`.
 
+**Un slug present au catalogue Clip.cafe peut renvoyer 404 au telechargement.**
+Sur le Top 5, `thank-you-s2901` et `oh-my-god-yes` sont tous deux indexes dans le
+catalogue Bumblebee et tous deux introuvables au telechargement. Toute
+recuperation doit donc prevoir un repli sur le candidat suivant — sans lui,
+l'entree est perdue et il faut un run entier pour la rattraper.
+
+**Un lot partiel ne doit jamais sortir en code 0.** Le premier montage du Top 5 a
+produit 4 videoclips sur 5 et le job etait vert : rien ne distinguait le run
+complet du run ampute. Le script sort en code 1 des qu'une entree manque, et
+l'artefact passe en `always()` pour qu'on recupere quand meme ce qui a abouti.
+
 **Valider le YAML des workflows avant de pousser** (`yaml.safe_load`). Une
 continuation de ligne shell qui retombe en colonne 1 ferme le bloc `run: |` et
 rend le fichier illisible par GitHub — le job échoue alors sur chaque `push`
