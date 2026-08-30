@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+ranking/*/essais-voix/
+ranking/*/.travail/
