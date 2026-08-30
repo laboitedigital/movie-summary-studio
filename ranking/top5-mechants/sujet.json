@@ -37,7 +37,9 @@
         "titreExact": "No Country for Old Men",
         "requete": "what's the most you ever lost on a coin toss"
       },
-      "texte": "Numéro cinq, Anton Chigurh, il ne menace jamais, il pose une pièce sur le comptoir et vous laisse choisir."
+      "texte": "Numéro cinq, Anton Chigurh, il ne menace jamais, il pose une pièce sur le comptoir et vous laisse choisir.",
+      "dureeVoix": 5.878,
+      "assetYapper": "7006edde-2beb-45f5-9374-d1b7003ecfd0"
     },
     {
       "rang": 4,
@@ -51,7 +53,9 @@
         "titreExact": "The Silence of the Lambs",
         "requete": "fava beans and a nice chianti"
       },
-      "texte": "Numéro quatre, Hannibal Lecter, enfermé, immobile, sans arme, et pourtant c'est lui qui dirige chaque conversation."
+      "texte": "Numéro quatre, Hannibal Lecter, enfermé, immobile, sans arme, et pourtant c'est lui qui dirige chaque conversation.",
+      "dureeVoix": 7.001,
+      "assetYapper": "40216bf3-59f2-4b00-af24-ae7cd7c01f8c"
     },
     {
       "rang": 3,
@@ -65,7 +69,9 @@
         "titreExact": "Star Wars: Episode V   The Empire Strikes Back",
         "requete": "I am your father"
       },
-      "texte": "Numéro trois, Dark Vador, une seule respiration suffit à faire taire une salle, et la révélation a marqué le siècle."
+      "texte": "Numéro trois, Dark Vador, une seule respiration suffit à faire taire une salle, et la révélation a marqué le siècle.",
+      "dureeVoix": 6.191,
+      "assetYapper": "4772c0a9-7e3e-40b6-89c3-08710ad34043"
     },
     {
       "rang": 2,
@@ -79,7 +85,9 @@
         "titreExact": "The Dark Knight",
         "requete": "why so serious"
       },
-      "texte": "Numéro deux, le Joker de Heath Ledger, aucun plan, aucune logique, juste l'envie de voir le monde brûler."
+      "texte": "Numéro deux, le Joker de Heath Ledger, aucun plan, aucune logique, juste l'envie de voir le monde brûler.",
+      "dureeVoix": 6.113,
+      "assetYapper": "cd7ae5dc-af7e-41b2-89c2-6991ed19c2ee"
     },
     {
       "rang": 1,
@@ -93,7 +101,9 @@
         "titreExact": "Avengers: Infinity War",
         "requete": "perfectly balanced as all things should be"
       },
-      "texte": "Numéro un, Thanos, le seul méchant qui gagne à la fin, et qui pense sincèrement rendre service à l'univers."
+      "texte": "Numéro un, Thanos, le seul méchant qui gagne à la fin, et qui pense sincèrement rendre service à l'univers.",
+      "dureeVoix": 5.721,
+      "assetYapper": "e89f1272-2418-43cf-b77a-7b74258241c3"
     }
   ]
 }
