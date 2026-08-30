@@ -107,8 +107,10 @@ jobs:
           path: ranking/${{ inputs.projet }}/catalogue.json
           if-no-files-found: warn
 
+      # always() : le script sort en erreur des qu'une entree n'a pas de videoclip,
+      # et on veut quand meme recuperer celles qui ont abouti.
       - name: Publier les videoclips
-        if: inputs.phase == 'montage'
+        if: always() && inputs.phase == 'montage'
         uses: actions/upload-artifact@v4
         with:
           name: ranking-videoclips
