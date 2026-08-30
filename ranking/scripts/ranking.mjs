@@ -157,6 +157,30 @@ async function montage() {
   const pris = new Set(Object.values(choix));
   const manifeste = [];
 
+  /** Telecharge un extrait. Renvoie null si Clip.cafe ne le sert pas. */
+  async function recuperer(slug, vers) {
+    // La cle de telechargement expire apres 5 min : celle du catalogue est morte.
+    // On refait une recherche par slug pour en obtenir une fraiche.
+    const frais = (await api(`slug=${encodeURIComponent(slug)}&size=1`))[0];
+    if (!frais) throw new Error(`slug introuvable : ${slug}`);
+    const dl = frais.download;
+    if (!dl) throw new Error("aucune cle de telechargement renvoyee");
+
+    let buf;
+    // Selon les comptes, "download" est soit une URL complete, soit la cle
+    // a passer a l'endpoint documente. On gere les deux.
+    if (typeof dl === "string" && dl.startsWith("http")) {
+      const r = await fetch(dl, { signal: AbortSignal.timeout(180000) });
+      if (!r.ok) throw new Error(`telechargement HTTP ${r.status}`);
+      buf = Buffer.from(await r.arrayBuffer());
+    } else {
+      buf = await api(`slug=${encodeURIComponent(slug)}&key=${encodeURIComponent(dl)}`, { binary: true });
+    }
+    if (buf.length < 2048) throw new Error("fichier trop petit, cle probablement expiree");
+    fs.writeFileSync(vers, buf);
+    return frais;
+  }
+
   for (const c of sujet.clips) {
     const voix = path.join(VOIX, `${c.tag}.mp3`);
     process.stdout.write(`#${c.rang}  ${c.film} ... `);
@@ -167,93 +191,93 @@ async function montage() {
       continue;
     }
 
-    // Le slug force gagne ; sinon le premier du catalogue qui n'est pas deja pris.
-    const candidat = choix[c.tag] || (cat[c.tag] || []).find((r) => !pris.has(r.slug))?.slug;
-    if (!candidat) {
+    // Le slug force passe en tete, le catalogue sert de repli. Un slug peut etre
+    // indexe et pourtant renvoyer 404 au telechargement : sans repli, l'entree est
+    // perdue et il faut un run entier pour la rattraper.
+    const repli = (cat[c.tag] || []).map((r) => r.slug).filter((sl) => !pris.has(sl));
+    const candidats = [...new Set([choix[c.tag], ...repli].filter(Boolean))].slice(0, 4);
+    if (!candidats.length) {
       console.log("ECHEC : aucun extrait disponible dans le catalogue");
       manifeste.push({ tag: c.tag, rang: c.rang, statut: "echec", erreur: "catalogue vide" });
       continue;
     }
-    pris.add(candidat);
 
-    try {
-      // La cle de telechargement expire apres 5 min : celle du catalogue est morte.
-      // On refait une recherche par slug pour en obtenir une fraiche.
-      const frais = (await api(`slug=${encodeURIComponent(candidat)}&size=1`))[0];
-      if (!frais) throw new Error(`slug introuvable : ${candidat}`);
-      const dl = frais.download;
-      if (!dl) throw new Error("aucune cle de telechargement renvoyee");
+    let pose = null;
+    let derniereErreur = null;
 
+    for (const candidat of candidats) {
+      pris.add(candidat);
       const brut = path.join(TRAVAIL, `${c.tag}-brut.mp4`);
-      let buf;
-      // Selon les comptes, "download" est soit une URL complete, soit la cle
-      // a passer a l'endpoint documente. On gere les deux.
-      if (typeof dl === "string" && dl.startsWith("http")) {
-        const r = await fetch(dl, { signal: AbortSignal.timeout(180000) });
-        if (!r.ok) throw new Error(`telechargement HTTP ${r.status}`);
-        buf = Buffer.from(await r.arrayBuffer());
-      } else {
-        buf = await api(`slug=${encodeURIComponent(candidat)}&key=${encodeURIComponent(dl)}`, { binary: true });
+      try {
+        const frais = await recuperer(candidat, brut);
+
+        const dVoix = await duree(voix);
+        const dExtrait = await duree(brut);
+        // L'extrait commande, sauf s'il est trop court pour contenir la narration.
+        const requis = avanceSecondes + dVoix + queueSecondes;
+        const finale = +Math.max(dExtrait, requis).toFixed(3);
+        const sonDispo = await aDuSon(brut);
+
+        // Deux copies du meme flux : un fond flou plein cadre, l'extrait net par-dessus.
+        // fps EN PREMIER : les extraits sont en 24/25 fps et le montage en 30 ; conformer
+        // apres le compositing ferait heriter la base de temps du premier flux.
+        const video =
+          `[0:v]fps=${FPS},split=2[a][b];` +
+          `[a]scale=${L}:${H}:force_original_aspect_ratio=increase,crop=${L}:${H},gblur=sigma=28[bg];` +
+          `[b]scale=${L}:-2:flags=lanczos[fg];` +
+          `[bg][fg]overlay=(W-w)/2:(H-h)/2,` +
+          `tpad=stop_mode=clone:stop_duration=${Math.max(0, finale - dExtrait + 1).toFixed(3)},` +
+          `format=yuv420p[v]`;
+
+        // Le son d'origine reste audible sous la narration, mais ne lui dispute rien.
+        // normalize=0 : sans lui, amix divise chaque entree par leur nombre.
+        // Pas de shortest=1 : c'est -t qui fixe la duree, sinon le plus court tronque tout.
+        // all=1 : sans lui, adelay ne decale que le premier canal et la voix se dedouble.
+        const retard = `adelay=${Math.round(avanceSecondes * 1000)}:all=1`;
+        const audio = sonDispo
+          ? `[0:a]volume=${volumeExtrait},apad[s0];[1:a]volume=${volumeVoix},${retard}[s1];[s0][s1]amix=inputs=2:duration=longest:normalize=0[aout]`
+          : `[1:a]volume=${volumeVoix},${retard},apad[aout]`;
+
+        const sortie = path.join(SORTIE, `${c.tag}-${c.film.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.mp4`);
+        await run("ffmpeg", [
+          "-y", "-i", brut, "-i", voix,
+          "-filter_complex", `${video};${audio}`,
+          "-map", "[v]", "-map", "[aout]",
+          "-t", String(finale),
+          "-r", String(FPS),
+          "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+          "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+          "-movflags", "+faststart",
+          sortie,
+        ]);
+        fs.unlinkSync(brut);
+
+        const reelle = await duree(sortie);
+        pose = {
+          tag: c.tag, rang: c.rang, statut: "ok",
+          fichier: path.relative(RACINE, sortie),
+          duree: +reelle.toFixed(3), dureeVoix: +dVoix.toFixed(3), dureeExtrait: +dExtrait.toFixed(3),
+          slug: candidat, film: frais.movie_title, annee: frais.movie_year,
+          replique: frais.title, page: `https://clip.cafe/${frais.movie_slug}/${candidat}/`,
+          sonOrigine: sonDispo, texte: c.texte,
+          repliApres: candidat === choix[c.tag] ? undefined : `slug force indisponible (${derniereErreur})`,
+        };
+        const tenu = reelle >= 6.5 && reelle <= 10.5 ? "" : "  [HORS 7-10 s]";
+        console.log(`ok — ${reelle.toFixed(2)}s  (voix ${dVoix.toFixed(2)}s, extrait ${dExtrait.toFixed(2)}s)${tenu}  ${candidat}`);
+        break;
+      } catch (e) {
+        derniereErreur = e.message;
+        if (fs.existsSync(brut)) fs.unlinkSync(brut);
+        const reste = candidats.indexOf(candidat) < candidats.length - 1;
+        console.log(`${candidat} : ${e.message}${reste ? " — repli sur le suivant" : ""}`);
+        if (reste) { process.stdout.write(`#${c.rang}  ${c.film} ... `); await sleep(RATE_MS); }
       }
-      if (buf.length < 2048) throw new Error("fichier trop petit, cle probablement expiree");
-      fs.writeFileSync(brut, buf);
-
-      const dVoix = await duree(voix);
-      const dExtrait = await duree(brut);
-      // L'extrait commande, sauf s'il est trop court pour contenir la narration.
-      const requis = avanceSecondes + dVoix + queueSecondes;
-      const finale = +Math.max(dExtrait, requis).toFixed(3);
-      const sonDispo = await aDuSon(brut);
-
-      // Deux copies du meme flux : un fond flou plein cadre, l'extrait net par-dessus.
-      // fps EN PREMIER : les extraits sont en 24/25 fps et le montage en 30 ; conformer
-      // apres le compositing ferait heriter la base de temps du premier flux.
-      const video =
-        `[0:v]fps=${FPS},split=2[a][b];` +
-        `[a]scale=${L}:${H}:force_original_aspect_ratio=increase,crop=${L}:${H},gblur=sigma=28[bg];` +
-        `[b]scale=${L}:-2:flags=lanczos[fg];` +
-        `[bg][fg]overlay=(W-w)/2:(H-h)/2,` +
-        `tpad=stop_mode=clone:stop_duration=${Math.max(0, finale - dExtrait + 1).toFixed(3)},` +
-        `format=yuv420p[v]`;
-
-      // Le son d'origine reste audible sous la narration, mais ne lui dispute rien.
-      // normalize=0 : sans lui, amix divise chaque entree par leur nombre.
-      // Pas de shortest=1 : c'est -t qui fixe la duree, sinon le plus court tronque tout.
-      // all=1 : sans lui, adelay ne decale que le premier canal et la voix se dedouble.
-      const retard = `adelay=${Math.round(avanceSecondes * 1000)}:all=1`;
-      const audio = sonDispo
-        ? `[0:a]volume=${volumeExtrait},apad[s0];[1:a]volume=${volumeVoix},${retard}[s1];[s0][s1]amix=inputs=2:duration=longest:normalize=0[aout]`
-        : `[1:a]volume=${volumeVoix},${retard},apad[aout]`;
-
-      const sortie = path.join(SORTIE, `${c.tag}-${c.film.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.mp4`);
-      await run("ffmpeg", [
-        "-y", "-i", brut, "-i", voix,
-        "-filter_complex", `${video};${audio}`,
-        "-map", "[v]", "-map", "[aout]",
-        "-t", String(finale),
-        "-r", String(FPS),
-        "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-        "-movflags", "+faststart",
-        sortie,
-      ]);
-      fs.unlinkSync(brut);
-
-      const reelle = await duree(sortie);
-      const tenu = reelle >= 6.5 && reelle <= 10.5 ? "" : "  [HORS 7-10 s]";
-      console.log(`ok — ${reelle.toFixed(2)}s  (voix ${dVoix.toFixed(2)}s, extrait ${dExtrait.toFixed(2)}s)${tenu}  ${candidat}`);
-      manifeste.push({
-        tag: c.tag, rang: c.rang, statut: "ok",
-        fichier: path.relative(RACINE, sortie),
-        duree: +reelle.toFixed(3), dureeVoix: +dVoix.toFixed(3), dureeExtrait: +dExtrait.toFixed(3),
-        slug: candidat, film: frais.movie_title, annee: frais.movie_year,
-        replique: frais.title, page: `https://clip.cafe/${frais.movie_slug}/${candidat}/`,
-        sonOrigine: sonDispo, texte: c.texte,
-      });
-    } catch (e) {
-      console.log(`ECHEC : ${e.message}`);
-      manifeste.push({ tag: c.tag, rang: c.rang, statut: "echec", erreur: e.message, slug: candidat });
     }
+
+    manifeste.push(pose || {
+      tag: c.tag, rang: c.rang, statut: "echec",
+      erreur: derniereErreur, essayes: candidats,
+    });
     await sleep(RATE_MS);
   }
 
@@ -266,8 +290,14 @@ async function montage() {
   console.log(`\n${ok.length}/${sujet.clips.length} videoclips dans ${path.relative(RACINE, SORTIE)}/`);
   console.log(`Extraits distincts : ${new Set(ok.map((m) => m.slug)).size}`);
   const rates = manifeste.filter((m) => m.statut !== "ok");
-  if (rates.length) console.log(`A reprendre : ${rates.map((r) => `#${r.rang} (${r.erreur})`).join(", ")}`);
+  if (rates.length) {
+    // Un run partiel ne doit pas passer pour un succes : le job doit rougir.
+    console.log(`A reprendre : ${rates.map((r) => `#${r.rang} (${r.erreur})`).join(", ")}`);
+    console.log(`::error::${rates.length} entree(s) sur ${sujet.clips.length} sans videoclip.`);
+    process.exitCode = 1;
+  }
 }
+
 
 if (cmd === "catalogue") await catalogue();
 else if (cmd === "montage") await montage();
