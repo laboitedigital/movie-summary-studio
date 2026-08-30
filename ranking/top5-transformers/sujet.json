@@ -4,7 +4,9 @@
   "format": {
     "largeur": 1080,
     "hauteur": 1920,
-    "fps": 30
+    "fps": 30,
+    "cadrage": "plein",
+    "note": "plein = l'image remplit le 9:16 (un 16:9 y perd ses cotes) ; flou = bande centree sur fond flou"
   },
   "voix": {
     "modele": "eleven_v3",
@@ -20,7 +22,7 @@
     "volumeVoix": 1.0,
     "avanceSecondes": 0.3,
     "queueSecondes": 0.4,
-    "regle": "la duree de sortie suit l'extrait (7-10 s) ; la voix (5-8 s) se pose dedans apres l'avance"
+    "regle": "la duree de sortie colle a la voix : avance + voix + queue, l'extrait est coupe"
   },
   "clips": [
     {
