@@ -27,6 +27,18 @@ on:
         description: "Deposer une planche de controle des extraits sur la branche (true / false)"
         required: false
         default: "true"
+      duree:
+        description: "Duree max d un extrait en secondes. 7 = regle de l episode long"
+        required: false
+        default: "7"
+      duree_min:
+        description: "Duree min de la source cherchee. La relever avec duree, sinon une source courte reste courte"
+        required: false
+        default: "3"
+      deposer_clips:
+        description: "Committer les mp4 sur la branche en plus de l artefact (true / false)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -62,6 +74,8 @@ jobs:
           PLANS: ${{ inputs.plans }}
           EXCLURE: ${{ inputs.exclure }}
           REQUETE: ${{ inputs.requete }}
+          CAP: ${{ inputs.duree }}
+          DUREE_MIN: ${{ inputs.duree_min }}
         run: |
           set -e
           # le plan est reference depuis la racine du depot
@@ -109,13 +123,23 @@ jobs:
           rm -rf planche
           ls -la apercu/
 
-      - name: Deposer la planche sur la branche
-        if: ${{ inputs.planche == 'true' }}
+      # Un seul commit pour la planche et les mp4 : deux etapes qui poussent
+      # l une apres l autre se rejettent mutuellement sur un push concurrent.
+      - name: Deposer sur la branche
+        if: ${{ inputs.planche == 'true' || inputs.deposer_clips == 'true' }}
         run: |
           set -e
           git config user.name  "Claude"
           git config user.email "noreply@anthropic.com"
-          git add mr-tier-maker/episode-01-transformers/apercu/planche-extraits-*.jpg \
-                  mr-tier-maker/episode-01-transformers/apercu/planche-extraits.md
-          git commit -m "Planche de controle des extraits (run ${{ github.run_id }})" || exit 0
+          if [ "${{ inputs.planche }}" = "true" ]; then
+            git add mr-tier-maker/episode-01-transformers/apercu/planche-extraits-*.jpg \
+                    mr-tier-maker/episode-01-transformers/apercu/planche-extraits.md
+          fi
+          # Les extraits d un Short se comptent en unites : on les veut lisibles
+          # depuis le depot, pas enfouis dans un zip d artefact. Jamais pour
+          # l episode long, ou ils sont 96.
+          if [ "${{ inputs.deposer_clips }}" = "true" ]; then
+            git add -f mr-tier-maker/episode-01-transformers/scripts/clips/
+          fi
+          git commit -m "Extraits Clip.cafe (run ${{ github.run_id }})" || exit 0
           git push origin HEAD:${{ github.ref_name }}

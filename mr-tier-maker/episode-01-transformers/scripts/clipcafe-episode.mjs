@@ -38,9 +38,15 @@ const REQUETE = (process.env.REQUETE || "").split("|").map((x) => x.trim()).filt
 
 const API = "https://api.clip.cafe/";
 const OUT = "clips";
-const CAP = 7.0;            // aucun extrait ne depasse 7 s
+// 7 s est la regle de l episode long. Un Short vertical veut des plans plus
+// longs : CAP se releve par l environnement sans toucher au defaut.
+const CAP = Number(process.env.CAP || 7.0);
 const RATE_MS = 6500;       // plan PRO : 10 requetes/minute
-const DURATION_RANGE = "3-30";
+// La borne basse compte autant que CAP : une source de 3 s coupee a 10 s reste
+// une source de 3 s. Pour garantir un plan long, on refuse les clips trop
+// courts des la recherche.
+const DUREE_MIN = Number(process.env.DUREE_MIN || 3);
+const DURATION_RANGE = `${DUREE_MIN}-30`;
 
 // index de segment -> film. L'ordre suit le plan de montage.
 const FILMS = [
@@ -177,7 +183,7 @@ for (const s of shots) {
       const buf = await api(url.startsWith("http") && !url.includes("api_key")
         ? url : url.split("?")[1], true);
       fs.writeFileSync(`${OUT}/_${tag}.mp4`, buf);
-      // on coupe a 7 s : c'est la limite qu'on s'impose sur les extraits
+      // on coupe a CAP : 7 s par defaut, la limite qu'on s'impose sur les extraits
       await ffmpeg(["-y", "-loglevel", "error", "-i", `${OUT}/_${tag}.mp4`,
         "-t", String(CAP), "-c", "copy", dest]);
       fs.unlinkSync(`${OUT}/_${tag}.mp4`);

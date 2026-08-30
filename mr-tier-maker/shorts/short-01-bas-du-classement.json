@@ -1,0 +1,62 @@
+[
+ {
+  "n": 901,
+  "seg": 5,
+  "type": "CLIP",
+  "famille": "extrait",
+  "position": 9,
+  "film": "Transformers: The Last Knight (2017)",
+  "tier": "D",
+  "requete": "why do you keep coming back to Earth",
+  "texte": "Position 9 — tout en bas de la case D.",
+  "note": "Le pire du classement selon l'episode 01, plan 106."
+ },
+ {
+  "n": 902,
+  "seg": 4,
+  "type": "CLIP",
+  "famille": "extrait",
+  "position": 8,
+  "film": "Transformers: Age of Extinction (2014)",
+  "tier": "D",
+  "requete": "I am Optimus Prime and I am calling all Autobots",
+  "texte": "Position 8 — D.",
+  "note": "Verdict D a l'episode 01, plan 093."
+ },
+ {
+  "n": 903,
+  "seg": 2,
+  "type": "CLIP",
+  "famille": "extrait",
+  "position": 7,
+  "film": "Revenge of the Fallen (2009)",
+  "tier": "D",
+  "requete": "the Fallen shall rise again",
+  "texte": "Position 7 — D.",
+  "note": "Verdict D a l'episode 01, plan 063. Replique-titre du film."
+ },
+ {
+  "n": 904,
+  "seg": 0,
+  "type": "CLIP",
+  "famille": "extrait",
+  "position": 6,
+  "film": "The Transformers: The Movie (1986)",
+  "tier": "B",
+  "requete": "Megatron must be stopped no matter the cost",
+  "texte": "Position 6 — B.",
+  "note": "Verdict B a l'episode 01, plan 029. Requete differente du plan 009 (one shall stand one shall fall) pour ne pas reprendre le meme clip."
+ },
+ {
+  "n": 905,
+  "seg": 7,
+  "type": "CLIP",
+  "famille": "extrait",
+  "position": 5,
+  "film": "Transformers: Rise of the Beasts (2023)",
+  "tier": "B",
+  "requete": "till all are one",
+  "texte": "Position 5 — B.",
+  "note": "Verdict B a l'episode 01, plan 134."
+ }
+]
