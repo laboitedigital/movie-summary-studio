@@ -18,7 +18,9 @@
   "audio": {
     "volumeExtrait": 0.12,
     "volumeVoix": 1.0,
-    "queueSecondes": 0.4
+    "avanceSecondes": 0.3,
+    "queueSecondes": 0.4,
+    "regle": "la duree de sortie suit l'extrait (7-10 s) ; la voix (5-8 s) se pose dedans apres l'avance"
   },
   "clips": [
     {

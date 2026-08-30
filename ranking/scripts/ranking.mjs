@@ -128,9 +128,13 @@ async function catalogue() {
 /**
  * Telecharge l'extrait choisi, le recadre en 9:16 et pose la voix off dessus.
  *
- * La duree finale est celle de la VOIX, pas celle de l'extrait : c'est la narration
- * qui ne doit jamais etre coupee. Un extrait trop court est prolonge sur sa derniere
- * image (tpad), un extrait trop long est coupe (-t).
+ * La duree finale est celle de l'EXTRAIT (7 a 10 s), pas celle de la voix : la voix
+ * fait 5 a 8 s et se pose dedans, elle n'a pas a remplir le plan. Elle entre apres
+ * une courte avance, pour ne pas demarrer sur la premiere image.
+ *
+ * Seul cas ou l'extrait ne commande pas : quand la voix ne rentrerait pas dedans.
+ * La narration n'est jamais coupee — l'extrait est alors prolonge sur sa derniere
+ * image (tpad). A l'inverse, un extrait plus long que necessaire est coupe (-t).
  */
 async function montage() {
   const catFile = path.join(RACINE, "catalogue.json");
@@ -146,7 +150,7 @@ async function montage() {
   fs.mkdirSync(TRAVAIL, { recursive: true });
 
   const { largeur: L, hauteur: H, fps: FPS } = sujet.format;
-  const { volumeExtrait, volumeVoix, queueSecondes } = sujet.audio;
+  const { volumeExtrait, volumeVoix, queueSecondes, avanceSecondes } = sujet.audio;
 
   // Un slug deja pris ne peut pas etre repris : sans cette liste, deux entrees
   // voisines finissent sur le meme extrait.
@@ -196,7 +200,9 @@ async function montage() {
 
       const dVoix = await duree(voix);
       const dExtrait = await duree(brut);
-      const finale = +(dVoix + queueSecondes).toFixed(3);
+      // L'extrait commande, sauf s'il est trop court pour contenir la narration.
+      const requis = avanceSecondes + dVoix + queueSecondes;
+      const finale = +Math.max(dExtrait, requis).toFixed(3);
       const sonDispo = await aDuSon(brut);
 
       // Deux copies du meme flux : un fond flou plein cadre, l'extrait net par-dessus.
@@ -213,9 +219,11 @@ async function montage() {
       // Le son d'origine reste audible sous la narration, mais ne lui dispute rien.
       // normalize=0 : sans lui, amix divise chaque entree par leur nombre.
       // Pas de shortest=1 : c'est -t qui fixe la duree, sinon le plus court tronque tout.
+      // all=1 : sans lui, adelay ne decale que le premier canal et la voix se dedouble.
+      const retard = `adelay=${Math.round(avanceSecondes * 1000)}:all=1`;
       const audio = sonDispo
-        ? `[0:a]volume=${volumeExtrait},apad[s0];[1:a]volume=${volumeVoix}[s1];[s0][s1]amix=inputs=2:duration=longest:normalize=0[aout]`
-        : `[1:a]volume=${volumeVoix}[aout]`;
+        ? `[0:a]volume=${volumeExtrait},apad[s0];[1:a]volume=${volumeVoix},${retard}[s1];[s0][s1]amix=inputs=2:duration=longest:normalize=0[aout]`
+        : `[1:a]volume=${volumeVoix},${retard},apad[aout]`;
 
       const sortie = path.join(SORTIE, `${c.tag}-${c.film.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.mp4`);
       await run("ffmpeg", [
@@ -232,7 +240,8 @@ async function montage() {
       fs.unlinkSync(brut);
 
       const reelle = await duree(sortie);
-      console.log(`ok — ${reelle.toFixed(2)}s  (voix ${dVoix.toFixed(2)}s, extrait ${dExtrait.toFixed(2)}s)  ${candidat}`);
+      const tenu = reelle >= 6.5 && reelle <= 10.5 ? "" : "  [HORS 7-10 s]";
+      console.log(`ok — ${reelle.toFixed(2)}s  (voix ${dVoix.toFixed(2)}s, extrait ${dExtrait.toFixed(2)}s)${tenu}  ${candidat}`);
       manifeste.push({
         tag: c.tag, rang: c.rang, statut: "ok",
         fichier: path.relative(RACINE, sortie),

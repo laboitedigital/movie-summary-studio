@@ -71,10 +71,16 @@ peuvent pas retomber sur le même extrait.
 
 ## Ce que le montage garantit
 
-**La durée finale est celle de la voix, jamais celle de l'extrait.** C'est la
-narration qui ne doit pas être coupée. Un extrait trop court est prolongé sur sa
-dernière image, un extrait trop long est coupé net. La fenêtre 7-10 s sert à
-choisir la matière, pas à fixer la sortie.
+**La durée finale est celle de l'extrait, pas celle de la voix.** Les deux
+contraintes du format tiennent ensemble : la vidéo fait **7 à 10 s**, la voix fait
+**5 à 8 s** et se pose dedans, après une avance de 0,3 s pour ne pas démarrer sur
+la première image. La voix n'a pas à remplir le plan.
+
+L'extrait ne perd la main que dans un cas : quand la voix n'y rentrerait pas. La
+narration n'est jamais coupée — l'extrait est alors prolongé sur sa dernière image.
+C'est pour ça que le catalogue est trié par durée décroissante et que le montage
+prend le plus long extrait encore libre : l'entrée la plus bavarde a besoin de la
+plus longue matière.
 
 **Le 9:16 est un fond flou plein cadre + l'extrait net centré par-dessus.** Pas de
 recadrage destructif : rien de l'image d'origine n'est perdu.
