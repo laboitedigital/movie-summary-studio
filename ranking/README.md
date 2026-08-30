@@ -71,19 +71,19 @@ peuvent pas retomber sur le même extrait.
 
 ## Ce que le montage garantit
 
-**La durée finale est celle de l'extrait, pas celle de la voix.** Les deux
-contraintes du format tiennent ensemble : la vidéo fait **7 à 10 s**, la voix fait
-**5 à 8 s** et se pose dedans, après une avance de 0,3 s pour ne pas démarrer sur
-la première image. La voix n'a pas à remplir le plan.
+**La durée finale colle à la voix.** `avance + voix + queue`, et l'extrait est
+coupé à cette longueur. La narration n'est jamais tronquée — c'est le plancher —
+mais rien ne traîne après elle. Un extrait de 10 s posé sur une voix de 5,4 s
+sort à 6,06 s.
 
-L'extrait ne perd la main que dans un cas : quand la voix n'y rentrerait pas. La
-narration n'est jamais coupée — l'extrait est alors prolongé sur sa dernière image.
-C'est pour ça que le catalogue est trié par durée décroissante et que le montage
-prend le plus long extrait encore libre : l'entrée la plus bavarde a besoin de la
-plus longue matière.
+Quand l'extrait est plus court que la voix, il est prolongé sur sa dernière image
+plutôt que la couper.
 
-**Le 9:16 est un fond flou plein cadre + l'extrait net centré par-dessus.** Pas de
-recadrage destructif : rien de l'image d'origine n'est perdu.
+**Le 9:16 est plein cadre par défaut.** L'image remplit les 1080×1920 : un 16:9 y
+perd ses côtés, c'est le prix d'un vrai cadrage vertical et c'est ce que le format
+court attend. `format.cadrage: "flou"` rebascule sur l'ancien rendu — l'image
+entière dans une bande centrée, sur fond flou plein cadre — quand perdre les côtés
+coûte trop cher sur un plan large.
 
 **Le son d'origine reste sous la voix** (12 %), il ne disparaît pas. `amix` est en
 `normalize=0` — sans ça, il divise chaque entrée par leur nombre et tout le mixage

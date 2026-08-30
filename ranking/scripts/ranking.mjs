@@ -149,7 +149,7 @@ async function montage() {
   fs.mkdirSync(SORTIE, { recursive: true });
   fs.mkdirSync(TRAVAIL, { recursive: true });
 
-  const { largeur: L, hauteur: H, fps: FPS } = sujet.format;
+  const { largeur: L, hauteur: H, fps: FPS, cadrage = "plein" } = sujet.format;
   const { volumeExtrait, volumeVoix, queueSecondes, avanceSecondes } = sujet.audio;
 
   // Un slug deja pris ne peut pas etre repris : sans cette liste, deux entrees
@@ -213,21 +213,25 @@ async function montage() {
 
         const dVoix = await duree(voix);
         const dExtrait = await duree(brut);
-        // L'extrait commande, sauf s'il est trop court pour contenir la narration.
-        const requis = avanceSecondes + dVoix + queueSecondes;
-        const finale = +Math.max(dExtrait, requis).toFixed(3);
+        // La voix commande : la video colle a la narration et l'extrait est coupe.
+        // On ne descend jamais sous la voix — la narration n'est jamais tronquee.
+        const finale = +(avanceSecondes + dVoix + queueSecondes).toFixed(3);
         const sonDispo = await aDuSon(brut);
 
-        // Deux copies du meme flux : un fond flou plein cadre, l'extrait net par-dessus.
         // fps EN PREMIER : les extraits sont en 24/25 fps et le montage en 30 ; conformer
-        // apres le compositing ferait heriter la base de temps du premier flux.
-        const video =
-          `[0:v]fps=${FPS},split=2[a][b];` +
-          `[a]scale=${L}:${H}:force_original_aspect_ratio=increase,crop=${L}:${H},gblur=sigma=28[bg];` +
-          `[b]scale=${L}:-2:flags=lanczos[fg];` +
-          `[bg][fg]overlay=(W-w)/2:(H-h)/2,` +
-          `tpad=stop_mode=clone:stop_duration=${Math.max(0, finale - dExtrait + 1).toFixed(3)},` +
-          `format=yuv420p[v]`;
+        // apres le reste ferait heriter la base de temps du premier flux.
+        const rallonge = `tpad=stop_mode=clone:stop_duration=${Math.max(0, finale - dExtrait + 1).toFixed(3)}`;
+        const video = cadrage === "flou"
+          // Fond flou plein cadre, extrait net par-dessus : rien de l'image n'est perdu,
+          // mais l'image utile ne fait qu'une bande au centre.
+          ? `[0:v]fps=${FPS},split=2[a][b];` +
+            `[a]scale=${L}:${H}:force_original_aspect_ratio=increase,crop=${L}:${H},gblur=sigma=28[bg];` +
+            `[b]scale=${L}:-2:flags=lanczos[fg];` +
+            `[bg][fg]overlay=(W-w)/2:(H-h)/2,${rallonge},format=yuv420p[v]`
+          // Plein cadre : l'image remplit le 9:16. Un 16:9 y perd ses cotes — c'est le
+          // prix d'un vrai cadrage vertical, et c'est ce que le format court attend.
+          : `[0:v]fps=${FPS},scale=${L}:${H}:force_original_aspect_ratio=increase,` +
+            `crop=${L}:${H},${rallonge},format=yuv420p[v]`;
 
         // Le son d'origine reste audible sous la narration, mais ne lui dispute rien.
         // normalize=0 : sans lui, amix divise chaque entree par leur nombre.
@@ -262,8 +266,8 @@ async function montage() {
           sonOrigine: sonDispo, texte: c.texte,
           repliApres: candidat === choix[c.tag] ? undefined : `slug force indisponible (${derniereErreur})`,
         };
-        const tenu = reelle >= 6.5 && reelle <= 10.5 ? "" : "  [HORS 7-10 s]";
-        console.log(`ok — ${reelle.toFixed(2)}s  (voix ${dVoix.toFixed(2)}s, extrait ${dExtrait.toFixed(2)}s)${tenu}  ${candidat}`);
+        const ecart = reelle - dVoix;
+        console.log(`ok — ${reelle.toFixed(2)}s  (voix ${dVoix.toFixed(2)}s, +${ecart.toFixed(2)}s ; extrait ${dExtrait.toFixed(2)}s coupe)  ${candidat}`);
         break;
       } catch (e) {
         derniereErreur = e.message;
