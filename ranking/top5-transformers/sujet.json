@@ -7,11 +7,12 @@
     "fps": 30
   },
   "voix": {
-    "modele": "A CHOISIR",
-    "voiceId": "A CHOISIR",
-    "nom": "en cours d'essai — voir essais-voix/",
-    "note": "Les modeles Cartesia (sonic-3.5) acceptent speed 0.6-1.5 ; eleven_v3 non.",
-    "cible": "5 a 8 s par piste — environ 17 mots"
+    "modele": "eleven_v3",
+    "voiceId": "BUJMBsQ3Oq4cEeWSb48y",
+    "nom": "Sébastien - French Male (jeune, radio/podcast)",
+    "cible": "5 a 8 s par piste — environ 17 mots",
+    "choisi": "essai du 30 aout, asset ccfa766e-c45c-42e4-bdb9-2fd2f8d9e383, 6,69 s",
+    "note": "eleven_v3 n'accepte pas de parametre de debit : la duree se regle au nombre de mots."
   },
   "audio": {
     "volumeExtrait": 0.12,
@@ -28,7 +29,9 @@
         "movie_title": "Transformers",
         "movie_year": "2011"
       },
-      "texte": "Numéro cinq, Dark of the Moon, scénario désastreux, mais la bataille de Chicago reste la plus belle."
+      "texte": "Numéro cinq, Dark of the Moon, scénario désastreux, mais la bataille de Chicago reste la plus belle.",
+      "dureeVoix": 5.329,
+      "assetYapper": "b80a4afe-1bdd-4911-bfb1-9c275cc3ef46"
     },
     {
       "rang": 4,
@@ -39,7 +42,9 @@
         "movie_title": "Transformers",
         "movie_year": "2007"
       },
-      "texte": "Numéro quatre, Transformers deux mille sept, Optimus se transforme à l'écran, pis on a tous eu douze ans."
+      "texte": "Numéro quatre, Transformers deux mille sept, Optimus se transforme à l'écran, pis on a tous eu douze ans.",
+      "dureeVoix": 5.146,
+      "assetYapper": "d945a646-e3e2-42f7-a75b-ac8e7c402056"
     },
     {
       "rang": 3,
@@ -50,7 +55,9 @@
         "movie_title": "Transformers",
         "movie_year": "1986"
       },
-      "texte": "Numéro trois, The Transformers The Movie, y ont tué Optimus Prime dans un film pour enfants."
+      "texte": "Numéro trois, The Transformers The Movie, y ont tué Optimus Prime dans un film pour enfants.",
+      "dureeVoix": 5.486,
+      "assetYapper": "fa3506ee-2c70-4ed2-a78b-35e1d3420ac7"
     },
     {
       "rang": 2,
@@ -61,7 +68,9 @@
         "movie_title": "Bumblebee",
         "movie_year": "2018"
       },
-      "texte": "Numéro deux, Bumblebee, enfin un film avec un cœur pis pas juste des explosions, le meilleur live action."
+      "texte": "Numéro deux, Bumblebee, enfin un film avec un cœur pis pas juste des explosions, le meilleur live action.",
+      "dureeVoix": 5.721,
+      "assetYapper": "e19f03e8-95ef-443b-9125-8d570fce9824"
     },
     {
       "rang": 1,
@@ -72,7 +81,9 @@
         "movie_title": "Transformers",
         "movie_year": "2024"
       },
-      "texte": "Numéro un, Transformers One, Optimus pis Megatron avant la guerre, brutal, magnifique, le meilleur de la saga."
+      "texte": "Numéro un, Transformers One, Optimus pis Megatron avant la guerre, brutal, magnifique, le meilleur de la saga.",
+      "dureeVoix": 7.079,
+      "assetYapper": "43d46f25-bf31-47ac-aa46-e14ecd8aef0a"
     }
   ]
 }
