@@ -1,0 +1,47 @@
+[
+ {
+  "plan": 901,
+  "seg": 5,
+  "requete": "why do you keep coming back to Earth",
+  "slug": "drop-the-cruiser-right-now",
+  "rang": 1,
+  "echecs": 0,
+  "etat": "ok"
+ },
+ {
+  "plan": 902,
+  "seg": 4,
+  "requete": "I am Optimus Prime and I am calling all Autobots",
+  "slug": "and-later-truck-comes-haul-off",
+  "rang": 1,
+  "echecs": 0,
+  "etat": "ok"
+ },
+ {
+  "plan": 903,
+  "seg": 2,
+  "requete": "the Fallen shall rise again",
+  "slug": "all-decepticon-life-i-never-did-a-thing-worth-doing-now",
+  "rang": 1,
+  "echecs": 0,
+  "etat": "ok"
+ },
+ {
+  "plan": 904,
+  "seg": 0,
+  "requete": "Megatron must be stopped no matter the cost",
+  "slug": "breach-their-defenses",
+  "rang": 1,
+  "echecs": 0,
+  "etat": "ok"
+ },
+ {
+  "plan": 905,
+  "seg": 7,
+  "requete": "till all are one",
+  "slug": "dont-prime-i-can-give-everything-want",
+  "rang": 1,
+  "echecs": 0,
+  "etat": "ok"
+ }
+]
