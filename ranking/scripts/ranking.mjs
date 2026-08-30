@@ -107,7 +107,12 @@ async function catalogue() {
         replique: h.title,
         page: `https://clip.cafe/${h.movie_slug}/${h.slug}/`,
       }));
-      console.log(`${hits.length} extrait(s) de 7 a 10 s`);
+      // Le film matche, pas seulement le nombre de resultats : un titre partiel
+      // comme "Infinity War" ou "Empire Strikes Back" peut tomber sur autre chose,
+      // et on ne veut pas s'en apercevoir une fois les videoclips montes.
+      const films = [...new Set(cat[c.tag].map((r) => `${r.film} (${r.annee})`))];
+      const bon = films.length === 1 && films[0] === `${c.film} (${c.annee})`;
+      console.log(`${hits.length} extrait(s) de 7 a 10 s${bon ? "" : `  [A VERIFIER : ${films.join(" / ") || "aucun"}]`}`);
       cat[c.tag].slice(0, 6).forEach((r, i) =>
         console.log(`      [${i}] ${String(r.duree ?? "?").padStart(2)}s  ${r.slug.padEnd(44)} ${String(r.replique || "").slice(0, 52)}`)
       );

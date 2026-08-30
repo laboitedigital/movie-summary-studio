@@ -1,0 +1,69 @@
+{
+  "sujet": "Top 5 des méchants du cinéma",
+  "slug": "top5-mechants",
+  "langue": {
+    "registre": "français neutre",
+    "note": "Demande explicite de Popol le 30 août : ce projet vise tous les francophones, pas le Québec. C'est une exception au CLAUDE.md, qui impose le québécois parlé à MR TierMaker. Ne pas réécrire en joual."
+  },
+  "format": { "largeur": 1080, "hauteur": 1920, "fps": 30, "cadrage": "plein" },
+  "voix": {
+    "modele": "eleven_v3",
+    "voiceId": "BUJMBsQ3Oq4cEeWSb48y",
+    "nom": "Sébastien - French Male (jeune, radio/podcast)",
+    "cible": "5 a 8 s par piste — environ 17 a 20 mots"
+  },
+  "audio": {
+    "volumeExtrait": 0.12,
+    "volumeVoix": 1.0,
+    "avanceSecondes": 0.3,
+    "queueSecondes": 0.4,
+    "regle": "la duree de sortie colle a la voix : avance + voix + queue, l'extrait est coupe"
+  },
+  "clips": [
+    {
+      "rang": 5,
+      "tag": "05",
+      "film": "No Country for Old Men",
+      "annee": 2007,
+      "mechant": "Anton Chigurh",
+      "recherche": { "movie_title": "No Country for Old Men", "movie_year": "2007" },
+      "texte": "Numéro cinq, Anton Chigurh, il ne menace jamais, il pose une pièce sur le comptoir et vous laisse choisir."
+    },
+    {
+      "rang": 4,
+      "tag": "04",
+      "film": "The Silence of the Lambs",
+      "annee": 1991,
+      "mechant": "Hannibal Lecter",
+      "recherche": { "movie_title": "Silence of the Lambs", "movie_year": "1991" },
+      "texte": "Numéro quatre, Hannibal Lecter, enfermé, immobile, sans arme, et pourtant c'est lui qui dirige chaque conversation."
+    },
+    {
+      "rang": 3,
+      "tag": "03",
+      "film": "The Empire Strikes Back",
+      "annee": 1980,
+      "mechant": "Dark Vador",
+      "recherche": { "movie_title": "Empire Strikes Back", "movie_year": "1980" },
+      "texte": "Numéro trois, Dark Vador, une seule respiration suffit à faire taire une salle, et la révélation a marqué le siècle."
+    },
+    {
+      "rang": 2,
+      "tag": "02",
+      "film": "The Dark Knight",
+      "annee": 2008,
+      "mechant": "Le Joker",
+      "recherche": { "movie_title": "The Dark Knight", "movie_year": "2008" },
+      "texte": "Numéro deux, le Joker de Heath Ledger, aucun plan, aucune logique, juste l'envie de voir le monde brûler."
+    },
+    {
+      "rang": 1,
+      "tag": "01",
+      "film": "Avengers: Infinity War",
+      "annee": 2018,
+      "mechant": "Thanos",
+      "recherche": { "movie_title": "Infinity War", "movie_year": "2018" },
+      "texte": "Numéro un, Thanos, le seul méchant qui gagne à la fin, et qui pense sincèrement rendre service à l'univers."
+    }
+  ]
+}
